@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   ignoreDeadLinks: true,
-  base: process.env.BASE_PATH || '/tiktok-docs/',
+  base: '/tiktok-wiki-zh/',
   locales: {
     root: {
       label: 'English',
