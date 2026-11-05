@@ -694,7 +694,7 @@ export default defineConfig({
         nav: [
           { text: '合作伙伴指南', link: '/zh/Partner_Guide/About_the_Partner_Center_Console' },
           { text: '开发者指南', link: '/zh/Developer_Guide/TikTok_Shop_developer_guide' },
-          { text: '合作伙伴授权指南', link: '/zh/API_Reference/Guide' },
+          { text: 'API 参考', link: '/zh/API_Reference/Guide' },
           { text: 'Webhooks', link: '/zh/Webhooks/Order/(1)_Order_status_change' }
         ],
         sidebar: [
