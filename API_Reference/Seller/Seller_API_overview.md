@@ -1,4 +1,4 @@
-# 卖家 API 概览
+# Seller API overview
 
 
 # Context

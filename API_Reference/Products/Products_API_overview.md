@@ -1,4 +1,4 @@
-# 产品 API 概览
+# Products API overview
 
 # Context
 The Product API helps sellers manage their product catalog at scale. Using the Product API, a seller can create, edit, delete products, and retrieve product details, as well as sync them into Tiktok Shop from an external DTC/OMS/ERP system (such as Shopify) for sales on TikTok Shop.

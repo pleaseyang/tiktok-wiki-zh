@@ -1,4 +1,4 @@
-# 财务 API 概览
+# Finance API overview
 
 # Context
 You can get transaction details for a given order or date range. You can also get payment details for a given date range.

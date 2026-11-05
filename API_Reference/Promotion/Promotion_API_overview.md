@@ -1,4 +1,4 @@
-# 促销 API 概览
+# Promotion API overview
 
 TikTok Shop provides you with a variety of promotion activities with which you can create a rich shopping experience for TikTok users.
 You can use Promotion APIs to create and manage three kinds of promotion activities on TikTok Shop: 

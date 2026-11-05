@@ -1,4 +1,4 @@
-# 联盟合作伙伴 API 概览
+# Affiliate Partner API overview
 
 <div style="border: #fed4a4 solid 1px; background-color: #fff5eb; border-style: solid; padding: 1px 10px; border-radius: 10px;">
 <p>📌 <b>Note</b>: Affiliate APIs are currently <b>not</b> available in the <b>UK</b> and <b>EU</b> markets.

@@ -1,4 +1,4 @@
-# 客户互动 API 概览
+# Customer engagement API overview
 
 Customer engagement is crucial for businesses looking to build lasting relationships with their customers and drive conversions. Therefore, we offer a suite of Customer Engagement API endpoints that enable businesses to integrate their CRM platforms with TikTok Shop to capitalize on TikTok's extensive reach.
 
