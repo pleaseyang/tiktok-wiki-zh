@@ -1,0 +1,11 @@
+# Order API \概\览
+
+# \背\景
+Orders API \帮\助\您\获\取\订\单\相\关\信\息\。
+\您\可\以\通\过\程\序\化\方\式 GET [Order List](https://partner.tiktokshop.com/docv2/page/650aa8094a0bb702c06df242?external_id=650aa8094a0bb702c06df242)\，\并 GET \特\定\订\单\的 [Order Details](https://partner.tiktokshop.com/docv2/page/650aa8ccc16ffe02b8f167a0?external_id=650aa8ccc16ffe02b8f167a0)\。
+\此\外\，\您\还\可\以\订\阅 [Order Status Webhook](https://partner.tiktokshop.com/docv2/page/650300b8a57708028b430b4a) \以\接\收\订\单\状\态\变\更\通\知\。
+# \重\要\概\念
+## \订\单
+\当\买\家\点\击\“\下\单\”\按\钮\时\，\订\单\即\被\创\建\。\请\注\意\，\订\单\创\建\时\买\家\尚\未\完\成\支\付\，\因\此\订\单\状\态\为 UNPAID\。\订\单\创\建\后\，\卖\家\应\从\其\库\存\管\理\系\统\中\相\应\减\少\或\锁\定\库\存\。
+## **\订\单\结\构**
+
