@@ -1,9 +1,9 @@
 # 批量发货 Package
 
-# Path: /fulfillment/202309/packages/ship
-# Method: [POST]
+# 路径：/fulfillment/202309/packages/ship
+# 方法：[POST]
 # 功能描述
-使用此 API 在单个请求中发货一个或多个 package。此 API 支持 TikTok Shipping、Seller Shipping 和 In-store Pickup。
+使用此 API 在单个请求中发货一个或多个 package。此 API 支持 TikTok Shipping、卖家 Shipping 和 In-store Pickup。
 
 * `TikTok Shipping`：将每个 package 的 `handover_method` 设置为 `PICKUP` 由承运商从卖家的揽收地址揽收，或设置为 `DROP_OFF` 由卖家送到指定地点。
 * `Seller Shipping`：为每个 package 提供 `self_shipment.shipping_provider_id` 和 `self_shipment.tracking_number`。Package ID 可以从 [Get Order Detail](https://partner.tiktokshop.com/docv2/page/650aa8ccc16ffe02b8f167a0?external_id=650aa8ccc16ffe02b8f167a0) 获取。
@@ -16,19 +16,19 @@
 
 # 通用参数
 通用参数请参考 [如何调用 TikTok Shop API - 通用参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。在请求跨境店铺 API 时未传递正确值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型: application/json |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的 key。请使用分配给您应用的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 可以识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT (UTC+00:00)。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
-# 请求 Body 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+# 请求体参数
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | packages | []object | Y |  | 您要批量发货的 package 输入列表。 |
 | ^id | string | Y | 12321312312431 | Package ID。 |
@@ -39,9 +39,9 @@
    ^pickup_slot |object |N | |Package 揽收时间段。 |
    ^^start_time |int |N |1623812664 |承运商计划揽收 package 时间段的开始时间，Unix 时间戳，单位为秒。 |
    ^^end_time |int |N |1623812664 |承运商计划揽收 package 时间段的结束时间，Unix 时间戳，单位为秒。 |
-   ^self_shipment |object |N | |仅商家自发货 package 需要。检查 [Get Package Detail](https://partner.tiktokshop.com/docv2/page/650aa39fbace3e02b75d8617?external_id=650aa39fbace3e02b75d8617) 中的 `delivery_option` 字段以区分 TikTok 物流和商家自发货。使用从 [Get Shipping Providers](https://partner.tiktokshop.com/docv2/page/650aa48d4a0bb702c06d85cd?external_id=650aa48d4a0bb702c06d85cd#Back%20To%20Top) API 获取的 `shipping_provider_id` 并上传对应的 tracking 号码。 |
-   ^^tracking_number |string |Y |JX12345 |对于 `delivery_option` 类型为 `SEND_BY_SELLER` 的 package（商家自发货），您必须提供 package 的 tracking 号码。 |
-   ^^shipping_provider_id |string |Y |6617675021119438849 |对于 `delivery_option` 类型为 `SEND_BY_SELLER` 的 package（商家自发货），您必须提供物流服务商信息。请使用 [Get Shipping Providers](https://partner.tiktokshop.com/docv2/page/650aa48d4a0bb702c06d85cd?external_id=650aa48d4a0bb702c06d85cd#Back%20To%20Top) API 获取 `shipping_provider_id`。 |
+   ^self_shipment |object |N | |仅卖家自发货 package 需要。检查 [Get Package Detail](https://partner.tiktokshop.com/docv2/page/650aa39fbace3e02b75d8617?external_id=650aa39fbace3e02b75d8617) 中的 `delivery_option` 字段以区分 TikTok 物流和卖家自发货。使用从 [Get Shipping Providers](https://partner.tiktokshop.com/docv2/page/650aa48d4a0bb702c06d85cd?external_id=650aa48d4a0bb702c06d85cd#Back%20To%20Top) API 获取的 `shipping_provider_id` 并上传对应的 tracking 号码。 |
+   ^^tracking_number |string |Y |JX12345 |对于 `delivery_option` 类型为 `SEND_BY_SELLER` 的 package（卖家自发货），您必须提供 package 的 tracking 号码。 |
+   ^^shipping_provider_id |string |Y |6617675021119438849 |对于 `delivery_option` 类型为 `SEND_BY_SELLER` 的 package（卖家自发货），您必须提供物流服务商信息。请使用 [Get Shipping Providers](https://partner.tiktokshop.com/docv2/page/650aa48d4a0bb702c06d85cd?external_id=650aa48d4a0bb702c06d85cd#Back%20To%20Top) API 获取 `shipping_provider_id`。 |
 
 # 请求示例
 **Query**
@@ -55,7 +55,7 @@ https://open-api.tiktokglobalshop.com/fulfillment/202309/packages/ship?app_key=1
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -73,17 +73,17 @@ https://open-api.tiktokglobalshop.com/fulfillment/202309/packages/ship?app_key=1
 
 # 错误码
 通用错误码请参考 [如何调用 TikTok Shop API - 通用错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 | 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
-| 11006013 | package 发货失败。Phones & Tablets 品类下的产品不能与同一 package 中的其他商品一起发货。请拆分订单。 |
-| 11006014 | package 发货失败。如果您正在发货多个 Phones & Tablets 品类下的产品，它们必须在单独的 package 中发货。请拆分订单以继续。 |
+| 11006013 | package 发货失败。Phones & Tablets 品类下的商品不能与同一 package 中的其他商品一起发货。请拆分订单。 |
+| 11006014 | package 发货失败。如果您正在发货多个 Phones & Tablets 品类下的商品，它们必须在单独的 package 中发货。请拆分订单以继续。 |
 | 11021009 | 此请求没有可用的 shipping 服务。请修改 package 重量或检查收件人地址。如果错误持续存在，请联系平台寻求帮助。 |
 | 11021010 | 由于邮政编码无效，发货失败。请要求买家修改地址。如果地址无法更改，您可以通过选择以下原因无处罚取消订单：无法送达买家地址。 |
-| 11021011 | 由于产品名称无效，无法发货 package。您可以通过选择以下原因无处罚取消订单：无法送达买家地址。 |
+| 11021011 | 由于商品名称无效，无法发货 package。您可以通过选择以下原因无处罚取消订单：无法送达买家地址。 |
 | 11021012 | 地址不合法 |
 | 11021013 | 由于收货地址过长，发货失败。请要求买家缩短地址。如果地址无法更改，您可以通过选择以下原因无处罚取消订单：无法送达买家地址。 |
-| 11021014 | 产品超尺寸 |
+| 11021014 | 商品超尺寸 |
 | 11021015 | 由于 package 超重，无法发货。您可以通过选择以下原因无处罚取消订单：无法送达买家地址。 |
 | 11021016 | 由于 SKU 重量超过允许限制，无法发货 package。您可以通过选择以下原因无处罚取消订单：无法送达买家地址。 |
 | 11021017 | 由于 SKU 尺寸超过允许限制，无法发货 package。您可以通过选择以下原因无处罚取消订单：无法送达买家地址。 |

@@ -5,7 +5,7 @@ TikTok Shop Partner Center（美国市场）：[https://partner.us.tiktokshop.co
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/b4a0e2779d4e47b6b301d2561cfb866e~tplv-k9wyc2ijk0-image.image)
 # 步骤 1：注册账户
 您可以使用邮箱、手机号码（可选）和密码注册账户。
-**请注意，*邮箱地址*至关重要*，将用于接收平台邮件。请确保这是一个真实有效的邮箱地址。* 
+**请注意，*邮箱地址*至关重要*，将用于接收平台邮件。请确保这是一个真实有效的邮箱地址。*
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/9728a3e9a0a844d183e501761523cdac~tplv-k9wyc2ijk0-image.image" width="1919px" /></div>
 
 # 步骤 2：选择角色
@@ -16,7 +16,7 @@ TikTok Shop Partner Center（美国市场）：[https://partner.us.tiktokshop.co
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/9f1fc765fdbb4a3b9806aa82c9e5ab0b~tplv-k9wyc2ijk0-image.image)
 
 # 步骤 3：填写公司详情
-提供公司实体信息供平台审核。 
+提供公司实体信息供平台审核。
 注意：请确保所提供的公司信息准确无误。一旦批准，合作伙伴的实体信息将应用于所有类目和财务相关信息，且不可修改。
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/4dcd05f4088a43818bc71b8ac87a34c9~tplv-k9wyc2ijk0-image.image)
 *公司信息列表：
@@ -57,7 +57,7 @@ TikTok Shop Partner Center（美国市场）：[https://partner.us.tiktokshop.co
 # *现有代理机构合作伙伴的体验
 ### 所有代理机构的新服务类目
 服务类目升级将于 4 月 30 日生效。所有现有合作伙伴可能会注意到系统有轻微变化。
-**⚠️ 请注意：** 
+**⚠️ 请注意：**
 
 * 此升级不会影响不同合作伙伴类型的相关功能使用
 * 从 **4 月 30 日** 起，新合作伙伴将 **无法注册** 已停用的 ++规模化招聘、规模化辅导和付费媒体++ 类目**。**
@@ -69,7 +69,7 @@ TikTok Shop Partner Center（美国市场）：[https://partner.us.tiktokshop.co
 随着服务类目更新，在其他产品页面（如支付和分析页面）上的角色切换按钮...角色将参考最新的服务类目结构来获取相应数据。
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/897a44a56bca4e0ea68a05ce7bbd570c~tplv-k9wyc2ijk0-image.image" width="1460px" /></div>
 
-### 查看现有入驻状态和信息 
+### 查看现有入驻状态和信息
 您的各类目申请状态将 **保持不变**。您的入驻信息将整合到新的用户界面框架中。
 您可以在"公司实体信息"部分查看您的实体信息，并在"服务类目信息"部分访问相关类目信息和审核状态。
 **请注意：** 在 TTSPC 升级期间，您的入驻申请将被拒绝，同时系统将自动在同一类目下生成另一个申请。升级后，您的申请将被处理。感谢您的耐心和理解，对造成的不便深表歉意。

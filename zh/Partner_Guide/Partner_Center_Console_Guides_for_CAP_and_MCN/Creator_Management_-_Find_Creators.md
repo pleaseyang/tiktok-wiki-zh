@@ -8,7 +8,7 @@
 
 * 达人市场是一组使MCN/CAP能够与达人建立联系和协作的功能。
 * MCN/CAP可以查看达人的联系方式或一键发送邀请。
-* 商家通过使用*类目、达人属性和粉丝*等筛选条件搜索合作伙伴。
+* 卖家通过使用*类目、达人属性和粉丝*等筛选条件搜索合作伙伴。
 
 ## 在Affiliate Marketplace上能找到什么类型的达人？
 ✅ 拥有电商权限的达人
@@ -55,7 +55,7 @@
 **（2）邀请达人**
 点击邀请按钮后，您可以一键向达人发送邀请。
 
-* 如果您同时拥有MCN（creator management）和Affiliate Partner（Seller and Scalable Creator Match-up）角色，可以选择邀请目的
+* 如果您同时拥有MCN（达人 management）和Affiliate Partner（卖家 and Scalable 达人 Match-up）角色，可以选择邀请目的
    * MCN：请选择"与达人建立长期绑定关系"
    * Affiliate Partner：请选择"提高产品分发效率"
 
@@ -112,7 +112,7 @@
    ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/7bb885fb916148b8be8c6e25d32721a3~tplv-k9wyc2ijk0-image.image)
 
 注意：
-如果您同时拥有MCN（creator management）和Affiliate Partner（Seller and Scalable Creator Match-up）角色，可以切换邀请意向
+如果您同时拥有MCN（达人 management）和Affiliate Partner（卖家 and Scalable 达人 Match-up）角色，可以切换邀请意向
 
 * 达人合作：MCN角色
 * 产品分发：Affiliate Partner角色

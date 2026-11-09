@@ -7,7 +7,7 @@
 | **文档** | **受众** | **涵盖内容** |
 | --- | --- | --- |
 | [订单同步指南](https://bytedance.us.larkoffice.com/docx/GTgMdfok5oXd4fxLqQNucRAgs7d) | 工程团队 <br/>  | 订单如何到达你：Mode A（webhook + 轮询）和 Mode B（仅轮询），订单记录和状态生命周期（包括 ON_HOLD 窗口），对账扫描，以及存储每个订单并标记为待履行状态的步骤。请首先阅读。 |
-| [履约指南](https://bytedance.us.larkoffice.com/docx/FYBrdmGO4oUr0ux2tjAu8BY4s3c) | 工程团队 <br/>  | 收到待处理订单后你需要做什么：两条端到端履约通道——Lane A TikTok Shipping（4PL）和 Lane B Seller Shipping（3PL），发货计划，平台对包裹集的重组，包裹合并，包裹状态参考，以及履约错误码。 |
+| [履约指南](https://bytedance.us.larkoffice.com/docx/FYBrdmGO4oUr0ux2tjAu8BY4s3c) | 工程团队 <br/>  | 收到待处理订单后你需要做什么：两条端到端履约通道——Lane A TikTok Shipping（4PL）和 Lane B 卖家 Shipping（3PL），发货计划，平台对包裹集的重组，包裹合并，包裹状态参考，以及履约错误码。 |
 | [市场变体（配套指南）](https://bytedance.us.larkoffice.com/docx/RLORdDtEyom8HLxDCXEu5aLMszg) | 工程团队 | 与默认流程不同的内容：东南亚和拉美地区的交接与发货报告，发货前合并，巴西发票上传，以及英国注意事项。每个章节都会注明它所替代的指南步骤。 |
 | [利益相关方概览](https://bytedance.us.larkoffice.com/docx/Z5f8dYDBcoqdzvxPTLHuVMKnsUc) | 解决方案架构师、业务方、商务方 | 非技术视角：用通俗语言详细介绍两种履约模式，按能力分组的 API 接入清单，分阶段工作量框架，以及影响运营的一些业务规则。没有 payload，没有复杂图表。 |
 # 我应该从哪个指南开始？

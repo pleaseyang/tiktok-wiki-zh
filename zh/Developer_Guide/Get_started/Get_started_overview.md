@@ -14,7 +14,7 @@
 ## TikTok Shop 卖家开发者
 拥有活跃店铺并希望为自己的店铺需求构建集成的 TikTok Shop 卖家。此类型仅可访问**自有**的 OAuth 凭据和数据。
 ## 开发者类型如何映射到 `user_type`
-当用户授权你的应用时，token 响应包含 `user_type` 字段。平台/集成商开发者代表 **Seller**（`user_type=0`）操作；为 affiliate creator 构建的应用接收 **Creator**（`user_type=1`）；affiliate partner（TAP）应用接收 **Partner**（`user_type=3`）。完整枚举请参阅授权概述。
+当用户授权你的应用时，token 响应包含 `user_type` 字段。平台/集成商开发者代表 **卖家**（`user_type=0`）操作；为 affiliate 达人构建的应用接收 **达人**（`user_type=1`）；affiliate 合作伙伴（TAP）应用接收 **合作伙伴**（`user_type=3`）。完整枚举请参阅授权概述。
 > **不熟悉 OAuth 术语？** *OAuth 凭据*是你的应用代表用户操作所需的凭证。*Bearer token（access token）* 授权每次 API 调用；*refresh token* 允许你在无需重新授权的情况下获取新的 access token。完整流程请参阅授权概述。
 
 ## 后续步骤

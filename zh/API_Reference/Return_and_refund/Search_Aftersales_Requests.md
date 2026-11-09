@@ -1,7 +1,7 @@
 # 搜索售后请求
 
-# Path: /return_refund/202603/aftersales/search
-# Method: [POST]
+# 路径：/return_refund/202603/aftersales/search
+# 方法：[POST]
 # 功能描述
 搜索已授权店铺的售后请求。您可以通过售后请求、buyer 或主订单 ID、售后请求状态、退货类型以及创建或更新时间进行筛选。使用 `whitelisted_data_fields` 在每个结果中包含行项目、SKU 退货请求或 return merchandise authorization。
 
@@ -10,21 +10,21 @@
 
 # 公共参数
 公共参数请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。跨境店铺请求 API 时未传递正确值将返回错误的响应。 |
 | 通过 API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) 获取 |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Query 参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个 app 都有一个唯一的 key。请使用分配给您的 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT（UTC+00:00）。此时间戳用于所有 API 请求。开发者可以使用此转换为本地时间。 |
 | locale | string | N | en-US | 用于显示目的的 BCP-47 locale 代码。默认值：`en` |
 | 支持的 locale 代码列表请参考 [Locale codes](https://partner.tiktokshop.com/docv2/page/678e3a47bae28f030a8c7523)。 |  |  |  |  |
-# 请求 Body 参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+# 请求体参数
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | whitelisted_data_fields | []string | N | ["LINE_ITEMS", "SKU_RETURN_REQUESTS", "RETURN_MERCHANDISE_AUTHORIZATIONS"] | 控制每个售后请求包含哪些附加字段。 |
 | 可能的值： |  |  |  |  |
@@ -80,7 +80,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202603/aftersales/search?app
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -105,35 +105,35 @@ https://open-api.tiktokglobalshop.com/return_refund/202603/aftersales/search?app
    ^^^return_id |string |4035318504086604100 |特定退货的标识符。 |
    ^^^return_type |string |REFUND |退货类型。
    可用值：
-* `REFUND`：Seller 将发放仅退款。Buyer 无需将商品寄回给 seller。
-* `RETURN_AND_REFUND`：Buyer 需要将商品寄回给 seller。Seller 需要审核退回商品的状况后才能向 buyer 发放退款。
-* `REPLACEMENT`：Buyer 要求 seller 换货。
-* `EXCHANGE`：Buyer 要求 seller 换货。 |
+* `REFUND`：卖家将发放仅退款。Buyer 无需将商品寄回给卖家。
+* `RETURN_AND_REFUND`：Buyer 需要将商品寄回给卖家。卖家需要审核退回商品的状况后才能向 buyer 发放退款。
+* `REPLACEMENT`：Buyer 要求卖家换货。
+* `EXCHANGE`：Buyer 要求卖家换货。 |
    ^^^return_status |string |RETURN_OR_REFUND_REQUEST_PENDING |退货状态。
    可用值：
-* `RETURN_OR_REFUND_REQUEST_PENDING`：Buyer 已发起退货或退款请求。请求等待 seller 或平台审核。
+* `RETURN_OR_REFUND_REQUEST_PENDING`：Buyer 已发起退货或退款请求。请求等待卖家或平台审核。
 * `REFUND_OR_RETURN_REQUEST_REJECT`：退货或退款请求被拒绝。
-* `AWAITING_BUYER_SHIP`：退货请求已获批准。Seller 等待 buyer 将批准的商品寄回。如果 buyer 在截止日期前未寄出商品，平台将关闭请求。
-* `BUYER_SHIPPED_ITEM`：Buyer 已将批准的商品寄回给 seller。
-* `REJECT_RECEIVE_PACKAGE`：Seller 检查了退回商品并拒绝了退货包裹。
+* `AWAITING_BUYER_SHIP`：退货请求已获批准。卖家等待 buyer 将批准的商品寄回。如果 buyer 在截止日期前未寄出商品，平台将关闭请求。
+* `BUYER_SHIPPED_ITEM`：Buyer 已将批准的商品寄回给卖家。
+* `REJECT_RECEIVE_PACKAGE`：卖家检查了退回商品并拒绝了退货包裹。
 * `RETURN_OR_REFUND_REQUEST_SUCCESS`：退货/退款请求已获批准。Buyer 将获得退款。
 * `RETURN_OR_REFUND_REQUEST_CANCEL`：请求已被 buyer 或系统取消。
 * `RETURN_OR_REFUND_REQUEST_COMPLETE`：退货/退款已成功处理。Buyer 已收到退款。
-* `REPLACEMENT_REQUEST_PENDING`：Buyer 已发起换货请求。请求等待 seller 审核。
-* `REPLACEMENT_REQUEST_REJECT`：Seller 拒绝了 buyer 的换货请求。
+* `REPLACEMENT_REQUEST_PENDING`：Buyer 已发起换货请求。请求等待卖家审核。
+* `REPLACEMENT_REQUEST_REJECT`：卖家拒绝了 buyer 的换货请求。
 * `REPLACEMENT_REQUEST_REFUND_SUCCESS`：由于库存不足，buyer 的换货请求已通过退款解决。
 * `REPLACEMENT_REQUEST_CANCEL`：Buyer 取消了换货请求。
-* `REPLACEMENT_REQUEST_COMPLETE`：Seller 已批准 buyer 的换货请求，平台将生成新订单供 seller 履行。
-* `AWAITING_BUYER_RESPONSE`：Seller 向 buyer 提供另一种退货类型，等待 buyer 响应。Seller 提出的退货类型可检查 `seller_proposed_return_type`。
-* `EXCHANGE_REQUEST_PENDING`：Buyer 已发起换货请求。请求等待 seller 审核。
+* `REPLACEMENT_REQUEST_COMPLETE`：卖家已批准 buyer 的换货请求，平台将生成新订单供卖家履行。
+* `AWAITING_BUYER_RESPONSE`：卖家向 buyer 提供另一种退货类型，等待 buyer 响应。卖家提出的退货类型可检查 `seller_proposed_return_type`。
+* `EXCHANGE_REQUEST_PENDING`：Buyer 已发起换货请求。请求等待卖家审核。
 * `EXCHANGE_REQUEST_REFUND_SUCCESS`：由于库存不足，buyer 的换货请求已通过退款解决。
 * `EXCHANGE_REQUEST_CANCEL`：Buyer 取消了换货请求。
-* `EXCHANGE_REQUEST_COMPLETE`：Seller 已批准 buyer 的换货请求，平台将生成新订单供 seller 履行。 |
+* `EXCHANGE_REQUEST_COMPLETE`：卖家已批准 buyer 的换货请求，平台将生成新订单供卖家履行。 |
    ^^^arbitration_status |string |IN_PROGRESS |仲裁状态。
    可用值：
-* `IN_PROGRESS`：TikTok Shop 平台运营方正在处理仲裁，可能会要求 seller 提供更多信息。
+* `IN_PROGRESS`：TikTok Shop 平台运营方正在处理仲裁，可能会要求卖家提供更多信息。
 * `SUPPORT_BUYER`：平台运营方支持 buyer。
-* `SUPPORT_SELLER`：平台运营方支持 seller。
+* `SUPPORT_SELLER`：平台运营方支持卖家。
 * `CLOSED`：仲裁已关闭。 |
    ^^^role |string |BUYER |退货发起方角色。
    可用值：
@@ -145,15 +145,15 @@ https://open-api.tiktokglobalshop.com/return_refund/202603/aftersales/search?app
    ^^^return_reason |string |ecom_order_to_ship_canceled_reason_created_by_mistakes |退货的机器可读原因代码。使用 `return_reason_text` 获取本地化显示文本。 |
    ^^^return_reason_text |string |Order created by mistake |退货原因，本地化文本。
    您可以使用 locale 请求参数更改语言。 |
-   ^^^seller_next_action_response |[]object | |Seller 的下一步操作和截止日期。 |
-   ^^^^action |string |SELLER_RESPOND_REFUND |Seller 的下一步操作。
+   ^^^seller_next_action_response |[]object | |卖家的下一步操作和截止日期。 |
+   ^^^^action |string |SELLER_RESPOND_REFUND |卖家的下一步操作。
    可用值：
 * `SELLER_RESPOND_REFUND`
 * `SELLER_RESPOND_RETURN`
 * `SELLER_RESPOND_RECEIVE_PACKAGE`
 * `SELLER_RESPOND_REPLACEMENT` |
-   ^^^^deadline |int |1690554680 |Seller 执行指定操作的截止日期，为 Unix 时间戳（秒）。 |
-   ^^^shipment_type |string |PLATFORM |Buyer 选择的将商品寄回给 seller 的物流方式。
+   ^^^^deadline |int |1690554680 |卖家执行指定操作的截止日期，为 Unix 时间戳（秒）。 |
+   ^^^shipment_type |string |PLATFORM |Buyer 选择的将商品寄回给卖家的物流方式。
    可用值：
 * `PLATFORM`：Buyer 使用 TikTok Shop 的 shipping 服务。参见 `handover_method` 了解 buyer 使用 `DROP_OFF` 还是 `PICKUP`。
 * `BUYER_ARRANGE`：Buyer 自行安排退货物流。 |
@@ -183,7 +183,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202603/aftersales/search?app
    ^^^^^width |int |200 |商品图片宽度。单位：像素（px）。 |
    ^^^^^height |int |200 |商品图片高度。单位：像素（px）。 |
    ^^^^product_name |string |(SP) [PROMO BUNDLING] NICE Tissue Facial 180s x 5 pcs |商品名称。 |
-   ^^^^seller_sku |string |PUTIH 1 TALI |Seller 定义的 SKU 名称。 |
+   ^^^^seller_sku |string |PUTIH 1 TALI |卖家定义的 SKU 名称。 |
    ^^^^refund_amount |object | |退款金额详情。 |
    ^^^^^currency |string |USD |付款币种。 |
    ^^^^^refund_total |string |1.23 |退还给 buyer 的总退款金额。 |
@@ -193,7 +193,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202603/aftersales/search?app
    ^^^^^retail_delivery_fee |string |0.1 |根据美国科罗拉多州的合规规则，当平台 GMV 超过 500,000 USD 时，零售配送费生效。 |
    ^^^^^buyer_service_fee |string |0.1 |Buyer 服务费。 |
    ^^^^return_sub_line_items |[]object | |退货子订单行项目。
-   子项目代表属于 seller 定义的"虚拟捆绑"的 SKU。sub_items 将包含虚拟捆绑中每个商品的所有相关信息。 |
+   子项目代表属于卖家定义的"虚拟捆绑"的 SKU。sub_items 将包含虚拟捆绑中每个商品的所有相关信息。 |
    ^^^^^return_sub_line_item_id |string |4035227657962164812 |退货子订单行 ID。 |
    ^^^^^return_line_item_id |string |4035227657962164811 |退货订单行 ID。 |
    ^^^^^sub_order_line_item_id |string |576473917261451852 |子订单行 ID。 |
@@ -205,7 +205,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202603/aftersales/search?app
    ^^^^^^width |int |200 |商品图片宽度。单位：像素（px）。 |
    ^^^^^^height |int |200 |商品图片高度。单位：像素（px）。 |
    ^^^^^product_name |string |(SP) [PROMO BUNDLING] NICE Tissue Facial 180s x 5 pcs |商品名称。 |
-   ^^^^^seller_sku |string |PUTIH 1 TALI |Seller 定义的 SKU 名称。 |
+   ^^^^^seller_sku |string |PUTIH 1 TALI |卖家定义的 SKU 名称。 |
    ^^^^^refund_amount |object | |退款金额详情。 |
    ^^^^^^currency |string |USD |付款币种。 |
    ^^^^^^refund_total |string |1.23 |退还给 buyer 的总退款金额。 |
@@ -218,11 +218,11 @@ https://open-api.tiktokglobalshop.com/return_refund/202603/aftersales/search?app
    ^^^update_time |int |1690453136 |退货最后更新时间，Unix 时间戳（秒）。 |
    ^^^discount |object | |折扣退款金额，以 `refund_amount.currency` 指定的币种计价。 |
    ^^^^product_platform_discount |string |0.1 |平台折扣的退款金额。 |
-   ^^^^product_seller_discount |string |0.1 |商品 seller 折扣的退款金额。 |
+   ^^^^product_seller_discount |string |0.1 |商品卖家折扣的退款金额。 |
    ^^^^shipping_fee_platform_discount |string |0.1 |运费平台折扣的退款金额。 |
-   ^^^^shipping_fee_seller_discount |string |0.1 |运费 seller 折扣的退款金额。 |
+   ^^^^shipping_fee_seller_discount |string |0.1 |运费卖家折扣的退款金额。 |
    ^^^shipping_fee |object | |退货物流费用金额，以 `refund_amount.currency` 指定的币种计价。 |
-   ^^^^seller_paid_return_shipping_fee_amount |string |0.1 |Seller 承担的退货物流费用金额。 |
+   ^^^^seller_paid_return_shipping_fee_amount |string |0.1 |卖家承担的退货物流费用金额。 |
   3 ^^^^buyer_paid_return_shipping_fee_amount |string |0.1 |Buyer 承担的退货物流费用金额。 |
    ^^^^platform_paid_return_shipping_fee_amount |string |0.1 |平台承担的退货物流费用金额。 |
    ^^^buyer_keep_item |bool |true |指示 buyer 是否可以保留商品。对于换货请求，此字段返回 `true`，其他退货类型则省略此字段。 |
@@ -232,22 +232,22 @@ https://open-api.tiktokglobalshop.com/return_refund/202603/aftersales/search?app
 * `QR_CODE` - 带箱的二维码
 * `QR_CODE_NBNL` - 无箱无标的二维码 |
    ^^^return_method |string |PLATFORM_SHIPPED |退货方式：
-* `SELLER_SHIPPED`：Seller 提供退货物流服务。
+* `SELLER_SHIPPED`：卖家提供退货物流服务。
 * `BUYER_SHIPPED`：Buyer 自行安排退货物流。
 * `PLATFORM_SHIPPED`：TikTok Shop 提供退货物流服务。 |
    ^^^is_combined_return |bool |false |如果 buyer 要求将多个退货合并为一个退货包裹，此字段返回 true。 |
    ^^^combined_return_id |string |4035309948547073951 |如果 `is_combined_return` 为 `true`，此字段返回与合并退货关联的 `combined_return_id`。 |
-   ^^^seller_proposed_return_type |string |PARTIAL_REFUND |Seller 提出的退货类型：
+   ^^^seller_proposed_return_type |string |PARTIAL_REFUND |卖家提出的退货类型：
 * `PARTIAL_REFUND` |
    ^^^partial_refund_amount |object | |部分退款详情。 |
-   ^^^^partial_refund_total |string |10 |Seller 提供的部分退款金额。
-   注意：仅 seller 发起的部分退款才返回此字段。 |
+   ^^^^partial_refund_total |string |10 |卖家提供的部分退款金额。
+   注意：仅卖家发起的部分退款才返回此字段。 |
    ^^^^currency |string |IDR |部分退款币种 |
-   ^^^buyer_rejected_partial_refund |bool |true |仅在 seller 发起部分退款时返回此字段。
+   ^^^buyer_rejected_partial_refund |bool |true |仅在卖家发起部分退款时返回此字段。
    可用值：
-* `TRUE`：Buyer 拒绝了 seller 的部分退款提议。
-* `FALSE`：Buyer 接受了 seller 的部分退款提议或等待 buyer 响应。 |
-   ^^^return_warehouse_address |object | |Seller 提供的退货仓库地址详情。 |
+* `TRUE`：Buyer 拒绝了卖家的部分退款提议。
+* `FALSE`：Buyer 接受了卖家的部分退款提议或等待 buyer 响应。 |
+   ^^^return_warehouse_address |object | |卖家提供的退货仓库地址详情。 |
    ^^^^full_address |string |1199 Coleman Ave San Jose, CA 95110 |完整的退货仓库地址。 |
    ^^^exchange_order_lines |[]object | |请忽略此字段。尚未支持。 |
    ^^^^order_line_id |string |0 |请忽略此字段。尚未支持。 |
@@ -266,7 +266,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202603/aftersales/search?app
    ^^^^^refund_shipping_fee |string |0 |请忽略此字段。尚未支持。 |
    ^^^^^refund_tax |string |0 |请忽略此字段。尚未支持。 |
    ^^^reshipment_order_id |string |0 |请忽略此字段。尚未支持。 |
-   ^^^is_quick_refund |bool |false |如果退货触发了快速退款策略，seller 无法拒绝收货包裹 |
+   ^^^is_quick_refund |bool |false |如果退货触发了快速退款策略，卖家无法拒绝收货包裹 |
    ^^^return_sub_line_items |[]object | |已弃用。请勿使用此字段。 |
    ^^^^return_sub_line_item_id |string |4035227657962164812 |退货子订单行 ID。 |
    ^^^^return_line_item_id |string |4035227657962164811 |退货订单行 ID。 |
@@ -279,7 +279,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202603/aftersales/search?app
    ^^^^^width |int |200 |商品图片宽度。单位：像素（px）。 |
    ^^^^^height |int |200 |商品图片高度。单位：像素（px）。 |
    ^^^^product_name |string |(SP) [PROMO BUNDLING] NICE Tissue Facial 180s x 5 pcs |商品名称。 |
-   ^^^^seller_sku |string |PUTIH 1 TALI |Seller 定义的 SKU 名称。 |
+   ^^^^seller_sku |string |PUTIH 1 TALI |卖家定义的 SKU 名称。 |
    ^^^^refund_amount |object | |退款金额详情。 |
    ^^^^^currency |string |USD |付款币种。 |
    ^^^^^refund_total |string |1.23 |退还给 buyer 的总退款金额。 |
@@ -318,7 +318,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202603/aftersales/search?app
 | 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 | 25001001 | 传递了无效的请求参数。请检查您是否具有正确的参数类型和格式。 |
-| 25020005 | No permission to process this order |
-| 25020008 | Internal error. Please try again. If the issue persists after multiple attempts, please contact platform support. |
-| 36009003 | Internal error. Please try again. If the issue persists after multiple attempts, please contact platform support. |
+| 25020005 | 无权处理此订单 |
+| 25020008 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
+| 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
 

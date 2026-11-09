@@ -1,7 +1,7 @@
 # 获取全球卖家仓库
 
-# Path: /logistics/202309/global_warehouses
-# Method: [GET]
+# 路径：/logistics/202309/global_warehouses
+# 方法：[GET]
 # 功能描述
 此 API 获取与卖家关联的全球仓库，包括每个仓库的全球仓库 ID、名称和所有权。
 
@@ -10,11 +10,11 @@
 
 # 公共参数
 公共参数详情请参考 [如何调用 TikTok Shop APIs - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 参数 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 参数描述 <!-- width:254px --> |
+| 参数 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 参数描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | content-type | header | string | Y | application/json | 允许类型: application/json |
 # 请求 Query 参数
-| 参数 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 参数描述 <!-- width:254px --> |
+| 参数 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 参数描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个 app 都有唯一的 key。请使用分配给您 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |

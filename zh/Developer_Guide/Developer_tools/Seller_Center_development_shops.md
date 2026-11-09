@@ -4,12 +4,12 @@ Seller Center 开发店铺允许开发者为 TikTok Shop API 开发创建 Seller
 使用本指南选择合适的测试账号类型、创建测试店铺、授权您的应用，以及生成测试商品和订单数据。
 # 快速入门
 使用当前 Partner Center 路径：
-**Partner Center Console > Development Kits > Development Shops**
+**Partner Center 控制台 > 开发工具包 > 开发店铺**
 | 任务 | 路径 |
 | --- | --- |
-| 创建 Core Function 或 Full Function 测试账号 | **Development Kits > Development Shops > Manage accounts > Create test account** |
-| 进入测试店铺或授权应用 | **Development Kits > Development Shops > Manage accounts**  |
-| 关联客户（买家）测试 TikTok 账号 | **Development Kits > Development Shops > Manage accounts > Settings (button)** |
+| 创建 Core Function 或 Full Function 测试账号 | **开发工具包 > 开发店铺 > 管理账号 > 创建测试账号** |
+| 进入测试店铺或授权应用 | **开发工具包 > 开发店铺 > 管理账号**  |
+| 关联客户（买家）测试 TikTok 账号 | **开发工具包 > 开发店铺 > 管理账号 > 设置 (按钮)** |
 
 较旧的截图或文档可能显示 **Development Kits > Development Shops**。将 **Development Shops** 视为 Sandbox 测试账号区域的前一个菜单名称。
 
@@ -68,7 +68,7 @@ TikTok 账号地区必须与测试店铺地区匹配。创建或关联 TikTok �
 | 财务报表和结算 | 否 | 是 |
 | 客户消息服务 | 否 | 是 |
 # 支持的市场和卖家类型
-Seller 开发店铺适用于跨境和本地店铺。
+卖家开发店铺适用于跨境和本地店铺。
 **注意：** 表格反映的是 Core Function 账号支持的区域。对于 Full Function 账号，支持的本地区域与 Core Function 账号相同，而跨境卖家支持目前不可用。
 | 国家/地区 | 国家代码 | 跨境 | 本地 |
 | --- | --- | --- | --- |
@@ -100,23 +100,23 @@ Seller 开发店铺适用于跨境和本地店铺。
 | 术语 | 定义 |
 | --- | --- |
 | Seller Center 开发账号 | 在 Partner Center 下创建的用于开发和测试的 Seller Center 测试账号。开发账号中的事件和数据不会影响生产卖家账号。有两种类型：Core Function Account 和 Full Function Account。 |
-| Core Function Account | 一种轻量级测试账号，不需要真实商业信息、TikTok 账号设置或信用卡信息。主要用于 Partner Center 内的商品、订单和履约测试。不支持真实买家结账、财务、结算或客服场景。 |
-| Full Function Account | 一种类生产环境的测试账号，需要商业和 KYC 信息。它支持 Core Account 功能以及关联的 Official Test TikTok Account 和 Buyer Test TikTok Account。用于买家结账、商品发现、财务、结算、客服和全流程测试。 |
+| 核心功能账号 | 一种轻量级测试账号，不需要真实商业信息、TikTok 账号设置或信用卡信息。主要用于 Partner Center 内的商品、订单和履约测试。不支持真实买家结账、财务、结算或客服场景。 |
+| 全功能账号 | 一种类生产环境的测试账号，需要商业和 KYC 信息。它支持 Core Account 功能以及关联的 Official Test TikTok Account 和 Buyer Test TikTok Account。用于买家结账、商品发现、财务、结算、客服和全流程测试。 |
 | TikTok Account | 在 TikTok 应用中通过邮箱或手机号创建的账号。对于测试，请创建新的 TikTok 账号，不要使用生产账号。 |
-| Official Test TikTok Account | 作为店铺官方账号关联到 Full Function 测试店铺的 TikTok 账号。关联后，该账号被转变为测试账号，无法恢复为生产用途。 |
-| Buyer Test TikTok Account | 在 Partner Center 中关联的用于买家侧测试的 TikTok 账号。它可以在 Full Function 场景中搜索测试店铺、查看商品和下达测试订单。关联后，它永久转变为测试账号。 |
+| 官方测试 TikTok 账号 | 作为店铺官方账号关联到 Full Function 测试店铺的 TikTok 账号。关联后，该账号被转变为测试账号，无法恢复为生产用途。 |
+| 买家测试 TikTok 账号 | 在 Partner Center 中关联的用于买家侧测试的 TikTok 账号。它可以在 Full Function 场景中搜索测试店铺、查看商品和下达测试订单。关联后，它永久转变为测试账号。 |
 | 店铺类型 | 测试店铺的卖家模式和市场类型，例如 **Local** 或 **Cross-border**。本地店铺在一个本地市场运营。跨境店铺代表支持地区的跨境卖家场景。 |
 | 入驻类型 | 设置期间使用的账号实体类型，例如 **Individual** 或 **Business**。对于 Core Function 测试，这不会改变可用功能。对于 Full Function 测试，商业/KYC 要求可能因市场和账号上下文而异。 |
 # 设置概述
 大多数 API 集成测试需要商品数据和订单数据。要创建这些数据，请使用以下设置之一：
 | 设置 | 所需资源 |
 | --- | --- |
-| Core Function 测试 | Seller Center Core Function Account |
+| Core Function 测试 | Seller Center 核心功能账号 |
 | Full Function 测试 | Seller Center Full Function Account、Official Test TikTok Account 和 Buyer Test TikTok Account |
 设置完成后，使用测试店铺授权您的应用、创建商品、创建或下达订单，然后根据生成的测试数据验证 API 行为。
 # Core Function Account 设置
 ## Core Function 功能
-Core Function Account：
+核心功能账号：
 
 * 需要最少的设置信息；
 * 不需要 TikTok Official 或 Buyer Test TikTok Account；
@@ -126,7 +126,7 @@ Core Function Account：
 
 ## 创建 Core Function Account
 
-1. 在 Partner Center Console 中，进入 **Development Kits > Sandbox > Seller test accounts**。
+1. 在 Partner Center Console 中，进入 **Development Kits > Sandbox > 卖家 test accounts**。
 2. 点击 **Create test account**。
 3. 选择 **Core Function**。
 4. 根据目标卖家场景选择 **Shop Type**，例如 **Local**。
@@ -137,7 +137,7 @@ Core Function Account：
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/e58d92b9830a4cc8b0a9dbddfa2e61ff~tplv-k9wyc2ijk0-image.image)
 ## 使用 Core Function 测试店铺授权您的应用
 
-1. 进入 **Development Kits > Sandbox > Seller test accounts**。
+1. 进入 **Development Kits > Sandbox > 卖家 test accounts**。
 2. 在卖家测试账号区域，点击 **Authorize app**。
 3. 选择要与此店铺一起测试的应用。
 
@@ -152,8 +152,8 @@ Core Function Account：
 **注意：** 本节截图以美国为例。菜单选项可能因市场而异。
 
 1. 在 Core Function Account 中，进入 **Orders > Shipping Options**。
-2. 选择 TikTok Shipping 或 Seller Shipping。
-3. 如果选择了 Seller Shipping，进入 **Orders > Shipping Templates** 并设置包含所需买家地区的运费模板。
+2. 选择 TikTok Shipping 或卖家 Shipping。
+3. 如果选择了卖家 Shipping，进入 **Orders > Shipping Templates** 并设置包含所需买家地区的运费模板。
 
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/4961c665fe8a44198437732d9f968854~tplv-k9wyc2ijk0-image.image)
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/8e9ac605b68e4ffd894c68bfe33d0e78~tplv-k9wyc2ijk0-image.image)
@@ -182,7 +182,7 @@ Buyer View 支持对受支持订单状态的模拟买家操作：
 
 # Full Function Account 设置
 ## Full Function 功能
-Full Function Account：
+全功能账号：
 
 * 包含 Core Function 测试功能；
 * 需要有效的商业和 KYC 信息；
@@ -202,7 +202,7 @@ Full Function Account：
 如果您无法提供所需的信息或区域匹配的 TikTok 账号，请先使用 Core Function Account。
 ## 创建 Full Function Account
 
-1. 在 Partner Center Console 中，进入 **Development Kits > Sandbox > Seller test accounts**。
+1. 在 Partner Center Console 中，进入 **Development Kits > Sandbox > 卖家 test accounts**。
 2. 点击 **Create test account**。
 3. 选择 **Full Function**。
 4. 根据目标卖家场景选择 **Shop Type**，例如 **Local**。
@@ -249,7 +249,7 @@ Full Function Account：
 # 使用 Full Function Account 测试您的应用
 ## 授权您的应用
 
-1. 进入 **Development Kits > Sandbox > Seller test accounts**。
+1. 进入 **Development Kits > Sandbox > 卖家 test accounts**。
 2. 在卖家测试账号区域，点击 **Authorize app**。
 3. 选择要安装并与测试店铺一起测试的应用。
 

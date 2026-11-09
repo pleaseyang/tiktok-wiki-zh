@@ -41,88 +41,88 @@
 1. 只有合作伙伴能在其桌面中心看到达人等级吗？
    * 不是，达人等级对卖家也是可见的。
 
-# **ID - Level Kreator untuk Partner**
-Dalam artikel ini, kami akan menunjukkan cara menggunakan Level Kreator untuk mendukung kemitraan Anda di masa depan dengan Kreator Afiliasi.
-Untuk memulai, kami akan membahas hal-hal berikut:
+# **ID - 面向合作伙伴的达人等级**
+在本文中，我们将展示如何使用达人等级来支持您未来与联盟达人的合作关系。
+首先，我们将讨论以下内容：
 
-* Apa itu Level Kreator?
-* Mengapa Kami Menampilkan Level Kreator kepada Partner?
-* Cara Menemukan Level Kreator di Partner Center
+* 什么是达人等级？
+* 为何我们要向合作伙伴展示达人等级？
+* 如何在 Partner Center 中找到达人等级
 
-*Catatan: Tugas dan manfaat yang ditampilkan dalam tangkapan layar mungkin tidak mencerminkan versi terbaru dari Level Kreator. Silakan periksa Partner Center Anda untuk daftar terbaru.*
+*说明：屏幕截图中显示的任务和权益可能未反映达人等级的最新版本。请查看您的 Partner Center 以获取最新列表。*
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/c2d306b773434df4833dd00860c32f95~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 
-# **Apa itu Level Kreator?**
-Level Kreator adalah program berbasis musim yang memberikan serangkaian tugas kepada kreator untuk naik level dan mendapatkan hadiah.
+# **什么是达人等级？**
+达人等级是一项按赛季开展的计划，为达人提供一系列任务，供其升级并获得奖励。
 
-* Kreator diklasifikasikan dari Level 0 (L0) hingga Level 8 (L8), dengan level yang diperbarui di awal setiap bulan berdasarkan performa bulan sebelumnya. Evaluasi dilakukan berdasarkan GMV, tingkat aktivitas, serta kemampuan dalam memilih produk dan menjalankan bisnis e-commerce.
-* Level yang lebih tinggi mencerminkan performa lebih kuat dalam menghasilkan GMV dan aktivitas afiliasi yang konsisten. Kreator dengan level tinggi juga mendapatkan lebih banyak keuntungan dan dukungan dari platform.
+* 达人被划分为等级 0 (L0) 至等级 8 (L8)，等级会在每月初根据上月表现更新。评估依据为 GMV、活跃度，以及选品和经营电商业务的能力。
+* 更高的等级反映了在创造 GMV 和持续开展联盟活动方面更强劲的表现。高等级达人还可获得来自平台更多权益与支持。
 
-Untuk mempelajari lebih lanjut dari sudut pandang kreator, baca panduan kami **di sini.**
+要从达人视角了解更多，请阅读我们的指南**这里。**
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/e596d965c8a34e90bd0fd1b6bef6233b~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 
-# **Mengapa Kami Menampilkan Level Kreator kepada Partner?**
-| ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/89c8a4442daf42a1a13786ead70dc1dd~tplv-k9wyc2ijk0-image.image) <br/>  | **Temukan talenta terbaik dengan mudah melalui Level Kreator** <br/>  <br/> * Fitur Level Kreator memudahkan partner untuk menemukan kreator berperforma tinggi. Fitur ini diperbarui setiap bulannya sehingga dapat menunjukkan siapa yang aktif dan menghasilkan penjualan—membantu Anda membangun kolaborasi afiliasi yang lebih cerdas dan andal. <br/>  <br/> **Bermitra dengan yang terbaik dan dapatkan hasil Maksimal** <br/>  <br/> * Kreator dengan level tinggi menikmati keuntungan eksklusif dan dukungan dari platform yang dapat memberikan dorongan ekstra pada campaign Anda dan membantu meningkatkan penjualan secara signifikan. |
+# **为何我们要向合作伙伴展示达人等级？**
+| ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/89c8a4442daf42a1a13786ead70dc1dd~tplv-k9wyc2ijk0-image.image) <br/>  | **通过达人等级轻松发掘优质人才** <br/> <br/> * 达人等级功能帮助合作伙伴轻松找到高表现达人。该功能每月更新，可展示哪些达人活跃并带来销量——帮助您建立更智能、更可靠的联盟协作。 <br/> <br/> **与最优秀者合作，获取最大成效** <br/> <br/> * 高等级达人享有专属权益与平台支持，可为您的活动提供额外助力，并帮助显著提升销量。 |
 | --- | --- |
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/05783d92e7b04f47807105a6bfb86c0d~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 
-# **Cara Menemukan Level Kreator di Partner Center**
-Di Partner Center, Anda dapat melihat Level Kreator di berbagai modul. Anda dapat menggunakan level ini sebagai panduan atau penanda untuk memilih kreator yang tepat untuk dijadikan mitra. Level ini memberi gambaran seberapa aktif seorang kreator selama periode satu bulan.
+# **如何在 Partner Center 中找到达人等级**
+在 Partner Center 中，您可以在多个模块看到达人等级。您可以将此等级作为指引或标记，来选择合适的达人作为合作伙伴。该等级可反映达人在一个月内的活跃程度。
 ## **Temukan Kreator**
-Level kreator dapat ditemukan di samping nama kreator di halaman utama "Temukan Kreator" dan di halaman detail kreator.
+达人等级可在"发现达人"主页和达人详情页的达人名称旁找到。
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/a4a8816cbba2481589ea711d3a52255a~tplv-k9wyc2ijk0-image.image" width="1440px" /></div>
 
-### **Filter Pencarian Kreator**
-Saat mencari kreator, partner dapat memfilter berdasarkan level kreator, yang tersedia di bawah filter "Kreator". Partner dapat memilih satu atau lebih level saat menerapkan filter.
+### **达人搜索筛选**
+搜索达人时，合作伙伴可按达人等级进行筛选，该筛选项位于"Kreator"筛选条件下。合作伙伴在应用筛选时可选择其中一个或多个等级。
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/13f15f6255d44a5a9012a7b37e0053aa~tplv-k9wyc2ijk0-image.image" width="1440px" /></div>
 
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/845aac27639945d4913c76bc030d9d95~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 
 ## **FAQ**
 
-1. **Apakah hanya Partner yang bisa melihat Level Kreator di desktop Partner Center mereka?**
-   * Tidak, Level Kreator juga dapat dilihat oleh Penjual (Sellers).
+1. **是否只有合作伙伴才能在其桌面版 Partner Center 中看到达人等级？**
+   * 不可以，达人等级也可被卖家 (Sellers) 查看。
 
-# **MY - Tahap Kreator untuk Rakan Kongsi**
-Dalam artikel ini, kami akan tunjukkan cara untuk menavigasi dan menggunakan sistem Tahap Kreator bagi menyokong kerjasama anda dengan Kreator Afiliasi pada masa hadapan.
-Untuk permulaan, kami akan menerangkan perkara berikut:
+# **MY - 面向合作伙伴的达人等级**
+在本文中，我们将展示如何浏览和使用达人等级体系，以支持您未来与联盟达人的协作。
+首先，我们将说明以下事项：
 
-* Apa itu Tahap Kreator?
-* Mengapa Kami Paparkan Tahap Kreator kepada Rakan Kongsi?
-* Di Mana Nak Cari Tahap Kreator dalam Partner Center
+* 什么是达人等级？
+* 为何我们要向合作伙伴展示达人等级？
+* 在 Partner Center 中何处查找达人等级
 
-*Nota: Tugas dan faedah yang dipaparkan dalam tangkapan skrin mungkin tidak mencerminkan versi terkini Tahap Kreator. Sila semak Partner Center anda untuk senarai paling terkini.*
+*说明：屏幕截图中显示的任务和权益可能未反映达人等级的最新版本。请查看您的 Partner Center 以获取最新列表。*
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/8b36b22c503544c79164cf55e4cb513e~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 
-# **Apa itu Tahap Kreator?**
-Tahap Kreator ialah program bermusim yang memberikan tugasan kepada para kreator untuk naik ke tahap lebih tinggi dan menerima ganjaran.
+# **什么是达人等级？**
+达人等级是一项按赛季开展的计划，向达人提供任务，助其升至更高等级并获得奖励。
 
-* Kreator dinilai dari Tahap 0 (L0) hingga Tahap 8 (L8), dan tahap akan dikemas kini pada awal setiap bulan berdasarkan prestasi bulan sebelumnya. Penilaian dilakukan berdasarkan GMV, tahap aktiviti, serta kebolehan dalam pemilihan produk dan pengurusan perniagaan e-dagang.
-* Kreator bertahap lebih tinggi menunjukkan prestasi yang lebih kukuh dalam menjana GMV dan kekal aktif dalam aktiviti afiliasi. Mereka juga menikmati lebih banyak faedah serta sokongan daripada platform.
+* 达人被评定为等级 0 (L0) 至等级 8 (L8)，等级会在每月初根据上月表现更新。评估依据为 GMV、活跃度，以及选品和电商业务运营能力。
+* 等级更高的达人在创造 GMV 方面表现更强劲，并持续活跃于联盟活动中。他们还可享受来自平台更多权益与支持。
 
-Untuk tahu lebih lanjut dari perspektif kreator, sila baca panduan kami di sini.
+如需从达人视角了解更多，请在此处阅读我们的指南。
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/3dc6d9dc93cc4611b0b84b1bc0d44eef~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 
-# **Mengapa Kami Paparkan Tahap Kreator kepada Rakan Kongsi?**
-| ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/9ae9552aaf75426c8caa8001c740e9a9~tplv-k9wyc2ijk0-image.image) <br/>  | **Kenal Pasti Bakat Terbaik dengan Mudah melalui Tahap Kreator** <br/> Ciri Tahap Kreator memudahkan rakan kongsi untuk mengenal pasti kreator berprestasi tinggi. Ia dikemas kini setiap bulan untuk menunjukkan siapa yang aktif dan berjaya menjana jualan—membolehkan anda membina kerjasama afiliasi yang lebih bijak dan boleh dipercayai. <br/> **Bekerjasama dengan yang Terbaik, Dapatkan Hasil Maksimum** <br/> Kreator pada tahap yang lebih tinggi menikmati ganjaran eksklusif dan sokongan dari platform, yang dapat meningkatkan lagi kempen anda dan membantu menjana jualan yang lebih besar. |
+# **为何我们要向合作伙伴展示达人等级？**
+| ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/9ae9552aaf75426c8caa8001c740e9a9~tplv-k9wyc2ijk0-image.image) <br/>  | **通过达人等级轻松识别优质人才** <br/> 达人等级功能帮助合作伙伴轻松识别高表现达人。该功能每月更新，展示哪些达人活跃并成功带来销量——让您能够建立更明智、更可靠的联盟协作。 <br/> **与最优秀者合作，获取最大成效** <br/> 更高等级的达人享有专属奖励与平台支持，可进一步提升您的活动成效，并帮助带来更高的销量。 |
 | --- | --- |
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/b8dbb5bd9e04431b922713d46345f7d3~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 
-# **Di Mana Nak Cari Tahap Kreator dalam Partner Center?**
-Di Partner Center, anda akan mula melihat Tahap Kreator dipaparkan dalam pelbagai modul. Anda boleh gunakan tahap ini sebagai panduan untuk memilih kreator yang sesuai untuk dijadikan rakan kerjasama. Tahap ini juga memberi gambaran sejauh mana kreator tersebut aktif dalam tempoh sebulan.
+# **在 Partner Center 中何处查找达人等级？**
+在 Partner Center 中，您将开始在多个模块中看到达人等级的展示。您可以将此等级作为指引，选择合适的达人作为合作伙伴。该等级还可反映达人在一个月内的活跃程度。
 ## **Cari Kreator**
-Tahap kreator boleh dilihat di sebelah nama kreator dalam halaman utama "Cari Kreator" dan juga dalam halaman Butiran Kreator.
+达人等级可在"查找达人"主页和达人详情页的达人名称旁查看。
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/31e34dceb8d745d8b43447b260714de2~tplv-k9wyc2ijk0-image.image" width="1440px" /></div>
 
-### **Penapis Cari Kreator**
-Semasa mencari kreator, rakan kongsi boleh menapis berdasarkan tahap kreator, yang tersedia di bawah penapis "Kreator". Anda boleh pilih satu atau lebih tahap untuk digunakan.
+### **达人搜索筛选**
+搜索达人时，合作伙伴可按达人等级进行筛选，该筛选项位于"Kreator"筛选条件下。您可以选择一个或多个等级来应用。
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/91b9fcec49b04ba6baf496923478d52c~tplv-k9wyc2ijk0-image.image" width="1440px" /></div>
 
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/feb7f15eab854ff6839f46944f873001~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 
-# **Soalan Lazim (FAQ)**
+# **常见问题 (FAQ)**
 
-1. **Adakah hanya Rakan Kongsi yang boleh melihat Tahap Kreator dalam Partner Center desktop mereka?**
-   * Tidak, Tahap Kreator juga boleh dilihat oleh Penjual.
+1. **是否只有合作伙伴才能在其桌面版 Partner Center 中看到达人等级？**
+   * 不是，卖家也可以看到达人等级。
 
 

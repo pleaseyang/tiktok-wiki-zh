@@ -38,7 +38,7 @@ npm install @tiktokshop/widget-kit@latest
 
 # 配置字段
 使用来自 Partner Center、卖家授权数据和 widget 启用材料的明确值。不要在生产代码中保留 `xxx` 等占位符字符串。
-| 字段 | 是否必填 | 示例 | 获取方式 |
+| 字段 | 必填 | 示例 | 获取方式 |
 | --- | --- | --- | --- |
 | `config.shopId` | 是 | `7493990753256900486` | 应用后端中已授权的 TikTok Shop 卖家/店铺 ID。必须与用于请求 widget token 的卖家 access token 匹配。 |
 | `config.oecRegion` | 是 | `US` | 来自已授权店铺上下文的卖家市场或区域代码，如 `US`、`GB` 或 `ID`。 |
@@ -52,7 +52,7 @@ npm install @tiktokshop/widget-kit@latest
 
 1. 前端调用您的后端 endpoint，例如 `GET /api/widget-token?shopId=7493990753256900486`。
 2. 您的后端验证卖家会话并获取卖家的 TikTok Shop `access_token`。
-3. 您的后端调用 TikTok Shop OpenAPI `GET /authorization/202401/widget_token`，并携带必需的 `x-tts-access-token` header。
+3. 您的后端调用 TikTok Shop OpenAPI `GET /authorization/202401/widget_token`，并携带必需的 `x-tts-access-token` 请求头。
 4. TikTok Shop 返回 `data.widget_token.token` 和 `data.widget_token.expire_at`。
 5. 您的后端向前端返回 `{ "token": "...", "expire_at": 1703100448 }`。
 6. SDK 在需要有效 widget token 时调用 `getToken`。
@@ -277,7 +277,7 @@ await update({
 
 # 参考 API - init
 `init` 存在于 `@tiktokshop/widget-kit` 中。在加载或预加载 widget 之前调用一次。
-| 属性 | 类型 | 是否必填 | 示例 | 描述 |
+| 字段 | 类型 | 必填 | 示例 | 描述 |
 | --- | --- | --- | --- | --- |
 | `config` | `WidgetConfig` | 是 |  | 基础 widget 配置。 |
 | `config.shopId` | `string` | 是 | `"7493990753256900486"` | 用于路由和事件追踪的卖家或店铺 ID。 |
@@ -289,7 +289,7 @@ await update({
 | `remotes` | `Array<{ name: string }>` | 是 | `[{ name: "@tiktokshop-widget/product:optimizer" }]` | 为您的应用启用的 widget 名称。 |
 # 参考 API - WidgetToken
 `getToken` 必须解析为 SDK 所需的 token 对象。
-| 属性 | 类型 | 是否必填 | 示例 | 描述 |
+| 字段 | 类型 | 必填 | 示例 | 描述 |
 | --- | --- | --- | --- | --- |
 | `token` | `string` | 是 | `"eyJhbGciOiJIUzUxMi..."` | widget 页面使用的 token。 |
 | `expire_at` | `number` | 是 | `1703100448` | 过期时间戳。OpenAPI 响应将 widget token 描述为短期有效，通常约 5 分钟。 |
@@ -307,18 +307,18 @@ await view.render({});
 
 # 参考 API - update
 `update` 存在于 `@tiktokshop/widget-kit` 中。用于在初始化后更新 widget 配置。
-| 属性 | 类型 | 是否必填 | 示例 | 描述 |
+| 字段 | 类型 | 必填 | 示例 | 描述 |
 | --- | --- | --- | --- | --- |
 | `config` | `WidgetConfig` | 否 |  | 新的 widget 配置。当您要更改店铺、区域、app key 或 ISV 信息时必填。 |
 | `getToken` | `() => Promise<WidgetToken>` | 否 | `getWidgetToken` | 如果回调未变化，`update` 时为可选。初始设置时必填。 |
 # 参考 API - preloadWidget
 `preloadWidget` 存在于 `@tiktokshop/widget-kit` 中。
-| 属性 | 类型 | 是否必填 | 示例 | 描述 |
+| 字段 | 类型 | 必填 | 示例 | 描述 |
 | --- | --- | --- | --- | --- |
 | `names` | `string[]` | 是 | `["@tiktokshop-widget/product:optimizer"]` | 要预加载的 widget 名称。 |
 # 参考 API - WidgetConfigProvider
 `WidgetConfigProvider` 存在于 `@tiktokshop/widget-kit-react` 中。将其放置在渲染远程 widget 的 React 组件之上。
-| 属性 | 类型 | 是否必填 | 示例 | 描述 |
+| 字段 | 类型 | 必填 | 示例 | 描述 |
 | --- | --- | --- | --- | --- |
 | `config` | `WidgetConfig` | 是 |  | 基础 widget 配置。 |
 | `getToken` | `() => Promise<WidgetToken>` | 是 | `getWidgetToken` | 返回短期有效 widget token 的回调函数。 |
@@ -326,7 +326,7 @@ await view.render({});
 | `preloadWidgetNames` | `string[]` | 否 | `["@tiktokshop-widget/product:optimizer"]` | 要预加载的 widget 名称。 |
 # 参考 API - RemoteWidget
 `RemoteWidget` 存在于 `@tiktokshop/widget-kit-react` 中。用于渲染一个已启用的 widget。
-| 属性 | 类型 | 是否必填 | 示例 | 描述 |
+| 字段 | 类型 | 必填 | 示例 | 描述 |
 | --- | --- | --- | --- | --- |
 | `name` | `string` | 是 | `"@tiktokshop-widget/product:optimizer"` | 为您的应用启用的 widget 名称。 |
 | `className` | `string` | 否 | `"widget-preview-container"` | widget 容器的 CSS 类名。 |

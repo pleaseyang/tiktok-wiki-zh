@@ -155,7 +155,7 @@ TikTok Shop 提供两种履约类型：
 对于 FULFILLMENT_BY_SELLER，有两种发货类型：
 
 1. TikTok Shipping：TikTok 提供物流服务。卖家从 TikTok 获取物流标签。
-2. Seller Shipping：卖家自行安排物流。
+2. 卖家 Shipping：卖家自行安排物流。
 
 
 ## 收件人地址

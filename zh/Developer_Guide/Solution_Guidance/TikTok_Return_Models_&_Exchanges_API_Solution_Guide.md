@@ -98,16 +98,16 @@ TikTok Shop 的标准退货行为是为买家使用 TikTok 的退货运输标签
 | --- | --- | --- | --- |
 | ### 买家发起退货并开始（第一次审核阶段） |  |  |  |
 | **第一次审核** <br/>  <br/>   <br/>  <br/>   <br/>   <br/>   <br/>  | **[1]** 买家提交退货请求 <br/>  | **TikTok**  <br/>  | 买家在 TT 应用中选择了退货方式并提交退货请求。 |
-|  | **[2]** Webhook：`AFTERSALES_REQUEST_STATUS_UPDATE` <br/> Webhook topic：**64** <br/>  | **TikTok** <br/>  | TikTok 触发 webhook topic：**Aftersales Request Status Update** <br/> "aftersales_request_status" : `PENDING_REQUEST_REVIEW` <br/> [Webhook topic 64 文档](https://partner.tiktokshop.com/docv2/page/h4cxaxub) <br/>  |
-|  | **[3]** Search Aftersales Request API | **卖家/ISV** <br/>  | 使用 webhook 中提供的 aftersales_request_id 作为调用 "Search Aftersales Request API" 时的搜索参数。响应将公开与此统一售后请求关联的所有 return_line_item_id <br/> [Search Aftersales Request API 文档](https://partner.tiktokshop.com/docv2/page/search-aftersales-request-202603) <br/>  |
+|  | **[2]** Webhook：`AFTERSALES_REQUEST_STATUS_UPDATE` <br/> Webhook 主题：**64** <br/>  | **TikTok** <br/>  | TikTok 触发 webhook topic：**Aftersales Request Status Update** <br/> "aftersales_request_status" : `PENDING_REQUEST_REVIEW` <br/> [Webhook topic 64 文档](https://partner.tiktokshop.com/docv2/page/h4cxaxub) <br/>  |
+|  | **[3]** 搜索售后请求 API | **卖家/ISV** <br/>  | 使用 webhook 中提供的 aftersales_request_id 作为调用 "Search Aftersales Request API" 时的搜索参数。响应将公开与此统一售后请求关联的所有 return_line_item_id <br/> [Search Aftersales Request API 文档](https://partner.tiktokshop.com/docv2/page/search-aftersales-request-202603) <br/>  |
 |  | **[4]** 将售后请求同步到卖家 OMS <br/>  | **卖家/ISV** | 售后请求详情同步到卖家的 OMS/UI/工作台等进行审核  |
 |  | **[5]** 决定批准或拒绝**请求** <br/>  | **卖家/ISV** | 卖家决定是否**批准**或**拒绝**退货**请求**。这被视为第一次审核决策步骤。  <br/> > **注意**：对于大多数卖家，此第一次审核步骤会根据退货请求中商品的品类**自动**批准。对于任何自动批准的售后请求，卖家无需执行请求批准操作，但在退货包裹显示仓库送达扫描后，仍必须在我们的 48 小时政策 SLA 内执行退款决策。  |
-|  | **[6]** Review Aftersales API | **卖家/ISV** | 使用此 API 决定是否**批准**或**拒绝**退货请求。指定 **request_id_type**：**`AFTERSALES`** <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
+|  | **[6]** 审核售后 API | **卖家/ISV** | 使用此 API 决定是否**批准**或**拒绝**退货请求。指定 **request_id_type**：**`AFTERSALES`** <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
 |  | **[7]** Webhook：`AFTERSALES_REQUEST_STATUS_UPDATE` | **TikTok** | **Webhook：AFTERSALES_REQUEST_STATUS_UPDATE** <br/> status: `REQUEST_REVIEW_COMPLETED` <br/> [Webhook topic 64 文档](https://partner.tiktokshop.com/docv2/page/h4cxaxub) |
 | ### 第一次审核流程完成后，官方 RMA 工作流将开始（第二次审核阶段） |  |  |  |
 | **第二次审核** <br/>  | **[8]** TikTok RMA 创建  | **TikTok** <br/>  | 售后请求批准后，TikTok 将立即创建 RMA，这是一个统一的退货标识符，涵盖与买家退货提交关联的所有唯一 SKU 行和数量 |
-|  | **[9]** Webhook：`RMA_STATUS_UPDATE` <br/> Webhook topic：**65** | **TikTok** <br/>  | **Webhook：RMA_STATUS_UPDATE** <br/> **status**：**`RMA_CREATED`** <br/> 一旦官方 TikTok RMA 在 TikTok 系统中创建，此 webhook 将触发 <br/> [Webhook topic 65 文档](https://partner.tiktokshop.com/docv2/page/2f0jrrxc) |
-|  | **[10]** Search RMA Requests API | **卖家/ISV** | 调用此 API 获取退货的完整详情，包括所有嵌套的退货订单和行级商品详情。  <br/> [Search Return Merchandise Authorization API 文档](https://partner.tiktokshop.com/docv2/page/search-return-merchandise-authorization-202604) <br/>  |
+|  | **[9]** Webhook：`RMA_STATUS_UPDATE` <br/> Webhook 主题：**65** | **TikTok** <br/>  | **Webhook：RMA_STATUS_UPDATE** <br/> **status**：**`RMA_CREATED`** <br/> 一旦官方 TikTok RMA 在 TikTok 系统中创建，此 webhook 将触发 <br/> [Webhook topic 65 文档](https://partner.tiktokshop.com/docv2/page/2f0jrrxc) |
+|  | **[10]** 搜索 RMA 请求 API | **卖家/ISV** | 调用此 API 获取退货的完整详情，包括所有嵌套的退货订单和行级商品详情。  <br/> [Search Return Merchandise Authorization API 文档](https://partner.tiktokshop.com/docv2/page/search-return-merchandise-authorization-202604) <br/>  |
 |  | **[11]** 同步退货 RMA  | **卖家/ISV** | 将退货 RMA 详情同步到 OMS 和 WMS 层，确保 RMA 记录在数据库中，以便仓库在收到时识别。 |
 |  | **[12A] 和 [12B]** 买家寄出/投递商品 | **TTS 买家** | 买家将商品送到最近的物流投递点或将商品寄送到仓库 |
 |  | **[13]** 仓库运营收到 RMA 包裹 | **仓库运营** | 仓库运营接收并识别 RMA 包裹，与 WMS 中的 RMA 记录进行匹配处理。  |
@@ -116,22 +116,22 @@ TikTok Shop 的标准退货行为是为买家使用 TikTok 的退货运输标签
 | ### **路径 A：** 所有预期商品已收到并接受，全额退款 |  |  |  |
 | **路径 A** <br/>  | **[15.A]** WMS 更新 OMS | **WMS** <br/>  | 仓库人员检查商品并更新 RMA 状态，确认与 RMA 关联的所有行项目均处于"良好"状态 <br/>  |
 | **路径 A** <br/>  | **[16.A]** OMS 更新 TikTok 应用 | **OMS** <br/>  | 根据仓库商品评估结果所有商品状态良好，OMS 更新退货应用，确认所有商品符合全额退款条件。 <br/>  |
-| **路径 A** | **[17.A]** Review Aftersales API <br/>  | **ISV** | 触发 RMA 中所有 return_line_item_id 的退款。 <br/> request_id_type: `RMA` <br/> action: `APPROVE_RETURN_PACKAGE` <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
+| **路径 A** | **[17.A]** 审核售后 API <br/>  | **ISV** | 触发 RMA 中所有 return_line_item_id 的退款。 <br/> request_id_type: `RMA` <br/> action: `APPROVE_RETURN_PACKAGE` <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
 | **路径 A** | **[18.A]** 退款给买家  | **TikTok** | 买家退款支付完成 |
 | ### **路径 B：** 部分商品不符合仓库评估验收标准（部分商品缺失/损坏）。 |  |  |  |
 | **路径 B** <br/>  | **[15.B]** WMS RMA 状态 = 部分商品评估为"损坏/缺失" <br/>  | **WMS** | 仓库人员检查商品并更新 RMA 状态，与 RMA 关联的部分行项目处于"良好"状态，部分为"损坏/缺失" |
 | **路径 B** <br/>  | **[16.B]** 使用混合退款决定指示 TTS 应用（所有行） | **OMS** | 根据仓库商品评估结果，部分行项目处于"良好"状态，部分为"损坏/缺失"，使用基于行项目的部分退款更新退货平台 RMA。 |
-| **路径 B** | **[17.B]** Review Aftersales API <br/>  <br/>  | **卖家/ISV** <br/>  | 触发已批准行项目的退款并拒绝缺失/损坏的行项目。使用 "Review Aftersales API" 时，您可以为不同的 return_line_item_id 定义不同的决策/操作枚举。示例： <br/> return_line_item_id: 111 = 良好状态。 <br/> action: `APPROVE_RETURN_PACKAGE` <br/> - <br/> return_line_item_id: 222 = 损坏/缺失 <br/> Action: `REJECT_RETURN_PACKAGE`  <br/>  <br/> > **注意**：TTS **不允许**同一 sku_id 具有**不同**的决策（已知平台限制）。卖家必须对同一 sku_id 的多个数量执行相同的操作/决策。我们将在 2026 年第三季度末解决此平台问题，允许真正灵活的 return_line_item_id 决策，不受 sku_id 配置的限制。 <br/>  <br/>  <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
+| **路径 B** | **[17.B]** 审核售后 API <br/> <br/>  | **卖家/ISV** <br/>  | 触发已批准行项目的退款并拒绝缺失/损坏的行项目。使用 "Review Aftersales API" 时，您可以为不同的 return_line_item_id 定义不同的决策/操作枚举。示例： <br/> return_line_item_id: 111 = 良好状态。 <br/> action: `APPROVE_RETURN_PACKAGE` <br/> - <br/> return_line_item_id: 222 = 损坏/缺失 <br/> Action: `REJECT_RETURN_PACKAGE`  <br/>  <br/> > **注意**：TTS **不允许**同一 sku_id 具有**不同**的决策（已知平台限制）。卖家必须对同一 sku_id 的多个数量执行相同的操作/决策。我们将在 2026 年第三季度末解决此平台问题，允许真正灵活的 return_line_item_id 决策，不受 sku_id 配置的限制。 <br/>  <br/>  <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
 | **路径 B** | **[18.B]** 按 SKU 行混合退款 <br/>  | **TikTok** | 根据不同的 sku_id 决策完成买家的部分退款支付。  |
 | ### **路径 C：** 所有商品不符合仓库评估验收标准（缺失/损坏）。  |  |  |  |
 | **路径 C** | **[15.C]** OMS RMA 状态 = 所有商品评估为"损坏/缺失" | **WMS** | 仓库人员检查商品并更新 RMA 状态，与 RMA 关联的所有行项目均为"损坏/缺失" |
 | **路径 C** | **[16.C]** 指示 TTS 应用拒绝 RMA（所有行） <br/>  | **OMS** | 根据仓库商品评估结果所有行项目均为"损坏/缺失"状态，更新退货平台 RMA 以拒绝所有行项目的退款 |
-| **路径 C** | **[17.C]** Review Aftersales API | **卖家/ISV** | 触发拒绝 RMA 中所有行项目的退款 <br/> request_id_type: `RMA` <br/> action: `REJECT_RETURN_PACKAGE` <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
+| **路径 C** | **[17.C]** 审核售后 API | **卖家/ISV** | 触发拒绝 RMA 中所有行项目的退款 <br/> request_id_type: `RMA` <br/> action: `REJECT_RETURN_PACKAGE` <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
 | **路径 C** | **[18.C]** 退货退款被拒绝（所有行） | **TikTok** | 所有退货商品的退款被拒绝，通知已发送给买家 |
 | ### **路径 D：** 同一 sku_id 的部分数量不符合仓库评估验收标准（缺失/损坏）。提供部分退款 |  |  |  |
 | **路径 D** | **[15.D]** OMS RMA 状态 = 同一 SKU / 多个数量具有不同状态。 <br/>  | **WMS** | RMA 包含完全相同 SKU 的多个数量（SKU:A x 2 件）。仓库人员检查包裹/商品后发现： <br/>  第 1 件状态良好 <br/>  第 2 件完全损坏或完全缺失。  |
 | **路径 D** | **[16.D] 指示 TTS 应用** `OFFER_PARTIAL_REFUND` <br/>  | **OMS** | 根据仓库商品评估结果，1 件应退款，1 件因损坏应拒绝。然而，如前所述，TikTok Shop 平台存在一个已知限制，即不允许对同一 sku_id 的多个数量做出不同的退款决策。为解决此平台行为，OMS 必须执行计算，为每个数量/行触发部分退款金额，以等于买家应收到的总金额。示例：  <br/> 买家订购了 SKU:A x 2 件。每件商品原始支付价格 = $10.00 <br/> 第 1 件收到时状态为"良好/可售" <br/> 第 2 件损坏或缺失。 <br/> - <br/> 卖家希望**批准**第 1 件并**拒绝**第 2 件，使买家仅获得两行原始支付 $20.00 中的 **$10.00** 退款。但 TTS 平台/API 不允许对同一 SKU 做出不同决策（已知平台行为/限制）。  <br/>  <br/> 卖家可以使用 Review Aftersales API 并为两行使用 `OFFER_PARTIAL_REFUND` 枚举。但 OMS 逻辑**必须**使用以下公式计算金额： <br/>（退款总金额）/（return_line_item_id 总数） <br/> 以上示例： <br/> $10.00（退款总金额）/（2 个退货行）= $5.00 <br/> `OFFER_PARTIAL_REFUND` 金额将为同一 SKU 的**两行**都设为 `5.00`，以确保买家获得 $10.00 的退款金额。 <br/>  |
-|  **路径 D** | **[17.D]** Review Aftersales API <br/> request_id_type: `RMA` <br/> action: `OFFER_PARTIAL_REFUND` | **卖家/ISV** | 触发同一 SKU 所有行项目的 `OFFER_PARTIAL_REFUND` 操作 <br/> request_id_type: `RMA` <br/> action: `OFFER_PARTIAL_REFUND` <br/> - <br/> 在 alternative_solutions_details 对象中： <br/> 定义 `partial_refund_amount` 和 `currency` <br/>  <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
+|  **路径 D** | **[17.D]** 审核售后 API <br/> request_id_type: `RMA` <br/> action: `OFFER_PARTIAL_REFUND` | **卖家/ISV** | 触发同一 SKU 所有行项目的 `OFFER_PARTIAL_REFUND` 操作 <br/> request_id_type: `RMA` <br/> action: `OFFER_PARTIAL_REFUND` <br/> - <br/> 在 alternative_solutions_details 对象中： <br/> 定义 `partial_refund_amount` 和 `currency` <br/>  <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
 | **路径 D** | **[18.D]** 买家收到准确的部分金额退款 | **TikTok** | 部分退款金额和通知已发送给买家 |
 | **路径 D** |  |  | **买家安抚使用场景** <br/> `OFFER_PARTIAL_REFUND` 也可用作安抚机制。例如 <br/> **如果**：买家本应只寄回 SKU A 第 1 件，但商品有轻微损坏、明显磨损、包装轻微损坏等 <br/> **则**：卖家可以决定对该单个 return_line_item_id 执行 `OFFER_PARTIAL_REFUND`，TikTok 将按卖家指定的金额退款给该买家。  |
 
@@ -218,20 +218,20 @@ TikTok Shop 的标准退货行为是为买家使用 TikTok 的退货运输标签
 | --- | --- | --- | --- |
 | ### 买家发起退货并开始（第一次审核阶段） |  |  |  |
 | **第一次审核** <br/>  <br/>   <br/>  <br/>   <br/>   <br/>   <br/>  | **[1]** 买家提交退货请求 <br/>  | **TikTok**  <br/>  | 买家在 TT 应用中选择了退货方式并提交退货请求。 |
-|  | **[2]** Webhook：`AFTERSALES_REQUEST_STATUS_UPDATE` <br/> Webhook Topic ID：64 <br/>  | **TikTok** <br/>  | TikTok 触发 webhook topic：**Aftersales Request Status Update** <br/> "aftersales_request_status" : `PENDING_REQUEST_REVIEW` <br/> [Webhook topic 64 文档](https://partner.tiktokshop.com/docv2/page/h4cxaxub) <br/>  |
-|  | **[3]** Search Aftersales Request API | **卖家/ISV** <br/>  | 使用 webhook 中提供的 aftersales_request_id 作为调用 "Search Aftersales Request API" 时的搜索参数。响应将公开与此统一售后请求关联的所有 return_line_item_id <br/> [Search Aftersales Request API 文档](https://partner.tiktokshop.com/docv2/page/search-aftersales-request-202603) <br/>  |
+|  | **[2]** Webhook：`AFTERSALES_REQUEST_STATUS_UPDATE` <br/> Webhook 主题 ID：64 <br/>  | **TikTok** <br/>  | TikTok 触发 webhook topic：**Aftersales Request Status Update** <br/> "aftersales_request_status" : `PENDING_REQUEST_REVIEW` <br/> [Webhook topic 64 文档](https://partner.tiktokshop.com/docv2/page/h4cxaxub) <br/>  |
+|  | **[3]** 搜索售后请求 API | **卖家/ISV** <br/>  | 使用 webhook 中提供的 aftersales_request_id 作为调用 "Search Aftersales Request API" 时的搜索参数。响应将公开与此统一售后请求关联的所有 return_line_item_id <br/> [Search Aftersales Request API 文档](https://partner.tiktokshop.com/docv2/page/search-aftersales-request-202603) <br/>  |
 |  | **[4]** 将售后请求同步到卖家 OMS <br/>  | **卖家/ISV** <br/>  | 售后请求详情同步到卖家的 OMS/UI/工作台等进行审核  |
 |  | **[5]** 决定批准或拒绝**请求** <br/>  | **卖家** | 卖家决定是否**批准**或**拒绝**退货**请求**。这被视为第一次审核决策步骤。  <br/> > **注意**：对于大多数卖家，此第一次审核步骤会根据退货请求中商品的品类**自动**批准。对于任何自动批准的售后请求，卖家无需执行请求批准操作，但在退货包裹显示仓库送达扫描后，仍必须在我们的 48 小时政策 SLA 内执行退款决策。  <br/>  <br/>  |
-|  | **[6]** Review Aftersales API | **卖家/ISV** | 使用此 API 决定是否**批准**或**拒绝**退货请求。指定 **request_id_type**：**`AFTERSALES`** <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) |
+|  | **[6]** 审核售后 API | **卖家/ISV** | 使用此 API 决定是否**批准**或**拒绝**退货请求。指定 **request_id_type**：**`AFTERSALES`** <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) |
 |  | **[7]** Webhook：`AFTERSALES_REQUEST_STATUS_UPDATE` | **TikTok** | **Webhook：AFTERSALES_REQUEST_STATUS_UPDATE** <br/> status: `REQUEST_REVIEW_COMPLETED` <br/> [Webhook topic 64 文档](https://partner.tiktokshop.com/docv2/page/h4cxaxub) |
 | ### 第一次审核流程完成后，官方 RMA 工作流将开始（第二次审核阶段） |  |  |  |
 | **第二次审核** <br/>  | **[8]** TikTok RMA 创建  | **TikTok** <br/>  | 售后请求批准后，TikTok 将立即创建 RMA，这是一个统一的退货标识符，涵盖与买家退货提交关联的所有唯一 SKU 行和数量 |
-|  | **[9]** Webhook：`RMA_STATUS_UPDATE` <br/> Webhook topic：**65** <br/>  | **TikTok** | **Webhook：RMA_STATUS_UPDATE** <br/> **status**：**`RMA_CREATED`** <br/> 一旦官方 TikTok RMA 在 TikTok 系统中创建，此 webhook 将触发。 <br/> [Webhook topic 65 文档](https://partner.tiktokshop.com/docv2/page/2f0jrrxc) |
-|  | **[10]** Search Return Merchandise Authorization API | **卖家/ISV** | 调用此 API 获取退货的完整详情，包括所有退货订单和行级标识符。  <br/> [Search Return Merchandise Authorization API 文档](https://partner.tiktokshop.com/docv2/page/search-return-merchandise-authorization-202604) <br/>  |
-|  | **[11]** Get External Order References API | **卖家/ISV** | 获取卖家的 OMS order_id 以与 TikTok order_id 关联 <br/> [Get External Order References API 文档](https://partner.tiktokshop.com/docv2/page/get-external-order-references-202406) |
+|  | **[9]** Webhook：`RMA_STATUS_UPDATE` <br/> Webhook 主题：**65** <br/>  | **TikTok** | **Webhook：RMA_STATUS_UPDATE** <br/> **status**：**`RMA_CREATED`** <br/> 一旦官方 TikTok RMA 在 TikTok 系统中创建，此 webhook 将触发。 <br/> [Webhook topic 65 文档](https://partner.tiktokshop.com/docv2/page/2f0jrrxc) |
+|  | **[10]** 搜索退货授权 API | **卖家/ISV** | 调用此 API 获取退货的完整详情，包括所有退货订单和行级标识符。  <br/> [Search Return Merchandise Authorization API 文档](https://partner.tiktokshop.com/docv2/page/search-return-merchandise-authorization-202604) <br/>  |
+|  | **[11]** 获取外部订单参考 API | **卖家/ISV** | 获取卖家的 OMS order_id 以与 TikTok order_id 关联 <br/> [Get External Order References API 文档](https://partner.tiktokshop.com/docv2/page/get-external-order-references-202406) |
 |  | **[12.1]** Create Return API / 工作流 | **卖家/ISV** | Create Return API endpoint 将根据用于 RMA 记录/标签/二维码生成的退货平台而有所不同。 |
 |  | **[12.2]** 退货标签 / 二维码生成 | **退货平台** | RMA 二维码在响应体中提供 |
-|  | **[13]** Upload Shipping Document API | **卖家/ISV** | 将标签/二维码文档上传到 TikTok Shop <br/> [Upload Shipping Document API 文档](https://partner.tiktokshop.com/docv2/page/upload-shipping-document-and-tracking-info-202405) |
+|  | **[13]** 上传配送单据 API | **卖家/ISV** | 将标签/二维码文档上传到 TikTok Shop <br/> [Upload Shipping Document API 文档](https://partner.tiktokshop.com/docv2/page/upload-shipping-document-and-tracking-info-202405) |
 |  | **[14]** 渲染二维码 + 发送邮件给买家 | **TikTok** | TikTok 应用将在买家应用 UX 中渲染二维码 |
 |  | **[15]** 同步退货平台 RMA  | **退货平台** | 退货平台向卖家发送新 RMA 信号（现有集成路径） |
 |  | **[16]** 买家寄出/投递商品 | **TTS 买家** | 买家将商品送到最近的物流投递点或将商品寄送到仓库 |
@@ -240,22 +240,22 @@ TikTok Shop 的标准退货行为是为买家使用 TikTok 的退货运输标签
 | ### **路径 A：** 所有预期商品已收到并接受，全额退款 |  |  |  |
 | **路径 A** <br/>  | **[18.A]** WMS 更新 OMS | **WMS** <br/>  | 仓库人员检查商品并更新 RMA 状态，确认与 RMA 关联的所有行项目均处于"良好"状态 <br/>  |
 | **路径 A** <br/>  | **[19.A]** OMS 更新 TikTok 应用 | **OMS** <br/>  | 根据仓库商品评估结果所有商品状态良好，OMS 更新退货应用，确认所有商品符合全额退款条件。 <br/>  |
-| **路径 A** | **[20.A]** Review Aftersales API <br/>  | **卖家/ISV** | 触发 RMA 中所有 return_line_item_id 的退款。 <br/> request_id_type: `RMA` <br/> action: `APPROVE_RETURN_PACKAGE` <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) |
+| **路径 A** | **[20.A]** 审核售后 API <br/>  | **卖家/ISV** | 触发 RMA 中所有 return_line_item_id 的退款。 <br/> request_id_type: `RMA` <br/> action: `APPROVE_RETURN_PACKAGE` <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) |
 | **路径 A** | **[21.A]** 退款给买家  | **TikTok** | 买家退款支付完成 |
 | ### **路径 B：** 部分商品不符合仓库评估验收标准（部分商品缺失/损坏）。 |  |  |  |
 | **路径 B** <br/>  | **[18.B]** WMS RMA 状态 = 部分商品评估为"损坏/缺失" <br/>  | **WMS** | 仓库人员检查商品并更新 RMA 状态，与 RMA 关联的部分行项目处于"良好"状态，部分为"损坏/缺失" |
 | **路径 B** <br/>  | **[19.B]** 使用混合退款决定指示 TTS 应用（所有行） | **OMS** | 根据仓库商品评估结果，部分行项目处于"良好"状态，部分为"损坏/缺失"，使用基于行项目的部分退款更新退货平台 RMA。 |
-| **路径 B** | **[20.B]** Review Aftersales API <br/>  | **卖家/ISV** <br/>  | 触发已批准行项目的退款并拒绝缺失/损坏的行项目。使用 "Review Aftersales API" 时，您可以为不同的 return_line_item_id 定义不同的决策/操作枚举。示例： <br/> return_line_item_id: 111 = 良好状态。 <br/> action: `APPROVE_RETURN_PACKAGE` <br/> - <br/> return_line_item_id: 222 = 损坏/缺失 <br/> Action: `REJECT_RETURN_PACKAGE`  <br/>  <br/> > **注意**：TTS **不允许**同一 sku_id 具有**不同**的决策（已知平台限制）。卖家必须对同一 sku_id 的多个数量执行相同的操作/决策。我们将在 2026 年第三季度末解决此平台问题，允许真正灵活的 return_line_item_id 决策，不受 sku_id 配置的限制。 <br/>  <br/>  <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
+| **路径 B** | **[20.B]** 审核售后 API <br/>  | **卖家/ISV** <br/>  | 触发已批准行项目的退款并拒绝缺失/损坏的行项目。使用 "Review Aftersales API" 时，您可以为不同的 return_line_item_id 定义不同的决策/操作枚举。示例： <br/> return_line_item_id: 111 = 良好状态。 <br/> action: `APPROVE_RETURN_PACKAGE` <br/> - <br/> return_line_item_id: 222 = 损坏/缺失 <br/> Action: `REJECT_RETURN_PACKAGE`  <br/>  <br/> > **注意**：TTS **不允许**同一 sku_id 具有**不同**的决策（已知平台限制）。卖家必须对同一 sku_id 的多个数量执行相同的操作/决策。我们将在 2026 年第三季度末解决此平台问题，允许真正灵活的 return_line_item_id 决策，不受 sku_id 配置的限制。 <br/>  <br/>  <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
 | **路径 B** | **[21.B]** 按 SKU 行混合退款 <br/>  | **TikTok** | 根据不同的 sku_id 决策完成买家的部分退款支付。  |
 | ### **路径 C：** 所有商品不符合仓库评估验收标准（缺失/损坏）。  |  |  |  |
 | **路径 C** | **[18.C]** OMS RMA 状态 = 所有商品评估为"损坏/缺失" | **WMS** | 仓库人员检查商品并更新 RMA 状态，与 RMA 关联的所有行项目均为"损坏/缺失" |
 | **路径 C** | **[19.C]** 指示 TTS 应用拒绝 RMA（所有行） <br/>  | **OMS** | 根据仓库商品评估结果所有行项目均为"损坏/缺失"状态，更新退货平台 RMA 以拒绝所有行项目的退款 |
-| **路径 C** | **[20.C]** Review Aftersales API | **卖家/ISV** | 触发拒绝 RMA 中所有行项目的退款 <br/> request_id_type: `RMA` <br/> action: `REJECT_RETURN_PACKAGE` <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
+| **路径 C** | **[20.C]** 审核售后 API | **卖家/ISV** | 触发拒绝 RMA 中所有行项目的退款 <br/> request_id_type: `RMA` <br/> action: `REJECT_RETURN_PACKAGE` <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
 | **路径 C** | **[21.C]** 退货退款被拒绝（所有行） | **TikTok** | 所有退货商品的退款被拒绝，通知已发送给买家 |
 | ### **路径 D：** 同一 sku_id 的部分数量不符合仓库评估验收标准（缺失/损坏）。提供部分退款 |  |  |  |
 | **路径 D** | **[18.D]** OMS RMA 状态 = 同一 SKU / 多个数量具有不同状态。 <br/>  | **WMS** | RMA 包含完全相同 SKU 的多个数量（SKU:A x 2 件）。仓库人员检查包裹/商品后发现： <br/>  第 1 件状态良好 <br/>  第 2 件完全损坏或完全缺失。  |
 | **路径 D** | **[19.D] 指示 TTS 应用** `OFFER_PARTIAL_REFUND` <br/>  | **OMS** | 根据仓库商品评估结果，1 件应退款，1 件因损坏应拒绝。然而，如前所述，TikTok Shop 平台存在一个已知限制，即不允许对同一 sku_id 的多个数量做出不同的退款决策。为解决此平台行为，OMS 必须执行计算，为每个数量/行触发部分退款金额，以等于买家应收到的总金额。示例：  <br/> 买家订购了 SKU:A x 2 件。每件商品原始支付价格 = $10.00 <br/> 第 1 件收到时状态为"良好/可售" <br/> 第 2 件损坏或缺失。 <br/> - <br/> 卖家希望**批准**第 1 件并**拒绝**第 2 件，使买家仅获得两行原始支付 $20.00 中的 **$10.00** 退款。但 TTS 平台/API 不允许对同一 SKU 做出不同决策（已知平台行为/限制）。  <br/>  <br/> 卖家可以使用 Review Aftersales API 并为两行使用 `OFFER_PARTIAL_REFUND` 枚举。但 OMS 逻辑**必须**使用以下公式计算金额： <br/>（退款总金额）/（return_line_item_id 总数） <br/> 以上示例： <br/> $10.00（退款总金额）/（2 个退货行）= $5.00 <br/> `OFFER_PARTIAL_REFUND` 金额将为同一 SKU 的**两行**都设为 `5.00`，以确保买家获得 $10.00 的退款金额。 <br/>  |
-|  **路径 D** | **[20.D]** Review Aftersales API <br/>  | **卖家/ISV** | 触发同一 SKU 所有行项目的 `OFFER_PARTIAL_REFUND` 操作 <br/> request_id_type: `RMA` <br/> action: `OFFER_PARTIAL_REFUND` <br/> - <br/> 在 `alternative_solutions_details` 对象中： <br/> 定义 `partial_refund_amount` 和 `currency` <br/>  <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
+|  **路径 D** | **[20.D]** 审核售后 API <br/>  | **卖家/ISV** | 触发同一 SKU 所有行项目的 `OFFER_PARTIAL_REFUND` 操作 <br/> request_id_type: `RMA` <br/> action: `OFFER_PARTIAL_REFUND` <br/> - <br/> 在 `alternative_solutions_details` 对象中： <br/> 定义 `partial_refund_amount` 和 `currency` <br/>  <br/> [Review Aftersales API 文档](https://partner.tiktokshop.com/docv2/page/review-aftersales-202606) <br/>  |
 | **路径 D** | **[21.D]** 买家收到准确的部分金额退款 | **TikTok** | 部分退款金额和通知已发送给买家 |
 | **路径 D** |  |  | **买家安抚使用场景** <br/> `OFFER_PARTIAL_REFUND` 也可用作安抚机制。例如 <br/> **如果**：买家本应只寄回 SKU A 第 1 件，但商品有轻微损坏、明显磨损、包装轻微损坏等 <br/> **则**：卖家可以决定对该单个 return_line_item_id 执行 `OFFER_PARTIAL_REFUND`，TikTok 将按卖家指定的金额退款给该买家。  |
 
@@ -273,7 +273,7 @@ TikTok 买家可以执行换货操作，通过 TikTok 应用内的退货流程�
 |  |  |
 | [Get Decision Eligibility API](https://partner.tiktokshop.com/docv2/page/get-decision-eligibility-202601) | 1. 在 `check_decisions` 和 `decision` 字段中新增以下枚举： <br/>    *  `ISSUE_EXCHANGE_REFUND` |
 
-| **Orders API Endpoints** | **参数更新** |
+| **订单 API 端点** | **参数更新** |
 | --- | --- |
 | [Get Order Details API](https://partner.tiktokshop.com/docv2/page/get-order-detail-202507) <br/> [Get Order List API](https://partner.tiktokshop.com/docv2/page/get-order-list-202309) <br/>  <br/>  | 1. `is_exchange_order`：当为 `true` 时，这是一个卖家必须履行的换货订单。 <br/> 2. `exchange_source_order_id`：如果订单是换货订单，此字段返回生成该换货订单的原始订单的 order ID。仅在 `is_exchange_order`= `true` 时返回。 <br/>  <br/>  <br/> > ***注意***：当买家已通过物流承运商寄出/投递退货时，来自承运商与 TikTok 集成的信号将确认包裹在途中，TikTok 然后将自动创建新的换货订单。* <br/> > *此新的出库订单的订单价值也将为 $0.00，因为付款/GMV 已在原始 *`order_id`* 中获取，且不需要任何财务交易，因为 TikTok 目前仅允许相同价值的商品进行换货。* <br/>  ` |
 |  |  |

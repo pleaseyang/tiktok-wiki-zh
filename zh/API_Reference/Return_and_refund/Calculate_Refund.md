@@ -1,7 +1,7 @@
 # 计算退款
 
-# Path: /return_refund/202602/refunds/calculate
-# Method: [POST]
+# 路径：/return_refund/202602/refunds/calculate
+# 方法：[POST]
 # 功能描述
 使用此 API 估算取消、退款或退货退款请求的可退款金额。估算结果取决于所选的 request_type、reason_name 和目标商品。如果 skus、order_line_item_ids 和 order_line_list 均被省略，则订单中的所有订单行将被选为退款计算的输入。对于退货退款场景，估算结果还可能取决于所选的退货物流方式。
 
@@ -10,19 +10,19 @@
 
 # 公共参数
 公共参数请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。跨境店铺请求 API 时未传递正确值将返回错误的响应。 |
 | 通过 API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) 获取 |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Query 参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个 app 都有一个唯一的 key。请使用分配给您的 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT（UTC+00:00）。此时间戳用于所有 API 请求。开发者可以使用此转换为本地时间。 |
-# 请求 Body 参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+# 请求体参数
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | order_id | string | Y | 576469648086175911 | TikTok Shop 订单 ID。 |
 | request_type | string | Y | REFUND | 请求类型 |
@@ -31,13 +31,13 @@
 * REFUND
 * RETURN_AND_REFUND
    注意：不同的请求类型用于不同的售后场景。同时，不同的请求类型可能有不同的退款金额，因为退款金额计算策略不同。 |
-   shipment_type |string |N |PLATFORM |在退货请求中 buyer 如何将商品寄回给 seller，可以是：
+   shipment_type |string |N |PLATFORM |在退货请求中 buyer 如何将商品寄回给卖家，可以是：
 * `PLATFORM`
 * `BUYER_ARRANGE` |
    handover_method |string |N |DROP_OFF |buyer 在使用平台退货时选择的交接方式
 * `DROP_OFF`：buyer 将包裹送到物流服务收集点。
 * `PICKUP`：物流服务上门取件。 |
-   reason_name |string |Y |ecom_order_delivered_refund_reason_missing_product_seller |seller 对所选取消、退款或退货退款请求的原因。使用 [Get Aftersale Eligibility](https://partner.tiktokshop.com/docv2/page/69c3070c66dee40493fdfe2e) endpoint 检索当前可用的原因，并在此字段中提交返回的原因 name。 |
+   reason_name |string |Y |ecom_order_delivered_refund_reason_missing_product_seller |卖家对所选取消、退款或退货退款请求的原因。使用 [Get Aftersale Eligibility](https://partner.tiktokshop.com/docv2/page/69c3070c66dee40493fdfe2e) endpoint 检索当前可用的原因，并在此字段中提交返回的原因 name。 |
    order_line_item_ids |[]string |N |["576469648086306986"] |纳入退款计算的 TikTok Shop 订单行项目 ID。请勿在同一请求中同时为 `order_line_item_ids` 和 `order_line_list` 提供非空值。 |
    skus |[]object |N | |skus |
    ^sku_id |string |Y |1729386416015578024 |纳入退款计算的 TikTok Shop SKU ID。 |
@@ -60,7 +60,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202602/refunds/calculate?app
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |

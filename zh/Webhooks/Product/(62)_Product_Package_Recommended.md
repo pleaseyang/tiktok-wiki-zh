@@ -5,7 +5,7 @@
 **注意：** 仅适用于巴西（**BR**）和墨西哥（**MX**）市场。
 **前提条件**：在合作伙伴中心已启用 "Product Basic" API 权限范围。更多信息请参见[访问权限范围](https://partner.tiktokshop.com/docv2/page/access-scope)。
 # 2. 数据业务参数
-| 属性 |  |  |  | 类型 | 示例 | 属性描述 |
+| 字段 |  |  |  | 类型 | 示例 | 描述 |
 | --- | --- | --- | --- | --- | --- | --- |
 | type |  |  |  | int | 62 | webhook 类型的 ID。 |
 | tts_notification_id |  |  |  | string | 7327112393057371910 | 通知的 ID。 |

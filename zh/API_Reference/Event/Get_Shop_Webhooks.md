@@ -1,7 +1,7 @@
 # 获取店铺 Webhook
 
-# Path: /event/202309/webhooks
-# Method: [GET]
+# 路径：/event/202309/webhooks
+# 方法：[GET]
 # 功能描述
 获取店铺已启用的 webhook 配置及其对应的 webhook URL。
 
@@ -10,13 +10,13 @@
 
 # 公共参数
 有关公共参数，请参阅[如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | 是 | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。跨境店铺请求 API 时未传递正确值将返回错误的响应。 |
 | 通过 API 获取 [获取授权店铺](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | 是 | application/json | 允许类型：application/json |
 # 请求 Query 参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | 是 | 38abcd | 每个应用都有一个唯一的 key。请使用分配给您的应用的特定 key。 |
 | timestamp | int | 是 | 1623812664 | Unix 时间戳 GMT（UTC+00:00）。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
@@ -28,7 +28,7 @@ https://open-api.tiktokglobalshop.com/event/202309/webhooks?app_key=123abc&sign=
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |

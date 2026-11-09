@@ -1,71 +1,71 @@
 # 推荐分类
 
-# Path: /product/202309/categories/recommend
-# Method: [POST]
+# 路径：/product/202309/categories/recommend
+# 方法：[POST]
 # 功能描述
-根据候选产品的标题、描述和图片获取推荐的分类。
-如果您正在将产品目录从外部系统同步到 TikTok Shop，请使用此 API 来促进产品分类。
-**Note**: 描述和标题等文本字段中使用的语言必须与目标市场的语言一致（例如，不要使用中文）。
+根据候选商品的标题、描述和图片获取推荐的分类。
+如果您正在将商品目录从外部系统同步到 TikTok Shop，请使用此 API 来促进商品分类。
+**注意**： 描述和标题等文本字段中使用的语言必须与目标市场的语言一致（例如，不要使用中文）。
 
 ---
 
 
 # 通用参数
 通用参数请参考 [如何调用 TikTok Shop API - 通用参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。在请求跨境店铺的 API 时未传递正确的值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求查询参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的密钥。请使用分配给您的应用的特定密钥。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT（UTC+00:00）。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
 # 请求体参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
-| category_version | string | N | v1 | 按分类树版本过滤分类。Possible values based on region: |
+| category_version | string | N | v1 | 按分类树版本过滤分类。基于地区的可能值： |
 
-* US, EU and SEA: v2, represents the 7-level category tree.
-   Important: For US, EU and SEA shops, you must pass v2 when using this API.
-* Other regions: v1, represents the 3-level category tree.Default: v1 |
+* US、EU 和 SEA: v2，代表 7 级分类树。
+   重要提示：对于 US、EU 和 SEA 店铺，使用此 API 时必须传递 v2。
+* 其他地区: v1，代表 3 级分类树。默认值：v1 |
    description |string |N |
-   Please check the measurements before purchase.
+   请在购买前检查尺寸。
 * M-Size
 * XL-Size
 
 ![Image](https://p16-oec-va.ibyteimg.com/tos-maliva-i-o3syd03w52-us/181595ea7d26489284b5667488d708c1~tplv-o3syd03w52-origin-jpeg.jpeg?from=1432613627)
  |HTML 格式的产品描述。
-**Note**:
+**注意**：
 
-* The content must conform to the [HTML syntax](https://html.spec.whatwg.org/). All HTML tags are accepted but to optimize display on the TikTok Shop product detail page, the system will automatically convert certain tags into alternative formats, such as rendering `<table>` tags as images.
-* Max length: 10,000 characters.
-* Image guidelines: You must use [TikTok Shop image URLs](6509df95defece02be598a22). Max 30 `<img>` tags, each under 4000px with `src`, `width`, and `height` attributes.
+* 内容必须符合 [HTML 语法](https://html.spec.whatwg.org/)。系统接受所有 HTML 标签，但为优化在 TikTok Shop 商品详情页上的展示，会自动将某些标签转换为其他格式，例如将 `<table>` 标签渲染为图片。
+* 最大长度：10,000 个字符。
+* 图片规范：必须使用 [TikTok Shop image URLs](6509df95defece02be598a22)。最多 30 个 `<img>` 标签，每个小于 4000px，并带 `src`、`width` 和 `height` 属性。
 
-**Recommendations**:
+**建议**：
 
-* If you are syncing a pre-existing description from another platform, include the full HTML source description here.
-* Provide a detailed description, ideally over 300 characters.
-* Include 3-5 key selling points, each under 250 characters, with supporting images.
-* Use 1600x1600 px for the image dimensions. |
-   images |[]object |N | |Product images, including gallery images, images that appear in the description, product variant images. |
-   ^uri |string |N |tos-maliva-i-o3syd03w52-us/c668cdf70b7f483c94dbe |图片的 URI。从 [Upload Product Image API] 获取 URI(https://partner.tiktokshop.com/docv2/page/6509df95defece02be598a22). |
-   include_prohibited_categories |bool |N |false |A flag to indicate whether to include matching categories that are prohibited on TikTok Shop. Set this to `true` to identify if the product falls under a category that you can't list on TikTok Shop in any circumstances.
-   **Note**:
-* Applicable only for BR and MX markets.
+* 如果您正在从其他平台同步预先存在的描述，请在此处包含完整的 HTML 源代码描述。
+* 提供详细描述，最好超过 300 个字符。
+* 包含 3-5 个关键卖点，每个不超过 250 个字符，并附带支持图片。
+* 图片尺寸使用 1600x1600 像素。 |
+   images |[]object |N | |商品图片，包括图库图片、描述中出现的图片、商品变体图片。 |
+   ^uri |string |N |tos-maliva-i-o3syd03w52-us/c668cdf70b7f483c94dbe |图片的 URI。从 [Upload Product Image API] 获取 URI(https://partner.tiktokshop.com/docv2/page/6509df95defece02be598a22)。 |
+   include_prohibited_categories |bool |N |false |用于指示是否包含在 TikTok Shop 上禁售的匹配类目的标志。将此设置为 `true` 可识别该商品是否属于在任何情况下都无法在 TikTok Shop 上架的类目。
+   **注意**：
+* 仅适用于 BR 和 MX 市场。
 * Default: `false` |
-   listing_platform |string |N |TIKTOK_SHOP |Recommend categories that belong to the specified platform.
-   Possible values:
+   listing_platform |string |N |TIKTOK_SHOP |推荐属于指定平台的类目。
+   可能的值：
 * TIKTOK_SHOP
 * TOKOPEDIA
-   Default: TIKTOK_SHOP
+   默认值：TIKTOK_SHOP
 
-Applicable only for sellers that migrated from Tokopedia. |
+仅适用于从 Tokopedia 迁移的卖家。 |
 locale |string |N |en-US |用于显示分类信息的 BCP-47 语言环境代码。
 Default: 您店铺的默认语言环境。
-Possible values:
+可能的值：
 
 * `cs-CZ`
 * `de-AT`
@@ -92,27 +92,27 @@ Possible values:
 * `th-TH`
 * `vi-VN`
 * `zh-CN` |
-   origin_platform_product_type |string |N |Handbags |在源平台上定义的产品类型。 |
-   origin_platform_vendor |string |N |Chanel |源平台上的产品供应商或品牌名称。 |
-   origin_platform_tags |[]string |N |["blastcornhole","Shopify Collective"] |与源平台上产品关联的标签。 |
-   origin_platform_category |object |N | |在源平台上分配给产品的分类信息。 |
+   origin_platform_product_type |string |N |Handbags |在源平台上定义的商品类型。 |
+   origin_platform_vendor |string |N |Chanel |源平台上的商品供应商或品牌名称。 |
+   origin_platform_tags |[]string |N |["blastcornhole","Shopify Collective"] |与源平台上商品关联的标签。 |
+   origin_platform_category |object |N | |在源平台上分配给商品的分类信息。 |
    ^id |string |N |gid://shopify/TaxonomyCategory/na |源平台上的分类 ID。 |
    ^name |string |N |Uncategorized |源平台上的分类名称。 |
    ^full_name |string |N |Uncategorized |源平台上的完整分类路径或完整分类名称。 |
    ^is_leaf |bool |N |true |该分类是否为叶子分类。 |
    ^is_root |bool |N |true |该分类是否为根分类。 |
-   origin_platform_product_meta_data |object |N | |源平台提供的额外产品元数据。 |
-   ^attribute_value_list |[]object |N | |产品元数据属性及其值的列表。 |
+   origin_platform_product_meta_data |object |N | |源平台提供的额外商品元数据。 |
+   ^attribute_value_list |[]object |N | |商品元数据属性及其值的列表。 |
    ^^name |string |N |mark_out_of_stock |元数据属性名称。 |
    ^^values |[]string |N |["true"] |与元数据属性关联的值。 |
-   product_title |string |Y |Men's Fashion Sports Low Cut Cotton Breathable Ankle Short |产品标题。
+   product_title |string |Y |Men's Fashion Sports Low Cut Cotton Breathable Ankle Short |商品标题。
    标题长度：
 * DE, ES, FR, IE, IT, JP, UK, US: [1, 255]
 * BR, MX: [1, 300]
-* Other regions: [25, 255] |
-   is_live_quick |bool |N |false |false — NORMAL products
-   true — LIVE_QUICK products. Only seller with the required permissions can creat LIVE_QUICK products.
-   Default: false |
+* 其他地区: [25, 255] |
+   is_live_quick |bool |N |false |false — 常规商品
+   true — LIVE_QUICK 商品。只有具有所需权限的卖家才能创建 LIVE_QUICK 商品。
+   默认值：false |
 
 # 请求示例
 **Query**
@@ -126,7 +126,7 @@ https://open-api.tiktokglobalshop.com/product/202309/categories/recommend?app_ke
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性 description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -135,16 +135,16 @@ https://open-api.tiktokglobalshop.com/product/202309/categories/recommend?app_ke
 | ^categories | []object |  | 推荐叶子分类的分类层级，从顶级分类到叶子分类排序。 |
 | ^^id | string | 605254 | 分类 ID。 |
 | ^^is_leaf | bool | true | 标识该分类是否为叶子分类的标志。 |
-**Note**: 您只能创建或编辑属于叶子分类的产品。 |
+**注意**： 您只能创建或编辑属于叶子分类的商品。 |
 ^^level |int |1 |分类级别。 |
 ^^name |string |Teas |分类名称。 |
 ^^permission_statuses |[]string |["INVITE_ONLY"] |该店铺的此分类权限状态。
-Possible values:
+可能的值：
 
-* AVAILABLE: You have the permission to create products in this category.
-* INVITE_ONLY: This is a restricted category and you do not have permission to use it. Submit an application through the Qualification Center on TikTok Shop Seller Center to gain access. In Seller Center, `INVITE_ONLY` is also known as "restricted".
-* NON_MAIN_CATEGORY: This category is not in the shop's main category.
-* PROHIBITED: This category is prohibited on TikTok Shop. If your product falls under this category, do not attempt to list it, as it will be rejected during audit. Applicable only for BR and MX markets. |
+* AVAILABLE: 您有权在该类目下创建商品。
+* INVITE_ONLY: 这是一个受限类目，你没有使用权限。请通过 TikTok Shop Seller Center 上的 Qualification Center 提交申请以获得访问权限。在 Seller Center 中，`INVITE_ONLY` 也称为 "restricted"。
+* NON_MAIN_CATEGORY: 该类目不在店铺的主类目中。
+* PROHIBITED：该类目在 TikTok Shop 上被禁止。如果您的商品属于此类目，请勿尝试上架，因为它将在审核中被拒绝。仅适用于 BR 和 MX 市场。 |
    ^leaf_category_id |string |605254 |推荐的分类 ID。这始终是叶子分类。 |
 
 # 响应示例
@@ -162,8 +162,8 @@ Possible values:
 | 12052013 | The product description cannot exceed maximum characters |
 | 12052051 | The product name exceed max limit characters |
 | 12052056 | The num of image in description cannot exceed max limit |
-| 12052217 | All region shops must use V2 categories. Check the documentation for further details. |
-| 12052230 | 分类 version and categoryID are not matched. |
+| 12052217 | 所有地区的店铺必须使用 V2 分类。请查看文档了解更多详情。 |
+| 12052230 | 分类版本与 categoryID 不匹配。 |
 | 12052261 | product name is empty |
 | 12052262 | Chinese characters are not supported in product name |
 | 12052266 | The product name contains non-English characters. |
@@ -181,10 +181,10 @@ Possible values:
 | 12052350 | The product description html tag contain illegal attribute. |
 | 12052351 | The product description contains non-English characters. |
 | 12052352 | The product description nest exceeding limit |
-| 12052700 | The seller is inactive. |
-| 12052704 | seller id not exist |
+| 12052700 | 卖家不活跃。 |
+| 12052704 | 卖家 ID 不存在 |
 | 12052722 | The image URI does not exist in TikTok Shop. |
-| 36009003 | Internal error. Please try again. If the issue persists after multiple attempts, please contact platform support. |
+| 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
 | 12052912 | No matching category found within your account's main category. Check your main category in the seller profile on Seller Center and ensure your product falls within its scope. |
-| 12052931 | The title must follow these formatting rules: it cannot contain HTML escape characters (e.g.,  ), emojis, or ASCII control characters (e.g., \u007F). It also cannot consist solely of symbols (e.g., //// or !@#$$$&), nor can it have more than 9 consecutive repeated characters (e.g., aaaaaaaaa or 111111111). |
+| 12052931 | 标题必须遵循以下格式规则: 不能包含 HTML 转义字符 (e.g., )、表情符号或 ASCII 控制字符 (e.g., \u007F). 也不能仅由符号组成 (e.g., //// or !@#$$$&), 且连续重复字符不能超过 9 个 (e.g., aaaaaaaaa or 111111111)。 |
 

@@ -1,7 +1,7 @@
-# 创建 Promotion 活动
+# 创建促销活动
 
-# Path: /promotion/202309/activities
-# Method: [POST]
+# 路径：/promotion/202309/activities
+# 方法：[POST]
 # 功能描述
 创建固定价格、百分比折扣、限时抢购、运费折扣、买更多省更多、满赠或买XGetY促销活动。无法通过此 API 创建 coupon；请在卖家中心或卖家应用中创建。要更新活动中包含的商品或 SKU，请使用[更新活动商品](https://partner.tiktokshop.com/docv2/page/650d32c42aaa3602b86ccb5c)。
 
@@ -10,22 +10,22 @@
 
 # 通用参数
 通用参数请参考 [如何调用 TikTok Shop API - 通用参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。在请求跨境店铺的 API 时未传递正确的值将返回错误的响应。 |
 | 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型: application/json |
 # 请求 Query 参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有唯一的 key。请使用分配给您的应用的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 能够识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT (UTC+00:00)。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
-# 请求 Body 参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+# 请求体参数
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | title | string | Y | DiscountEvent0829 | 所有活动中的唯一名称。最大长度：`FLASHSALE` 和 `SHIPPING_DISCOUNT` 为 50 个字符；`FIXED_PRICE`、`DIRECT_DISCOUNT`、`BUY_MORE_SAVE_MORE`、`BUY_X_GET_Y` 和 `GIFT_WITH_PURCHASE` 为 100 个字符。 |
-| activity_type | string | Y | FIXED_PRICE | promotion 活动类型。 |
+| activity_type | string | Y | FIXED_PRICE | 促销活动类型。 |
 | 可能的值： |  |  |  |  |
 
 * `FIXED_PRICE`：固定价格的商品折扣活动。
@@ -85,17 +85,17 @@ duration_type |string |N |NORMAL |当前活动的生效时间类型
 * `EXPRESS_SHIPPING`：仅适用于快速配送方式。
 * `ALL_SHIPPING_METHOD`：适用于店铺提供的所有配送方式。
    默认值：`STANDARD_SHIPPING` |
-   ^^inventory_type |string |N |SELF_FULFILLED |promotion 活动适用的库存类型：
+   ^^inventory_type |string |N |SELF_FULFILLED |促销活动适用的库存类型：
 * `SELF_FULFILLED`：仅适用于从卖家仓库发货的库存。
 * `FULFILLED_BY_TIKTOK`：仅适用于由 TikTok 从 FBT（Fulfilled by TikTok）仓库发货的库存。
 * `ALL`：适用于符合条件商品的所有库存。
    对于美国全店免运费活动（`product_level` == `SHOP`），默认为 `ALL`，且 `inventory_type` 不能仅设置为 `SELF_FULFILLED` 或仅设置为 `FULFILLED_BY_TIKTOK`。
    对于其他地区，默认为 `SELF_FULFILLED`。`FULFILLED_BY_TIKTOK` 和 `ALL` 仅在 `product_level` == `SHOP` 且 `threshold_type` = `NO_THRESHOLD` 时可以设置。 |
-   ^^area_scope |object |Y | |promotion 活动适用的（买家）地理区域。 |
-   ^^^type |string |Y |WHOLE |promotion 活动适用的（买家）地理区域。
-   - `WHOLE`：promotion 活动适用于卖家提供配送的所有区域。
+   ^^area_scope |object |Y | |促销活动适用的（买家）地理区域。 |
+   ^^^type |string |Y |WHOLE |促销活动适用的（买家）地理区域。
+   - `WHOLE`：促销活动适用于卖家提供配送的所有区域。
 * `SPECIFIC_AREAS`：仅适用于 `area_scope.specific_areas` 中定义的特定配送区域。 |
-   ^^^specific_areas |[]string |N |["Washington", "New York"] |promotion 活动适用的区域列表。可包含在此列表中的有效值取决于店铺所在区域。每个店铺区域的有效值列表可在此处获取：[链接](https://partner.tiktokshop.com/docv2/page/67e3b059e7dc4f04a4ff9e09) |
+   ^^^specific_areas |[]string |N |["Washington", "New York"] |促销活动适用的区域列表。可包含在此列表中的有效值取决于店铺所在区域。每个店铺区域的有效值列表可在此处获取：[链接](https://partner.tiktokshop.com/docv2/page/67e3b059e7dc4f04a4ff9e09) |
    ^bmsm_discount |object |N | |买更多省更多 (BMSM) 活动的相关配置。 |
    ^^details |[]object |N | |买更多省更多层级配置。提供一个或两个层级。所有层级的 `threshold_type` 和 `type` 必须相同。 |
    ^^^tier |int |Y |1 |`tier` 使用从 1 开始的索引：第一层和第二层分别为 `1` 和 `2`，而不是 `0` 和 `1`。对于每个后续层级，`threshold_value` 和 `value` 都必须大于前一层级的对应值。例如，如果第 `1` 层的 `threshold_value` 为 `20`，`value` 为 `15`，则第 `2` 层的 `threshold_value` 必须大于 `20`，`value` 必须大于 `15`。 |
@@ -172,7 +172,7 @@ https://open-api.tiktokglobalshop.com/promotion/202309/activities?app_key=123abc
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -183,10 +183,10 @@ https://open-api.tiktokglobalshop.com/promotion/202309/activities?app_key=123abc
 | ^update_time | int | 1661756811 | 活动最后更新时间。 |
 | ^status | string | ONGOING | 可能的值： |
 
-* DRAFT：具有此状态的 promotion 活动不对 TikTok 用户开放。
-* NOT_START：具有此状态的 promotion 活动在设定的活动开始时间之前不对 TikTok 用户开放。
-* ONGOING：具有此状态的 promotion 活动对对 TikTok 用户开放。
-* EXPIRED：具有此状态的 promotion 活动因已过期而不对 TikTok 用户开放。
+* DRAFT：具有此状态的促销活动不对 TikTok 用户开放。
+* NOT_START：具有此状态的促销活动在设定的活动开始时间之前不对 TikTok 用户开放。
+* ONGOING：具有此状态的促销活动对对 TikTok 用户开放。
+* EXPIRED：具有此状态的促销活动因已过期而不对 TikTok 用户开放。
 * DEACTIVATED：活动已被卖家停用，不对 TikTok 用户开放。
 * NOT_EFFECTIVE：活动已被平台终止，不对 TikTok 用户开放。 |
 
@@ -199,7 +199,7 @@ https://open-api.tiktokglobalshop.com/promotion/202309/activities?app_key=123abc
 常见错误码请参考 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
 | 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
-| 17003203 | 已存在一个全店免运费 promotion 活动。一次只能创建一个。 |
+| 17003203 | 已存在一个全店免运费促销活动。一次只能创建一个。 |
 | 17029001 | 参数无效 |
 | 17029002 | 标题长度过长 |
 | 17029004 | 活动标题重复。 |

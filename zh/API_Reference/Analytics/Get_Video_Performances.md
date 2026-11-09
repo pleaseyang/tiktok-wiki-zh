@@ -1,20 +1,20 @@
 # 获取视频表现
 
-# Path: /analytics/202403/videos/performances
-# Method: [GET]
+# 路径：/analytics/202403/videos/performances
+# 方法：[GET]
 # 功能描述
-使用此仅限美国创作者的 API 检索 TikTok 电商视频指标，包括 anchor_display_rate、click_through_rate、orders、items_sold 和 GMV，用于请求的视频。
+使用此仅限美国达人的 API 检索 TikTok 电商视频指标，包括 anchor_display_rate、click_through_rate、orders、items_sold 和 GMV，用于请求的视频。
 
 ---
 
 
 # 公共参数
 有关公共参数，请参阅 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的 key。请使用分配给您应用的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 能够识别发送方。 |
@@ -30,7 +30,7 @@ https://open-api.tiktokglobalshop.com/analytics/202403/videos/performances?app_k
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中说明。 |
@@ -57,6 +57,6 @@ https://open-api.tiktokglobalshop.com/analytics/202403/videos/performances?app_k
 
 # 错误码
 有关常见错误码，请参阅 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 

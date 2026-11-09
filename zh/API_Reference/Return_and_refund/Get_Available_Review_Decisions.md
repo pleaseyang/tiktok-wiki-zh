@@ -1,7 +1,7 @@
 # 获取可用审核决策
 
-# Path: /return_refund/202606/review_decision
-# Method: [GET]
+# 路径：/return_refund/202606/review_decision
+# 方法：[GET]
 # 功能描述
 [GET]/return_refund/:version/Get_Review_Decision 的描述
 
@@ -10,19 +10,19 @@
 
 # 公共参数
 公共参数请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。跨境店铺请求 API 时未传递正确值将返回错误的响应。 |
 | 通过 API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) 获取 |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Query 参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
-| seller_id | int | Y | 7494781899660428507 | seller/店铺的唯一标识符 |
+| seller_id | int | Y | 7494781899660428507 | 卖家/店铺的唯一标识符 |
 | return_or_cancel_id | string | Y | 4035319218955782461 | 待评估的售后请求的标识符。传递逆向主订单 ID、售后请求 ID 或 return merchandise authorization（RMA）ID；API 会检测提供了哪种类型。请勿传递订单 ID 或订单行 ID。 |
 | locale | string | N | en-US | 用于显示退货原因的 BCP-47 locale 代码，以逗号分隔。默认值：en-US |
 | 支持的 locale 代码列表请参考 [Locale codes](678e3a47bae28f030a8c7523)。 |  |  |  |  |
-| check_decisions | []string | N | APPROVE_REFUND,REJECT_RETURN | 为指定售后请求评估的 seller 决策。可能的值： |
+| check_decisions | []string | N | APPROVE_REFUND,REJECT_RETURN | 为指定售后请求评估的卖家决策。可能的值： |
 
 * `APPROVE_REQUEST_CANCEL`
 * `APPROVE_REFUND`
@@ -39,7 +39,7 @@
 * `ISSUE_EXCHANGE_REFUND`
 * `OFFER_PARTIAL_REFUND`
 * `OFFER_PARTIAL_REFUND_AFTER_RECEIVING_PKG`
-   **注意：** 省略时，API 将评估请求的所有支持的 seller 决策并为每个决策返回一个结果。 |
+   **注意：** 省略时，API 将评估请求的所有支持的卖家决策并为每个决策返回一个结果。 |
 
 # 请求示例
 **Query**
@@ -48,7 +48,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202606/review_decision?app_k
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -58,7 +58,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202606/review_decision?app_k
 | ^^return_line_item_id | string | 4035319218955782461 | 此商品在退货中的唯一标识符。在虚拟捆绑商品的情况下，这对应于原始父商品捆绑的 id。 |
 | ^^sub_return_line_item_id | string | 4035227657962164815 | 此商品在退货中的唯一标识符。在虚拟捆绑商品的情况下，这对应于当前被退货的子商品的 id。 |
 | ^^decisions | []object |  | 此行项目的候选审核决策列表。 |
-| ^^^decision | string | OFFER_PARTIAL_REFUND_AFTER_RECEIVING_PKG | 为此行项目评估的 seller 审核决策。 |
+| ^^^decision | string | OFFER_PARTIAL_REFUND_AFTER_RECEIVING_PKG | 为此行项目评估的卖家审核决策。 |
 | 可能的值： |  |  |  |
 
 * `APPROVE_REQUEST_CANCEL`
@@ -83,8 +83,8 @@ https://open-api.tiktokglobalshop.com/return_refund/202606/review_decision?app_k
    ^^^^name |string |seller_reject_apply_product_has_been_packed |拒绝原因的机器可读名称，用作适用的审核或拒绝请求中的拒绝原因标识符。 |
    ^^^^text |string |The display text for the reject reason. |拒绝原因的显示文本。 |
    ^^^partial_refund_amount_range |object | |允许的部分退款金额范围。当 `OFFER_PARTIAL_REFUND_AFTER_RECEIVING_PKG` 决策有资格时返回；所有其他决策省略。 |
-   ^^^^min_amount |string |2.34 |seller 可以提供的最低部分退款金额。 |
-   ^^^^max_amount |string |3.33 |seller 可以提供的最高部分退款金额。 |
+   ^^^^min_amount |string |2.34 |卖家可以提供的最低部分退款金额。 |
+   ^^^^max_amount |string |3.33 |卖家可以提供的最高部分退款金额。 |
    ^^^^currency |string |USD |部分退款金额范围的币种，与当前退货请求的币种一致。 |
    ^request_log_id |string |20260713225708FB… |此请求的日志 id，用于与 TikTok Shop 支持团队排查问题。 |
    ^errors |[]object | |列出部分失败请求的错误。例如，如果请求审核了多个订单或商品且只有部分失败，则各个错误详情将在此处返回。

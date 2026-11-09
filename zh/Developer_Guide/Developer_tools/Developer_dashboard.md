@@ -7,7 +7,7 @@ Developer Dashboard 帮助开发者监控 TikTok Shop 对账检查发现的订�
 2. 哪些活跃订单有可能超过发货 SLA 或存在不一致的履约数据？
 3. 哪个规则触发了每个事件，以便开发者修复集成并使用正确的原因关闭事件？
 
-将此 Dashboard 与你的订单、履约和物流跟踪集成结合使用。目标是防止商家收入损失、减少迟发取消，并保持良好的事件关闭率。
+将此 Dashboard 与你的订单、履约和物流跟踪集成结合使用。目标是防止卖家收入损失、减少迟发取消，并保持良好的事件关闭率。
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/6a2c9069067a46fc9dd43fa4c3aa5eae~tplv-k9wyc2ijk0-image.image)
 # 如何使用 Dashboard
 
@@ -31,7 +31,7 @@ TikTok Shop 负责计算事件规则、暴露事件记录和展示 Dashboard 指
 | 术语 | 含义 |
 | --- | --- |
 | TikTok Shop / TTS | TikTok Shop 订单和履约数据。 |
-| 外部平台 / DTC 平台 | 接收 TikTok Shop 订单并处理下游履约的开发者、商家、ERP、OMS、WMS 或 DTC 系统。 |
+| 外部平台 / DTC 平台 | 接收 TikTok Shop 订单并处理下游履约的开发者、卖家、ERP、OMS、WMS 或 DTC 系统。 |
 | Quality Engine | TikTok Shop 的对账系统，将 TikTok Shop 订单数据与外部平台数据进行比较，并展示面向开发者的事件。 |
 | SLA | 服务等级协议。在此上下文中，指订单必须发货或更新的最晚时间。 |
 | `shipping_due_time` | 订单的发货截止时间。如果订单在此截止时间前未发货或更新，可能会被系统取消。请参阅 [Orders API 中的 SLA 信息](https://partner.tiktokshop.com/docv2/page/sla-information-now-available-in-orders-api)。 |

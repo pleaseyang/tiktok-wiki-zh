@@ -3,18 +3,18 @@
 ### **原因码**
 | **原因码** | **英文含义** | **中文含义** | **常见回传场景** |
 | --- | --- | --- | --- |
-| **R104** | Failed to contact recipient | 无法联系收件人 | 电话无人接听、关机，或到达地址后无人响应 |
+| **R104** | 无法联系收件人 | 无法联系收件人 | 电话无人接听、关机，或到达地址后无人响应 |
 | **R148** | Exceptional reason | 其他异常原因 | 物流商原始原因无法映射到具体标准码时使用的异常兜底码 |
-| **R400** | Recipient issues other | 收件人侧其他问题 | 收件人侧发生其他异常，但不属于拒收、联系不上、改期等明确原因 |
-| **R103** | Error in address | 收件地址错误 | 门牌号缺失、街道错误、邮编与城市不匹配，导致无法派送 |
+| **R400** | 其他收件人问题 | 收件人侧其他问题 | 收件人侧发生其他异常，但不属于拒收、联系不上、改期等明确原因 |
+| **R103** | 地址错误 | 收件地址错误 | 门牌号缺失、街道错误、邮编与城市不匹配，导致无法派送 |
 | **R106** | Recipient refused | 收件人拒收 | 收件人明确拒绝接收包裹，或表示未购买该商品 |
-| **R110** | Bad weather conditions | 恶劣天气或不可抗力 | 暴雨、洪水、台风、道路封闭、区域管制等导致无法派送 |
+| **R110** | 天气条件恶劣 | 恶劣天气或不可抗力 | 暴雨、洪水、台风、道路封闭、区域管制等导致无法派送 |
 | **R117** | Package damage | 包裹破损 | 外包装破裂、严重挤压、商品泄漏或运输中损坏 |
 | **R116** | Package lost | 包裹丢失 | 分拣、转运或末端派送环节确认包裹遗失 |
-| **R105** | Error in phone number | 收件人电话号码错误 <br/>  | 电话号码位数错误、空号、区号错误或无法接通 |
-| **R108** | Recipient request delivery change | 收件人要求变更派送 | 收件人要求改期、改地址或改送至代收点 |
+| **R105** | 电话号码错误 | 收件人电话号码错误 <br/>  | 电话号码位数错误、空号、区号错误或无法接通 |
+| **R108** | 收件人要求更改配送 | 收件人要求变更派送 | 收件人要求改期、改地址或改送至代收点 |
 
-### Action code 
+### Action code
 | Action code 名称 | Action code 值 | 是否必须 | 追踪事件 / 运输阶段 |  |
 | --- | --- | --- | --- | --- |
 | pickup_start | 20201 | N | 揽收开始 — Pickup initiated |  |
@@ -45,5 +45,5 @@
 | pop_arrived | 41501 | N | 自提点到达 — Arrived at pickup point |  |
 | **signed_personally** | 50101 <br/>  | **Y** <br/>  | 本人签收（平台终态） — Delivered — signed by recipient (platform final state) |  |
 | sign_failure <br/>  | 60101 | 如未通过 signed_personally，则应有 sign failure 或 unreachable_returned | 签收失败（非终态节点） — Delivery attempt failed (non-final status) |  |
-| **unreachable_returned** | 80101 | 如未通过 signed_personally，则应有 sign failure 或 unreachable_returned | 退回商家（平台终态） — Returned to merchant (platform final state) |  |
+| **unreachable_returned** | 80101 | 如未通过 signed_personally，则应有 sign failure 或 unreachable_returned | 退回卖家（平台终态） — Returned to merchant (platform final state) |  |
 |  |  |  |  |  |

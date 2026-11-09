@@ -19,10 +19,10 @@ TikTok Shop 提供了全面的 API 系列，统称为 **TTS API**。这些 API �
 | 5 | [Logistics API](https://partner.tiktokshop.com/docv2/page/logistic-api-overview) | 当卖家使用 TikTok Shop 提供的物流服务时，开发者可以使用 Logistics API 帮助卖家获取仓库列表、全球仓库列表、已订阅的配送方式和物流服务商。 |
 | 6 | [Promotion API](https://partner.tiktokshop.com/docv2/page/promotion-api-overview) | 开发者可以使用 Promotion API 协助卖家为特定商品设置促销、折扣和其他优惠活动。 |
 | 7 | [Finance API](https://partner.tiktokshop.com/docv2/page/finance-api-overview) | 开发者可以使用 Finance API 协助卖家获取其 TikTok Shop 的支付和结算信息。 |
-| 8 | [Seller API](https://partner.tiktokshop.com/docv2/page/seller-api-overview) | Seller API 支持跨境运营，一个卖家可以在多个区域市场开设店铺。开发者可以使用 Seller API 获取跨境卖家的店铺状态，并确定特定跨境市场是否符合 Global Product 功能的使用条件。 |
+| 8 | [Seller API](https://partner.tiktokshop.com/docv2/page/seller-api-overview) | 卖家 API 支持跨境运营，一个卖家可以在多个区域市场开设店铺。开发者可以使用卖家 API 获取跨境卖家的店铺状态，并确定特定跨境市场是否符合 Global Product 功能的使用条件。 |
 | 9 | [Authorization API](https://partner.tiktokshop.com/docv2/page/get-authorized-shops-202309) | 开发者可以使用 Authorization API 交换授权 token 并获取应用的已授权店铺信息。 |
 | 10 | [Events API](https://partner.tiktokshop.com/docv2/page/get-shop-webhooks) | 开发者可以使用 Events API 订阅和取消订阅 TikTok Shop 业务事件的 Open Platform webhook。 |
-| 11 | Data Reconciliation API | 开发者可以使用 Data Reconciliation API 将外部数据传输到 Open Platform 进行质量引擎对账。 |
+| 11 | 数据对账 API | 开发者可以使用 Data Reconciliation API 将外部数据传输到 Open Platform 进行质量引擎对账。 |
 | 12 | [Supply Chain API](https://partner.tiktokshop.com/docv2/page/confirm-package-shipment) | 此 API 面向 TikTok Shop 认证的仓库合作伙伴。开发者可以使用 Supply Chain API 将认证仓库履约的订单包裹履约详情回传至 TTS。 |
 
 有关可用 API 的完整列表，请参阅 [TTS API 参考文档](https://partner.tiktokshop.com/docv2/page/create-product)。

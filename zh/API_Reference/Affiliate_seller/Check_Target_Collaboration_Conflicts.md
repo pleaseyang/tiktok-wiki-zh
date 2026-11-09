@@ -1,31 +1,31 @@
 # 检查 Target Collaboration 冲突
 
-# Path: /affiliate_seller/202605/target_collaborations/conflicts/check
-# Method: [POST]
+# 路径：/affiliate_seller/202605/target_collaborations/conflicts/check
+# 方法：[POST]
 # 功能描述
-此 API 用于检查您计划邀请加入 target collaboration group 的 creator 是否存在冲突。如果存在冲突，此 API 将返回冲突详情，您可以调用 Resolve Target Collaboration Conflicts API 来解决冲突。
+此 API 用于检查您计划邀请加入 target collaboration group 的达人是否存在冲突。如果存在冲突，此 API 将返回冲突详情，您可以调用 Resolve Target Collaboration Conflicts API 来解决冲突。
 
 ---
 
 
 # 通用参数
 有关通用参数，请参阅 [How to call TikTok Shop APIs - Common Parameters](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。请求跨境店铺 API 时未传递正确值将返回不正确的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的密钥。请使用分配给您应用的特定密钥。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 可以识别发送者。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT (UTC+00:00)。此时间戳用于所有 API 请求。开发者可以使用此时间戳转换为本地时间。 |
-# 请求 Body 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+# 请求体参数
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
-| creator_open_id_list | []string | Y | [" "] | Creator Open ID 列表。[更多详情](https://partner.tiktokshop.com/docv2/page/3obfokj6) |
-| product_id_list | []string | Y | [" "] | 产品 ID 列表 |
+| creator_open_id_list | []string | Y | [" "] | 达人 Open ID 列表。[更多详情](https://partner.tiktokshop.com/docv2/page/3obfokj6) |
+| product_id_list | []string | Y | [" "] | 商品 ID 列表 |
 # 请求示例
 **Query**
 ```Plain Text
@@ -38,16 +38,16 @@ https://open-api.tiktokglobalshop.com/affiliate_seller/202605/target_collaborati
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
 | request_id | string | 202203070749000101890810281E8C70B7 | 请求日志 |
 | data | object |  | 具体返回信息 |
-| ^has_conflict | bool | false | 指示 creator 和产品之间是否存在冲突。（检测到冲突时返回 `true`。） |
-| ^conflict_items | []object |  | 因冲突导致 target collaboration 失败的 creator-产品组合列表。每个条目标识了涉及的 creator、产品和现有 target collaboration。 |
+| ^has_conflict | bool | false | 指示达人和商品之间是否存在冲突。（检测到冲突时返回 `true`。） |
+| ^conflict_items | []object |  | 因冲突导致 target collaboration 失败的达人-商品组合列表。每个条目标识了涉及的达人、商品和现有 target collaboration。 |
 | ^^creator_open_id | string | uACafQAAAABmUU2qon4R0vUYvUVS3QC6CICP2m5A2-wd77j8R9G0yg | Creator Open ID。[更多详情](https://partner.tiktokshop.com/docv2/page/3obfokj6) |
-| ^^product_id | string | 1234 | 产品标识符。 |
+| ^^product_id | string | 1234 | 商品标识符。 |
 | ^^existing_collaboration_id | string | 1234 | 冲突的 target collaboration ID |
 # 响应示例
 ```json
@@ -56,6 +56,6 @@ https://open-api.tiktokglobalshop.com/affiliate_seller/202605/target_collaborati
 
 # 错误码
 有关常见错误码，请参阅 [How to call TikTok Shop APIs - Common Error Code](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 

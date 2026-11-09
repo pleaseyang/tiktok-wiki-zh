@@ -1,48 +1,48 @@
 # 更新 Target Collaboration
 
-# Path: /affiliate_seller/202508/target_collaborations/{target_collaboration_id}
-# Method: [PUT]
+# 路径：/affiliate_seller/202508/target_collaborations/{target_collaboration_id}
+# 方法：[PUT]
 # 功能描述
-使用此 API 更新 target collaboration。您可以修改 commission 比率、sample 设置等。
+使用此 API 更新 target collaboration。您可以修改佣金比率、sample 设置等。
 
 ---
 
 
 # 通用参数
 有关通用参数，请参阅 [How to call TikTok Shop APIs - Common Parameters](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。请求跨境店铺 API 时未传递正确值将返回不正确的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Path 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
-| target_collaboration_id | string | Y | 7890786712312312 | The unique id of specific target collaboration. |
+| target_collaboration_id | string | Y | 7890786712312312 | 特定定向协作的唯一 id。 |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的密钥。请使用分配给您应用的特定密钥。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 可以识别发送者。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT (UTC+00:00)。此时间戳用于所有 API 请求。开发者可以使用此时间戳转换为本地时间。 |
-# 请求 Body 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+# 请求体参数
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | name | string | Y | openapi_test | Target collaboration 的名称。 |
 | end_time | string | Y | 1715654330 | Target collaboration 的结束时间，以秒为单位的 Unix 时间戳。 |
-| products | []object | Y |  | 卖家为 target collaboration 中 creator 合作提供的产品信息。 |
-| 产品最大数量为 100。 |  |  |  |  |
-| 当从产品列表中删除产品时，如果被删除的产品已被 creator 添加到 showcase，则将在次日 0:00 生效，否则立即生效。 |  |  |  |  |
-| ^id | string | Y | 789078671231312312 | 产品标识符。 |
-| ^commission_rate | int | Y | 1000 | Target collaboration 的目标 commission 比率。该值以万分之一为单位。例如，3587 表示 commission 等于原始价格的 35.87%。范围为 [100, 8000]。 |
-| 提高产品 commission 将立即生效，而降低产品 commission 如果当前产品已被 creator 添加到 showcase，则将在次日 00:00 生效，否则立即生效。 |  |  |  |  |
-| ^target_ad_commission_rate | int | N | 1000 | The commission rate applies only to orders generated from ads. If a creator’s video is used as an ad without this rate being set, the resulting orders will instead earn either: |
+| products | []object | Y |  | 卖家为 target collaboration 中达人合作提供的商品信息。 |
+| 商品最大数量为 100。 |  |  |  |  |
+| 当从商品列表中删除商品时，如果被删除的商品已被达人添加到橱窗，则将在次日 0:00 生效，否则立即生效。 |  |  |  |  |
+| ^id | string | Y | 789078671231312312 | 商品标识符。 |
+| ^commission_rate | int | Y | 1000 | Target collaboration 的目标佣金比率。该值以万分之一为单位。例如，3587 表示佣金等于原始价格的 35.87%。范围为 [100, 8000]。 |
+| 提高商品佣金将立即生效，而降低商品佣金如果当前商品已被达人添加到橱窗，则将在次日 00:00 生效，否则立即生效。 |  |  |  |  |
+| ^target_ad_commission_rate | int | N | 1000 | 该佣金率仅适用于广告产生的订单。如果达人的视频被用作广告而未设置此费率，产生的订单将改为按以下之一获得佣金： |
 
-* The Shop Ads commission you configured in open collaboration, or
-* The standard commission defined in this invitation.
-   The commission rate is specified in increments of 1/10,000.
-   For example, 1000 stands for 0.1 or 10%. |
-   creator_user_open_ids |[]string |Y |["123123213213"] |Target collaboration 中邀请的 Creator 的 TikTok User Open ID 列表。Creator 最大数量为 50。[更多详情](https://partner.tiktokshop.com/docv2/page/3obfokj6) |
+* 您在 open collaboration 中配置的 Shop Ads 佣金，或
+* 此邀请中定义的标准佣金。
+   佣金率以 1/10,000 为增量指定。
+   例如，1000 代表 0.1 或 10%。 |
+   creator_user_open_ids |[]string |Y |["123123213213"] |Target collaboration 中邀请的达人的 TikTok User Open ID 列表。达人最大数量为 50。[更多详情](https://partner.tiktokshop.com/docv2/page/3obfokj6) |
    seller_contact_info |object |Y | |Target collaboration 中卖家的联系信息。 |
    ^email |string |Y |test@bytedance.com |卖家的电子邮件联系信息 |
    ^phone_number |string |N |1234567890 |卖家的电话号码。 |
@@ -50,9 +50,9 @@
    ^telegram |string |N |1234567890 |卖家的 Telegram 用户名或电话号码。 |
    ^line |string |N |1234567890 |卖家注册 Line 应用使用的电话号码。 |
    free_sample_rule |object |Y | |卖家在 target collaboration 中设置的免费 sample 规则。 |
-   ^has_free_sample |bool |Y |true |如果为 true，则向邀请到 target collaboration 的 creator 提供免费 sample。 |
-   ^is_sample_approval_exempt |bool |Y |true |如果为 true，邀请到 target collaboration 的 creator 将免除卖家审核，并自动获得免费 sample。
-   Note that if has_free_sample=false, this field will not take effect. |
+   ^has_free_sample |bool |Y |true |如果为 true，则向邀请到 target collaboration 的达人提供免费 sample。 |
+   ^is_sample_approval_exempt |bool |Y |true |如果为 true，邀请到 target collaboration 的达人将免除卖家审核，并自动获得免费 sample。
+   请注意，如果 has_free_sample=false, 此字段将不生效。 |
 
 # 请求示例
 **Query**
@@ -66,25 +66,25 @@ https://open-api.tiktokglobalshop.com/affiliate_seller/202508/target_collaborati
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
 | request_id | string | 202203070749000101890810281E8C70B7 | 请求日志 |
 | data | object |  | 具体返回信息 |
-| ^target_collaboration_conflicts | []object |  | 因 target collaboration 冲突导致 target collaboration 更新失败的 creator 和产品列表。 |
-| ^^creator_user_open_id | string | 7494656937121841111 | Creator Open ID。更多详情：https://partner.tiktokshop.com/docv2/page/3obfokj6 |
-| ^^product_id | string | 789078671231 | 产品标识符。 |
+| ^target_collaboration_conflicts | []object |  | 因 target collaboration 冲突导致 target collaboration 更新失败的达人和商品列表。 |
+| ^^creator_user_open_id | string | 7494656937121841111 | 达人 Open ID。更多详情：https://partner.tiktokshop.com/docv2/page/3obfokj6 |
+| ^^product_id | string | 789078671231 | 商品标识符。 |
 | ^update_failed | object |  | 描述哪些字段未成功更新。 |
-| ^^remove_creator_open_ids | []string | ["12345"] | 未成功移除的 creator 的 TikTok User Open ID 列表。更多详情：https://partner.tiktokshop.com/docv2/page/3obfokj6 |
-| ^^remove_product_ids | []string | ["12345"] | 未成功移除的产品 ID 列表。 |
-| ^^add_creator_open_ids | []string | ["12345"] | 未成功添加的 creator 的 TikTok User Open ID 列表。更多详情：https://partner.tiktokshop.com/docv2/page/3obfokj6 |
-| ^^add_products | object |  | 未成功添加的产品列表。 |
-| ^^^id | string | 789078671231312312 | 产品标识符。 |
-| ^^^commission_rate | int | 1000 | Target collaboration 的目标 commission 比率。目标 commission 比率以百分之一为单位。例如，3587 表示 35.87% 的 commission 比率。此值最小为 1000。 |
-| ^^change_commissions | object |  | 未成功更改的 commission 信息列表。 |
-| ^^^product_id | string | 789078671231312312 | 产品标识符。 |
-| ^^^commission_rate | int | 1000 | Target collaboration 的目标 commission 比率。目标 commission 比率以百分之一为单位。例如，3587 表示 35.87% 的 commission 比率。此值最小为 1000。 |
+| ^^remove_creator_open_ids | []string | ["12345"] | 未成功移除的达人的 TikTok User Open ID 列表。更多详情：https://partner.tiktokshop.com/docv2/page/3obfokj6 |
+| ^^remove_product_ids | []string | ["12345"] | 未成功移除的商品 ID 列表。 |
+| ^^add_creator_open_ids | []string | ["12345"] | 未成功添加的达人的 TikTok User Open ID 列表。更多详情：https://partner.tiktokshop.com/docv2/page/3obfokj6 |
+| ^^add_products | object |  | 未成功添加的商品列表。 |
+| ^^^id | string | 789078671231312312 | 商品标识符。 |
+| ^^^commission_rate | int | 1000 | Target collaboration 的目标佣金比率。目标佣金比率以百分之一为单位。例如，3587 表示 35.87% 的佣金比率。此值最小为 1000。 |
+| ^^change_commissions | object |  | 未成功更改的佣金信息列表。 |
+| ^^^product_id | string | 789078671231312312 | 商品标识符。 |
+| ^^^commission_rate | int | 1000 | Target collaboration 的目标佣金比率。目标佣金比率以百分之一为单位。例如，3587 表示 35.87% 的佣金比率。此值最小为 1000。 |
 | ^^end_time | int | 1715654330 | 未成功更新的 target collaboration 结束时间。 |
 | ^^seller_contact_info | object |  | 未成功更新的 target collaboration 中卖家的联系信息。 |
 | ^^^email | string | test@bytedance.com | 未成功更新的卖家电子邮件联系信息。 |
@@ -97,7 +97,7 @@ https://open-api.tiktokglobalshop.com/affiliate_seller/202508/target_collaborati
 | ^^^line | string | (+62) 1234567890 |  |
 | 卖家注册 Line 应用使用的电话号码。 |  |  |  |
 | ^^name | string | openapi_test | Target collaboration 的名称。 |
-| ^^invalid_product_id_list | []string | ["1234"] | 导致更新失败的产品 ID 列表。 |
+| ^^invalid_product_id_list | []string | ["1234"] | 导致更新失败的商品 ID 列表。 |
 | ^^invalid_open_id_list | []string | ["xxxxxx"] | 导致更新失败的 open ID 列表。 |
 # 响应示例
 ```json
@@ -106,20 +106,20 @@ https://open-api.tiktokglobalshop.com/affiliate_seller/202508/target_collaborati
 
 # 错误码
 有关常见错误码，请参阅 [How to call TikTok Shop APIs - Common Error Code](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 | 16024004 | 测试账号和非测试账号不能交叉邀请 |
-| 16024006 | 卖家不能邀请其官方 creator。 |
-| 16024008 | 存在不属于此商家的产品。 |
-| 16024016 | 邀请失败，因为 creator 已关联店铺账号。 |
-| 16024018 | 卖家不能邀请其拉黑的 creator |
+| 16024006 | 卖家不能邀请其官方达人。 |
+| 16024008 | 存在不属于此卖家的商品。 |
+| 16024016 | 邀请失败，因为达人已关联店铺账号。 |
+| 16024018 | 卖家不能邀请其拉黑的达人 |
 | 16024019 | 配额不足，无法创建邀请 |
-| 16024020 | 请移除被排除的 creator 以创建邀请 |
-| 16024021 | 邀请包含超过粉丝限制的 creator |
+| 16024020 | 请移除被排除的达人以创建邀请 |
+| 16024021 | 邀请包含超过粉丝限制的达人 |
 | 36009007 | 请求超时 |
 | 50001701 | target collaboration 已过期 |
 | 50001702 | Your invitation target contains an unavailable creator or product. Please check your request params.Remove the unavailable creator or product id and try again. |
 | 50001703 | 请求参数包含敏感词。 |
 | 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
-| 98001004 | Parameter {param_name} is invalid. Reason: {reason}. Expected: {expected_value} |
+| 98001004 | 参数 {param_name} 无效。原因：{reason}。预期值：{expected_value} |
 

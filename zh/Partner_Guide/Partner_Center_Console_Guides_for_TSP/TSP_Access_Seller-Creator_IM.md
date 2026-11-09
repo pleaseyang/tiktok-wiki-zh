@@ -1,11 +1,11 @@
-# TSP Access Seller-Creator IM
+# TSP 访问卖家-达人 IM
 
-# **使用Seller-Creator IM的步骤**
-如果TSP获得了完全访问权限或联盟权限授权，则可以使用Seller-Creator IM功能。
+# **使用卖家-达人 IM的步骤**
+如果TSP获得了完全访问权限或联盟权限授权，则可以使用卖家-达人 IM功能。
 通过TSP Access登录卖家中心后，在"联盟"页面点击"进入联盟中心首页"按钮进入联盟中心。
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/a95d4a8789f741c89d9d8014958c5c7e~tplv-k9wyc2ijk0-image.image" width="2940px" /></div>
 
-进入联盟中心后，TSP可以通过5个入口像卖家一样使用Creator IM。请参考[卖家-达人IM使用指南](https://seller-us.tiktok.com/university/essay?course_type=1&from=search%7BcontentIdParams%7D&identity=1&is_new_connect=0&is_new_user=0&knowledge_id=2725932827150123&role=1)。
+进入联盟中心后，TSP可以通过5个入口像卖家一样使用达人 IM。请参考[卖家-达人IM使用指南](https://seller-us.tiktok.com/university/essay?course_type=1&from=search%7BcontentIdParams%7D&identity=1&is_new_connect=0&is_new_user=0&knowledge_id=2725932827150123&role=1)。
 
 * **入口1：** 在联盟中心，点击顶部导航栏的达人消息。
 

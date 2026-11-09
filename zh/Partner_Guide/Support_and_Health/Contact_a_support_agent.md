@@ -20,7 +20,7 @@
 
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/8eb1f68dc5e84758bed1642507ca4d6c~tplv-k9wyc2ijk0-image.image" width="2880px" /></div>
 
-# 面向 Creator Agency Partners (CAPs)/Multi-Channel Networks (MCNs)
+# 面向达人 Agency Partners (CAPs)/Multi-Channel Networks (MCNs)
 在**帮助中心**中，选择**获取达人支持**选项：
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/c6a4e38d6da249b9b81d44d68a01665c~tplv-k9wyc2ijk0-image.image)
 您将看到以下下拉菜单：

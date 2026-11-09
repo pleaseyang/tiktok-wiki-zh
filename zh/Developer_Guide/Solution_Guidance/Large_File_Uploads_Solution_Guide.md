@@ -60,7 +60,7 @@
 | `x-tts-access-token` | String | 已授权用户的 access token。 |
 
 **请求体**
-| 参数 | 类型 | 是否必填 | 描述 |
+| 参数 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `file_size` | Integer | 是 | 文件总大小（字节）。 |
 | `file_name` | String | 是 | 文件名，包含扩展名，如 `my_video.mp4`。 |
@@ -90,12 +90,12 @@
 ```
 
 **查询参数**
-| 参数 | 类型 | 是否必填 | 描述 |
+| 参数 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `upload_token` | String | 是 | Upload File Init 返回的上传令牌。 |
 | `chunk_num` | Integer | 是 | 当前分块的序号，从 1 开始。 |
 | `app_key` | String | 是 | 您的 app key。 |
-| `shop_cipher` | String | 条件必填 | 当 token 关联到 TikTok Shop 卖家时（如 `user_type=0`（`TTS`）），店铺范围上传必需。从 [Get Authorized Shops](https://partner.tiktokshop.com/docv2/page/get-authorized-shops-202309) 获取。请勿使用旧标签 `user_type=3 (Partner)`：token `user_type` 值为 `0=TTS`、`1=TTC`、`2=PARTNER`、`3=PARTNERV2`、`4=GS` 和 `5=GSV2`。对于 partner token 上传，请遵循目标业务 API 的标识符要求。 |
+| `shop_cipher` | String | 条件必填 | 当 token 关联到 TikTok Shop 卖家时（如 `user_type=0`（`TTS`）），店铺范围上传必需。从 [Get Authorized Shops](https://partner.tiktokshop.com/docv2/page/get-authorized-shops-202309) 获取。请勿使用旧标签 `user_type=3 (Partner)`：token `user_type` 值为 `0=TTS`、`1=TTC`、`2=PARTNER`、`3=PARTNERV2`、`4=GS` 和 `5=GSV2`。对于合作伙伴 token 上传，请遵循目标业务 API 的标识符要求。 |
 
 **Headers**
 | Header | 类型 | 描述 |

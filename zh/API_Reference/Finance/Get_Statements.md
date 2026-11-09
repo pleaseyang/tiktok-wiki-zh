@@ -1,7 +1,7 @@
 # 获取对账单
 
-# Path: /finance/202309/statements
-# Method: [GET]
+# 路径：/finance/202309/statements
+# 方法：[GET]
 # 功能描述
 根据指定的日期范围或付款状态，检索为店铺生成的账单及关键账单信息。使用此 API 获取一段时间内每日账单的概览，或查看哪些账单已付款、哪些未付款。有关详细交易信息，请参阅 [Get Statement Transactions](650a6749defece02be67da87) 或 [Get Order Statement Transactions](650a6734defece02be67d724)。
 适用于所有地区的卖家。仅提供 2023-07-01 之后的数据。
@@ -11,13 +11,13 @@
 
 # 公共参数
 有关公共参数，请参阅 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。在请求跨境店铺 API 时未传递正确值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的 key。请使用分配给您应用的特定 key。 |
 | statement_time_lt | int | N | 1777507200 | 筛选账单，仅显示在指定日期和时间之前生成的账单。Unix 时间戳（秒）。 |
@@ -62,7 +62,7 @@ https://open-api.tiktokglobalshop.com/finance/202309/statements?app_key=123abc&s
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中说明。 |
@@ -105,7 +105,7 @@ https://open-api.tiktokglobalshop.com/finance/202309/statements?app_key=123abc&s
 
 # 错误码
 有关常见错误码，请参阅 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 | 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
 

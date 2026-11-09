@@ -1,6 +1,6 @@
 # 运费折扣支持区域
 
-在创建或更新 promotion 活动时，您可以设置运费折扣适用的地理区域。
+在创建或更新促销活动时，您可以设置运费折扣适用的地理区域。
 要设置区域，请在 [创建活动](650c33c155bc3202b762b507) 和 [更新活动](650c584d82c3a602befa4ab8) 中使用 `discount.shipping_discount.area_scope.specific_areas`。
 
 此字段的枚举值仅限于以下列表：

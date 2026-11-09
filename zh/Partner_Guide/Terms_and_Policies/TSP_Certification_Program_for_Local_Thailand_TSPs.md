@@ -54,7 +54,7 @@ TSP将收到每月汇总的绩效报告并获得更多运营支持。
 > 有关内容服务能力指标的更多信息，请参阅[TikTok Shop达人绩效评估指南](https://seller-th.tiktok.com/university/essay?knowledge_id=6837794815706882)。
 
 # **如何参与**
-如您希望注册，请联系tts.partner.certification@bytedance.com或您的TikTok代理商合作伙伴经理。您将收到一份注册表格。
+如您希望注册，请联系tts.合作伙伴.certification@bytedance.com或您的TikTok代理商合作伙伴经理。您将收到一份注册表格。
 注册时，您必须在TikTok Shop上管理至少3个卖家。
 对于店铺管理类别，请仅在您提供订单履约服务的情况下纳入该店铺。
 对于内容管理类别，请填写绑定到每个卖家账号的所有官方/营销达人账号。

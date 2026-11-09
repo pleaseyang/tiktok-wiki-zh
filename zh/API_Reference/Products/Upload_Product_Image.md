@@ -1,13 +1,13 @@
-# 上传产品图片
+# 上传商品图片
 
-# Path: /product/202309/images/upload
-# Method: [POST]
+# 路径：/product/202309/images/upload
+# 方法：[POST]
 # 功能描述
-将本地图片上传到 TikTok Shop，用作产品图片、变体图片、尺码表、认证图片或支持的其他图片用例。
-**Note**:
+将本地图片上传到 TikTok Shop，用作商品图片、变体图片、尺码表、认证图片或支持的其他图片用例。
+**注意**：
 
-* All images used in TikTok Shop products must be uploaded through this API. You cannot use image URLs that are not hosted by TikTok Shop.
-* Store `data.uri` to associate the uploaded image with a product when creating or editing it. Store `data.url` when you need to display the image in a product description by using an HTML `<img>` tag.
+* TikTok Shop 商品中使用的所有图片都必须通过此 API 上传. 不能使用非 TikTok Shop 托管的图片 URL。
+* 保存 `data.uri`，以便在创建或编辑商品时将上传的图片与商品关联。保存 `data.url`，用于需要使用 HTML `<img>` 标签在商品描述中展示图片的情形。
 
 
 ---
@@ -15,37 +15,37 @@
 
 # 通用参数
 通用参数请参考 [如何调用 TikTok Shop API - 通用参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | content-type | header | string | Y | multipart/form-data | 允许类型：multipart/form-data |
 # 请求查询参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的密钥。请使用分配给您的应用的特定密钥。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT（UTC+00:00）。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
 # 请求体参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | data | file | Y |  | 要上传的本地图片文件。 |
-**Note**:
+**注意**：
 
-* Supported formats: JPG, JPEG, PNG, WEBP, HEIC, BMP
-* Zero-byte files are rejected.
-* Max size: 10MB
-* Dimensions: [100x100 px, 20000x20000 px]
-* For `use_case=MAIN_IMAGE`, the dimensions must be between 300x300 px and 4000x4000 px.
-* For `use_case=SIZE_CHART_IMAGE`, the dimension must be at least 1024 px on the shorter side. |
+* 支持的格式：JPG, JPEG, PNG, WEBP, HEIC, BMP
+* 零字节文件将被拒绝。
+* 最大大小: 10MB
+* 尺寸: [100x100 px, 20000x20000 px]
+* 对于 `use_case=MAIN_IMAGE`，尺寸必须介于 300x300 px 和 4000x4000 px 之间。
+* 对于 `use_case=SIZE_CHART_IMAGE`，短边尺寸必须至少为 1024 px。 |
    use_case |string |N |MAIN_IMAGE |图片的使用场景。
-   Possible values:
-* MAIN_IMAGE: An image displayed in the product image gallery.
-* ATTRIBUTE_IMAGE: An image that represents a product variant (e.g. color).
-* DESCRIPTION_IMAGE: An image used within the product description.
-* CERTIFICATION_IMAGE: An image to provide supporting information to meet TikTok Shop requirements for listing restricted products (e.g., images of certifications, product packaging, labeling).
-* SIZE_CHART_IMAGE: An image that displays the product's measurement details.
-* CUSTOMIZATION_IMAGE: Images used for POD product customization, such as background images, mask images, or default images configured for customizable areas. These images are used to render or preview consumer-customizable product content.
+   可能的值：
+* MAIN_IMAGE: 在商品图片库中展示的图片。
+* ATTRIBUTE_IMAGE: 表示商品变体的图片 (e.g. color)。
+* DESCRIPTION_IMAGE: 商品描述中使用的图片。
+* CERTIFICATION_IMAGE：用于提供佐证信息以满足 TikTok Shop 对上架受限商品要求的图片（例如认证图片、商品包装、标签）。
+* SIZE_CHART_IMAGE: 展示商品尺寸详情的图片。
+* CUSTOMIZATION_IMAGE: 用于 POD 商品定制的图片，例如背景图片、蒙版图片或为可定制区域配置的默认图片。这些图片用于渲染或预览消费者可定制的商品内容。
 
-**Note**: Images for use cases `MAIN_IMAGE` and `ATTRIBUTE_IMAGE` that do not fit within the 3:4 to 4:3 aspect ratio range will be automatically converted to 1:1. |
+**说明**：对于 `MAIN_IMAGE` 和 `ATTRIBUTE_IMAGE` 用例，不符合 3:4 至 4:3 宽高比范围的图片将自动转换为 1:1。 |
 # 请求示例
 **Query**
 ```Plain Text
@@ -53,23 +53,23 @@ https://open-api.tiktokglobalshop.com/product/202309/images/upload?app_key=123ab
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性 description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
 | request_id | string | 202203070749000101890810281E8C70B7 | 请求日志 |
 | data | object |  | 具体返回信息 |
-| ^uri | string | tos-maliva-i-o3syd03w52-us/c668cdf70b7f483c94dbe | The URI to identify the image in API requests and responses. |
-| 在创建或编辑产品时传递此值，以将图片与产品关联。 |  |  |  |
+| ^uri | string | tos-maliva-i-o3syd03w52-us/c668cdf70b7f483c94dbe | 用于在接口请求和响应中标识图片的 URI。 |
+| 在创建或编辑商品时传递此值，以将图片与商品关联。 |  |  |  |
 | ^url | string | https://p-oec-va.ibyteimg.com/tos-maliva-i-o3syd03w52-us/c668cdf70b7f483c94dbe |  |
 | 访问和查看图片的 URL。 |  |  |  |
-| Use this URL in product descriptions by embedding it within an HTML `<img>` tag. |  |  |  |
+| 在商品描述中使用此 URL, 将其嵌入 HTML `<img>` 标签中。 |  |  |  |
 | ^height | int | 720 | 调整宽高比后的图片高度。 |
 |  |  |  |  |
 | ^width | int | 720 | 调整宽高比后的图片宽度。 |
 |  |  |  |  |
 | ^use_case | string | MAIN_IMAGE | 上传时指定的使用场景。 |
-| Possible values: |  |  |  |
+| 可能的值： |  |  |  |
 
 * MAIN_IMAGE
 * ATTRIBUTE_IMAGE
@@ -89,10 +89,10 @@ https://open-api.tiktokglobalshop.com/product/202309/images/upload?app_key=123ab
 | --- | --- |
 | 11050001 | invalid param |
 | 12019116 | The image dimensions exceed the allowed limits. |
-| 36009003 | Internal error. Please try again. If the issue persists after multiple attempts, please contact platform support. |
+| 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
 | 12038002 | Invalid upload file. Please ensure you are passing the correct file data. |
 | 12038004 | Failed to process the image. The format or content is not supported. |
 | 12038005 | The file size exceeds the maximum allowed size. |
-| 12038014 | The image dimensions exceed the allowed limits. Allowed dimensions (width x height in pixels): &lbrace;&lbrace;min_width&rbrace;&rbrace; x &lbrace;&lbrace;min_height&rbrace;&rbrace; to &lbrace;&lbrace;max_width&rbrace;&rbrace; x &lbrace;&lbrace;max_height&rbrace;&rbrace; |
-| 12038015 | Failed to process the image. The format or content is not supported. Supported formats: &lbrace;&lbrace;formats&rbrace;&rbrace; |
+| 12038014 | 图片尺寸超出允许的限制。允许的尺寸（宽 x 高，单位像素）：&lbrace;&lbrace;min_width&rbrace;&rbrace; x &lbrace;&lbrace;min_height&rbrace;&rbrace; 至 &lbrace;&lbrace;max_width&rbrace;&rbrace; x &lbrace;&lbrace;max_height&rbrace;&rbrace; |
+| 12038015 | 处理图片失败。不支持该格式或内容。支持的格式：&lbrace;&lbrace;formats&rbrace;&rbrace; |
 

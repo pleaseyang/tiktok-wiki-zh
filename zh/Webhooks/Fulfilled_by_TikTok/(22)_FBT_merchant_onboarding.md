@@ -1,4 +1,4 @@
-# (22) FBT 商家入驻
+# (22) FBT 卖家入驻
 
 ## 触发场景
 当 TikTok Shop 卖家入驻 FBT 平台并启用 FBT 服务时，会触发此 webhook。

@@ -1,70 +1,70 @@
 # 创建负责人
 
-# Path: /product/202409/compliance/responsible_persons
-# Method: [POST]
+# 路径：/product/202409/compliance/responsible_persons
+# 方法：[POST]
 # 功能描述
-Add a new EU responsible person who ensures a seller's products comply with EU regulations. The provided information will be automatically translated into all EU languages supported by TikTok Shop.
+新增一名欧盟负责人，以确保卖家的商品符合欧盟法规。所提供的信息将自动翻译为 TikTok Shop 支持的所有欧盟语言。
 
-* Use the [Search Responsible Persons API](67066a55f17b7d02f95d2fb1) to obtain the translations.
-* Use the [Partial Edit Responsible Person API](67066a5587019802fdce19b3) to edit the translations, if necessary.
-* When creating a product, pass the returned `responsible_person_id` to associate the product with the responsible person.
+* 使用 [Search Responsible Persons API](67066a55f17b7d02f95d2fb1) 获取译文。
+* 请使用 [Partial Edit Responsible Person API](67066a5587019802fdce19b3) 编辑译文，如有必要。
+* 创建商品时，传入返回的 `responsible_person_id` 以将商品与责任人关联。
 
-Target seller: Local sellers operating in EU countries
+目标卖家：在欧盟国家运营的本地卖家
 
 ---
 
 
 # 通用参数
 通用参数请参考 [如何调用 TikTok Shop API - 通用参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求查询参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的密钥。请使用分配给您的应用的特定密钥。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT（UTC+00:00）。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
 # 请求体参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
-| name | string | Y | John Doe | The responsible person name. Chinese characters are not supported. |
-| Max length: 200 characters |  |  |  |  |
-| email | string | Y | john.doe@email.com | The email address of the responsible person. Chinese characters are not supported. |
-| phone_number | object | Y |  | The phone number of the responsible person. Chinese characters are not supported in `local_number`. |
-| ^country_code | string | Y | +353 | The country code of the phone number, prefixed by a plus `+` symbol. E.g. +353 for Ireland. Only EU country codes are allowed. |
+| name | string | Y | John Doe | 负责人姓名。不支持中文字符。 |
+| 最大长度：200 个字符 |  |  |  |  |
+| email | string | Y | john.doe@email.com | 负责人的电子邮箱地址。不支持中文字符。 |
+| phone_number | object | Y |  | 负责人的电话号码。`local_number` 不支持中文字符。 |
+| ^country_code | string | Y | +353 | 电话号码的国家代码，以加号 `+` 开头。例如爱尔兰为 +353。仅允许欧盟国家代码。 |
 | Max digits: 4 |  |  |  |  |
-| ^local_number | string | Y | 80915151 | The local number. |
+| ^local_number | string | Y | 80915151 | 本地号码。 |
 | Length: 7 - 11 digits |  |  |  |  |
-| address | object | Y |  | The residential address of the responsible person. Chinese characters are not supported in any address field. |
-| ^street_address_line1 | string | Y | 63 Cardiff Ln, Grand Canal Dock, Dublin City, Dublin | The detailed street address of the location, including the building number, street name, district, city, province, and any relevant details. |
-| Max length: 500 characters |  |  |  |  |
-| ^street_address_line2 | string | N | - | (**Deprecated**: This field is deprecated and will be removed in a future API version. If provided, its value will be merged into `street_address_line1`. It is recommended to specify `street_address_line1` directly.) |
-| An optional secondary line for additional address details, if necessary. |  |  |  |  |
-| Max length: 500 characters |  |  |  |  |
-| ^district | string | N | - | (**Deprecated**: This field is deprecated and will be removed in a future API version. If provided, its value will be merged into `street_address_line1`. It is recommended to specify `street_address_line1` directly.) |
-The district name.
-Max length: 500 characters |
-^city |string |N |- |(**Deprecated**: This field is deprecated and will be removed in a future API version. If provided, its value will be merged into `street_address_line1`. It is recommended to specify `street_address_line1` directly.)
-The city name.
-Max length: 500 characters |
-^postal_code |string |Y |D02 HD23 |The postal code.
-Max length: 500 characters |
-^province |string |N |- |(**Deprecated**: This field is deprecated and will be removed in a future API version. If provided, its value will be merged into `street_address_line1`. It is recommended to specify `street_address_line1` directly.)
-The province, state, or region name.
-Max length: 500 characters |
-^country |string |Y |IE |The two letter ISO 3166 country code representing the country of the address. It must be an EU country. |
-locale |string |N |en-IE |The BCP-47 locale code representing the language used for specifying the responsible person information.
-Possible values:
+| address | object | Y |  | 负责人的居住地址。任何地址字段均不支持中文字符。 |
+| ^street_address_line1 | string | Y | 63 Cardiff Ln, Grand Canal Dock, Dublin City, Dublin | 位置的详细街道地址，包括门牌号，街道名称，区，城市，省份以及任何相关详细信息。 |
+| 最大长度：500 个字符 |  |  |  |  |
+| ^street_address_line2 | string | N | - | (**已弃用**：该字段已弃用，将在未来的 API 版本中移除。如果提供，其值将合并到 `street_address_line1`。建议直接指定 `street_address_line1`。) |
+| 可选的第二行，用于填写补充地址信息（如需要）。 |  |  |  |  |
+| 最大长度：500 个字符 |  |  |  |  |
+| ^district | string | N | - | (**已弃用**：该字段已弃用，将在未来的 API 版本中移除。如果提供，其值将合并到 `street_address_line1`。建议直接指定 `street_address_line1`。) |
+区县名称。
+最大长度：500 个字符 |
+^city |string |N |- |(**已废弃**：该字段已废弃，将在未来 API 版本中移除。如果提供该字段，其值将合并到 `street_address_line1`。建议直接指定 `street_address_line1`。)
+城市名称。
+最大长度：500 个字符 |
+^postal_code |string |Y |D02 HD23 |邮政编码。
+最大长度：500 个字符 |
+^province |string |N |- |(**已废弃**：该字段已废弃，将在未来 API 版本中移除。如果提供该字段，其值将合并到 `street_address_line1`。建议直接指定 `street_address_line1`。)
+省，州或地区名称。
+最大长度：500 个字符 |
+^country |string |Y |IE |表示地址所属国家的两位字母 ISO 3166 国家代码。必须是欧盟国家。 |
+locale |string |N |en-IE |表示用于填写责任人信息所使用语言的 BCP-47 语言区域代码。
+可能的值：
 
 * de-DE
 * en-IE
 * es-ES
 * fr-FR
 * it-IT
-   Default: The locale of the seller's registered business address.
+   默认值：卖家注册经营地址所在的区域设置。
 
-**Note**: The information provided will be automatically translated into all EU languages supported by TikTok Shop. Ensure the locale matches the language used in field values to avoid inaccurate translations. |
+**说明**：所提供的信息将自动翻译为 TikTok Shop 支持的所有 EU 语言。请确保 locale 与字段值中使用的语言一致，以避免翻译不准确。 |
 # 请求示例
 **Query**
 ```Plain Text
@@ -77,13 +77,13 @@ https://open-api.tiktokglobalshop.com/product/202409/compliance/responsible_pers
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性 description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
 | request_id | string | 202203070749000101890810281E8C70B7 | 请求日志 |
 | data | object |  | 具体返回信息 |
-| ^responsible_person_id | string | 66d3cbe4d9c8b09ddca023f1 | A unique ID that identifies the responsible person in TikTok Shop. |
+| ^responsible_person_id | string | 66d3cbe4d9c8b09ddca023f1 | 在 TikTok Shop 中标识负责人的唯一 ID。 |
 # 响应示例
 ```json
 {"code":0,"data":{"responsible_person_id":"66d3cbe4d9c8b09ddca023f1"},"message":"Success","request_id":"202203070749000101890810281E8C70B7"}
@@ -103,5 +103,5 @@ https://open-api.tiktokglobalshop.com/product/202409/compliance/responsible_pers
 | 38023042 | Invalid email format |
 | 38023043 | Invalid address length |
 | 38023044 | Invalid name length |
-| 38023050 | Operation is not supported for global seller |
+| 38023050 | 全球卖家不支持此操作 |
 

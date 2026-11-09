@@ -8,7 +8,7 @@ TikTok Shop API 使用 **HMAC-SHA256** 作为生成签名的默认算法。
 ❗ **重要提示**：TikTok Shop API 使用您的 **app secret** 作为身份验证的私钥。您可以从 Partner Center 的应用详情页获取 **app secret**。
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/cc8d63acb74b4e7bb18413efa3aaace7~tplv-k9wyc2ijk0-image.image)
 
-对于 API 版本 `202309` 及更高版本，在 `x-tts-access-token` 请求 header 中发送 access token，而不是在查询字符串中。生成签名时不包含 access token。对于仍使用 `access_token` 作为查询参数的旧版 API，在重新排列的查询键中排除 `access_token`。
+对于 API 版本 `202309` 及更高版本，在 `x-tts-access-token` 请求请求头中发送 access token，而不是在查询字符串中。生成签名时不包含 access token。对于仍使用 `access_token` 作为查询参数的旧版 API，在重新排列的查询键中排除 `access_token`。
 # 代码示例
 您可以在下方找到 GoLang、Java、Node.js 和 Python 的代码示例。借助这些代码示例，您无需深入了解算法细节。如果您需要其他语言的代码示例，请标注相关句子并向我们反馈。
 ## 签名算法（Go）
@@ -347,7 +347,7 @@ input = path + input
 /authorization/202309/shopsapp_key29a39dtimestamp1623812664
 ```
 
-📌 **注意**：如果请求 header content-type 不是 multipart/form-data，还需将 API 请求 body 追加到字符串中。使用 HTTP 请求中发送的确切 body 字节。不要解析并重新序列化或重新格式化 body 进行签名，因为字段顺序、空格、转义或字符集的变化可能产生不同的签名。
+📌 **注意**：如果请求请求头 content-type 不是 multipart/form-data，还需将 API 请求 body 追加到字符串中。使用 HTTP 请求中发送的确切 body 字节。不要解析并重新序列化或重新格式化 body 进行签名，因为字段顺序、空格、转义或字符集的变化可能产生不同的签名。
 ```Plain Text
 input = input + body
 ```
@@ -406,7 +406,7 @@ b596b73e0cc6de07ac26f036364178ab16b0a907af13d43f0a0cd2345f582dc8
 
 * 通常，此错误发生在开发者使用错误的 app key 和 secret 生成签名时。必须验证 app key 和 secret 是否精确匹配。
 * 确保 `sign` 和 `access_token` **未**包含在重新排列的查询键中（步骤2）。
-* 对于 API 版本 `202309` 及更高版本，在 `x-tts-access-token` header 中发送 access token。不要将此 header 值包含在签名字符串中。
+* 对于 API 版本 `202309` 及更高版本，在 `x-tts-access-token` 请求头中发送 access token。不要将此请求头值包含在签名字符串中。
 * 始终确保使用 **HMAC-SHA256** 签名方法（不同于普通的 SHA-256）。
 * 确保时间戳在平台收到请求时的当前时间 5 分钟以内。时间戳必须表示为 10 位 Unix 时间戳。
 * 如果请求不是 `multipart/form-data`，请对您发送的确切 body 字节进行签名。重新序列化 JSON 可能改变空格、字段顺序或转义，导致签名验证失败。

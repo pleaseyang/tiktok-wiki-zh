@@ -1,24 +1,24 @@
 # 获取直播间商品统计
 
-# Path: /analytics/202502/live_rooms/{live_room_id}/product_stats
-# Method: [GET]
+# 路径：/analytics/202502/live_rooms/{live_room_id}/product_stats
+# 方法：[GET]
 # 功能描述
-返回指定直播间的商品表现统计，包括商品 ID、名称、GMV、单价、库存数量和点击次数。直播间必须与 access token 关联的创作者所属。
+返回指定直播间的商品表现统计，包括商品 ID、名称、GMV、单价、库存数量和点击次数。直播间必须与 access token 关联的达人所属。
 
 ---
 
 
 # 公共参数
 有关公共参数，请参阅 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Path 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | live_room_id | string | Y | 7494534671928321024 | 直播间 ID |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的 key。请使用分配给您应用的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 能够识别发送方。 |
@@ -30,7 +30,7 @@ https://open-api.tiktokglobalshop.com/analytics/202502/live_rooms/74945346719283
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中说明。 |
@@ -65,7 +65,7 @@ https://open-api.tiktokglobalshop.com/analytics/202502/live_rooms/74945346719283
 
 # 错误码
 有关常见错误码，请参阅 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 | 66009302 | 参数无效。请检查直播间 ID。 |
 | 66009315 | 无操作权限。 |

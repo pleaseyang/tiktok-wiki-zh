@@ -34,14 +34,14 @@
 配送选项是协助卖家将商品交付给客户的物流方案。
 配送选项包含一组物流服务商和物流服务。
 卖家需要在配送选项要求下履约订单，包括物流服务商、物流服务、尺寸、重量等。
-配送选项由买家在 TikTok 下单时选择。配送选项的示例包括 Seller Shipping 的"Express shipping"、TikTok Shipping 的"Economy Shipping"等。
-请注意，Seller Shipping 的 Express Shipping 和 TikTok Shipping 的 Express Shipping 实际上是两个不同的配送选项。
+配送选项由买家在 TikTok 下单时选择。配送选项的示例包括卖家 Shipping 的"Express shipping"、TikTok Shipping 的"Economy Shipping"等。
+请注意，卖家 Shipping 的 Express Shipping 和 TikTok Shipping 的 Express Shipping 实际上是两个不同的配送选项。
 ### 配送类型
 配送类型是卖家发货的方式。它是配送选项的一个属性。
 TikTok 支持多种配送类型：
 
 * Platform - 卖家通过 TikTok 与物流服务商连接。
-* Seller - 卖家通过自己的渠道与物流服务商连接，然后将物流单号上传到 TikTok 进行后续跟踪。
+* 卖家 - 卖家通过自己的渠道与物流服务商连接，然后将物流单号上传到 TikTok 进行后续跟踪。
 
 对于不同地区，TikTok 提供不同的配送服务，包括购买面单、安排配送等。
 ## 物流服务（美国）
@@ -51,7 +51,7 @@ TikTok 支持多种配送类型：
 ## 物流服务商
 物流服务商是提供物流服务的服务商。
 不同的配送选项有不同的可用物流服务商。
-对于使用"seller shipping"类型配送选项的订单，卖家需要在履约过程中更新物流服务商和物流单号。
+对于使用"卖家 shipping"类型配送选项的订单，卖家需要在履约过程中更新物流服务商和物流单号。
 物流服务商的示例包括"USPS"、"DHL eCommerce"。
 重要提示："DHL"和"DHL eCommerce"是两个不同的服务商。
 

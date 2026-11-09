@@ -1,7 +1,7 @@
 # 审核售后请求
 
-# Path: /return_refund/202609/aftersales/review
-# Method: [POST]
+# 路径：/return_refund/202609/aftersales/review
+# 方法：[POST]
 # 功能描述
 用于审核（批准、拒绝或提供替代方案）buyer 退货请求的 API。
 
@@ -10,19 +10,19 @@
 
 # 公共参数
 公共参数请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。跨境店铺请求 API 时未传递正确值将返回错误的响应。 |
 | 通过 API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) 获取 |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Query 参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个 app 都有一个唯一的 key。请使用分配给您的 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT（UTC+00:00）。此时间戳用于所有 API 请求。开发者可以使用此转换为本地时间。 |
-# 请求 Body 参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+# 请求体参数
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | aftersales_request_decisions | []object | N |  | 应用于售后请求的决策。 |
 | ^request_id | string | Y | 4035319218955782461 | 标识此决策所应用的对象。 |
@@ -51,7 +51,7 @@
    ^^^partial_refund_amount |string |N |12.34 |提议的退款金额。 |
    ^^^currency |string |N |USD |退款金额的币种（ISO 4217）。必须与正向订单的币种一致。 |
    ^^reason |object |N | |用于证明行动/决策的合理性（拒绝时通常需要）。 |
-   ^^^reason_id |string |N |seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |Seller 拒绝售后请求的原因。使用 [Get Review Decision](https://partner.tiktokshop.com/docv2/page/get-review-decision-202606) endpoint 检索当前可用于同一请求的拒绝选项，并在此字段中提交返回的拒绝原因 name。
+   ^^^reason_id |string |N |seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |卖家拒绝售后请求的原因。使用 [Get Review Decision](https://partner.tiktokshop.com/docv2/page/get-review-decision-202606) endpoint 检索当前可用于同一请求的拒绝选项，并在此字段中提交返回的拒绝原因 name。
    **注意**：可用的决策和拒绝原因可能会根据当前请求状态而变化，因此在调用此 API 之前请重新获取资格。 |
    ^^^text |string |N |I have reached an agreement with the buyer |决策的附加说明。 |
    ^^^media |object |N | |支持性证据（如图片）。 |
@@ -72,7 +72,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202609/aftersales/review?app
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -106,7 +106,7 @@ https://open-api.tiktokglobalshop.com/return_refund/202609/aftersales/review?app
 | 25011026 | forbid process receive for FBT order |
 | 25011032 | ReverseInvalidStatusPartialRefund |
 | 25020004 | decision not match reverse type |
-| 25020005 | No permission to process this order |
-| 25020008 | Internal error. Please try again. If the issue persists after multiple attempts, please contact platform support. |
+| 25020005 | 无权处理此订单 |
+| 25020008 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
 | 25020009 | reverse already cancelled |
 

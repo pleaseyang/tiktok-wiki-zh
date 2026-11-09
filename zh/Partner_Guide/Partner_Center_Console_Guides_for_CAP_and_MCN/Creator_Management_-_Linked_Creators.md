@@ -82,7 +82,7 @@
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/1e704492315e4b52acac348d4862cf85~tplv-k9wyc2ijk0-image.image" width="500px" /></div>
 
 ### 如何延期与达人的关联关系？
-系统将开始提醒您，您与该账号的关联关系将在一个月内到期。对于将在 15 天内到期的达人/商家，我们将每天更新剩余关联天数。
+系统将开始提醒您，您与该账号的关联关系将在一个月内到期。对于将在 15 天内到期的达人/卖家，我们将每天更新剩余关联天数。
 如果您仍希望继续与该账号合作，请及时延期关联，以免影响激励政策。
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/09b1e7430912412aa8df3121ab14bf89~tplv-k9wyc2ijk0-image.image" width="500px" /></div>
 

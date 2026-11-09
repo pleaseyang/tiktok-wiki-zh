@@ -1,7 +1,7 @@
 # 创建首程 bundle
 
-# Path: /fulfillment/202407/bundles
-# Method: [POST]
+# 路径：/fulfillment/202407/bundles
+# 方法：[POST]
 # 功能描述
 如果您在单个首程 bundle 中向 TikTok Shop 仓库发送多个 package，可以使用此 API 在 TikTok Shop 上创建首程 bundle 并获取 bundle ID。
 
@@ -10,17 +10,17 @@
 
 # 通用参数
 通用参数请参考 [如何调用 TikTok Shop API - 通用参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | content-type | header | string | Y | application/json | 允许类型: application/json |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的 key。请使用分配给您应用的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 可以识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT (UTC+00:00)。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
-# 请求 Body 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+# 请求体参数
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | order_ids | []string | Y | ["578967030217083407"] | 在单个首程 bundle 中发送的所有订单的 ID。每个请求最多：9,999 个订单 ID。 |
 | 订单必须遵循以下限制： |  |  |  |  |
@@ -52,7 +52,7 @@ https://open-api.tiktokglobalshop.com/fulfillment/202407/bundles?app_key=123abc&
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -61,7 +61,7 @@ https://open-api.tiktokglobalshop.com/fulfillment/202407/bundles?app_key=123abc&
 | ^first_mile_bundle_id | string | BA123444534 | 首程 bundle 的 ID。 |
 | ^url | string | https://open-fs-va.tiktokshop.com/doc_tts/object/28b05?skipCookie=true&timeStamp=1721272360&sign=ef63cd6 | 返回的运单链接。 |
 | ^errors | []object |  | 与请求的订单关联的错误。条目可能表示无法解析请求的订单，或者与订单关联的 package 无法包含在 bundle 中。即使顶级响应 code 为 `0`，也请检查此数组和 `first_mile_bundle_id`。存在的 `first_mile_bundle_id` 标识已创建的 bundle；如果不存在，则此响应未标识已创建的 bundle。 |
-| ^^code | int | 21008121 | 与 `detail.order_id` 标识的请求订单关联的错误代码。 |
+| ^^code | int | 21008121 | 与 `detail.order_id` 标识的请求订单关联的错误码。 |
 | ^^message | string | invalid order id | 解释与 `detail.order_id` 标识的请求订单关联的错误消息。 |
 | ^^detail | object |  | 错误详情 |
 | ^^^order_id | string | 578967030217083407 | TikTok Shop 订单 ID |
@@ -72,6 +72,6 @@ https://open-api.tiktokglobalshop.com/fulfillment/202407/bundles?app_key=123abc&
 
 # 错误码
 通用错误码请参考 [如何调用 TikTok Shop API - 通用错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 

@@ -41,10 +41,10 @@ Agency入驻申请获批后，账号所有者将在左上角的身份切换器�
 # 5. 权限点汇总
 | 功能 | 所需身份 | 获取方式 | 适用范围 |
 | --- | --- | --- | --- |
-| 访问TikTok Shop开发者控制台 | App Developer（ISV） | Agency入驻成功后自动授予 | 左上角身份切换器 |
+| 访问TikTok Shop开发者控制台 | 应用开发者（ISV） | Agency入驻成功后自动授予 | 左上角身份切换器 |
 | 创建调用TikTok Shop Open API的Custom App | 具有TikTok Shop Agency应用类别的App Developer（ISV） | 应用类别设置为TikTok Shop Agency | 开发者控制台，创建应用 |
 | 代表卖家进入Seller Center | 具有已授权卖家的TSP | TSP Access | Partner Center，卖家列表 |
-| 打开App Subscription URL并确认卖家订阅 | 具有已授权卖家的TSP | TSP Access，应用订阅权限点（见图4） | Seller Center，App Subscription URL |
+| 打开App Subscription URL并确认卖家订阅 | 具有已授权卖家的TSP | TSP Access，应用订阅权限点（见图4） | Seller Center，应用订阅 URL |
 # 6. 分步指南
 ## 6.1 验证您的Agency身份
 
@@ -79,7 +79,7 @@ Agency入驻申请获批后，账号所有者将在左上角的身份切换器�
 
 # 8. 常见问题
 ## Q1. 我完成了Agency入驻但没有看到App Developer（ISV）身份。
-请在入驻批准后等待最多一个工作日。如果身份仍未显示，请联系您的TikTok Shop客户经理，提供您的Partner ID和批准时间戳。
+请在入驻批准后等待最多一个工作日。如果身份仍未显示，请联系您的TikTok Shop客户经理，提供您的合作伙伴 ID和批准时间戳。
 ## Q2. 我还需要单独申请ISV应用类别吗？
 不需要。已入驻的Agency自动归入TikTok Shop Agency应用类别。无需单独申请ISV。
 ## Q3. 我还需要卖家主账号来选择订阅按钮吗？

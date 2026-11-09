@@ -15,7 +15,7 @@
 # TEXT
 ### content
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | content | string | 文本内容 |
 #### **示例**
@@ -36,12 +36,12 @@
 ```
 
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | url | string | 图片 URL |
 | width | int | 图片宽度 |
 | height | int | 图片高度 |
-### 
+###
 # VIDEO
 ### content
 ```JSON
@@ -62,7 +62,7 @@
 ```
 
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | url | string | 视频 URL |
 | width | int | 视频宽度 |
@@ -75,11 +75,11 @@
 | bit_rate | int | 视频比特率（kbps） |
 | quality | string | 视频质量等级 |
 | codec_type | string | 视频编码格式 |
-### 
+###
 # ORDER_CARD
 ### content
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | order_id | string | 订单标识符 |
 #### **示例**
@@ -91,7 +91,7 @@
 
 ### data
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | order_id | string | 订单标识符 |
 | order_status | string | 当前订单状态 |
@@ -130,7 +130,7 @@
 # PRODUCT_CARD
 ### content
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | product_id | string | 商品标识符 |
 #### **示例**
@@ -142,7 +142,7 @@
 
 ### data
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | product_id | string | 商品标识符 |
 | product_name | string | 商品展示名称 |
@@ -181,7 +181,7 @@
 # RETURN_REFUND_CARD
 ### content
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | order_id | string | 关联的订单标识符 |
 | sku_id | string | 退货/退款对应的具体商品 SKU 标识符 |
@@ -195,7 +195,7 @@
 
 ### data
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | sku_id | string | 具体商品 SKU 标识符 |
 | order_id | string | 关联的订单标识符 |
@@ -237,7 +237,7 @@
 # COUPON_CARD
 ### content
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | coupon_id | string | 优惠券标识符 |
 #### **示例**
@@ -249,7 +249,7 @@
 
 ### data
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | coupon_id | string | 优惠券标识符 |
 | coupon_title | string | 优惠券展示标题 |
@@ -293,7 +293,7 @@
 # LOGISTICS_CARD
 ### content
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | order_id | string | 关联的订单标识符 |
 | package_id | string | 用于追踪的具体包裹标识符 |
@@ -307,13 +307,13 @@
 
 ### data
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | packages | list&lt;Package&gt; | 包裹对象数组，每个对象包含物流和商品详情。 |
 
 * **Package**
 
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | package_id | string | 包裹标识符 |
 | product_name | string | 商品展示名称 |
@@ -329,7 +329,7 @@
 
 * **Tracking**
 
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | description | string | 物流状态更新的描述信息 |
 | update_time_millis | int | 物流状态更新的时间戳 |
@@ -391,7 +391,7 @@
 # REVERSE_LOGISTICS_CARD
 ### content
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | reverse_main_order_id | string | 逆向主订单标识符 |
 #### **示例**
@@ -401,7 +401,7 @@
 
 ### data
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | reverse_main_order_id | string | 逆向主订单标识符 |
 | tracking_no | string | 退货物流追踪单号 |
@@ -413,7 +413,7 @@
 
 * **LogisticsItem**
 
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | time | int | 物流更新的时间戳 |
 | title | string | 物流追踪事件标题 |
@@ -446,7 +446,7 @@ Jan 30, 2026 1:48 AM
 OTHER / NOTIFICATION / ALLOCATED_SERVICE / BUYER_ENTER_FROM_TRANSFER
 ### content
 #### **属性**
-| 属性 | 类型 | 描述 |
+| 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | content | string | 文本内容 |
 #### **示例**

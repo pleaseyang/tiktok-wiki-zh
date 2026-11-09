@@ -1,6 +1,6 @@
 # 授权概述
 
-授权是 TikTok Shop 用户（卖家、达人或 partner）授予你的应用访问其数据的方式。该流程基于 OAuth：用户批准授权链接，你的应用收到一个短期有效的 `auth_code`，然后你将其交换为 `access_token` 和 `refresh_token`。
+授权是 TikTok Shop 用户（卖家、达人或合作伙伴）授予你的应用访问其数据的方式。该流程基于 OAuth：用户批准授权链接，你的应用收到一个短期有效的 `auth_code`，然后你将其交换为 `access_token` 和 `refresh_token`。
 本页面是 token API 和 `user_type` 值的**参考文档**。如需按角色分步操作指南，请参阅：
 
 * [Seller authorization guide（卖家授权指南）](https://partner.tiktokshop.com/docv2/page/seller-authorization-guide)
@@ -33,7 +33,7 @@
 
 1. 你的应用通过 Get Access Token API 将 `code`（作为 `auth_code` 传入）交换为 token。
 
-# Get Access Token API
+# 获取访问令牌 API
 向 `https://auth.tiktok-shops.com/api/v2/token/get` 发送 `GET` 请求，携带以下参数：
 | 参数 | 类型 | 是否必需 | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
@@ -57,7 +57,7 @@ https://auth.tiktok-shops.com/api/v2/token/get?app_key=123abc
 | `code` | int | 机器可读的结果码。`0` = 成功。参见常见错误码。 | 0 |
 | `message` | string | 人类可读的结果消息。 | success |
 | `request_id` | string | 用于跟踪 API 请求的 ID。 | 2024080809462301024509910319695C45 |
-| `data.access_token` | string | 用户 access token。在 API 请求的 `x-tts-access-token` header 中传入。 | TTP_RLM6CIADWF606TZGFO5XGA |
+| `data.access_token` | string | 用户 access token。在 API 请求的 `x-tts-access-token` 请求头中传入。 | TTP_RLM6CIADWF606TZGFO5XGA |
 | `data.access_token_expire_in` | Unix timestamp | Access token 过期时间（默认有效期：**7 天**）。 | 1660556783 |
 | `data.refresh_token` | string | 用于刷新 access token 的 token。 | TTP_C2XWDN63ON-FOHJSMR0WSG |
 | `data.refresh_token_expire_in` | Unix timestamp | Refresh token 过期时间（等于用户授予的授权时长）。 | 1691487031 |
@@ -92,15 +92,15 @@ https://auth.tiktok-shops.com/api/v2/token/get?app_key=123abc
 `user_type` 字段告诉你哪种类型的用户授权了你的应用：
 | 值 | 用户类型 | 备注 |
 | --- | --- | --- |
-| 0 | Seller（卖家） | 标准卖家授权。 |
-| 1 | Creator（达人） | Affiliate 达人授权。 |
-| 2 | Partner | 旧版 partner 类型。 |
-| 3 | Partner | 当前用于 Affiliate Partner / TAP 授权的 partner 类型。 |
-| 4 | Global Selling seller | 跨境 / Global Selling。 |
-| 5 | Global Selling seller | 当前 Global Selling 类型。 |
+| 0 | 卖家（卖家） | 标准卖家授权。 |
+| 1 | 达人（达人） | Affiliate 达人授权。 |
+| 2 | Partner | 旧版合作伙伴类型。 |
+| 3 | Partner | 当前用于 Affiliate Partner / TAP 授权的合作伙伴类型。 |
+| 4 | Global Selling 卖家 | 跨境 / Global Selling。 |
+| 5 | Global Selling 卖家 | 当前 Global Selling 类型。 |
 > 将你收到的值与此表进行匹配——例如，达人集成应收到 `1`，Affiliate Partner（TAP）集成应收到 `3`。如果你收到了意外值，请验证用户是否通过适用于你的应用类型的正确授权链接进行了授权。
 
-# Get Refresh Token API
+# 获取刷新令牌 API
 Access token 会过期（默认 7 天）。在过期之前，通过向 `https://auth.tiktok-shops.com/api/v2/token/refresh` 发送 `GET` 请求来刷新：
 | 参数 | 类型 | 是否必需 | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
@@ -151,5 +151,5 @@ Token 获取/刷新和了解 `user_type` 是最常见的授权支持主题。在
 更多帮助，请参阅如何联系支持。
 # 启用 API Scope
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/84f5bb18084348f585eade8b61db9111~tplv-k9wyc2ijk0-image.image)
-在开发应用之前，开发者应根据应用的业务类型启用或申请必要的 API scope。
-<span style="background-color: rgb(255, 245, 235)">📌 </span><span style="background-color: rgb(255, 245, 235)">**注意**</span><span style="background-color: rgb(255, 245, 235)">：启用不必要的 scope 可能导致应用审核时间更长以及用户授权率降低。</span>
+在开发应用之前，开发者应根据应用的业务类型启用或申请必要的 API 权限范围。
+<span style="background-color: rgb(255, 245, 235)">📌 </span><span style="background-color: rgb(255, 245, 235)">**注意**</span><span style="background-color: rgb(255, 245, 235)">：启用不必要的权限范围可能导致应用审核时间更长以及用户授权率降低。</span>

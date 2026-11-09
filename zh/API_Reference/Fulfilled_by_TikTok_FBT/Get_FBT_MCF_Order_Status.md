@@ -1,7 +1,7 @@
 # 获取 FBT MCF 订单状态
 
-# Path: /fbt/202601/mcf_outbound_orders
-# Method: [GET]
+# 路径：/fbt/202601/mcf_outbound_orders
+# 方法：[GET]
 # 功能描述
 使用此 API 检索 MCF 订单及其 consign 订单的当前状态和履约详情。如果订单因承运商限制或包裹尺寸限制需要多个包裹，FBT system 会将其拆分履约，并在 `consign_orders` 中为每个包裹返回一个条目。
 
@@ -10,13 +10,13 @@
 
 # 公共参数
 公共参数请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。在请求跨境店铺的 API 时未传递正确的值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型: application/json |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个 app 都有一个唯一的 key。请使用分配给您的 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 能够识别发送方。 |
@@ -29,7 +29,7 @@ https://open-api.tiktokglobalshop.com/fbt/202601/mcf_outbound_orders?app_key=123
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中说明。 |
@@ -44,13 +44,13 @@ https://open-api.tiktokglobalshop.com/fbt/202601/mcf_outbound_orders?app_key=123
 | ^^^^id | string | 123124124 | Fulfilled by TikTok 系统生成的商品标识符 |
 | ^^^^quantity | int | 1 | 此 consign 订单中的商品数量 |
 | ^^^tracking_number | string | TN87654321 | 此 consign 订单的追踪号。如果订单尚未交给物流承运商，此字段可能为空值。 |
-| ^^^carrier | string | USPS | The shipping carrier of this consign order. If the order has not yet been handed over to the logistics carrier, this field may be a null value. |
+| ^^^carrier | string | USPS | 此发货订单的配送承运商。如果订单尚未交付给物流承运商，此字段可能为 null 值。 |
 | ^^^status | string | PENDING | consign 订单的状态。 |
-Possible values:
+可能的值：
 
-* **PENDING** - 订单正在等待 warehouse 处理。
-* **HANDLE_BY_WAREHOUSE** - 订单正在由 warehouse 处理。
-* **SHIPPED** - 订单已从 warehouse 发出。
+* **PENDING** - 订单正在等待仓库处理。
+* **HANDLE_BY_WAREHOUSE** - 订单正在由仓库处理。
+* **SHIPPED** - 订单已从仓库发出。
 * **HANDOVER** - 物流承运商已接收订单，正在运输中。
 * **CLOSED** - 订单已关闭。
 * **LOST** - 订单丢失。
@@ -74,7 +74,7 @@ Possible values:
 
 # 错误码
 常见错误码请参考 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 | 177001009 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
 | 177001010 | 无法通过您提供的 mcf_order_id 检索订单信息；请检查您的 ID 是否正确。 |

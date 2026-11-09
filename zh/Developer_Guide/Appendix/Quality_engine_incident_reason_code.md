@@ -7,13 +7,13 @@ Quality Engine 使用原因码来了解订单对账事件发生的原因。发�
 # 关键术语
 | 术语 | 含义 |
 | --- | --- |
-| Quality Engine | TikTok Shop 的订单和履约对账系统。它将 TikTok Shop 的订单和履约数据与商家同步或履行订单的外部平台进行比较。 |
+| Quality Engine | TikTok Shop 的订单和履约对账系统。它将 TikTok Shop 的订单和履约数据与卖家同步或履行订单的外部平台进行比较。 |
 | A-LOC | App Caused-Late Dispatch Rate TikTok Shipping Cancel Order Count。在 Developer Dashboard 中，A-LOC 事件是指因超过 `shipping_due_time` SLA 而被系统取消的 TikTok Shop 订单，取消原因为 `system_cancel_order_reason_shipping_timeout`。 |
 | Risk Order（风险订单） | 由于 TikTok Shop 与外部平台之间的订单或履约数据不一致，可能导致无法按时完成 TikTok Shop 发货 SLA 的订单。 |
 | Orphan Order（孤儿订单） | TikTok Shop 订单在 DTC 渠道或外部平台中没有相关订单的事件。 |
 | Pre-RTS | 在本页面中，Pre-RTS 事件是指订单在 DTC 渠道中已发货或有物流跟踪信息，但对应的 TikTok Shop 订单尚未在 TikTok Shop 中发货或履约。RTS 指的是 ready-to-ship 履约阶段。 |
-| DTC 渠道 | Direct-to-Consumer 渠道，例如 Shopify、WooCommerce、BigCommerce 或 Magento。在本页面中，"DTC 渠道"、"渠道平台"和"外部平台"均指商家的外部商务系统。 |
-| 4PL 连接器 | 四方物流连接器或履约集成，可以在商家的履约系统与 TikTok Shop 之间交换订单、包裹、承运商或物流跟踪数据。 |
+| DTC 渠道 | Direct-to-Consumer 渠道，例如 Shopify、WooCommerce、BigCommerce 或 Magento。在本页面中，"DTC 渠道"、"渠道平台"和"外部平台"均指卖家的外部商务系统。 |
+| 4PL 连接器 | 四方物流连接器或履约集成，可以在卖家的履约系统与 TikTok Shop 之间交换订单、包裹、承运商或物流跟踪数据。 |
 | TTS | TikTok Shop。在面向用户的文本中使用"TikTok Shop"，除非引用 API 字段或现有规则名称。 |
 | `shipping_due_time` / `tts_sla` | TikTok Shop 的发货截止时间，Developer Dashboard 规则表用于检测 A-LOC 和风险订单事件。 |
 # 规则对照
@@ -78,17 +78,17 @@ Developer Dashboard 表格中的 FC-101 至 FC-105 仅作为旧版"Not Existing 
 当 DTC 渠道中没有相关订单时使用这些码。
 | 原因类别 | 适用规则 | 原因码 | 描述 |
 | --- | --- | --- | --- |
-| Orphan Order | R1 / R2 / A1 | `SELLER_TIKTOKSHOP_AUTHORIZATION_REVOKED` | 商家撤销了应用对 TikTok Shop 的授权。 |
-| Orphan Order | R1 / R2 / A1 | `SELLER_UNINSTALLED_DTC_APP` | 商家从 DTC 渠道平台卸载了该应用。 |
-| Orphan Order | R1 / R2 / A1 | `SELLER_NOT_GRANT_DTC_PERMISSION` | 商家未向应用授予相应的 DTC 渠道 API 权限。 |
-| Orphan Order | R1 / R2 / A1 | `SELLER_DTC_STORE_UNAVAILABLE` | 商家的 DTC 渠道店铺不可用。 |
-| Orphan Order | R1 / R2 / A1 | `SELLER_TIKTOKSHOP_STORE_INACTIVE` | 商家的 TikTok Shop 店铺处于非活跃状态。 |
-| Orphan Order | R1 / R2 / A1 | `SELLER_DTC_NO_SKU` | 未找到商家 DTC 渠道产品的对应 SKU。 |
-| Orphan Order | R1 / R2 / A1 | `SELLER_DTC_ABNORMAL_PRODUCT_STATUS` | 商家 DTC 渠道平台上的产品状态异常。 |
-| Orphan Order | R1 / R2 / A1 | `SELLER_DTC_PRODUCT_OUT_OF_STOCK` | 商家 DTC 渠道平台上的产品缺货。 |
-| Orphan Order | R1 / R2 / A1 | `SELLER_TIKTOKSHOP_ORDER_AMOUNT_ZERO` | 商家 TikTok Shop 订单中的订单金额为 0。 |
-| Orphan Order | R1 / R2 / A1 | `SELLER_APP_OWE_FEE` | 商家使用了应用但未续费，或商家配额已用完。 |
-| Orphan Order | R1 / R2 / A1 | `SELLER_ABANDON_SYNC_TIKTOKSHOP_ORDER` | 商家选择不同步 TikTok Shop 订单。 |
+| Orphan Order | R1 / R2 / A1 | `SELLER_TIKTOKSHOP_AUTHORIZATION_REVOKED` | 卖家撤销了应用对 TikTok Shop 的授权。 |
+| Orphan Order | R1 / R2 / A1 | `SELLER_UNINSTALLED_DTC_APP` | 卖家从 DTC 渠道平台卸载了该应用。 |
+| Orphan Order | R1 / R2 / A1 | `SELLER_NOT_GRANT_DTC_PERMISSION` | 卖家未向应用授予相应的 DTC 渠道 API 权限。 |
+| Orphan Order | R1 / R2 / A1 | `SELLER_DTC_STORE_UNAVAILABLE` | 卖家的 DTC 渠道店铺不可用。 |
+| Orphan Order | R1 / R2 / A1 | `SELLER_TIKTOKSHOP_STORE_INACTIVE` | 卖家的 TikTok Shop 店铺处于非活跃状态。 |
+| Orphan Order | R1 / R2 / A1 | `SELLER_DTC_NO_SKU` | 未找到卖家 DTC 渠道产品的对应 SKU。 |
+| Orphan Order | R1 / R2 / A1 | `SELLER_DTC_ABNORMAL_PRODUCT_STATUS` | 卖家 DTC 渠道平台上的产品状态异常。 |
+| Orphan Order | R1 / R2 / A1 | `SELLER_DTC_PRODUCT_OUT_OF_STOCK` | 卖家 DTC 渠道平台上的产品缺货。 |
+| Orphan Order | R1 / R2 / A1 | `SELLER_TIKTOKSHOP_ORDER_AMOUNT_ZERO` | 卖家 TikTok Shop 订单中的订单金额为 0。 |
+| Orphan Order | R1 / R2 / A1 | `SELLER_APP_OWE_FEE` | 卖家使用了应用但未续费，或卖家配额已用完。 |
+| Orphan Order | R1 / R2 / A1 | `SELLER_ABANDON_SYNC_TIKTOKSHOP_ORDER` | 卖家选择不同步 TikTok Shop 订单。 |
 | Orphan Order | R1 / R2 / A1 | `APP_MISSED_WEBHOOK` | 应用错过了 TikTok Shop 订单 webhook。 |
 | Orphan Order | R1 / R2 / A1 | `APP_ORDER_RETRIEVE_API_FAILED` | 应用通过调用 TikTok Shop API 检索订单失败。 |
 | Orphan Order | R1 / R2 / A1 | `APP_ORDER_RETRIEVE_API_NOT_MATCH_DTC_FIELD` | 应用从 TikTok Shop API 检索的订单信息不完整或与 DTC 渠道字段映射不匹配。 |
@@ -102,7 +102,7 @@ Developer Dashboard 表格中的 FC-101 至 FC-105 仅作为旧版"Not Existing 
 | Pre-RTS | A3 / R5 / R6 | `UNSUPPORTED_CARRIER_TRACKING_NUMBER` | 承运商被 DTC 渠道支持但不被 TikTok Shop 支持。TikTok Shop 拒绝此履约。 |
 | Pre-RTS | A3 / R5 / R6 | `ORDER_NOT_ELIGIBLE_FOR_FULFILLMENT` | 包裹在 DTC 渠道中已发货但未在 TikTok Shop 中发货，因为 TikTok Shop 对该订单有取消或退款请求。TikTok Shop 拒绝此履约。 |
 | Pre-RTS | A3 / R5 / R6 | `FULFILL_UNIT_OR_ORDER_NUMBER_NOT_COMBINED_CORRECTLY` | 包裹或订单履约调用 TikTok Shop 失败，因为物流跟踪号被用于另一个订单且未正确合并订单。 |
-| Pre-RTS | A3 / R5 / R6 | `FULFILL_UNIT_OR_ORDER_NUMBER_NOT_FOUND` | 包裹或订单履约调用 TikTok Shop 失败，因为商家在履约前在 TikTok Shop 或 DTC 渠道中合并或拆分了订单。TikTok Shop 拒绝此履约。 |
+| Pre-RTS | A3 / R5 / R6 | `FULFILL_UNIT_OR_ORDER_NUMBER_NOT_FOUND` | 包裹或订单履约调用 TikTok Shop 失败，因为卖家在履约前在 TikTok Shop 或 DTC 渠道中合并或拆分了订单。TikTok Shop 拒绝此履约。 |
 | Pre-RTS | A3 / R5 / R6 | `FULFILLMENT_FAILURE_DUE_TO_RATE_LIMIT` | 包裹或订单履约调用 TikTok Shop 失败，因为应用超出了速率限制且未进行重试。 |
 | Pre-RTS | A3 / R5 / R6 | `FULFILLMENT_FAILURE_DUE_TO_NO_RETRY_LOGIC` | 应用调用了订单履约，但 TikTok Shop 返回了临时内部错误且应用未进行重试。 |
 | Pre-RTS | A3 / R5 / R6 | `FULFILLMENT_FAILURE_DUE_TO_NO_API_CALL` | 连接器应用未对此订单进行订单履约调用。 |

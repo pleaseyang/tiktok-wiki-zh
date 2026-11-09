@@ -1,9 +1,9 @@
 # 订单 API 概览
 
 # 背景
-订单 API 可帮助您获取订单的相关信息。  
+订单 API 可帮助您获取订单的相关信息。
 您可以通过编程方式 GET 获取[订单列表](https://partner.tiktokshop.com/docv2/page/650aa8094a0bb702c06df242?external_id=650aa8094a0bb702c06df242)，并 GET 获取某个特定订单的[订单详情](https://partner.tiktokshop.com/docv2/page/650aa8ccc16ffe02b8f167a0?external_id=650aa8ccc16ffe02b8f167a0)。
-此外，您还可以订阅[订单状态 Webhook](https://partner.tiktokshop.com/docv2/page/650300b8a57708028b430b4a)，以接收有关订单状态变更的通知。 
+此外，您还可以订阅[订单状态 Webhook](https://partner.tiktokshop.com/docv2/page/650300b8a57708028b430b4a)，以接收有关订单状态变更的通知。
 # 重要概念
 ## 订单
 当买家点击"下单"按钮时即创建订单。请注意，订单创建时买家尚未完成付款，因此订单状态为 UNPAID。订单创建后，卖家应根据其库存管理系统相应地扣减或锁定库存。
@@ -16,7 +16,7 @@
 
 1. 订单 ID（Order ID）：订单 ID 是买家所创建的每个订单的唯一标识符。
 2. SKU ID：订单行包含同一库存量单位（Stock Keeping Unit）的 1 个或多个商品项。每个 SKU 通过其唯一的 SKU ID 来标识。SKU 可以理解为一种"变体"。
-3. 订单行项目 ID（Order Line Item id）：订单行中的每个单独商品项通过其唯一的订单行项目 ID 来标识。 
+3. 订单行项目 ID（Order Line Item id）：订单行中的每个单独商品项通过其唯一的订单行项目 ID 来标识。
 
 
 <br/>
@@ -52,12 +52,12 @@
 1. 从 UNPAID 到 ON_HOLD
    1. 触发条件：当订单付款完成后，订单状态更新为 ON_HOLD。
    2. 触发发起方：买家
-   3. 说明：  
+   3. 说明：
       1. 对于 ON_HOLD 订单，无法通过订单 API 获取收件人地址和买家信息。
 2. 从 ON_HOLD 到 AWAITING_SHIPMENT
    1. 触发条件：在反悔期（付款后 1 小时）之后，订单状态变更为 AWAITING_SHIPMENT。
    2. 触发发起方：TikTok
-   3. 说明：此步骤自动执行。 
+   3. 说明：此步骤自动执行。
 3. 从 AWAITING_SHIPMENT 到 PARTIALLY_SHIPPING
    1. 触发条件：当订单中的部分（但并非全部）商品项已发货时。
    2. 触发发起方：卖家
@@ -69,8 +69,8 @@
    2. 场景 B（卖家拆分订单发货）：PARTIALLY_SHIPPING 到 AWAITING_COLLECTION
       1. 触发条件：卖家调用 API 将订单中未发货的商品项发货。只有当所有商品项都已安排发货后，订单状态才会更新为 AWAITING_COLLECTION。
       2. 触发发起方：卖家
-   3. 说明：一旦卖家安排了发货，买家将无法取消请求，除非经卖家批准。 
-5. 从 AWAITING_COLLECTION 到 IN_TRANSIT 
+   3. 说明：一旦卖家安排了发货，买家将无法取消请求，除非经卖家批准。
+5. 从 AWAITING_COLLECTION 到 IN_TRANSIT
    1. 场景 A（卖家将所有商品项打包在一个包裹中发出）
       1. 触发条件：一旦 TikTok 从承运商系统获取到包裹的物流跟踪信息，订单状态将从 AWAITING_COLLECTION 更新为 IN_TRANSIT。
       2. 触发发起方：TikTok
@@ -78,7 +78,7 @@
       1. 触发条件：一旦 TikTok 从承运商系统获取到所有包裹的物流跟踪信息，订单状态将从 AWAITING_COLLECTION 更新为 IN_TRANSIT。
    3. 说明：TikTok 从多个跟踪数据服务商获取物流跟踪信息。根据服务商的表现，跟踪信息可能会有延迟。如果物流跟踪信息延迟超过 24 小时，请联系 TikTok。
 6. 从 IN_TRANSIT 到 DELIVERED
-   1. 触发条件：包裹已成功送达。 
+   1. 触发条件：包裹已成功送达。
    2. 触发发起方：TikTok
 7. 从 DELIVERED 到 COMPLETED。
    1. 场景 A（买家请求退款或退货）
@@ -100,7 +100,7 @@
       2. 触发发起方：TikTok
 9. 从 ON_HOLD 到 CANCELLED
    1. 场景 A（买家取消订单）
-      1. 触发条件：买家在反悔期内取消订单。 
+      1. 触发条件：买家在反悔期内取消订单。
       2. 触发发起方：买家
    2. 场景 B（卖家取消订单）
       1. 触发条件：卖家因缺货取消订单。
@@ -151,16 +151,16 @@
 
 ![图片](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/2a0ec536ec0e4d1e93aa66566915c3ce~tplv-k9wyc2ijk0-image.image)
 ### 履约类型
-TikTok Shop 提供两种履约类型： 
+TikTok Shop 提供两种履约类型：
 
 1. FULFILLMENT_BY_SELLER：卖家直接从自己的仓库履约订单。在此模式下，卖家负责存储、包装商品并向客户发货。
 2. FULFILLMENT_BY_TIKTOK：卖家将商品存储在 TikTok 的履约中心。TikTok 负责存储、拣货、包装商品并向客户发货。
 
 ### 运输类型
-对于 FULFILLMENT_BY_SELLER，有两种运输类型： 
+对于 FULFILLMENT_BY_SELLER，有两种运输类型：
 
 1. TikTok Shipping（TikTok 运输）：TikTok 提供运输服务。卖家从 TikTok 获取运单标签。
-2. Seller Shipping（卖家运输）：卖家自行安排运输。 
+2. 卖家 Shipping（卖家运输）：卖家自行安排运输。
 
 
 ## 收件人地址
@@ -173,7 +173,7 @@ TikTok Shop 提供两种履约类型：
 ### 本地化收件人地址
 不同国家可能有不同的地址层级和命名规范。为适配这些差异，请使用 'district_info_list' 获取以当地地址层级和命名规范表示的地址信息。
 ## 订单 SLA（服务水平协议）信息
-目前，TikTok Shop 有以下服务水平协议概念。 
+目前，TikTok Shop 有以下服务水平协议概念。
 rts_sla："RTS" 是 Ready To Ship（准备发货）的缩写。RTS 标志着订单状态转换为 AWAITING_COLLECTION 的时间。rts_sla 表示 TikTok 要求卖家发货订单的时间期限。如果订单状态在 rts_sla 到期前未转换为 AWAITING_COLLECTION，则构成延迟发货，将提高卖家的延迟发货率。
 tts_sla："TTS" 代表 Transfer To Ship（转交运输）。TTS 标志着订单状态转换为 IN_TRANSIT 的时间。tts_sla 规定了 TikTok 要求承运商揽收包裹的时间期限。如果订单状态在 tts_sla 到期前未转换为 IN_TRANSIT，则构成延迟发货，将提高卖家的延迟发货率。
 delivery_sla：TikTok 要求将包裹送达买家的时间期限。
@@ -193,7 +193,7 @@ cancel_order_sla：如果卖家未能在该时间点之前完成发货，订单�
 ## 订单履约 SLA（服务水平协议）政策
 
 1. 卖家应在 rts_sla 时间之前安排发货。
-2. 运输服务商必须在 tts_sla 时间之前更新包裹揽收的跟踪信息。 
+2. 运输服务商必须在 tts_sla 时间之前更新包裹揽收的跟踪信息。
 3. 如果卖家无法在 cancel_order_sla 之前使用有效运单号履约订单，则订单将被取消，并退款给买家。
 
 # 常见问题

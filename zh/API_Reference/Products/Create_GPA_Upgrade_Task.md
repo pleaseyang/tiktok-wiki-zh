@@ -1,20 +1,20 @@
 # 创建 GPA 升级任务
 
-# Path: /product/202604/products/gpa_upgrade_task
-# Method: [POST]
+# 路径：/product/202604/products/gpa_upgrade_task
+# 方法：[POST]
 # 功能描述
-This interface is only available for EU L2L sellers. The interface is used to upgrade products on EU interconnection. After the upgrade, products can be managed using the new interface, but not using interfaces related to Global Product.
+本接口仅适用于欧盟 L2L 卖家。该接口用于升级欧盟互联上的商品。升级后，商品可使用新接口管理，但不能使用与 Global Product 相关的接口。
 
 ---
 
 
 # 通用参数
 通用参数请参考 [如何调用 TikTok Shop API - 通用参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求查询参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的密钥。请使用分配给您的应用的特定密钥。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
@@ -31,7 +31,7 @@ https://open-api.tiktokglobalshop.com/product/202604/products/gpa_upgrade_task?a
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性 description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -47,5 +47,5 @@ https://open-api.tiktokglobalshop.com/product/202604/products/gpa_upgrade_task?a
 | 代码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 | 12052234 | The number of running tasks exceeds the limit. |
-| 36009003 | Internal error. Please try again. If the issue persists after multiple attempts, please contact platform support. |
+| 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
 

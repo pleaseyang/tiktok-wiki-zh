@@ -1,7 +1,7 @@
 # 集成 GoLang SDK
 
 # 概述
-按照本指南安装 TikTok Shop Go SDK，将商家授权码交换为 access token，获取授权店铺的 `shop_cipher`，并使用[搜索商品](https://partner.tiktokshop.com/docv2/page/search-products-202502)发起您的第一次商品 API 调用。
+按照本指南安装 TikTok Shop Go SDK，将卖家授权码交换为 access token，获取授权店铺的 `shop_cipher`，并使用[搜索商品](https://partner.tiktokshop.com/docv2/page/search-products-202502)发起您的第一次商品 API 调用。
 SDK 为您签署 TikTok Shop API 请求。仅当您使用自己的 HTTP 客户端而非 SDK 调用 OpenAPI 端点时，才需要使用[签署您的 API 请求](https://partner.tiktokshop.com/docv2/page/sign-your-api-request)。
 本指南使用：
 | 任务 | SDK API 或辅助工具 | OpenAPI 端点 |
@@ -14,11 +14,11 @@ SDK 为您签署 TikTok Shop API 请求。仅当您使用自己的 HTTP 客户�
 # 前提条件
 集成 SDK 之前，您需要：
 
-1. 一个 TikTok Shop 应用和测试商家账号。请参阅[创建测试商家账号](https://partner.tiktokshop.com/docv2/page/create-test-seller-account)。
-2. 从为测试应用配置的重定向 URL 获取的商家授权码。请参阅[生成测试 access token](https://partner.tiktokshop.com/docv2/page/generate-test-access-token)。
+1. 一个 TikTok Shop 应用和测试卖家账号。请参阅[创建测试商家账号](https://partner.tiktokshop.com/docv2/page/create-test-seller-account)。
+2. 从为测试应用配置的重定向 URL 获取的卖家授权码。请参阅[生成测试 access token](https://partner.tiktokshop.com/docv2/page/generate-test-access-token)。
 3. 从合作伙伴中心下载的最新 Go SDK 包。SDK 包根据您应用已启用的范围和 API 版本生成。请参阅[更新 SDK](https://partner.tiktokshop.com/docv2/page/update-sdk)。
 
-不要将 `app_key`、`app_secret`、`access_token`、`refresh_token`、授权码或商家数据提交到源代码管理。请从环境变量或密钥管理器加载密钥。
+不要将 `app_key`、`app_secret`、`access_token`、`refresh_token`、授权码或卖家数据提交到源代码管理。请从环境变量或密钥管理器加载密钥。
 # 环境要求
 使用 Go 1.18 或更高版本。示例使用标准库 `context` 包。不要添加 `golang.org/x/net/context`；对于现代 Go 项目它已过时。
 运行时依赖应来自 SDK 包和您的应用代码。不要将 `github.com/stretchr/testify/assert` 添加为运行时依赖；`testify` 是测试辅助工具，如果项目使用它应仅放在测试文件中。
@@ -69,7 +69,7 @@ apiClient := apis.NewAPIClient(configuration)
 ```
 
 # 获取 Access Token
-使用 SDK 辅助工具将一次性商家授权码交换为 access token。
+使用 SDK 辅助工具将一次性卖家授权码交换为 access token。
 ```Go
 at := apis.NewAccessToken(appKey, appSecret)
 
@@ -89,7 +89,7 @@ if accessToken == "" {
 
 在生产环境中，将 access token、refresh token 及其过期时间戳存储在安全的服务端数据存储中。不要在日志中打印 token 或将其存储在前端代码中。
 # 获取 Shop Cipher
-`shop_cipher` 标识用于搜索商品等店铺级 API 的授权店铺。使用商家 `accessToken` 调用[获取授权店铺](https://partner.tiktokshop.com/docv2/page/get-authorized-shops-202309)，并使用响应中的 `data.shops[].cipher`。
+`shop_cipher` 标识用于搜索商品等店铺级 API 的授权店铺。使用卖家 `accessToken` 调用[获取授权店铺](https://partner.tiktokshop.com/docv2/page/get-authorized-shops-202309)，并使用响应中的 `data.shops[].cipher`。
 ```Go
 shopsRequest := apiClient.AuthorizationV202309API.Authorization202309ShopsGet(ctx)
 shopsRequest = shopsRequest.ContentType("application/json")
@@ -154,8 +154,8 @@ OpenAPI 端点：
 本指南使用的 Go SDK 请求构建器：
 | 方法 | 含义 |
 | --- | --- |
-| `ContentType("application/json")` | 设置 `Content-Type` header。 |
-| `XTtsAccessToken(accessToken)` | 将商家 token 作为 `x-tts-access-token` 发送。 |
+| `ContentType("application/json")` | 设置 `Content-Type` 请求头。 |
+| `XTtsAccessToken(accessToken)` | 将卖家 token 作为 `x-tts-access-token` 发送。 |
 | `ShopCipher(shopCipher)` | 映射到 query 参数 `shop_cipher`。 |
 | `PageSize(1)` | 映射到必填 query 参数 `page_size`。 |
 | `Product202502SearchProductsRequestBody(reqBody)` | 设置 JSON 请求体过滤器。 |

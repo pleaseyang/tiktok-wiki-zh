@@ -1,7 +1,7 @@
 # 按对账单获取交易
 
-# Path: /finance/202501/statements/{statement_id}/statement_transactions
-# Method: [GET]
+# 路径：/finance/202501/statements/{statement_id}/statement_transactions
+# 方法：[GET]
 # 功能描述
 检索账单的详情，包括交易，可以是标准订单交易、调整交易或保证金相关交易。有关订单交易的 SKU 级别详情，请参阅 [Get Transactions by Order](650a6734defece02be67d724)。
 适用于所有地区的卖家。仅提供 2023-07-01 之后的数据（请注意，对于美国跨境卖家，2025-04-30 之前的数据不可用）。
@@ -11,17 +11,17 @@
 
 # 公共参数
 有关公共参数，请参阅 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。在请求跨境店铺 API 时未传递正确值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Path 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | statement_id | string | Y | 7238804564097517339 | 账单的唯一 ID |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的 key。请使用分配给您应用的特定 key。 |
 | page_token | string | N | 6AsPQsUMvH3RkchNUPPh22NROHkE0D8pmq/N5M1kHYcZmtRyv9aVrNv65W7Q6tFA+7D1ud64MPNz5OaT | 用于获取分页结果集下一页的不透明 token。从上一次响应的 `next_page_token` 结果中获取此值。第一页不需要此参数。 |
@@ -45,7 +45,7 @@ https://open-api.tiktokglobalshop.com/finance/202501/statements/7238804564097517
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中说明。 |
@@ -167,8 +167,8 @@ https://open-api.tiktokglobalshop.com/finance/202501/statements/7238804564097517
 ^^^distant_shipping_fee_amount |string |0 |客户支付的远距离运费。根据您当前的 Horizon+ 计划设置，此费用包含在发往爪哇岛以外地区的订单商品价格中。 |
 ^^^shipping_app_service_fee_amount |string |0 |使用运费生成运单的运费应用服务费 |
 ^^^logistics_service_fee |string |0 |在整个订单生命周期内因物流相关服务向卖家收取的费用，包括处理、协调、配送相关事务的处理以及基本运费激励。这是每笔订单的金额，基于包裹的重量等级和运输路线。它使平台能够在不断变化的全球环境中持续提升服务于卖家和客户的优质、可持续物流网络。 |
-^^^fbt_overall_merchant_subsidy |string |0 |适用于您的订单的补贴，在账单周期内提供给所有 FBT（Fulfilled by TikTok）商家。金额根据您在此期间的合格 FBT 订单量计算。 |
-^^^fbt_key_merchant_subsidy |string |0 |基于关键商家计划资格适用于您的订单的补贴。金额根据您在账单周期内的合格 FBT（Fulfilled by TikTok）订单量计算。 |
+^^^fbt_overall_merchant_subsidy |string |0 |适用于您的订单的补贴，在账单周期内提供给所有 FBT（Fulfilled by TikTok）卖家。金额根据您在此期间的合格 FBT 订单量计算。 |
+^^^fbt_key_merchant_subsidy |string |0 |基于关键卖家计划资格适用于您的订单的补贴。金额根据您在账单周期内的合格 FBT（Fulfilled by TikTok）订单量计算。 |
 ^^^tiktok_shop_shipping_incentive_amount |string |0 |TikTok Shop 提供的运费激励。
 |
 ^^^supplementary_component |object | |补充成本，仅供参考。这些金额不直接贡献于 `shipping_cost_amount`。 |
@@ -210,7 +210,7 @@ https://open-api.tiktokglobalshop.com/finance/202501/statements/7238804564097517
 仅适用于东南亚市场。 |
 ^^^^affiliate_partner_commission_amount |string |12 |通过联盟合作伙伴链接购买的佣金金额。 |
 ^^^^affiliate_ads_commission_amount |string |10 |来自广告的符合条件的订单佣金。 |
-^^^^sfp_service_fee_amount |string |5 |参与 [Seller Free Shipping Programme] 收取的服务费。 |
+^^^^sfp_service_fee_amount |string |5 |参与 [卖家 Free Shipping Programme] 收取的服务费。 |
 ^^^^live_specials_fee_amount |string |4 |参与 [LIVE Specials Programme] 收取的服务费。 |
 ^^^^bonus_cashback_service_fee_amount |string |2 |参与返现奖励计划收取的服务费。 |
 ^^^^mall_service_fee_amount |string |12 |使用 TikTok Shop Mall 收取的服务费。 |
@@ -231,7 +231,7 @@ https://open-api.tiktokglobalshop.com/finance/202501/statements/7238804564097517
 ^^^^vn_fix_infrastructure_fee |string |0 |基础设施费是 TikTok Shop 为提供、维护和发展配送服务基础设施而收取的固定服务费。适用于主订单级别的已配送订单。 |
 ^^^^affiliate_commission_deposit |string |0 |订单支付后为达人佣金预留的金额。仅适用于与订单量挂钩的佣金，基于最高收益费率。 |
 ^^^^affiliate_commission_release |string |0 |订单结算后退还给您的佣金押金。仅适用于与订单量挂钩的佣金。 |
-^^^^tap_shop_ads_commission |string |0 |商家向 TikTok Shop Affiliate Partner（TAP）支付的广告佣金成本。 |
+^^^^tap_shop_ads_commission |string |0 |卖家向 TikTok Shop Affiliate Partner（TAP）支付的广告佣金成本。 |
 ^^^^shipping_fee_guarantee_service_fee |string |0 |运费保障计划下每笔订单收取的固定服务费 |
 ^^^^installation_service_fee |string |0 |TikTok Shop 对您使用平台安装服务收取的费用 |
 ^^^^campaign_resource_fee |string |0 |卖家参加活动的活动资源费金额
@@ -325,7 +325,7 @@ https://open-api.tiktokglobalshop.com/finance/202501/statements/7238804564097517
 
 # 错误码
 有关常见错误码，请参阅 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 | 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
 

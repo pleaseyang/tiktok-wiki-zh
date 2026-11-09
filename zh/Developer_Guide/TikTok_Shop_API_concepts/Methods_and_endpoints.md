@@ -29,8 +29,8 @@ https://open-api.tiktokglobalshop.com/authorization/202309/shops
 | --- | --- | --- | --- |
 | 业务 API 调用 | `https://open-api.tiktokglobalshop.com` | 调用授权、商品、订单、履约和 webhook 等 API endpoint。 | 当前页面 |
 | 卖家授权 | 美国：`https://services.us.tiktokshop.com/open/authorize`；其他地区：`https://services.tiktokshop.com/open/authorize` | 发起卖家或店铺授权并获取授权码。不要将此 host 用作 API endpoint host。 | [Authorization overview](https://partner.tiktokshop.com/docv2/page/authorization-overview-202407) |
-| Partner 授权 | 美国：`https://partner.us.tiktokshop.com/open/authorize`；其他地区：`https://partner.tiktokshop.com/open/authorize` | 发起 partner 授权并获取授权码。不要将此 host 用作 API endpoint host。 | [Partner authorization guide](https://partner.tiktokshop.com/docv2/page/partner-authorization-guide) |
-| Creator 授权 | `https://shop.tiktok.com/alliance` | 发起 creator 授权。不要将此 host 用作 API endpoint host。 | [Creator authorization guide](https://partner.tiktokshop.com/docv2/page/creator-authorization-guide) |
+| 合作伙伴授权 | 美国：`https://partner.us.tiktokshop.com/open/authorize`；其他地区：`https://partner.tiktokshop.com/open/authorize` | 发起合作伙伴授权并获取授权码。不要将此 host 用作 API endpoint host。 | [Partner authorization guide](https://partner.tiktokshop.com/docv2/page/partner-authorization-guide) |
+| 达人授权 | `https://shop.tiktok.com/alliance` | 发起达人授权。不要将此 host 用作 API endpoint host。 | [Creator authorization guide](https://partner.tiktokshop.com/docv2/page/creator-authorization-guide) |
 | Token 交换 | `https://auth.tiktok-shops.com` | 将授权码交换为 token 或刷新 token。 | [Generate a test access token](https://partner.tiktokshop.com/docv2/page/generate-test-access-token) |
 | 沙盒和 API 测试 |  <br/>  | 使用 Sandbox 应用设置和 [API testing tool](https://partner.tiktokshop.com/dev/api-testing-tool) 来测试调用，同时仍遵循 endpoint reference 获取确切的路径和方法。 | [Authorization overview](https://partner.tiktokshop.com/docv2/page/authorization-overview-202407) |
 # Category 快速参考

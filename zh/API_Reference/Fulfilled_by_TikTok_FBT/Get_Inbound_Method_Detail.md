@@ -1,7 +1,7 @@
 # 获取 Inbound 方式详情
 
-# Path: /fbt/202602/inbound_method_detail
-# Method: [POST]
+# 路径：/fbt/202602/inbound_method_detail
+# 方法：[POST]
 # 功能描述
 检索 inbound plan 的入库详情。首先调用该 plan 的 List Available Inbound Methods API，然后使用同一返回选项中的 `inbound_method` 和预计到达时间窗口。响应报告入库任务状态，以及在可用时带有货件分配的入库选项；`ONE_HUB` 选项还可以包含估算入库费用。
 
@@ -10,22 +10,22 @@
 
 # 公共参数
 公共参数请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。在请求跨境店铺的 API 时未传递正确的值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型: application/json |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个 app 都有一个唯一的 key。请使用分配给您的 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 能够识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT（UTC+00:00）。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
-# 请求 Body 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+# 请求体参数
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | plan_id | string | Y | 5766071177167344427 | Inbound plan 标识符 |
-| inbound_method | string | Y | D2FC | **Possible values:** |
+| inbound_method | string | Y | D2FC | **可能的值：** |
 
 * `D2FC`（直接发送到 fulfillment center，可能拆分为多个货件）
 * `ONE_HUB`（单一目的地；可包含估算入库费用） |
@@ -47,7 +47,7 @@ https://open-api.tiktokglobalshop.com/fbt/202602/inbound_method_detail?app_key=1
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中说明。 |
@@ -61,7 +61,7 @@ https://open-api.tiktokglobalshop.com/fbt/202602/inbound_method_detail?app_key=1
 | ^^^^quantity | int | 400 | 此商品的数量。 |
 | ^^^cartons | []object |  | 箱列表。 |
 | ^^^^carton_type | string | SINGLE_SKU | 表示此箱是单 SKU 箱还是多 SKU 箱。 |
-| **Possible values:** |  |  |  |
+| **可能的值：** |  |  |  |
 
 * `SINGLE_SKU`
 * `MULTI_SKU` |
@@ -76,7 +76,7 @@ https://open-api.tiktokglobalshop.com/fbt/202602/inbound_method_detail?app_key=1
    ^^^^^weight |string |3.5 |箱重量。 |
    ^^^^^weight_unit |string |POUNDS |箱 `weight` 值使用的单位。
 
-**Possible values:**
+**可能的值：**
 
 * `KILOGRAM` (kg)
 * `GRAM` (g)
@@ -88,7 +88,7 @@ https://open-api.tiktokglobalshop.com/fbt/202602/inbound_method_detail?app_key=1
    ^^^^^length |string |5 |箱长度。 |
    ^^^^^length_unit |string |INCH |箱 `length`、`width` 和 `height` 值使用的单位。
 
-**Possible values:**
+**可能的值：**
 
 * `METER` (m)
 * `CENTIMETER` (cm)
@@ -103,14 +103,14 @@ https://open-api.tiktokglobalshop.com/fbt/202602/inbound_method_detail?app_key=1
    ^^^amount |string |13.50 |入库费用金额。 |
    ^^^currency |string |USD |入库费用金额的货币。
 
-**Possible values:**
+**可能的值：**
 
 * `USD`
 * `CNY`
 * `EUR`
 * `GBP`
 * `SAR` |
-   ^placement_task_status |string |Executing |**Possible values:**
+   ^placement_task_status |string |Executing |**可能的值：**
 * `Executing`
 * `Succeed`
 * `Failed` |
@@ -123,7 +123,7 @@ https://open-api.tiktokglobalshop.com/fbt/202602/inbound_method_detail?app_key=1
 
 # 错误码
 常见错误码请参考 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 | 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
 | 39001002 | 请求或请求参数为空。请重新检查输入参数。 |

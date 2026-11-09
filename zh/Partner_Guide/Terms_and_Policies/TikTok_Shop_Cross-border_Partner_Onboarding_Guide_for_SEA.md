@@ -1,7 +1,7 @@
 # TikTok Shop东南亚跨境合作伙伴入驻指南
 
 ## 一、概述
-本指南中的规则适用于**公司实体（或分支机构）注册在中国大陆和香港**的跨境合作伙伴（TikTok Shop Partner）（台湾和澳门的公司暂不支持，如需了解请联系您的运营经理），这些合作伙伴与TikTok Shop上的达人、卖家、品牌合作。TikTok Shop Partner类型包括但不限于TSP、MCN、联盟合作伙伴（TAP）等。
+本指南中的规则适用于**公司实体（或分支机构）注册在中国大陆和香港**的跨境合作伙伴（TikTok Shop 合作伙伴）（台湾和澳门的公司暂不支持，如需了解请联系您的运营经理），这些合作伙伴与TikTok Shop上的达人、卖家、品牌合作。TikTok Shop 合作伙伴类型包括但不限于TSP、MCN、联盟合作伙伴（TAP）等。
 本文档及入驻规则**将随着平台业务发展定期更新。请定期查阅入驻规则**，以确保您的业务符合最新规则。
 # 二、适用类目和服务范围
 [合作伙伴不同运营市场和角色的适用类目和服务范围](https://bytedance.sg.larkoffice.com/sync/GLC4dEjYPsbaHzbXXZ9lQaJMg6d)

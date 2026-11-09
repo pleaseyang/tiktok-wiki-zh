@@ -23,7 +23,7 @@ https://partner.tiktokshop.com/docv2/page/683f1353f979330480b82080
 
   在"开始业务" > "类目与市场"部分
 
-* 注册地区和公司注册地区：确认为"美国" 
+* 注册地区和公司注册地区：确认为"美国"
 * 目标市场：选择"美国"。
 * 类目与市场：在"TikTok Shop 合作伙伴"下，选择"外包运营"，然后勾选"店铺注册"作为具体服务类目。
 
@@ -65,7 +65,7 @@ https://partner.tiktokshop.com/docv2/page/683f1353f979330480b82080
 ##### **步骤 3：发布自定义店铺注册服务以获取 TTS 卖家店铺注册 URL**
 
 1. 发布服务
-   * 点击右上角的发布按钮。 
+   * 点击右上角的发布按钮。
    * 在弹出的确认中，验证目标市场
 
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/9ec62165ea214330817e9e06a193be1d~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
@@ -75,7 +75,7 @@ https://partner.tiktokshop.com/docv2/page/683f1353f979330480b82080
 
 2. 获取推荐链接
    * 发布后，服务状态更新为"开启"
-   * 生成两个 URL：一个用于本地卖家，一个用于跨境卖家。 
+   * 生成两个 URL：一个用于本地卖家，一个用于跨境卖家。
 
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/8ba804fc562c497a8835209533e4918a~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 
@@ -110,14 +110,14 @@ https://partner.tiktokshop.com/docv2/page/683f1353f979330480b82080
 
 
 ## 非美国实体合作伙伴
-与美国实体步骤类似，仅存在以下差异： 
+与美国实体步骤类似，仅存在以下差异：
 
-1. "+ 类目与市场/+类目与市场"按钮的位置略有变化。合作伙伴只能从"资料/个人信息主页"申请店铺注册服务 
+1. "+ 类目与市场/+类目与市场"按钮的位置略有变化。合作伙伴只能从"资料/个人信息主页"申请店铺注册服务
 
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/4cc3a3572eb14484a9bb0ebb21013fc6~tplv-k9wyc2ijk0-image.image" width="2428px" /></div>
 
 
-2. 跨境合作伙伴的"开始入驻/开始入驻"表单需要更多信息 
+2. 跨境合作伙伴的"开始入驻/开始入驻"表单需要更多信息
 
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/01c380cc00564b1089432e6214d0b625~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 

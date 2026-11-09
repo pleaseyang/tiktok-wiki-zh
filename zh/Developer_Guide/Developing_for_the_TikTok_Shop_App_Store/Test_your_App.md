@@ -1,11 +1,11 @@
 # 测试你的应用
 
 在上线应用之前，请在 Partner Center 中使用 Development Shop（Sandbox）和 API Testing Tool 进行测试。这些 Partner Center 工具帮助你模拟卖家工作流、授权测试卖家账户到未发布的应用，并在发布前验证 API 请求和响应。
-部分测试流程会为测试卖家账户打开 Seller Center。请仅在 Development Shop（Sandbox）测试流程中使用 Seller Center；应用创建、测试账户、API scope、授权和 API 测试请从 Partner Center 管理。
+部分测试流程会为测试卖家账户打开 Seller Center。请仅在 Development Shop（Sandbox）测试流程中使用 Seller Center；应用创建、测试账户、API 权限范围、授权和 API 测试请从 Partner Center 管理。
 使用以下工具进行应用测试：
 
-* Development Shop（Sandbox）
-* API Testing Tool
+* 开发店铺（Sandbox）
+* API 测试工具
 * Postman 或 cURL 用于本地和脚本化 API 测试
 
 # Development Shop
@@ -23,11 +23,11 @@ Development Shop 允许你通过模拟卖家和买家工作流来构建和测试
 * API Testing Tool 保持应用和店铺授权限制与线上一致，而沙箱店铺可能会跳过地区限制验证以方便测试。
 
 # 如何测试 API
-测试应用与 TikTok Shop 的集成涉及配置 API scope、完成授权以及调用应用使用场景所需的 API。
+测试应用与 TikTok Shop 的集成涉及配置 API 权限范围、完成授权以及调用应用使用场景所需的 API。
 根据你需要测试的内容选择指南：
 
 * [API Testing Tool](https://partner.tiktokshop.com/docv2/page/api-testing-tool) - 当你想直接在 Partner Center 中测试并检查确切的请求参数、响应参数、示例代码和 API 文档指引时使用。
-* [调用 Get Authorized Shops](https://partner.tiktokshop.com/docv2/page/call-get-authorized-shops) - 当你拥有 access token 和签名后，作为第一个 API 调用指南使用。它解释了 Open API 域名、必需的 header、必需的 query 参数和 Get Authorized Shops 请求。
+* [调用 Get Authorized Shops](https://partner.tiktokshop.com/docv2/page/call-get-authorized-shops) - 当你拥有 access token 和签名后，作为第一个 API 调用指南使用。它解释了 Open API 域名、必需的请求头、必需的 query 参数和 Get Authorized Shops 请求。
 * [如何使用 Postman 调用 API](https://partner.tiktokshop.com/docv2/page/call-tts-apis-with-postman) - 当你需要使用 Postman 环境、变量、预请求脚本和保存的请求进行本地、可重复或脚本化 API 测试时使用。
 
 使用 API Testing Tool 进行快速 Partner Center 测试和请求/响应检查。当你需要重复测试同一 API 流程、自动化签名或调试本地集成时，使用 Postman、cURL 或你自己的后端代码。
@@ -35,11 +35,11 @@ Development Shop 允许你通过模拟卖家和买家工作流来构建和测试
 在提交 public 应用审查或发布 custom 应用之前，请使用此检查清单：
 
 1. 在 Partner Center 中创建或确认你的应用。
-2. 为你支持的使用场景配置所需的 API scope 和 webhook 设置。
+2. 为你支持的使用场景配置所需的 API 权限范围和 webhook 设置。
 3. 创建 Development Shop（Sandbox）测试卖家账户和买家测试账户。
 4. 使用 Development Shop（Sandbox）测试卖家账户授权应用。
 5. 安全地生成和存储测试 access token。
-6. 调用应用的核心 API，如授权、商品、订单、履约、物流、退货、退款或客户服务 API，具体取决于你的 scope。
+6. 调用应用的核心 API，如授权、商品、订单、履约、物流、退货、退款或客户服务 API，具体取决于你的权限范围。
 7. 确认你的应用正确处理 `shop_cipher`、卖家/店铺地区、token 过期、token 刷新、错误码和 API 签名。
 8. 触发并验证所需的 webhook，包括投递、重试处理、去重和幂等处理。
 9. 在 Development Shop（Sandbox）中端到端运行卖家和买家工作流，包括商品设置、下单、订单状态变更、取消、退货或退款流程（视情况而定）。

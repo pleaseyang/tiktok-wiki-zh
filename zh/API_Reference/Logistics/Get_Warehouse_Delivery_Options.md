@@ -1,7 +1,7 @@
 # 获取仓库配送选项
 
-# Path: /logistics/202309/warehouses/{warehouse_id}/delivery_options
-# Method: [GET]
+# 路径：/logistics/202309/warehouses/{warehouse_id}/delivery_options
+# 方法：[GET]
 # 功能描述
 此 API 用于获取卖家指定仓库可用的配送选项列表。
 
@@ -10,17 +10,17 @@
 
 # 公共参数
 公共参数详情请参考 [如何调用 TikTok Shop APIs - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 参数 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 参数描述 <!-- width:254px --> |
+| 参数 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 参数描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 用于在请求 API 时传递店铺信息。跨境店铺请求 API 时未传递正确值将返回错误响应。 |
 | 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型: application/json |
 # 请求 Path 参数
-| 参数 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 参数描述 <!-- width:254px --> |
+| 参数 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 参数描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | warehouse_id | string | Y | 6966568648651605766 | 仓库 ID，以十进制整数字符串表示。 |
 # 请求 Query 参数
-| 参数 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 参数描述 <!-- width:254px --> |
+| 参数 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 参数描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个 app 都有唯一的 key。请使用分配给您 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
@@ -28,7 +28,7 @@
 | scope | string | N | PRODUCT | 指定要获取的配送选项类型。 |
 
 * `WAREHOUSE`：返回当前对仓库生效的配送选项。订单默认使用这些选项。
-* `PRODUCT`：返回可以直接分配给商品以覆盖默认仓库选项的配送选项。响应可以包含 `id`、`name`、`type`、`description` 和 `platform`；此 scope 不会填充 `dimension_limit` 或 `weight_limit`。
+* `PRODUCT`：返回可以直接分配给商品以覆盖默认仓库选项的配送选项。响应可以包含 `id`、`name`、`type`、`description` 和 `platform`；此权限范围不会填充 `dimension_limit` 或 `weight_limit`。
    默认值：`WAREHOUSE` |
 
 # 请求示例

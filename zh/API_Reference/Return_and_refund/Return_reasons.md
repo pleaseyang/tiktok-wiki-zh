@@ -1,187 +1,187 @@
 # 退货原因
 
 # US market
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| `AWAITING_COLLECTION` <br/> `IN_TRANSIT` | No longer needed | ecom_order_delivered_refund_and_return_reason_no_need |
-| `DELIVERED` | No longer needed | ecom_order_delivered_refund_and_return_reason_no_need |
-|  | Item doesn't fit (some categories) | buyer_return_and_refund_item_doesn't_fit |
-|  | Item doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description |
-|  | Missing or broken parts (Missing parts) | ecom_order_delivered_refund_and_return_reason_missing_product |
-|  | Damaged item or packaging | ecom_order_delivered_refund_and_return_reason_damaged |
-|  | Defective item | ecom_order_delivered_refund_and_return_reason_defective |
-|  | Wrong item was sent | ecom_order_delivered_refund_and_return_reason_wrong_product |
-|  | Item arrived too late | buyer_return_and_refund_item_arrived_too_late |
-|  | Fabric, material or style not as expected | buyer_return_and_refund_fabric,_material_or_style_not_as_expected |
-|  | Item is too big | ecom_order_delivered_refund_and_return_reason_item_too_big |
-|  | Item is too small | ecom_order_delivered_refund_and_return_reason_item_too_small |
-## Seller Reject Return Request Reason
+| `AWAITING_COLLECTION` <br/> `IN_TRANSIT` | 不再需要 | ecom_order_delivered_refund_and_return_reason_no_need |
+| `DELIVERED` | 不再需要 | ecom_order_delivered_refund_and_return_reason_no_need |
+|  | 商品不合适 (部分类目) | buyer_return_and_refund_item_doesn't_fit |
+|  | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description |
+|  | 缺少或损坏的部件 (缺少部件) | ecom_order_delivered_refund_and_return_reason_missing_product |
+|  | 商品或包装损坏 | ecom_order_delivered_refund_and_return_reason_damaged |
+|  | 商品有缺陷 | ecom_order_delivered_refund_and_return_reason_defective |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product |
+|  | 商品送达太晚 | buyer_return_and_refund_item_arrived_too_late |
+|  | 面料、材质或款式与预期不符 | buyer_return_and_refund_fabric,_material_or_style_not_as_expected |
+|  | 商品过大 | ecom_order_delivered_refund_and_return_reason_item_too_big |
+|  | 商品过小 | ecom_order_delivered_refund_and_return_reason_item_too_small |
+## 卖家拒绝退货申请原因
 ### **1st Review**
-| **Seller available reject return reason** | **Reason name** |
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| Product delivery is on schedule | reverse_reject_request_reason_4 |
-| Item is correct | reverse_reject_refund_request_correct_item |
-| Products were shipped in multiple packages  | reverse_reject_refund_request_package_delivery_multiple_boxes |
-| Reason is unclear / lack of evidence | reverse_reject_refund_request_unclear_evidence |
-| Product functions well/Incorrect usage by the customer | reverse_reject_refund_request_product_function_well |
-| Product is in transit | reverse_reject_refund_request_package_delivery_timing |
-| Replacement has been shipped | reverse_reject_refund_request_no_reason_shipped_replacement |
-| The delivery attempt failed  | reverse_reject_refund_request_no_reason_failed_delivery_attempt |
-| The package has been successfully delivered to the shipping address that was provided. | reverse_reject_refund_request_incorrect_address |
-| Not eligible for return (e.g. used or broken) | reverse_reject_request_reason_3 |
+| 商品按时送达 | reverse_reject_request_reason_4 |
+| 商品无误 | reverse_reject_refund_request_correct_item |
+| 商品分多个包裹发货  | reverse_reject_refund_request_package_delivery_multiple_boxes |
+| 原因不明/缺乏证据 | reverse_reject_refund_request_unclear_evidence |
+| Product functions well/错误用法 by the customer | reverse_reject_refund_request_product_function_well |
+| 商品在途 | reverse_reject_refund_request_package_delivery_timing |
+| 已寄出替换商品 | reverse_reject_refund_request_no_reason_shipped_replacement |
+| 投递失败  | reverse_reject_refund_request_no_reason_failed_delivery_attempt |
+| 包裹已成功送达所提供的收货地址。 | reverse_reject_refund_request_incorrect_address |
+| 不符合退货条件（如已使用或破损） | reverse_reject_request_reason_3 |
 
 ### **2nd Review**
-| **Seller available reject return reason** | **Reason name** |
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| The product returned is not the product that was sent | reverse_reject_return_parcel_reason_1 |
-| Missing products and/or product parts | reverse_reject_return_parcel_reason_3 |
-| I haven't received the package | reverse_reject_return_parcel_reason_4 |
-| Product is damaged or used | reverse_reject_return_parcel_reason_5 |
-## Seller Initiates Return Reason
-| **Order Status** | **Seller available initiate Return reason** | **Reason name** |
+| 退回的商品与发出的商品不符 | reverse_reject_return_parcel_reason_1 |
+| 缺少商品和/或商品部件 | reverse_reject_return_parcel_reason_3 |
+| 我未收到包裹 | reverse_reject_return_parcel_reason_4 |
+| 商品已损坏或已使用 | reverse_reject_return_parcel_reason_5 |
+## 卖家发起退货原因
+| **订单状态** | **卖家可选择的发起退货原因** | **原因名称** |
 | --- | --- | --- |
-| `DELIVERED` | No longer needed | seller_ecom_delivered_return_refund_reason1 |
+| `DELIVERED` | 不再需要 | seller_ecom_delivered_return_refund_reason1 |
 
 
 ---
 
 
 # UK market
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| AWAITING_COLLECTION <br/> IN_TRANSIT | No longer needed | ecom_order_delivered_refund_and_return_reason_no_need_uk |
-| DELIVERED | Product doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description_uk |
-|  | Missing product or accessories | ecom_order_delivered_refund_and_return_reason_missing_product_uk |
-|  | Package or product is damaged | ecom_order_delivered_refund_and_return_reason_damaged_uk |
-|  | Product is defective or doesn't work | ecom_order_delivered_refund_and_return_reason_defective_uk |
-|  | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product_uk |
-|  | Other | ecom_order_delivered_refund_and_return_reason_other_uk |
-|  | Suspected Counterfeit | buyer_return_and_refund_suspected_counterfeit |
-|  | Does not suit me | buyer_return_and_refund_does_not_suit_me |
-|  | Item is too big/long | buyer_return_and_refund_item_is_too_big/long |
-|  | Item is too small/short | buyer_return_and_refund_item_is_too_small/short |
-|  | Multiple sizes ordered | buyer_return_and_refund_multiple_sizes_ordered |
-|  | Quality or style not as expected | buyer_return_and_refund_quality_or_style_not_as_expected |
-|  | Ordered incorrect size | buyer_return_and_refund_ordered_incorrect_size |
-|  | Unauthorised purchase | buyer_return_and_refund_unauthorised_purchase |
-|  | Product is expired/spoiled | buyer_return_and_refund_product_is_expired/spoiled |
-|  | Product not frozen on arrival | buyer_return_and_refund_product_not_frozen_on_arrival |
-## Seller Reject Return Request Reason
-Seller rejects return request
-| **Seller available reject return reason** | **Reason name** |
+| AWAITING_COLLECTION <br/> IN_TRANSIT | 不再需要 | ecom_order_delivered_refund_and_return_reason_no_need_uk |
+| DELIVERED | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description_uk |
+|  | 缺少商品或配件 | ecom_order_delivered_refund_and_return_reason_missing_product_uk |
+|  | 包裹或商品已损坏 | ecom_order_delivered_refund_and_return_reason_damaged_uk |
+|  | 商品有缺陷或无法使用 | ecom_order_delivered_refund_and_return_reason_defective_uk |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product_uk |
+|  | 其他 | ecom_order_delivered_refund_and_return_reason_other_uk |
+|  | 疑似假冒商品 | buyer_return_and_refund_suspected_counterfeit |
+|  | 不适合我 | buyer_return_and_refund_does_not_suit_me |
+|  | 商品太大/太长 | buyer_return_and_refund_item_is_too_big/long |
+|  | 商品太小/太短 | buyer_return_and_refund_item_is_too_small/short |
+|  | 下单了多个尺码 | buyer_return_and_refund_multiple_sizes_ordered |
+|  | 质量或款式与预期不符 | buyer_return_and_refund_quality_or_style_not_as_expected |
+|  | 下单尺码错误 | buyer_return_and_refund_ordered_incorrect_size |
+|  | 未经授权的购买 | buyer_return_and_refund_unauthorised_purchase |
+|  | 商品已过期/变质 | buyer_return_and_refund_product_is_expired/spoiled |
+|  | 商品送达时未冷冻 | buyer_return_and_refund_product_not_frozen_on_arrival |
+## 卖家拒绝退货申请原因
+卖家拒绝退货请求
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| Buyer return reason is not valid | reverse_reject_request_reason_1_uk |
-| Change of mind returns are not applicable | reverse_reject_request_reason_2_uk |
-| Not eligible for return (e.g. used or broken) | reverse_reject_request_reason_3_uk |
-| Product delivery is on schedule | reverse_reject_request_reason_4_uk |
-| You have reached an agreement with the buyer | reverse_reject_request_reason_5_uk |
-| Item is correct | seller_reject_apply_item_is_correct |
-| Products will be sent separately | seller_reject_apply_products_will_be_sent_separately |
-| Reason is unclear or lack of evidence | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
-| Product functions well/Buyer use in wrong way | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
-| Product is shipped and parcel cannot be recalled back from logistics. | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
-Seller rejects receive package
-| **Seller available reject return reason** | **Reason name** |
+| 买家退货原因无效 | reverse_reject_request_reason_1_uk |
+| 不适用无理由退货 | reverse_reject_request_reason_2_uk |
+| 不符合退货条件（如已使用或破损） | reverse_reject_request_reason_3_uk |
+| 商品按时送达 | reverse_reject_request_reason_4_uk |
+| 您已与买家达成一致 | reverse_reject_request_reason_5_uk |
+| 商品无误 | seller_reject_apply_item_is_correct |
+| 商品将分开发货 | seller_reject_apply_products_will_be_sent_separately |
+| 原因不明或缺乏证据 | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
+| 商品功能正常/买家使用不当 | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
+| 商品已发货，无法从物流处召回包裹。 | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
+卖家拒绝接收包裹
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| The product returned is not the product that was sent | reverse_reject_return_parcel_reason_1_uk |
-| Not eligible for return (e.g. used or broken) | reverse_reject_return_parcel_reason_2_uk |
-| Missing products and/or product parts | reverse_reject_return_parcel_reason_3_uk |
-| I haven't received the package | reverse_reject_return_parcel_reason_4_uk |
-| Product is damaged or used | reverse_reject_return_parcel_reason_5_uk |
-| You have reached an agreement with the buyer | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
-## Seller Initiates Return Reason
-| **Order Status** | **Seller available initiate Return reason** | **Reason name** |
+| 退回的商品与发出的商品不符 | reverse_reject_return_parcel_reason_1_uk |
+| 不符合退货条件（如已使用或破损） | reverse_reject_return_parcel_reason_2_uk |
+| 缺少商品和/或商品部件 | reverse_reject_return_parcel_reason_3_uk |
+| 我未收到包裹 | reverse_reject_return_parcel_reason_4_uk |
+| 商品已损坏或已使用 | reverse_reject_return_parcel_reason_5_uk |
+| 您已与买家达成一致 | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
+## 卖家发起退货原因
+| **订单状态** | **卖家可选择的发起退货原因** | **原因名称** |
 | --- | --- | --- |
-| DELIVERED | No longer needed | seller_ecom_delivered_return_refund_reason1_uk |
-|  | Product doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description_seller_uk |
-|  | Missing product or accessories | ecom_order_delivered_refund_and_return_reason_missing_product_seller_uk |
-|  | Package or product is damaged | ecom_order_delivered_refund_and_return_reason_damaged_seller_uk |
-|  | Product is defective or doesn't work | ecom_order_delivered_refund_and_return_reason_defective_seller_uk |
-|  | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product_seller_uk |
-|  | Suspected Counterfeit | buyer_return_and_refund_suspected_counterfeit_seller_uk |
+| DELIVERED | 不再需要 | seller_ecom_delivered_return_refund_reason1_uk |
+|  | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description_seller_uk |
+|  | 缺少商品或配件 | ecom_order_delivered_refund_and_return_reason_missing_product_seller_uk |
+|  | 包裹或商品已损坏 | ecom_order_delivered_refund_and_return_reason_damaged_seller_uk |
+|  | 商品有缺陷或无法使用 | ecom_order_delivered_refund_and_return_reason_defective_seller_uk |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product_seller_uk |
+|  | 疑似假冒商品 | buyer_return_and_refund_suspected_counterfeit_seller_uk |
 
 
 ---
 
 
 # ID market
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | Product doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description |
-|  | Package or product is damaged | ecom_order_delivered_refund_and_return_reason_damaged |
-|  | Product is defective or doesn't work | ecom_order_delivered_refund_and_return_reason_defective |
-|  | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product |
-|  | Missed estimated delivery date | ecom_order_delivered_refund_and_return_reason_missed_delivery |
-|  | Suspected Counterfeit | buyer_return_and_refund_suspected_counterfeit |
-## Seller Reject Return Request Reason
-Seller rejects return request
-| **Seller available reject return reason** | **Reason name** |
+| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description |
+|  | 包裹或商品已损坏 | ecom_order_delivered_refund_and_return_reason_damaged |
+|  | 商品有缺陷或无法使用 | ecom_order_delivered_refund_and_return_reason_defective |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product |
+|  | 超过预计送达日期 | ecom_order_delivered_refund_and_return_reason_missed_delivery |
+|  | 疑似假冒商品 | buyer_return_and_refund_suspected_counterfeit |
+## 卖家拒绝退货申请原因
+卖家拒绝退货请求
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| Buyer return reason is not valid | reverse_reject_request_reason_1 |
-| Change of mind returns are not applicable | reverse_reject_request_reason_2 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_request_reason_3 |
-| Product delivery is on schedule | reverse_reject_request_reason_4 |
-| You have reached an agreement with the buyer | reverse_reject_request_reason_5 |
-| Item is correct | seller_reject_apply_item_is_correct |
-| Products will be sent separately | seller_reject_apply_products_will_be_sent_separately |
-| Reason is unclear or lack of evidence | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
-| Product functions well/Buyer use in wrong way | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
-| Product is shipped and parcel cannot be recalled back from logistics. | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
-Seller rejects receive package
-| **Seller available reject return reason** | **Reason name** |
+| 买家退货原因无效 | reverse_reject_request_reason_1 |
+| 不适用无理由退货 | reverse_reject_request_reason_2 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_request_reason_3 |
+| 商品按时送达 | reverse_reject_request_reason_4 |
+| 您已与买家达成一致 | reverse_reject_request_reason_5 |
+| 商品无误 | seller_reject_apply_item_is_correct |
+| 商品将分开发货 | seller_reject_apply_products_will_be_sent_separately |
+| 原因不明或缺乏证据 | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
+| 商品功能正常/买家使用不当 | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
+| 商品已发货，无法从物流处召回包裹。 | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
+卖家拒绝接收包裹
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| The product returned is not the product that was sent | reverse_reject_return_parcel_reason_1 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_return_parcel_reason_2 |
-| Missing products and/or product parts | reverse_reject_return_parcel_reason_3 |
-| I haven't received the package | reverse_reject_return_parcel_reason_4 |
-| Product is damaged or used | reverse_reject_return_parcel_reason_5 |
-| You have reached an agreement with the buyer | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
-## Seller Initiates Return Reason
-| **Order Status** | **Seller available initiate Return reason** | **Reason name** |
+| 退回的商品与发出的商品不符 | reverse_reject_return_parcel_reason_1 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_return_parcel_reason_2 |
+| 缺少商品和/或商品部件 | reverse_reject_return_parcel_reason_3 |
+| 我未收到包裹 | reverse_reject_return_parcel_reason_4 |
+| 商品已损坏或已使用 | reverse_reject_return_parcel_reason_5 |
+| 您已与买家达成一致 | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
+## 卖家发起退货原因
+| **订单状态** | **卖家可选择的发起退货原因** | **原因名称** |
 | --- | --- | --- |
-| DELIVERED | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product_seller |
+| DELIVERED | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product_seller |
 
 
 ---
 
 
 # MY market
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | Product doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description |
-|  | Package or product is damaged | ecom_order_delivered_refund_and_return_reason_damaged |
-|  | Product is defective or doesn't work | ecom_order_delivered_refund_and_return_reason_defective |
-|  | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product |
-|  | Missed estimated delivery date | ecom_order_delivered_refund_and_return_reason_missed_delivery |
-|  | Suspected Counterfeit | buyer_return_and_refund_suspected_counterfeit |
-## Seller Reject Return Request Reason
-Seller rejects return request
-| **Seller available reject return reason** | **Reason name** |
+| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description |
+|  | 包裹或商品已损坏 | ecom_order_delivered_refund_and_return_reason_damaged |
+|  | 商品有缺陷或无法使用 | ecom_order_delivered_refund_and_return_reason_defective |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product |
+|  | 超过预计送达日期 | ecom_order_delivered_refund_and_return_reason_missed_delivery |
+|  | 疑似假冒商品 | buyer_return_and_refund_suspected_counterfeit |
+## 卖家拒绝退货申请原因
+卖家拒绝退货请求
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| Buyer return reason is not valid | reverse_reject_request_reason_1 |
-| Change of mind returns are not applicable | reverse_reject_request_reason_2 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_request_reason_3 |
-| Product delivery is on schedule | reverse_reject_request_reason_4 |
-| You have reached an agreement with the buyer | reverse_reject_request_reason_5 |
-| Item is correct | seller_reject_apply_item_is_correct |
-| Products will be sent separately | seller_reject_apply_products_will_be_sent_separately |
-| Reason is unclear or lack of evidence | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
-| Product functions well/Buyer use in wrong way | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
-| Product is shipped and parcel cannot be recalled back from logistics. | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
-Seller rejects receive package
-| **Seller available reject return reason** | **Reason name** |
+| 买家退货原因无效 | reverse_reject_request_reason_1 |
+| 不适用无理由退货 | reverse_reject_request_reason_2 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_request_reason_3 |
+| 商品按时送达 | reverse_reject_request_reason_4 |
+| 您已与买家达成一致 | reverse_reject_request_reason_5 |
+| 商品无误 | seller_reject_apply_item_is_correct |
+| 商品将分开发货 | seller_reject_apply_products_will_be_sent_separately |
+| 原因不明或缺乏证据 | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
+| 商品功能正常/买家使用不当 | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
+| 商品已发货，无法从物流处召回包裹。 | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
+卖家拒绝接收包裹
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| The product returned is not the product that was sent | reverse_reject_return_parcel_reason_1 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_return_parcel_reason_2 |
-| Missing products and/or product parts | reverse_reject_return_parcel_reason_3 |
-| I haven't received the package | reverse_reject_return_parcel_reason_4 |
-| Product is damaged or used | reverse_reject_return_parcel_reason_5 |
-| You have reached an agreement with the buyer | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
-## Seller Initiates Return Reason
+| 退回的商品与发出的商品不符 | reverse_reject_return_parcel_reason_1 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_return_parcel_reason_2 |
+| 缺少商品和/或商品部件 | reverse_reject_return_parcel_reason_3 |
+| 我未收到包裹 | reverse_reject_return_parcel_reason_4 |
+| 商品已损坏或已使用 | reverse_reject_return_parcel_reason_5 |
+| 您已与买家达成一致 | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
+## 卖家发起退货原因
 Unsupported
 
 
@@ -189,39 +189,39 @@ Unsupported
 
 
 # PH market
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | Product doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description |
-|  | Package or product is damaged | ecom_order_delivered_refund_and_return_reason_damaged |
-|  | Product is defective or doesn't work | ecom_order_delivered_refund_and_return_reason_defective |
-|  | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product |
-|  | Missed estimated delivery date | ecom_order_delivered_refund_and_return_reason_missed_delivery |
-|  | Suspected Counterfeit | buyer_return_and_refund_suspected_counterfeit |
-## Seller Reject Return Request Reason
-Seller rejects return request
-| **Seller available reject return reason** | **Reason name** |
+| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description |
+|  | 包裹或商品已损坏 | ecom_order_delivered_refund_and_return_reason_damaged |
+|  | 商品有缺陷或无法使用 | ecom_order_delivered_refund_and_return_reason_defective |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product |
+|  | 超过预计送达日期 | ecom_order_delivered_refund_and_return_reason_missed_delivery |
+|  | 疑似假冒商品 | buyer_return_and_refund_suspected_counterfeit |
+## 卖家拒绝退货申请原因
+卖家拒绝退货请求
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| Buyer return reason is not valid | reverse_reject_request_reason_1 |
-| Change of mind returns are not applicable | reverse_reject_request_reason_2 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_request_reason_3 |
-| Product delivery is on schedule | reverse_reject_request_reason_4 |
-| You have reached an agreement with the buyer | reverse_reject_request_reason_5 |
-| Item is correct | seller_reject_apply_item_is_correct |
-| Products will be sent separately | seller_reject_apply_products_will_be_sent_separately |
-| Reason is unclear or lack of evidence | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
-| Product functions well/Buyer use in wrong way | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
-| Product is shipped and parcel cannot be recalled back from logistics. | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
-Seller rejects receive package
-| **Seller available reject return reason** | **Reason name** |
+| 买家退货原因无效 | reverse_reject_request_reason_1 |
+| 不适用无理由退货 | reverse_reject_request_reason_2 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_request_reason_3 |
+| 商品按时送达 | reverse_reject_request_reason_4 |
+| 您已与买家达成一致 | reverse_reject_request_reason_5 |
+| 商品无误 | seller_reject_apply_item_is_correct |
+| 商品将分开发货 | seller_reject_apply_products_will_be_sent_separately |
+| 原因不明或缺乏证据 | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
+| 商品功能正常/买家使用不当 | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
+| 商品已发货，无法从物流处召回包裹。 | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
+卖家拒绝接收包裹
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| The product returned is not the product that was sent | reverse_reject_return_parcel_reason_1 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_return_parcel_reason_2 |
-| Missing products and/or product parts | reverse_reject_return_parcel_reason_3 |
-| I haven't received the package | reverse_reject_return_parcel_reason_4 |
-| Product is damaged or used | reverse_reject_return_parcel_reason_5 |
-| You have reached an agreement with the buyer | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
-## Seller Initiates Return Reason
+| 退回的商品与发出的商品不符 | reverse_reject_return_parcel_reason_1 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_return_parcel_reason_2 |
+| 缺少商品和/或商品部件 | reverse_reject_return_parcel_reason_3 |
+| 我未收到包裹 | reverse_reject_return_parcel_reason_4 |
+| 商品已损坏或已使用 | reverse_reject_return_parcel_reason_5 |
+| 您已与买家达成一致 | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
+## 卖家发起退货原因
 Unsupported
 
 
@@ -229,39 +229,39 @@ Unsupported
 
 
 # SG market
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | Product doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description |
-|  | Package or product is damaged | ecom_order_delivered_refund_and_return_reason_damaged |
-|  | Product is defective or doesn't work | ecom_order_delivered_refund_and_return_reason_defective |
-|  | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product |
-|  | Missed estimated delivery date | ecom_order_delivered_refund_and_return_reason_missed_delivery |
-|  | Suspected Counterfeit | buyer_return_and_refund_suspected_counterfeit |
-## Seller Reject Return Request Reason
-Seller rejects return request
-| **Seller available reject return reason** | **Reason name** |
+| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description |
+|  | 包裹或商品已损坏 | ecom_order_delivered_refund_and_return_reason_damaged |
+|  | 商品有缺陷或无法使用 | ecom_order_delivered_refund_and_return_reason_defective |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product |
+|  | 超过预计送达日期 | ecom_order_delivered_refund_and_return_reason_missed_delivery |
+|  | 疑似假冒商品 | buyer_return_and_refund_suspected_counterfeit |
+## 卖家拒绝退货申请原因
+卖家拒绝退货请求
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| Buyer return reason is not valid | reverse_reject_request_reason_1 |
-| Change of mind returns are not applicable | reverse_reject_request_reason_2 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_request_reason_3 |
-| Product delivery is on schedule | reverse_reject_request_reason_4 |
-| You have reached an agreement with the buyer | reverse_reject_request_reason_5 |
-| Item is correct | seller_reject_apply_item_is_correct |
-| Products will be sent separately | seller_reject_apply_products_will_be_sent_separately |
-| Reason is unclear or lack of evidence | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
-| Product functions well/Buyer use in wrong way | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
-| Product is shipped and parcel cannot be recalled back from logistics. | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
-Seller rejects receive package
-| **Seller available reject return reason** | **Reason name** |
+| 买家退货原因无效 | reverse_reject_request_reason_1 |
+| 不适用无理由退货 | reverse_reject_request_reason_2 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_request_reason_3 |
+| 商品按时送达 | reverse_reject_request_reason_4 |
+| 您已与买家达成一致 | reverse_reject_request_reason_5 |
+| 商品无误 | seller_reject_apply_item_is_correct |
+| 商品将分开发货 | seller_reject_apply_products_will_be_sent_separately |
+| 原因不明或缺乏证据 | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
+| 商品功能正常/买家使用不当 | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
+| 商品已发货，无法从物流处召回包裹。 | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
+卖家拒绝接收包裹
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| The product returned is not the product that was sent | reverse_reject_return_parcel_reason_1 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_return_parcel_reason_2 |
-| Missing products and/or product parts | reverse_reject_return_parcel_reason_3 |
-| I haven't received the package | reverse_reject_return_parcel_reason_4 |
-| Product is damaged or used | reverse_reject_return_parcel_reason_5 |
-| You have reached an agreement with the buyer | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
-## Seller Initiates Return Reason
+| 退回的商品与发出的商品不符 | reverse_reject_return_parcel_reason_1 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_return_parcel_reason_2 |
+| 缺少商品和/或商品部件 | reverse_reject_return_parcel_reason_3 |
+| 我未收到包裹 | reverse_reject_return_parcel_reason_4 |
+| 商品已损坏或已使用 | reverse_reject_return_parcel_reason_5 |
+| 您已与买家达成一致 | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
+## 卖家发起退货原因
 Unsupported
 
 
@@ -269,39 +269,39 @@ Unsupported
 
 
 # TH market
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | No longer needed | ecom_order_delivered_refund_and_return_reason_no_need |
-|  | Product doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description |
-|  | Package or product is damaged | ecom_order_delivered_refund_and_return_reason_damaged |
-|  | Product is defective or doesn't work | ecom_order_delivered_refund_and_return_reason_defective |
-|  | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product |
-|  | Missed estimated delivery date | ecom_order_delivered_refund_and_return_reason_missed_delivery |
-|  | Suspected Counterfeit | buyer_return_and_refund_suspected_counterfeit |
-## Seller Reject Return Request Reason
-Seller rejects return request
-| **Seller available reject return reason** | **Reason name** |
+| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | 不再需要 | ecom_order_delivered_refund_and_return_reason_no_need |
+|  | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description |
+|  | 包裹或商品已损坏 | ecom_order_delivered_refund_and_return_reason_damaged |
+|  | 商品有缺陷或无法使用 | ecom_order_delivered_refund_and_return_reason_defective |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product |
+|  | 超过预计送达日期 | ecom_order_delivered_refund_and_return_reason_missed_delivery |
+|  | 疑似假冒商品 | buyer_return_and_refund_suspected_counterfeit |
+## 卖家拒绝退货申请原因
+卖家拒绝退货请求
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| Buyer return reason is not valid | reverse_reject_request_reason_1 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_request_reason_3 |
-| Product delivery is on schedule | reverse_reject_request_reason_4 |
-| You have reached an agreement with the buyer | reverse_reject_request_reason_5 |
-| Item is correct | seller_reject_apply_item_is_correct |
-| Products will be sent separately | seller_reject_apply_products_will_be_sent_separately |
-| Reason is unclear or lack of evidence | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
-| Product functions well/Buyer use in wrong way | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
-| Product is shipped and parcel cannot be recalled back from logistics. | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
-Seller rejects receive package
-| **Seller available reject return reason** | **Reason name** |
+| 买家退货原因无效 | reverse_reject_request_reason_1 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_request_reason_3 |
+| 商品按时送达 | reverse_reject_request_reason_4 |
+| 您已与买家达成一致 | reverse_reject_request_reason_5 |
+| 商品无误 | seller_reject_apply_item_is_correct |
+| 商品将分开发货 | seller_reject_apply_products_will_be_sent_separately |
+| 原因不明或缺乏证据 | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
+| 商品功能正常/买家使用不当 | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
+| 商品已发货，无法从物流处召回包裹。 | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
+卖家拒绝接收包裹
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| The product returned is not the product that was sent | reverse_reject_return_parcel_reason_1 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_return_parcel_reason_2 |
-| Missing products and/or product parts | reverse_reject_return_parcel_reason_3 |
-| I haven't received the package | reverse_reject_return_parcel_reason_4 |
-| Product is damaged or used | reverse_reject_return_parcel_reason_5 |
-| You have reached an agreement with the buyer | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
-## Seller Initiates Return Reason
+| 退回的商品与发出的商品不符 | reverse_reject_return_parcel_reason_1 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_return_parcel_reason_2 |
+| 缺少商品和/或商品部件 | reverse_reject_return_parcel_reason_3 |
+| 我未收到包裹 | reverse_reject_return_parcel_reason_4 |
+| 商品已损坏或已使用 | reverse_reject_return_parcel_reason_5 |
+| 您已与买家达成一致 | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
+## 卖家发起退货原因
 Unsupported
 
 
@@ -309,150 +309,150 @@ Unsupported
 
 
 # VN market
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | Product doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description |
-|  | Package or product is damaged | ecom_order_delivered_refund_and_return_reason_damaged |
-|  | Product is defective or doesn't work | ecom_order_delivered_refund_and_return_reason_defective |
-|  | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product |
-|  | Missed estimated delivery date | ecom_order_delivered_refund_and_return_reason_missed_delivery |
-|  | Suspected Counterfeit | buyer_return_and_refund_suspected_counterfeit |
-## Seller Reject Return Request Reason
-Seller rejects return request
-| **Seller available reject return reason** | **Reason name** |
+| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description |
+|  | 包裹或商品已损坏 | ecom_order_delivered_refund_and_return_reason_damaged |
+|  | 商品有缺陷或无法使用 | ecom_order_delivered_refund_and_return_reason_defective |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product |
+|  | 超过预计送达日期 | ecom_order_delivered_refund_and_return_reason_missed_delivery |
+|  | 疑似假冒商品 | buyer_return_and_refund_suspected_counterfeit |
+## 卖家拒绝退货申请原因
+卖家拒绝退货请求
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| Buyer return reason is not valid | reverse_reject_request_reason_1 |
-| Change of mind returns are not applicable | reverse_reject_request_reason_2 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_request_reason_3 |
-| Product delivery is on schedule | reverse_reject_request_reason_4 |
-| You have reached an agreement with the buyer | reverse_reject_request_reason_5 |
-| Item is correct | seller_reject_apply_item_is_correct |
-| Products will be sent separately | seller_reject_apply_products_will_be_sent_separately |
-| Reason is unclear or lack of evidence | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
-| Product functions well/Buyer use in wrong way | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
-| Product is shipped and parcel cannot be recalled back from logistics. | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
-Seller rejects receive package
-| **Seller available reject return reason** | **Reason name** |
+| 买家退货原因无效 | reverse_reject_request_reason_1 |
+| 不适用无理由退货 | reverse_reject_request_reason_2 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_request_reason_3 |
+| 商品按时送达 | reverse_reject_request_reason_4 |
+| 您已与买家达成一致 | reverse_reject_request_reason_5 |
+| 商品无误 | seller_reject_apply_item_is_correct |
+| 商品将分开发货 | seller_reject_apply_products_will_be_sent_separately |
+| 原因不明或缺乏证据 | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
+| 商品功能正常/买家使用不当 | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
+| 商品已发货，无法从物流处召回包裹。 | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
+卖家拒绝接收包裹
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| The product returned is not the product that was sent | reverse_reject_return_parcel_reason_1 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_return_parcel_reason_2 |
-| Missing products and/or product parts | reverse_reject_return_parcel_reason_3 |
-| I haven't received the package | reverse_reject_return_parcel_reason_4 |
-| Product is damaged or used | reverse_reject_return_parcel_reason_5 |
-| You have reached an agreement with the buyer | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
-## Seller Initiates Return Reason
-| **Order Status** | **Seller available initiate Return reason** | **Reason name** |
+| 退回的商品与发出的商品不符 | reverse_reject_return_parcel_reason_1 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_return_parcel_reason_2 |
+| 缺少商品和/或商品部件 | reverse_reject_return_parcel_reason_3 |
+| 我未收到包裹 | reverse_reject_return_parcel_reason_4 |
+| 商品已损坏或已使用 | reverse_reject_return_parcel_reason_5 |
+| 您已与买家达成一致 | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
+## 卖家发起退货原因
+| **订单状态** | **卖家可选择的发起退货原因** | **原因名称** |
 | --- | --- | --- |
-| DELIVERED | No longer needed | seller_ecom_delivered_return_refund_reason1 |
-|  | Product doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description_seller |
-|  | Missing product or accessories | ecom_order_delivered_refund_and_return_reason_missing_product_seller |
-|  | Package or product is damaged | ecom_order_delivered_refund_and_return_reason_damaged_seller |
-|  | Product is defective or doesn't work | ecom_order_delivered_refund_and_return_reason_defective_seller |
-|  | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product_seller |
-|  | Suspected Counterfeit | buyer_return_and_refund_suspected_counterfeit_seller |
+| DELIVERED | 不再需要 | seller_ecom_delivered_return_refund_reason1 |
+|  | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description_seller |
+|  | 缺少商品或配件 | ecom_order_delivered_refund_and_return_reason_missing_product_seller |
+|  | 包裹或商品已损坏 | ecom_order_delivered_refund_and_return_reason_damaged_seller |
+|  | 商品有缺陷或无法使用 | ecom_order_delivered_refund_and_return_reason_defective_seller |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product_seller |
+|  | 疑似假冒商品 | buyer_return_and_refund_suspected_counterfeit_seller |
 
 
 ---
 
 
 # MX market
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | Item doesn't fit | buyer_return_and_refund_item_doesn't_fit |
-|  | No longer needed | ecom_order_delivered_refund_and_return_reason_no_need |
-|  | Defective item | ecom_order_delivered_refund_reason_defective |
-|  | Item arrived too late | buyer_return_and_refund_item_arrived_too_late |
-|  | Wrong item was sent | ecom_order_delivered_refund_reason_wrong_product |
-|  | Fabric, material or style not as expected | buyer_return_and_refund_fabric,_material_or_style_not_as_expected |
-|  | Color or pattern not as expected | buyer_return_and_refund_color_or_pattern_not_as_expected |
-|  | Damaged item or packaging | ecom_order_delivered_refund_and_return_reason_damaged |
-|  | Item doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description |
-## Seller Reject Return Request Reason
-Seller rejects return request
-| **Seller available reject return reason** | **Reason name** |
+| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | 尺寸不合适 | buyer_return_and_refund_item_doesn't_fit |
+|  | 不再需要 | ecom_order_delivered_refund_and_return_reason_no_need |
+|  | 商品有缺陷 | ecom_order_delivered_refund_reason_defective |
+|  | 商品送达太晚 | buyer_return_and_refund_item_arrived_too_late |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_reason_wrong_product |
+|  | 面料、材质或款式与预期不符 | buyer_return_and_refund_fabric,_material_or_style_not_as_expected |
+|  | 颜色或图案与预期不符 | buyer_return_and_refund_color_or_pattern_not_as_expected |
+|  | 商品或包装损坏 | ecom_order_delivered_refund_and_return_reason_damaged |
+|  | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description |
+## 卖家拒绝退货申请原因
+卖家拒绝退货请求
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| Product functions well/Incorrect usage by the customer | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
-| Reason is unclear / lack of evidence | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
-| Item is correct | seller_reject_apply_item_is_correct |
-| You have reached an agreement with the customer | reverse_reject_request_reason_5 |
-| Product is in transit | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
-| Your products were shipped by multiple packages. | seller_reject_apply_products_will_be_sent_separately |
-| Need to apply for refund&return | seller_reject_apply_need_to_apply_for_refund&return |
-Seller rejects receive package
-| **Seller available reject return reason** | **Reason name** |
+| Product functions well/错误用法 by the customer | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
+| 原因不明/缺乏证据 | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
+| 商品无误 | seller_reject_apply_item_is_correct |
+| 您已与客户达成一致 | reverse_reject_request_reason_5 |
+| 商品在途 | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
+| 您的商品分多个包裹发货。 | seller_reject_apply_products_will_be_sent_separately |
+| 需要申请退款和退货 | seller_reject_apply_need_to_apply_for_refund&return |
+卖家拒绝接收包裹
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| The product returned is not the product that was sent | reverse_reject_return_parcel_reason_1 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_return_parcel_reason_2 |
-| Missing products and/or product parts | reverse_reject_return_parcel_reason_3 |
-| I haven't received the package | reverse_reject_return_parcel_reason_4 |
-| Product is damaged or used | reverse_reject_return_parcel_reason_5 |
-| You have reached an agreement with the customer | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
-## Seller Initiates Return Reason
-| **Order Status** | **Seller available initiate Return reason** | **Reason name** |
+| 退回的商品与发出的商品不符 | reverse_reject_return_parcel_reason_1 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_return_parcel_reason_2 |
+| 缺少商品和/或商品部件 | reverse_reject_return_parcel_reason_3 |
+| 我未收到包裹 | reverse_reject_return_parcel_reason_4 |
+| 商品已损坏或已使用 | reverse_reject_return_parcel_reason_5 |
+| 您已与客户达成一致 | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
+## 卖家发起退货原因
+| **订单状态** | **卖家可选择的发起退货原因** | **原因名称** |
 | --- | --- | --- |
-| DELIVERED | No longer needed | seller_ecom_delivered_return_refund_reason1 |
-|  | Late delivery (Item arrived too late) | seller_return_late_delivery |
-|  | Missing items or parts | seller_return_missing_item |
-|  | Damaged item or packaging | seller_return_damaged_item |
-|  | Defective item | seller_return_defective_item |
-|  | Wrong item was sent | seller_return_wrong_item_was_sent |
+| DELIVERED | 不再需要 | seller_ecom_delivered_return_refund_reason1 |
+|  | 配送延迟 (商品送达太晚) | seller_return_late_delivery |
+|  | 缺少商品或部件 | seller_return_missing_item |
+|  | 商品或包装损坏 | seller_return_damaged_item |
+|  | 商品有缺陷 | seller_return_defective_item |
+|  | 发送了错误的商品 | seller_return_wrong_item_was_sent |
 
 
 ---
 
 
 # BR market
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | Item doesn't fit | buyer_return_and_refund_item_doesn't_fit |
-|  | No longer needed | ecom_order_delivered_refund_and_return_reason_no_need |
-|  | Defective item | ecom_order_delivered_refund_reason_defective |
-|  | Item arrived too late | buyer_return_and_refund_item_arrived_too_late |
-|  | Wrong item was sent | ecom_order_delivered_refund_reason_wrong_product |
-|  | Fabric, material or style not as expected | buyer_return_and_refund_fabric,_material_or_style_not_as_expected |
-|  | Color or pattern not as expected | buyer_return_and_refund_color_or_pattern_not_as_expected |
-|  | Damaged item or packaging | ecom_order_delivered_refund_and_return_reason_damaged |
-|  | Item doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description |
-|  | Package received but missing item | ecom_order_delivered_refund_and_return_reason_missing_product |
-## Seller Reject Return Request Reason
-Seller rejects return request
-| **Seller available reject return reason** | **Reason name** |
+| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED | 尺寸不合适 | buyer_return_and_refund_item_doesn't_fit |
+|  | 不再需要 | ecom_order_delivered_refund_and_return_reason_no_need |
+|  | 商品有缺陷 | ecom_order_delivered_refund_reason_defective |
+|  | 商品送达太晚 | buyer_return_and_refund_item_arrived_too_late |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_reason_wrong_product |
+|  | 面料、材质或款式与预期不符 | buyer_return_and_refund_fabric,_material_or_style_not_as_expected |
+|  | 颜色或图案与预期不符 | buyer_return_and_refund_color_or_pattern_not_as_expected |
+|  | 商品或包装损坏 | ecom_order_delivered_refund_and_return_reason_damaged |
+|  | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description |
+|  | 已收到包裹但缺少商品 | ecom_order_delivered_refund_and_return_reason_missing_product |
+## 卖家拒绝退货申请原因
+卖家拒绝退货请求
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| Product functions well/Incorrect usage by the customer | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
-| Reason is unclear / lack of evidence | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
-| Item is correct | seller_reject_apply_item_is_correct |
-| You have reached an agreement with the customer | reverse_reject_request_reason_5 |
-| Product is in transit | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
-| Your products were shipped by multiple packages. | seller_reject_apply_products_will_be_sent_separately |
-| Need to apply for refund&return | seller_reject_apply_need_to_apply_for_refund&return |
-Seller rejects receive package
-| **Seller available reject return reason** | **Reason name** |
+| Product functions well/错误用法 by the customer | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
+| 原因不明/缺乏证据 | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
+| 商品无误 | seller_reject_apply_item_is_correct |
+| 您已与客户达成一致 | reverse_reject_request_reason_5 |
+| 商品在途 | seller_reject_apply_package_has_not_exceeded_estimated_delivery_time |
+| 您的商品分多个包裹发货。 | seller_reject_apply_products_will_be_sent_separately |
+| 需要申请退款和退货 | seller_reject_apply_need_to_apply_for_refund&return |
+卖家拒绝接收包裹
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| The product returned is not the product that was sent | reverse_reject_return_parcel_reason_1 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_return_parcel_reason_2 |
-| Missing products and/or product parts | reverse_reject_return_parcel_reason_3 |
-| I haven't received the package | reverse_reject_return_parcel_reason_4 |
-| Product is damaged or used | reverse_reject_return_parcel_reason_5 |
-| You have reached an agreement with the customer | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
-## Seller Initiates Return Reason
-| **Order Status** | **Seller available initiate Return reason** | **Reason name** |
+| 退回的商品与发出的商品不符 | reverse_reject_return_parcel_reason_1 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_return_parcel_reason_2 |
+| 缺少商品和/或商品部件 | reverse_reject_return_parcel_reason_3 |
+| 我未收到包裹 | reverse_reject_return_parcel_reason_4 |
+| 商品已损坏或已使用 | reverse_reject_return_parcel_reason_5 |
+| 您已与客户达成一致 | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
+## 卖家发起退货原因
+| **订单状态** | **卖家可选择的发起退货原因** | **原因名称** |
 | --- | --- | --- |
-| DELIVERED | No longer needed | seller_ecom_delivered_return_refund_reason1 |
-|  | Late delivery (Item arrived too late) | seller_return_late_delivery |
-|  | Missing items or parts | seller_return_missing_item |
-|  | Damaged item or packaging | seller_return_damaged_item |
-|  | Defective item | seller_return_defective_item |
-|  | Wrong item was sent | seller_return_wrong_item_was_sent |
+| DELIVERED | 不再需要 | seller_ecom_delivered_return_refund_reason1 |
+|  | 配送延迟 (商品送达太晚) | seller_return_late_delivery |
+|  | 缺少商品或部件 | seller_return_missing_item |
+|  | 商品或包装损坏 | seller_return_damaged_item |
+|  | 商品有缺陷 | seller_return_defective_item |
+|  | 发送了错误的商品 | seller_return_wrong_item_was_sent |
 
 
 ---
 
 
-# EU market(s)
-Currently, supported EU markets include: 
+# EU 市场
+目前，支持的 EU 市场包括:
 
 * Spain (ES)
 * Ireland (IE)
@@ -460,99 +460,99 @@ Currently, supported EU markets include:
 * Germany (DE)
 * Italy (IT)
 
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED <br/>  | No longer needed | ecom_order_delivered_refund_reason_no_need |
-|  | No longer needed | ecom_order_delivered_refund_and_return_reason_no_need |
-|  | Missed estimated delivery date | ecom_order_delivered_refund_reason_missed_delivery_date |
-|  | Other | ecom_order_delivered_refund_and_return_reason_other |
-|  | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product |
-|  | Product is defective or doesn't work | ecom_order_delivered_refund_and_return_reason_defective |
-|  | Package or product is damaged | ecom_order_delivered_refund_and_return_reason_damaged |
-|  | Missing product or accessories | ecom_order_delivered_refund_and_return_reason_missing_product |
-|  | Product doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description |
-|  | Does not suit me | buyer_return_and_refund_does_not_suit_me |
-|  | Item is too big/long | buyer_return_and_refund_item_is_too_big/long |
-|  | Item is too small/short | buyer_return_and_refund_item_is_too_small/short |
-|  | Multiple sizes ordered | buyer_return_and_refund_multiple_sizes_ordered |
-|  | Quality or style not as expected | buyer_return_and_refund_quality_or_style_not_as_expected |
-|  | Unauthorized purchase | buyer_return_and_refund_unauthorised_purchase |
-|  | Product is expired/spoiled | buyer_return_and_refund_product_is_expired/spoiled |
-|  | Product not frozen on arrival | buyer_return_and_refund_product_not_frozen_on_arrival |
-|  | Ordered incorrect size | buyer_return_and_refund_ordered_incorrect_size |
+| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED <br/>  | 不再需要 | ecom_order_delivered_refund_reason_no_need |
+|  | 不再需要 | ecom_order_delivered_refund_and_return_reason_no_need |
+|  | 超过预计送达日期 | ecom_order_delivered_refund_reason_missed_delivery_date |
+|  | 其他 | ecom_order_delivered_refund_and_return_reason_other |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product |
+|  | 商品有缺陷或无法使用 | ecom_order_delivered_refund_and_return_reason_defective |
+|  | 包裹或商品已损坏 | ecom_order_delivered_refund_and_return_reason_damaged |
+|  | 缺少商品或配件 | ecom_order_delivered_refund_and_return_reason_missing_product |
+|  | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description |
+|  | 不适合我 | buyer_return_and_refund_does_not_suit_me |
+|  | 商品太大/太长 | buyer_return_and_refund_item_is_too_big/long |
+|  | 商品太小/太短 | buyer_return_and_refund_item_is_too_small/short |
+|  | 下单了多个尺码 | buyer_return_and_refund_multiple_sizes_ordered |
+|  | 质量或款式与预期不符 | buyer_return_and_refund_quality_or_style_not_as_expected |
+|  | 未经授权的购买 | buyer_return_and_refund_unauthorised_purchase |
+|  | 商品已过期/变质 | buyer_return_and_refund_product_is_expired/spoiled |
+|  | 商品送达时未冷冻 | buyer_return_and_refund_product_not_frozen_on_arrival |
+|  | 下单尺码错误 | buyer_return_and_refund_ordered_incorrect_size |
 
-## Seller Reject Return Request Reason
-Seller rejects return request
-| **Seller available reject return reason** | **Reason name** |
+## 卖家拒绝退货申请原因
+卖家拒绝退货请求
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| Product delivery is on schedule | reverse_reject_request_reason_4_uk |
-| Change of mind returns are not applicable | reverse_reject_request_reason_2_uk |
-| Not eligible for return (e.g. used or broken) | reverse_reject_request_reason_3_uk |
-| Product delivery is on schedule | order_manage_list_action_respond_popup_reject_reason_delivered_uk |
-| Customer return reason is not valid | reverse_reject_request_reason_1_uk |
-| Product functions well/Incorrect usage by the customer | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
-| Reason is unclear / lack of evidence | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
-| Reached an agreement with the customer | order_manage_list_action_respond_popup_reject_reason_buyer_agree |
-| You have reached an agreement with the customer | reverse_reject_request_reason_5 |
-| Your products were shipped by multiple packages. | seller_reject_apply_products_will_be_sent_separately |
-Seller rejects receive package
-| **Seller available reject return reason** | **Reason name** |
+| 商品按时送达 | reverse_reject_request_reason_4_uk |
+| 不适用无理由退货 | reverse_reject_request_reason_2_uk |
+| 不符合退货条件（如已使用或破损） | reverse_reject_request_reason_3_uk |
+| 商品按时送达 | order_manage_list_action_respond_popup_reject_reason_delivered_uk |
+| 买家退货原因无效 | reverse_reject_request_reason_1_uk |
+| Product functions well/错误用法 by the customer | seller_reject_apply_product_functions_well/buyer_use_in_wrong_way |
+| 原因不明/缺乏证据 | seller_reject_apply_reason_is_unclear_or_lack_of_evidence |
+| 已与买家达成协议 | order_manage_list_action_respond_popup_reject_reason_buyer_agree |
+| 您已与客户达成一致 | reverse_reject_request_reason_5 |
+| 您的商品分多个包裹发货。 | seller_reject_apply_products_will_be_sent_separately |
+卖家拒绝接收包裹
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| You have reached an agreement with the customer | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
-| The product returned is not the product that was sent | reverse_reject_return_parcel_reason_1 |
-| Not eligible for return (e.g. used or broken) | reverse_reject_return_parcel_reason_2 |
-| Missing products and/or product parts | reverse_reject_return_parcel_reason_3 |
-| I haven't received the package | reverse_reject_return_parcel_reason_4 |
-| Product is damaged or used | reverse_reject_return_parcel_reason_5 |
+| 您已与客户达成一致 | seller_reject_apply_you_have_reached_an_agreement_with_the_buyer |
+| 退回的商品与发出的商品不符 | reverse_reject_return_parcel_reason_1 |
+| 不符合退货条件（如已使用或破损） | reverse_reject_return_parcel_reason_2 |
+| 缺少商品和/或商品部件 | reverse_reject_return_parcel_reason_3 |
+| 我未收到包裹 | reverse_reject_return_parcel_reason_4 |
+| 商品已损坏或已使用 | reverse_reject_return_parcel_reason_5 |
 
-## Seller Initiates Return Reason
-| **Order Stauts** | **Seller available initiate Return reason** | **Reason name** |
+## 卖家发起退货原因
+| **订单状态** | **卖家可选择的发起退货原因** | **原因名称** |
 | --- | --- | --- |
-| DELIVERED | No longer needed | seller_ecom_delivered_return_refund_reason1 |
-|  | Product doesn't match description | ecom_order_delivered_refund_and_return_reason_not_match_description_seller |
-|  | Missing product or accessories | ecom_order_delivered_refund_and_return_reason_missing_product_seller |
-|  | Package or product is damaged | ecom_order_delivered_refund_and_return_reason_damaged_seller |
-|  | Product is defective or doesn't work | ecom_order_delivered_refund_and_return_reason_defective_seller |
-|  | Wrong product was sent | ecom_order_delivered_refund_and_return_reason_wrong_product_seller |
-|  | Suspected Counterfeit | buyer_return_and_refund_suspected_counterfeit_seller |
+| DELIVERED | 不再需要 | seller_ecom_delivered_return_refund_reason1 |
+|  | 商品与描述不符 | ecom_order_delivered_refund_and_return_reason_not_match_description_seller |
+|  | 缺少商品或配件 | ecom_order_delivered_refund_and_return_reason_missing_product_seller |
+|  | 包裹或商品已损坏 | ecom_order_delivered_refund_and_return_reason_damaged_seller |
+|  | 商品有缺陷或无法使用 | ecom_order_delivered_refund_and_return_reason_defective_seller |
+|  | 发送了错误的商品 | ecom_order_delivered_refund_and_return_reason_wrong_product_seller |
+|  | 疑似假冒商品 | buyer_return_and_refund_suspected_counterfeit_seller |
 
 
 ---
 
 
 # JP market
-## Buyer Initiates Return Reason
-| **Order status** | **Buyer available Return reason** | **Reason name** |
+## 买家发起退货原因
+| **订单状态** | **买家可选择的退货原因** | **原因名称** |
 | --- | --- | --- |
-| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED <br/>  | No longer needed (Item must be returned in sealed/original condition). | ecom_order_delivered_refund_reason_no_need |
-|  | Received package but missing parts or accessories. | ecom_order_delivered_refund_and_return_reason_missing_parts_JP |
-|  | Product doesn't match description. | ecom_order_delivered_refund_and_return_reason_not_match_description_JP |
-|  | Package or product is damaged. | ecom_order_delivered_refund_reason_damaged |
-|  | Product is defective or doesn't work. | ecom_order_delivered_refund_reason_defective |
-|  | Wrong product sent. | ecom_order_delivered_refund_and_return_reason_wrong_product_JP |
-|  | Missed estimated delivery date. | ecom_order_delivered_refund_and_return_reason_missed_delivery_date_JP |
-## Seller Reject Return Request Reason
-Seller rejects return request.
-| **Seller available reject return reason** | **Reason name** |
+| AWAITING_COLLECTION <br/> IN_TRANSIT <br/> DELIVERED <br/>  | 不再需要 (商品必须以密封/原始状态退回)。 | ecom_order_delivered_refund_reason_no_need |
+|  | 已收到包裹但缺少部件或配件。 | ecom_order_delivered_refund_and_return_reason_missing_parts_JP |
+|  | 商品与描述不符。 | ecom_order_delivered_refund_and_return_reason_not_match_description_JP |
+|  | 包裹或商品受损。 | ecom_order_delivered_refund_reason_damaged |
+|  | 商品有缺陷或无法正常使用。 | ecom_order_delivered_refund_reason_defective |
+|  | 发错商品。 | ecom_order_delivered_refund_and_return_reason_wrong_product_JP |
+|  | 错过预计送达日期。 | ecom_order_delivered_refund_and_return_reason_missed_delivery_date_JP |
+## 卖家拒绝退货申请原因
+卖家拒绝退货请求。
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| reverse_reject_refund_request_unclear_evidence_Test | Reason is unclear / lack of evidence. |
-| ecom_reverse_reject_cancel_reason_product_packed | Product shipped. Tracking updates will be available soon. |
-| ecom_reverse_reject_refund_request_failed_delivery | The delivery attempt failed. |
-| ecom_reverse_reject_refund_request_package_delivery_multiple_boxes | Products were shipped in multiple packages. |
-| ecom_reverse_reject_refund_request_replacement_shipped | Replacement has been shipped. |
-| ecom_reverse_reject_apply_buyer_agree_jp | Reached an agreement with the customer. |
-| seller_reject_apply_reason_delivered_jp | Product delivery is on schedule. |
-| seller_reject_apply_buyers_responsibility_for_incorrect_address | The package has been successfully delivered to the shipping address that was provided. |
-| seller_reject_apply_item_is_correct | Item is correct. |
-| seller_reject_apply_package_has_not_exceeded_estimated_delivery_time | Product delivery is on schedule. |
-| seller_reject_apply_product_functions_well/buyer_use_in_wrong_way | Product functions well / Incorrect usage by the customer. |
-| seller_reject_apply_reason_is_unclear_or_lack_of_evidence | Reason is unclear / lack of evidence. |
-| seller_reject_apply_unable_to_change_address | Unable to change address. |
-Seller rejects receive package.
-| **Seller available reject return reason** | **Reason name** |
+| reverse_reject_refund_request_unclear_evidence_Test | 原因不明 / 缺少证据。 |
+| ecom_reverse_reject_cancel_reason_product_packed | 商品已发货。物流跟踪信息即将更新。 |
+| ecom_reverse_reject_refund_request_failed_delivery | 投递失败。 |
+| ecom_reverse_reject_refund_request_package_delivery_multiple_boxes | 商品分多个包裹发货。 |
+| ecom_reverse_reject_refund_request_replacement_shipped | 已寄出替换商品。 |
+| ecom_reverse_reject_apply_buyer_agree_jp | 已与买家达成协议。 |
+| seller_reject_apply_reason_delivered_jp | 商品按时送达。 |
+| seller_reject_apply_buyers_responsibility_for_incorrect_address | 包裹已成功送达所提供的收货地址。 |
+| seller_reject_apply_item_is_correct | 商品无误。 |
+| seller_reject_apply_package_has_not_exceeded_estimated_delivery_time | 商品按时送达。 |
+| seller_reject_apply_product_functions_well/buyer_use_in_wrong_way | Product functions well / 错误用法 by the customer。 |
+| seller_reject_apply_reason_is_unclear_or_lack_of_evidence | 原因不明 / 缺少证据。 |
+| seller_reject_apply_unable_to_change_address | 无法更改地址。 |
+卖家拒绝接收包裹。
+| **卖家可选择的拒绝退货原因** | **原因名称** |
 | --- | --- |
-| The product returned is not the product that was sent. | reverse_reject_return_parcel_reason_1 |
-| Missing products and/or product parts. | reverse_reject_return_parcel_reason_3 |
-| I haven't received the package. | reverse_reject_return_parcel_reason_4 |
-| Product is damaged or used. | reverse_reject_return_parcel_reason_5 |
+| 退回的商品与发出的商品不一致。 | reverse_reject_return_parcel_reason_1 |
+| 缺少商品和/或商品零件。 | reverse_reject_return_parcel_reason_3 |
+| 我未收到包裹。 | reverse_reject_return_parcel_reason_4 |
+| 商品已损坏或已使用。 | reverse_reject_return_parcel_reason_5 |

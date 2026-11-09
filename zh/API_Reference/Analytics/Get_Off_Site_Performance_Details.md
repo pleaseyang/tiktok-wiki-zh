@@ -1,7 +1,7 @@
 # 获取站外表现详情
 
-# Path: /analytics/202610/off_site/details
-# Method: [GET]
+# 路径：/analytics/202610/off_site/details
+# 方法：[GET]
 # 功能描述
 获取 video、LIVE 场次或商品的分页每周站外 performance 详情，包括 GMV 和站外效果指标。
 如果请求的 Pixel 和归因设置的报告不可用，结果可能使用 VIEW_14D 归因的店铺级报告。如果两个报告都不可用，则不返回内容记录。
@@ -11,13 +11,13 @@
 
 # 公共参数
 公共参数，请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此参数在请求 API 时传递店铺信息。请求跨境店铺 API 时未传递正确值将返回不正确的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求查询参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个 app 都有一个唯一的 key。请使用分配给您的 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 能够识别发送者。 |
@@ -42,7 +42,7 @@ https://open-api.tiktokglobalshop.com/analytics/202610/off_site/details?app_key=
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -52,10 +52,10 @@ https://open-api.tiktokglobalshop.com/analytics/202610/off_site/details?app_key=
 | ^^content_id | string | 7000000000000000001 | VIDEO 项目的 video ID、LIVE 项目的 LIVE 房间 ID 或 PRODUCT 项目的商品 ID。 |
 | ^^content_type | string | VIDEO | 项目类型：VIDEO（video）、LIVE（LIVE 场次）或 PRODUCT（商品）。 |
 | ^^cover_image_url | string | https://example.com/video-cover.jpg | video、LIVE 场次或商品的封面图片 URL（可用时）。 |
-| ^^creator | object |  | VIDEO 项目的创作者信息（元数据可用时）。LIVE 和 PRODUCT 项目不提供创作者信息。缺失的创作者信息返回为 null。 |
-| ^^^avatar_url | string | https://example.com/creator-avatar.jpg | video 创作者的头像图片 URL（可用时）。 |
-| ^^^id | string | 7000000000000000002 | video 创作者的 TikTok 用户 ID，以字符串表示。 |
-| ^^^name | string | demo_creator | video 创作者的显示名称（可用时）。 |
+| ^^creator | object |  | VIDEO 项目的达人信息（元数据可用时）。LIVE 和 PRODUCT 项目不提供达人信息。缺失的达人信息返回为 null。 |
+| ^^^avatar_url | string | https://example.com/creator-avatar.jpg | video 达人的头像图片 URL（可用时）。 |
+| ^^^id | string | 7000000000000000002 | video 达人的 TikTok 用户 ID，以字符串表示。 |
+| ^^^name | string | demo_creator | video 达人的显示名称（可用时）。 |
 | ^^duration_seconds | int | 38 | VIDEO 或 LIVE 场次的时长（秒）（可用时）。不适用于 PRODUCT 项目；缺失或不适用的元数据可能为 null。 |
 | ^^metrics | object |  | 报告周内此项目的 GMV 和站外效果指标。 |
 | ^^^off_site_effect_rate | string | 0.2500 | 报告周内此项目的站外 GMV 除以 TikTok Shop GMV，以小数比率表示；1.0000 表示 100%，比率可以超过 1。null 值表示比率不可用，不得解释为零；响应不说明不可用的原因。 |
@@ -81,6 +81,6 @@ https://open-api.tiktokglobalshop.com/analytics/202610/off_site/details?app_key=
 
 # 错误码
 常见错误码，请参考 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 

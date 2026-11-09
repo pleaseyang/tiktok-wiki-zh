@@ -73,7 +73,7 @@ TikTok Shop 将 Webhook 签名放在 `Authorization` 请求头中。此 Webhook 
 3. 使用你的 app secret 作为 HMAC-SHA256 密钥。
 4. 将生成的小写十六进制值与 `Authorization` 请求头的值进行比较。
 
-不要在验证之前解析并重新序列化 JSON 请求体。重新格式化请求体可能会改变空格或字段顺序，导致签名验证失败。有关 Webhook 签名示例，请参见 [Webhook 概述](https://partner.tiktokshop.com/docv2/page/tts-webhooks-overview) 中的 **Webhook Header 和 Body** 部分。
+不要在验证之前解析并重新序列化 JSON 请求体。重新格式化请求体可能会改变空格或字段顺序，导致签名验证失败。有关 Webhook 签名示例，请参见 [Webhook 概述](https://partner.tiktokshop.com/docv2/page/tts-webhooks-overview) 中的 **Webhook 请求头和 Body** 部分。
 # 第 4 步：响应 Webhook 通知
 每个通知请在 3 秒内返回响应。
 | 情况 | HTTP 状态码 | 响应体 | 含义 | 重试行为 |

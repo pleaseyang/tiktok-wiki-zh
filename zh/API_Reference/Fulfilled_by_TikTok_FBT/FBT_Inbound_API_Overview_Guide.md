@@ -1,13 +1,13 @@
 # FBT Inbound API 概述指南
 
-**综合参考** — FBT Inbound 和商品创建 API 的入门指南、关键概念、工作流程图和商家集成指南。 
+**综合参考** — FBT Inbound 和商品创建 API 的入门指南、关键概念、工作流程图和卖家集成指南。
 
 ## 1. 概述
-**FBT Inbound API** 套件使卖家和物流合作伙伴能够通过编程方式创建、管理和跟踪发送至 TikTok **Fulfillment by TikTok (FBT)** warehouse 的 inbound 货件。
+**FBT Inbound API** 套件使卖家和物流合作伙伴能够通过编程方式创建、管理和跟踪发送至 TikTok **Fulfillment by TikTok (FBT)** 仓库的 inbound 货件。
 ### 新 API 能力
 FBT 正在推出 **2 个新 API 组**，与现有 API（已支持 inventory 搜索、inbound 搜索和 inventory 记录）并行。
 **① 创建 Inbound**
-将 inventory 运送到 FBT warehouse 的端到端工作流程：
+将 inventory 运送到 FBT 仓库的端到端工作流程：
 
 * 创建 inbound plan 并选择入库方案
 * 确认运输方式并审核要求
@@ -31,7 +31,7 @@ FBT 正在推出 **2 个新 API 组**，与现有 API（已支持 inventory 搜�
 
 * Inventory 在创建 inbound 和发货前已预装入箱中
 * 每个箱包含一个或多个 SKU
-* TikTok 按箱分配 warehouse
+* TikTok 按箱分配仓库
 
 **单位拆分**
 
@@ -39,23 +39,23 @@ FBT 正在推出 **2 个新 API 组**，与现有 API（已支持 inventory 搜�
 * 基于流程的打包具有更高的灵活性
 
 
-**所需权限范围**：`seller.fbt.inbound` — 两种工作流程中的所有 endpoint 都需要 seller access token 上的此权限。
+**所需权限范围**：`seller.fbt.inbound` — 两种工作流程中的所有 endpoint 都需要卖家 access token 上的此权限。
 
 
 ## 2. 关键概念
 FBT API 集成的核心术语。
 ### Merchant
-**Merchant** 代表在 TikTok Shop 中使用 FBT 履约提供产品或服务销售的实体。每个商家都有一个唯一的 **FBT Merchant ID**，在任何 API 调用之前都需要。
+**Merchant** 代表在 TikTok Shop 中使用 FBT 履约提供商品或服务销售的实体。每个卖家都有一个唯一的 **FBT Merchant ID**，在任何 API 调用之前都需要。
 > **获取 Merchant ID**：Merchant ID 在 FBT 入驻期间分配。在调用任何 inbound API 之前，使用 **Get FBT Merchant Onboarded Regions** 验证卖家是否已注册并获取其活跃区域。
 
 ### 商品
 **FBT 商品**是 FBT 分配的唯一记录，用于在 Fulfilled by TikTok 系统中跟踪和管理单个卖家的 inventory。
-商品必须**与 TikTok 产品 ID 匹配**，然后商家才能创建 inbound 货件、管理 inventory 或履约订单。如果商品与 SKU 取消匹配，相应的 inventory 将不再在 TikTok Shop 上可供销售。
+商品必须**与 TikTok 商品 ID 匹配**，然后卖家才能创建 inbound 货件、管理 inventory 或履约订单。如果商品与 SKU 取消匹配，相应的 inventory 将不再在 TikTok Shop 上可供销售。
 **关键术语**
-| Full Name | Who Assigns It | Used In |
+| Full Name | 由谁分配 | Used In |
 | --- | --- | --- |
-| TikTok Shop Product /SKU ID | TikTok Shop（来自您的产品目录） | CreateGoods, GetHazmatInfo, UpdateSkuRelation |
-| FBT Goods ID | FBT 系统 — 在 CreateGoods 成功时返回 | UpdateGoods, UpdateSkuRelation, Inbound APIs |
+| TikTok Shop 商品 /SKU ID | TikTok Shop（来自您的商品目录） | CreateGoods, GetHazmatInfo, UpdateSkuRelation |
+| FBT 货品 ID | FBT 系统 — 在 CreateGoods 成功时返回 | UpdateGoods, UpdateSkuRelation, Inbound APIs |
 **商品生命周期**
 
 1. **检查要求** — 调用 *Get Hazmat & Expiration Info* 确定特殊处理需求
@@ -63,22 +63,22 @@ FBT API 集成的核心术语。
 3. **创建 inbound** — 匹配后，使用 Inbound API 发货 inventory
 4. **管理绑定** — 使用 *Update Goods SKU Relation* 随时添加或删除 SKU 关联
 
-**提示**：当商家启用渠道 inventory 时，单个 FBT 商品记录可以绑定到**多个 TikTok Shop SKU（1:N）** — 适用于在多个店铺或区域销售同一实物产品。
+**提示**：当卖家启用渠道 inventory 时，单个 FBT 商品记录可以绑定到**多个 TikTok Shop SKU（1:N）** — 适用于在多个店铺或区域销售同一实物商品。
 
 ### FBT Warehouse
-FBT warehouse 在**入驻后自动订阅**。有两种 warehouse 类型，各有不同的作用：
-| Warehouse Type | Accepts Inbound | Fulfills Orders | Notes |
+FBT 仓库在**入驻后自动订阅**。有两种仓库类型，各有不同的作用：
+| Warehouse Type | Accepts Inbound | Fulfills Orders | 说明 |
 | --- | --- | --- | --- |
 | **HUB** | ✅ 是 | ❌ 否 | 仅进行 inbound 处理和分拣 — inventory 在转为可售之前会转移到 FC。<br/> 收取 hub 入库费用，详见 FBT [商家学院](https://scm-us.tiktok.com/merchant-university/home)  |
-| **FC**（Fulfillment Center） | ✅ 是 | ✅ 是 | 接收 inventory；用于订单履约。<br/> 商家无法手动选择，FBT placement 决定 FC。 |
-使用 **Get FBT Warehouse List** 检索所有 warehouse ID、名称、地址和类型。创建 inbound plan 时需要返回的 `warehouse_id`。
+| **FC**（履约中心） | ✅ 是 | ✅ 是 | 接收 inventory；用于订单履约。<br/> 卖家无法手动选择，FBT placement 决定 FC。 |
+使用 **Get FBT Warehouse List** 检索所有仓库 ID、名称、地址和类型。创建 inbound plan 时需要返回的 `warehouse_id`。
 
 ## 3. 认证
-每个 API 请求必须包含以下 header：
-| Header | Value | Notes |
+每个 API 请求必须包含以下请求头：
+| Header | 取值 | 说明 |
 | --- | --- | --- |
 | `content-type` | `application/json` | 所有请求必需 |
-| `x-tts-access-token` | 您的 seller access token | 通过 TikTok Shop OAuth 获取（`user_type = 0`）。**Token 会过期** — 请在流程中加入刷新逻辑 |
+| `x-tts-access-token` | 您的卖家 access token | 通过 TikTok Shop OAuth 获取（`user_type = 0`）。**Token 会过期** — 请在流程中加入刷新逻辑 |
 **Example**
 ```HTTP
 POST /fbt/202602/create_update_inbound_plan?shop_id=123456 HTTP/1.1
@@ -94,7 +94,7 @@ x-tts-access-token: eyJhbGciOiJSUzI1NiIsInR5cCI6...
 
 - [ ] 您拥有有效的 **FBT Merchant ID**（在 FBT 入驻期间分配）。使用 *Get FBT Merchant Onboarded Regions* 验证
 - [ ] 您的 TikTok Shop 商品已通过商品管理 API 或 FBT 卖家门户**创建并匹配**到 FBT
-- [ ] 您拥有具有 `seller.fbt.inbound` OAuth 权限的 **seller access token**
+- [ ] 您拥有具有 `seller.fbt.inbound` OAuth 权限的 **卖家 access token**
 - [ ] 您已决定使用**箱拆分**（预装箱）还是**单位拆分**（散装单位）
 - [ ] 您已决定使用 **Single_Hub（单次货件）** 还是 **D2FC（多次货件）** 发送至 FBT
 
@@ -104,25 +104,25 @@ x-tts-access-token: eyJhbGciOiJSUzI1NiIsInR5cCI6...
 ### 推荐的商品设置顺序
 | # | API | Method | Purpose | Key Output |
 | --- | --- | --- | --- | --- |
-| 1 | **Get Hazmat & Expiration Info** | POST | 在创建商品之前检查 SKU 是否有危险品分类或保质期规则。每次调用最多 50 个 SKU。 | 危险品标志、保质期规则 |
+| 1 | **获取危险品 & 有效期信息** | POST | 在创建商品之前检查 SKU 是否有危险品分类或保质期规则。每次调用最多 50 个 SKU。 | 危险品标志、保质期规则 |
 | 2 | **Create Goods** | POST | 创建 FBT 商品记录并绑定到 TikTok Shop SKU（`CREATE_AND_BIND`）。如果在步骤 1 中标记了危险品/保质期字段，请一并包含。 | `tts_goods_id` |
 | 3 | **Update Goods** | POST | 编辑现有商品记录 — 名称、尺寸、条形码、退货处理、危险品/保质期信息。 | 更新确认 |
-| 4 | **Update Goods SKU Relation** | POST | 管理 FBT 商品与 Shop SKU 之间的绑定关系。使用 `BIND` 添加或使用 `UN_BIND` 移除。 | 操作确认 |
+| 4 | **更新商品 SKU 关系** | POST | 管理 FBT 商品与 Shop SKU 之间的绑定关系。使用 `BIND` 添加或使用 `UN_BIND` 移除。 | 操作确认 |
 ### 关键商品参数
-| Parameter | Where Used | Description |
+| 字段 | Where Used | 描述 |
 | --- | --- | --- |
-| `tt_sku_id` | GetHazmat, CreateGoods | TikTok Shop SKU ID — 来自卖家产品目录的主要标识符 |
+| `tt_sku_id` | GetHazmat, CreateGoods | TikTok Shop SKU ID — 来自卖家商品目录的主要标识符 |
 | `tts_goods_id` | UpdateGoods, UpdateSkuRelation | FBT Goods ID — 在 CreateGoods 成功时分配。**请保存此值** |
 | `create_goods_type` | CreateGoods | `CREATE_AND_BIND` — 创建 FBT 商品记录并在一次调用中绑定到 SKU |
 | `operation_type` | UpdateSkuRelation | `BIND` 关联 SKU，`UN_BIND` 移除关联 |
 ### 特殊处理标志
-某些产品在创建商品时需要额外的数据字段：
+某些商品在创建商品时需要额外的数据字段：
 
 * **危险品**（`is_hazmat = true`）：必须提供包含 `hazmat_type`（`BATTERY`、`MAGNETIZED`、`FLAMMABLE_LIQUID`、`AEROSOLS`）及特定类型详情的 `hazmat_info`
-* **电池产品**：需要电池类型（`LITHIUM_ION`、`LITHIUM_METAL`、`OTHER`）、容量、包装类型（`STANDALONE` / `IN_EQUIPMENT` / `WITH_EQUIPMENT`）和 UN 代码。请注意 SDS 适用于 
+* **电池商品**：需要电池类型（`LITHIUM_ION`、`LITHIUM_METAL`、`OTHER`）、容量、包装类型（`STANDALONE` / `IN_EQUIPMENT` / `WITH_EQUIPMENT`）和 UN 代码。请注意 SDS 适用于
 
 请参考下表了解危险品信息映射规则
-| **Hazmat type** | **Class** | **How batteries are packed** | **Battery type** | **Flammable liquid type** | **Un code** |
+| **Hazmat type** | **Class** | **电池如何包装** | **Battery type** | **易燃液体类型** | **Un code** |
 | --- | --- | --- | --- | --- | --- |
 | Battery | 9 | Standalone | Lithion Ion |  | UN 3480 |
 | Battery | 9 | Standalone | Lithion metal |  | UN3090 |
@@ -147,7 +147,7 @@ x-tts-access-token: eyJhbGciOiJSUzI1NiIsInR5cCI6...
 ## 6. 选择您的 Inbound 工作流程
 | Criteria | Carton Splitting | Unit Splitting |
 | --- | --- | --- |
-| **使用时机** | 您在发货前已知箱尺寸和内容 | 您在创建 inbound 订单时尚未装箱，或者箱由您的 warehouse 动态装箱 |
+| **使用时机** | 您在发货前已知箱尺寸和内容 | 您在创建 inbound 订单时尚未装箱，或者箱由您的仓库动态装箱 |
 | **inbound_type 值** | `CARTON_SPLITTING` | `UNIT_SPLITTING` |
 | **payload 中的箱数据** | 必需 — 在创建 plan 时； | 非必需，需在 Ship IBR 步骤中后续提供 <br/>  |
 
@@ -157,18 +157,18 @@ x-tts-access-token: eyJhbGciOiJSUzI1NiIsInR5cCI6...
 按顺序执行以下 **9 个步骤**。每个步骤可能会生成下一步所需的 ID。两种工作流程（箱拆分 / 单位拆分）共享相同的顺序 — 区别仅在于请求/响应字段。
 | # | API | Method | Purpose | Key Output | Comments |
 | --- | --- | --- | --- | --- | --- |
-| 1 | **Create / Update Inbound Plan** | POST | 创建新的 inbound plan 或更新现有草稿。指定 SKU、数量和目的地 warehouse。 | `inbound_plan_id` |  |
-| 2 | **List Available Inbound Methods** | GET | 检索 plan 可用的 inbound 方式及预期时间范围（Single Hub, D2FC）。<br/> 对于 hub 还包括入库费用估算。<br/>  | inbound 方式可用的 ETA | 此步骤告知您 inbound 方式的可用性。<br/> FBT inbound 方式  |
-| 3 | **Get Inbound Method Detail** | POST | 获取每个 inbound 方式和 ETA 的详情，包括 placement option ID 和 warehouse ID。<br/> 对于 hub 还包括入库费用估算。 | `placement_option_id` <br/> 如果要发往特定 hub，请使用对应 hub 的正确 placement option ID。 | **异步轮询操作**：此 endpoint 可能需要最多 **3-5 秒**才能返回成功。<br/> 建议每 3-5 秒轮询一次，直到 placement 任务成功 <br/>  |
-| 4 | **Confirm Inbound Method** | POST | 选择并确认首选的 inbound 方式和 placement option。包含步骤 3 返回的 `placement_option_id`。 | 已确认的 `inbound_order_ids` <br/> 对于单个 hub，您将获得 1 个订单 ID <br/> 对于 D2FC，您将获得订单 ID 列表 <br/>  |  |
-| 5 | **Ship Inbound Order** | POST | 提交最终发货详情：箱/单位清单，如果是单位拆分则提供箱内容 <br/>  | `inbound_order_id` 状态变为"已发货" | 这是接收 inventory 所必需的。未发货的 inbound 订单将导致 NCI |
+| 1 | **创建 / 更新入库计划** | POST | 创建新的 inbound plan 或更新现有草稿。指定 SKU、数量和目的地仓库。 | `inbound_plan_id` |  |
+| 2 | **列出可用入库方式** | GET | 检索 plan 可用的 inbound 方式及预期时间范围（Single Hub, D2FC）。<br/> 对于 hub 还包括入库费用估算。<br/>  | inbound 方式可用的 ETA | 此步骤告知您 inbound 方式的可用性。<br/> FBT inbound 方式  |
+| 3 | **获取入库方式详情** | POST | 获取每个 inbound 方式和 ETA 的详情，包括 placement option ID 和仓库 ID。<br/> 对于 hub 还包括入库费用估算。 | `placement_option_id` <br/> 如果要发往特定 hub，请使用对应 hub 的正确 placement option ID。 | **异步轮询操作**：此 endpoint 可能需要最多 **3-5 秒**才能返回成功。<br/> 建议每 3-5 秒轮询一次，直到 placement 任务成功 <br/>  |
+| 4 | **确认入库方式** | POST | 选择并确认首选的 inbound 方式和 placement option。包含步骤 3 返回的 `placement_option_id`。 | 已确认的 `inbound_order_ids` <br/> 对于单个 hub，您将获得 1 个订单 ID <br/> 对于 D2FC，您将获得订单 ID 列表 <br/>  |  |
+| 5 | **发运入库订单** | POST | 提交最终发货详情：箱/单位清单，如果是单位拆分则提供箱内容 <br/>  | `inbound_order_id` 状态变为"已发货" | 这是接收 inventory 所必需的。未发货的 inbound 订单将导致 NCI |
 | 6 | **Print Label** | POST | 生成可打印的运输标签（每箱 / 每货件）。 | 标签 PDF / URL | **异步轮询操作**：此 endpoint 可能需要最多 **30 秒**才能返回成功。<br/> 建议每 3-5 秒轮询一次，直到 task_status 成功并返回 URL |
 | 7 | **Update Tracking** | POST | 在每个箱的小包裹标签可用后推送承运商追踪号。 |  |  |
-| 8 | **Get Inbound Order** | GET | 检索订单详情 | 订单状态和详情 |  |
-| 9 | **Cancel Inbound Order** | POST | 取消订单（仅在 warehouse 收货之前）。 <br/> 请注意，如果 D2FC IBR 的部分 plan 已收货而剩余部分未收货，取消可能会产生费用。 | 取消确认 |  |
+| 8 | **获取入库订单** | GET | 检索订单详情 | 订单状态和详情 |  |
+| 9 | **取消入库订单** | POST | 取消订单（仅在仓库收货之前）。 <br/> 请注意，如果 D2FC IBR 的部分 plan 已收货而剩余部分未收货，取消可能会产生费用。 | 取消确认 |  |
 关键字段参考
 ### `plan_id` — 创建与更新
-| Scenario | `plan_id` in request body |
+| Scenario | `plan_id` 在请求体中 |
 | --- | --- |
 | 创建新的 inbound plan | **省略** — 系统生成并返回新的 `inbound_plan_id` |
 | 更新现有草稿 plan | **必需** — 包含原始 create 调用返回的 `inbound_plan_id` |
@@ -204,7 +204,7 @@ x-tts-access-token: eyJhbGciOiJSUzI1NiIsInR5cCI6...
 * **5xx Server Error** — 使用退避重试（最多 3 次）。记录响应头中的 `request_id` 以便上报
 
 ### 常见问题与修复
-**ETA 时段不可用。** ETA 帮助 FBT 规划 warehouse inbound 容量。**** 在高峰期，部分 inbound 方式或站点可能不可用，请选择其他 ETA 
+**ETA 时段不可用。** ETA 帮助 FBT 规划仓库 inbound 容量。**** 在高峰期，部分 inbound 方式或站点可能不可用，请选择其他 ETA
 
 * 从 *Get Inbound Method Detail*（步骤 3）检索可用 ETA 并从列表中选择
 
@@ -216,27 +216,27 @@ x-tts-access-token: eyJhbGciOiJSUzI1NiIsInR5cCI6...
 **Print Label API 延迟** 标签打印在调用 print label API 后**异步**运行。
 
 ## 9. 其他 FBT API 和 Webhook
-| # | Type | API / Webhook | Description |
+| # | 类型 | API / Webhook | 描述 |
 | --- | --- | --- | --- |
-| 1 | API | Get FBT Warehouse List | 检索所有 FBT warehouse 信息，包括名称和地址 |
-| 2 | API | Search Goods Info | 检索商品信息，包括 warehouse 验证的尺寸和重量 |
-| 3 | API | Search FBT Inventory | 检索 inventory 详情 — warehouse 级别的可售、预留、不可售和在途 inventory |
-| 4 | API | Search FBT Inventory Record | 检索 inventory 变更记录，可按 warehouse 和时间范围筛选 |
-| 5 | API | Get Inbound Orders | 检索 inbound 订单详情，包括计划/实际的 inbound 详情和状态 |
+| 1 | API | 获取 FBT 仓库列表 | 检索所有 FBT 仓库信息，包括名称和地址 |
+| 2 | API | 搜索货品信息 | 检索商品信息，包括仓库验证的尺寸和重量 |
+| 3 | API | 搜索 FBT 库存 | 检索 inventory 详情 — 仓库级别的可售、预留、不可售和在途 inventory |
+| 4 | API | 搜索 FBT 库存记录 | 检索 inventory 变更记录，可按仓库和时间范围筛选 |
+| 5 | API | 获取入库订单 | 检索 inbound 订单详情，包括计划/实际的 inbound 详情和状态 |
 | 6 | Webhook | Merchant Onboard | 当卖家入驻 FBT 时触发 |
 | 7 | Webhook | Goods Match | 当 TikTok Shop SKU 与 FBT 商品匹配或取消匹配时触发 |
-| 8 | Webhook | FBT Inventory Update | 当 FBT inventory 更新时触发 |
-| 9 | Webhook | FBT Inbound Status Change | 当 FBT inbound 订单状态更新时触发 |
+| 8 | Webhook | FBT 库存更新 | 当 FBT inventory 更新时触发 |
+| 9 | Webhook | FBT 入库状态变更 | 当 FBT inbound 订单状态更新时触发 |
 
 ## 10. 测试与上线检查清单
 ### 上线
 
 - [ ] 已实现 Token 刷新逻辑
-- [ ] ETA 选择：通过调用 List Inbound method 检索可用 ETA 
+- [ ] ETA 选择：通过调用 List Inbound method 检索可用 ETA
 - [ ] 标签生成：在调用 print label 后短暂异步延迟后调用 Print Label
 - [ ] 错误处理：记录所有 5xx 错误的响应中的 `request_id`
 - [ ] 已确认 inbound plan 中所有 SKU 的商品匹配
-- [ ] 已确认 warehouse 对您的商家处于活跃状态
+- [ ] 已确认仓库对您的卖家处于活跃状态
 - [ ] **仅在 sandbox 签核后**使用真实 `shop_id` 和凭据转入生产环境
 
 
@@ -245,7 +245,7 @@ x-tts-access-token: eyJhbGciOiJSUzI1NiIsInR5cCI6...
 **问：ListAvailableInboundMethod 响应中的 D2FC 和 ONE_HUB 是什么意思？**
 
 * **D2FC**：*Direct to Fulfillment Center* — 您的货件直接发送到履约客户订单的最终 FC
-* **ONE_HUB**：您的货件首先发送到 hub/合并点进行分拣，然后转发到 FC。这是两个标准值；根据 warehouse 位置，可能有额外的区域特定值可用。
+* **ONE_HUB**：您的货件首先发送到 hub/合并点进行分拣，然后转发到 FC。这是两个标准值；根据仓库位置，可能有额外的区域特定值可用。
 
-**Q: Can I update the tracking number after submission?​**Yes — use the *Update Tracking* API to push a new or corrected carrier tracking number at any time after handing off to the carrier.
+**问：提交后还能更新运单号吗？**可以——在将包裹交给承运商之后的任何时间，使用 *Update Tracking* 接口推送新的或更正后的承运商运单号。
 

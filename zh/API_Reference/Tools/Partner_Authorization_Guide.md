@@ -2,18 +2,18 @@
 
 # 合作伙伴授权的作用
 合作伙伴授权后，应用可以使用合作伙伴授予的权限调用 **Affiliate Partner** API。
-合作伙伴授权用于合作伙伴拥有的业务品类数据。目前，TikTok Shop Partner Center 仅支持 **Seller and Scalable Creator Match-Up (TAP)** 合作伙伴品类的此流程。有关支持的 endpoint 的更多信息，请参阅 **Affiliate Partner** API 参考文档。
+合作伙伴授权用于合作伙伴拥有的业务品类数据。目前，TikTok Shop Partner Center 仅支持 **卖家 and Scalable 达人 Match-Up (TAP)** 合作伙伴品类的此流程。有关支持的 endpoint 的更多信息，请参阅 **Affiliate Partner** API 参考文档。
 # 授权域名概览
 TikTok Shop 为卖家、达人和合作伙伴授权使用不同的授权入口域名。请使用与您要请求授权的数据所有者相匹配的授权指南。
 | 授权类型 | 数据所有者 | 美国授权入口 | 其他地区授权入口 | 备注 |
 | --- | --- | --- | --- | --- |
-| 卖家授权 | 卖家 / 店铺 | `https://services.us.tiktokshop.com/open/authorize` | `https://services.tiktokshop.com/open/authorize` | 用于卖家拥有的店铺数据和卖家 API scope。 |
+| 卖家授权 | 卖家 / 店铺 | `https://services.us.tiktokshop.com/open/authorize` | `https://services.tiktokshop.com/open/authorize` | 用于卖家拥有的店铺数据和卖家 API 权限范围。 |
 | 达人授权 | 达人 | `https://shop.tiktok.com/alliance` | `https://shop.tiktok.com/alliance` | 用于达人授权流程。完整路径和参数请遵循达人授权指南。 |
-| 合作伙伴授权 | 合作伙伴 | `https://partner.us.tiktokshop.com/open/authorize` | `https://partner.tiktokshop.com/open/authorize` | 用于 Affiliate Partner API 和合作伙伴 API scope。 |
+| 合作伙伴授权 | 合作伙伴 | `https://partner.us.tiktokshop.com/open/authorize` | `https://partner.tiktokshop.com/open/authorize` | 用于 Affiliate Partner API 和合作伙伴 API 权限范围。 |
 # 前提条件
 
 1. 如果应用仍处于开发中，则应用只能接受应用所有者的授权。上线后，应用可以接受其他合作伙伴的授权。
-2. 应用必须启用合作伙伴 API scope，即 scope key 中以 `partner` 开头的那些：
+2. 应用必须启用合作伙伴 API 权限范围，即权限范围 key 中以 `partner` 开头的那些：
 
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/dec0b1025fc14dec8878e93266569436~tplv-k9wyc2ijk0-image.image)
 # 授权链接
@@ -39,7 +39,7 @@ GET https://auth.tiktok-shops.com/api/v2/token/get?app_key={app_key}&app_secret=
 ```
 
 成功响应包含 `access_token`、`access_token_expire_in`、`refresh_token`、`refresh_token_expire_in` 和 `granted_scopes`。请在服务端安全存储 token。不要在前端代码中暴露 `app_secret`、`access_token` 或 `refresh_token`。
-在调用 Affiliate Partner API 时，在 `x-tts-access-token` 请求 header 中使用 `access_token`。在调用合作伙伴品类 API 之前，请先调用 **Get Authorized Category Assets** 以确认已授权的业务品类并获取品类资产 cipher：
+在调用 Affiliate Partner API 时，在 `x-tts-access-token` 请求请求头中使用 `access_token`。在调用合作伙伴品类 API 之前，请先调用 **Get Authorized Category Assets** 以确认已授权的业务品类并获取品类资产 cipher：
 ```HTTP
 # 获取已授权的品类资产
 GET /authorization/202405/category_assets
@@ -55,10 +55,10 @@ GET https://auth.tiktok-shops.com/api/v2/token/refresh?app_key={app_key}&app_sec
 
 如果 refresh token 过期或合作伙伴取消了授权，请要求合作伙伴重新授权应用。
 # 合作伙伴要求
-合作伙伴授权仅授予访问合作伙伴所授权且应用被批准访问的业务品类数据的权限。目前，Partner Center 仅公开 **Seller and Scalable Creator Match-Up (TAP)** 品类的合作伙伴授权；它不授予访问不相关的合作伙伴业务数据的权限。
-合作伙伴必须已成功加入 **Seller and Scalable Creator Match-Up (TAP)**：
+合作伙伴授权仅授予访问合作伙伴所授权且应用被批准访问的业务品类数据的权限。目前，Partner Center 仅公开 **卖家 and Scalable 达人 Match-Up (TAP)** 品类的合作伙伴授权；它不授予访问不相关的合作伙伴业务数据的权限。
+合作伙伴必须已成功加入 **卖家 and Scalable 达人 Match-Up (TAP)**：
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/445e0f8141aa4417b224109f48263772~tplv-k9wyc2ijk0-image.image)
-确保用户在授权页面上选择 **Seller and Scalable Creator Match-Up (TAP)**。
+确保用户在授权页面上选择 **卖家 and Scalable 达人 Match-Up (TAP)**。
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/ffeba3cb3bd74f029a7e4f9d537441e6~tplv-k9wyc2ijk0-image.image)
 # 取消授权
 合作伙伴可以从 **My account > My authorizations** 取消授权。

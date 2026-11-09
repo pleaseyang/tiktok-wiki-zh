@@ -1,22 +1,22 @@
 # 搜索商品信息
 
-# Path: /fbt/202607/goods/search
-# Method: [POST]
+# 路径：/fbt/202607/goods/search
+# 方法：[POST]
 # 功能描述
-检索属于商家且匹配指定筛选条件的商品，并返回其 ID、名称、商品-SKU 关系、商家申报的尺寸、warehouse 确认的尺寸和其他属性。当提供 `goods_ids`、`product_ids`、`reference_codes` 和 `sku_ids` 中的多个时，API 仅返回匹配所有提供的筛选字段的商品。如果所有四个筛选条件都为空或省略，API 按创建时间降序返回商家的商品，受 `page_size` 限制。
+检索属于卖家且匹配指定筛选条件的商品，并返回其 ID、名称、商品-SKU 关系、卖家申报的尺寸、仓库确认的尺寸和其他属性。当提供 `goods_ids`、`product_ids`、`reference_codes` 和 `sku_ids` 中的多个时，API 仅返回匹配所有提供的筛选字段的商品。如果所有四个筛选条件都为空或省略，API 按创建时间降序返回卖家的商品，受 `page_size` 限制。
 
 ---
 
 
 # 公共参数
 公共参数请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。在请求跨境店铺的 API 时未传递正确的值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型: application/json |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | page_size | int | Y | 50 | 每页返回的结果数量。 |
 | 有效范围：[1-100]。 |  |  |  |  |
@@ -24,12 +24,12 @@
 | app_key | string | Y | 38abcd | 每个 app 都有一个唯一的 key。请使用分配给您的 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 能够识别发送方。 |
 | timestamp | string | Y | 1623812664 | Unix 时间戳 GMT（UTC+00:00）。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
-# 请求 Body 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+# 请求体参数
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | goods_ids | []string | N | ["256080616234"] | 用于筛选结果的 Fulfilled by TikTok 商品 ID。每个 ID 必须为正十进制字符串。每次请求最多 100 个 ID。 |
-| product_ids | []string | N | ["256990616123"] | 用于筛选结果的 TikTok Shop 产品 ID。每个 ID 必须为正十进制字符串。每次请求最多 100 个 ID。 |
-| reference_codes | []string | N | ["SELLERSKU 123456"] | 用于筛选结果的商家定义商品参考代码。每次请求最多 100 个代码。 |
+| product_ids | []string | N | ["256990616123"] | 用于筛选结果的 TikTok Shop 商品 ID。每个 ID 必须为正十进制字符串。每次请求最多 100 个 ID。 |
+| reference_codes | []string | N | ["SELLERSKU 123456"] | 用于筛选结果的卖家定义商品参考代码。每次请求最多 100 个代码。 |
 | sku_ids | []string | N | ["256086568895"] | 用于筛选结果的 TikTok Shop SKU ID。每个 ID 必须为正十进制字符串。每次请求最多 100 个 ID。 |
 # 请求示例
 **Query**
@@ -43,7 +43,7 @@ https://open-api.tiktokglobalshop.com/fbt/202607/goods/search?app_key=123abc&sig
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中说明。 |
@@ -57,7 +57,7 @@ https://open-api.tiktokglobalshop.com/fbt/202607/goods/search?app_key=123abc&sig
 | ^^barcodes | []object |  | 商品条形码的详细信息列表。 |
 | ^^^code | string | 014673829105 | 商品的可打印条形码。 |
 | ^^^type | string | UPC | 条形码类型。 |
-| Possible values: |  |  |  |
+| 可能的值： |  |  |  |
 
 * UPC
 * EAN
@@ -65,13 +65,13 @@ https://open-api.tiktokglobalshop.com/fbt/202607/goods/search?app_key=123abc&sig
 * ASIN_OR_FNSKU
 * MERCHANT_SKU_ID
 * FBT_SPECIFIC_BARCODE |
-   ^^reference_code |string |abc32323 |商家定义的商品标识符。 |
+   ^^reference_code |string |abc32323 |卖家定义的商品标识符。 |
    ^^image_url |string |https://example.com/fbt/goods-image.jpg |商品图片 URL。 |
-   ^^merchant_declaration_info |object | |商家输入的尺寸和重量信息。 |
+   ^^merchant_declaration_info |object | |卖家输入的尺寸和重量信息。 |
    ^^^weight |object | |商品重量。 |
    ^^^^value |string |1.122 |重量值，最多三位小数。 |
    ^^^^unit |string |GRAM |重量单位。
-   Possible values:
+   可能的值：
 * MILLIGRAM
 * GRAM
 * KILOGRAM
@@ -82,29 +82,29 @@ https://open-api.tiktokglobalshop.com/fbt/202607/goods/search?app_key=123abc&sig
    ^^^^length |string |2.122 |长度值，最多三位小数。 |
    ^^^^height |string |3.122 |高度值，最多三位小数。 |
    ^^^^unit |string |CENTIMETER |尺寸单位。
-   Possible values:
+   可能的值：
 * MILLIMETER
 * CENTIMETER
 * METER
 * FOOT
 * INCH
 * MICROMETER |
-   ^^warehouse_confirmation_info |object | |warehouse 在商品首次 inbound 时验证的尺寸和重量信息。仅当至少有一个 warehouse 确认的重量、长度、宽度或高度值可用时返回。如果省略此对象，则此响应中没有 warehouse 确认的测量值。 |
+   ^^warehouse_confirmation_info |object | |仓库在商品首次 inbound 时验证的尺寸和重量信息。仅当至少有一个仓库确认的重量、长度、宽度或高度值可用时返回。如果省略此对象，则此响应中没有仓库确认的测量值。 |
    ^^^weight |object | |商品重量。 |
-   ^^^^value |string |1 |warehouse 验证的重量值，最多三位小数。 |
+   ^^^^value |string |1 |仓库验证的重量值，最多三位小数。 |
    ^^^^unit |string |GRAM |重量单位。
-   Possible values:
+   可能的值：
 * MILLIGRAM
 * GRAM
 * KILOGRAM
 * POUND
 * OUNCE |
    ^^^dimension |object | |商品尺寸。 |
-   ^^^^width |string |1 |warehouse 验证的宽度值，最多三位小数。 |
-   ^^^^length |string |2.5 |warehouse 验证的长度值，最多三位小数。 |
-   ^^^^height |string |3 |warehouse 验证的高度值，最多三位小数。 |
+   ^^^^width |string |1 |仓库验证的宽度值，最多三位小数。 |
+   ^^^^length |string |2.5 |仓库验证的长度值，最多三位小数。 |
+   ^^^^height |string |3 |仓库验证的高度值，最多三位小数。 |
    ^^^^unit |string |CENTIMETER |尺寸单位。
-   Possible values:
+   可能的值：
 * MILLIMETER
 * CENTIMETER
 * METER
@@ -115,10 +115,10 @@ https://open-api.tiktokglobalshop.com/fbt/202607/goods/search?app_key=123abc&sig
    ^^^id |string |1729439634328225260 |TikTok Shop 系统生成的 SKU 标识符。 |
    ^^^name |string |Testcase SKU |SKU 名称。 |
    ^^^image_url |string |https://example.com/fbt/sku-image.jpg |TikTok Shop SKU 图片 URL。 |
-   ^^^product |object | |与当前 Fulfilled by TikTok 商品匹配的 TikTok Shop 产品。 |
-   ^^^^id |string |1729439631253210604 |TikTok Shop 系统生成的产品标识符。 |
-   ^^^^name |string |Testcase_xd2.0_test_goods |TikTok Shop 产品名称。 |
-   ^^^^image_url |string |https://example.com/fbt/product-image.jpg |TikTok Shop 产品图片 URL。 |
+   ^^^product |object | |与当前 Fulfilled by TikTok 商品匹配的 TikTok Shop 商品。 |
+   ^^^^id |string |1729439631253210604 |TikTok Shop 系统生成的商品标识符。 |
+   ^^^^name |string |Testcase_xd2.0_test_goods |TikTok Shop 商品名称。 |
+   ^^^^image_url |string |https://example.com/fbt/product-image.jpg |TikTok Shop 商品图片 URL。 |
    ^^^regions |[]string |["US"] |SKU 正在销售的区域，以两位字符的 ISO 3166-1 alpha-2 格式的区域代码表示。 |
    ^^^matched |bool |true |表示 SKU 已与当前 Fulfilled by TikTok 商品匹配。`skus` 中的条目为已匹配关系，因此此值始终为 `true`。 |
    ^^lot_expiration_info |object | |商品的批次控制和保质期管理信息。 |
@@ -129,38 +129,38 @@ https://open-api.tiktokglobalshop.com/fbt/202607/goods/search?app_key=123abc&sig
    ^^^is_expiration_management |bool |true |表示商品是否受保质期管理的标志。
    True: 受保质期管理。
    False: 不受保质期管理。 |
-   ^^^shelf_life_days |int |12 |商家输入的商品保质期天数，表示产品从制造到过期之间可使用的总天数。 |
-   ^^^inbound_cutoff_days |int |90 |商品过期前的 inbound 截止天数，表示在产品过期前 warehouse 不再接受 inbound 货件的时间段。 |
-   ^^^expiration_alert_days |int |60 |商品过期前的预警天数，表示平台向商家发送过期提醒警报的时间段。 |
+   ^^^shelf_life_days |int |12 |卖家输入的商品保质期天数，表示商品从制造到过期之间可使用的总天数。 |
+   ^^^inbound_cutoff_days |int |90 |商品过期前的 inbound 截止天数，表示在商品过期前仓库不再接受 inbound 货件的时间段。 |
+   ^^^expiration_alert_days |int |60 |商品过期前的预警天数，表示平台向卖家发送过期提醒警报的时间段。 |
    ^^^sales_cutoff_days |int |20 |商品过期前的销售截止天数，表示在过期前商品不再可供销售的时间段。 |
    ^^^handling_method |string |DISPOSE |过期 inventory 的处理方式。
-   Possible values:
+   可能的值：
 * `STORE_UNITS`：将单位移至缺陷 inventory。
 * `RETURN_TO_SELLER`：将单位退回给卖家。
 * `DISPOSE`：处置单位。 |
    ^^is_hazmat |bool |false |是否为危险品商品 |
    ^^hazmat_info |object | |危险品详情。仅在 `is_hazmat` 为 `true` 时返回。子类型对象取决于 `hazmat_type`：`BATTERY` 对应 `battery_extra_info`，`FLAMMABLE_LIQUID` 对应 `flammable_liquids_extra_info`，`AEROSOLS` 对应 `aerosol_extra_info`。`MAGNETIZED` 不包含子类型对象。 |
    ^^^hazmat_type |string |MAGNETIZED |危险品类型
-   Possible values:
+   可能的值：
    -MAGNETIZED
    -BATTERY
    -FLAMMABLE_LIQUID
    -AEROSOLS |
    ^^^battery_extra_info |object | |危险品的附加电池信息。 |
    ^^^^battery_type |string |LITHIUM_ION |电池类型
-   Possible values:
+   可能的值：
    LITHIUM_ION
    LITHIUM_METAL
    OTHER |
    ^^^^battery_packaging_type |string |STANDALONE |电池包装类型。
-   Possible values:
+   可能的值：
 * STANDALONE
 * IN_EQUIPMENT
 * WITH_EQUIPMENT
 * OTHER |
    ^^^^total_battery_weight |string |1 |以 total_battery_weight_unit 指定单位表示的总电池重量。 |
    ^^^^total_battery_weight_unit |string |GRAM |total_battery_weight 的单位。可能的值：GRAM。 |
-   ^^^^total_battery_capacity |string |1 |Total battery capacity in the unit specified by total_battery_capacity_unit. |
+   ^^^^total_battery_capacity |string |1 |以 total_battery_capacity_unit 指定单位表示的总电池容量。 |
    ^^^^battery_count_per_package |string |2 |每个包装的电池数量 |
    ^^^^is_need_un_38_3_test |bool |false |UN38.3 测试确保电池符合特定的安全标准。如果报告中未包含在 MSDS 中，请在此字段中发送报告。 |
    ^^^^un_38_3_test_file_url |string |https://example.com/fbt/msds-report.pdf |UN38.3 测试文件 URL |
@@ -173,17 +173,17 @@ https://open-api.tiktokglobalshop.com/fbt/202607/goods/search?app_key=123abc&sig
    -OTHER |
    ^^^^flammable_liquids_volume |string |1 |以 volume_unit 指定单位表示的易燃液体体积。 |
    ^^^^volume_unit |string |MILLILITER |`flammable_liquids_volume` 的单位，如 `MILLILITER`。 |
-   ^^^aerosol_extra_info |object | |aerosol info |
+   ^^^aerosol_extra_info |object | |气雾剂信息 |
    ^^^^volume |string |1 |气雾剂体积 |
    ^^^^volume_unit |string |MILLILITER |气雾剂体积 unit |
    ^^^dg_class |string |CLASS_2
    |危险品等级
-   Possible values:
+   可能的值：
    -CLASS_2
    -CLASS_3
    -CLASS_9 |
    ^^^dg_uncode |string |UN1266 |危险物质的 UN 标识符。标准 UN 值使用 `UN` 前缀加四位数字；也支持 `OTHER`。
-   Possible values:
+   可能的值：
 * UN2807
 * UN3480
 * UN3090
@@ -195,14 +195,14 @@ https://open-api.tiktokglobalshop.com/fbt/202607/goods/search?app_key=123abc&sig
 * OTHER |
    ^^^msds_file_url |string |https://example.com/fbt/msds-report.pdf |危险品的材料安全数据表，用于支持在 FBT 中审核商品的安全合规性 |
    ^^sioc_approval_status |string |SIOC_APPROVAL_STATUS_APPROVE |SIOC 特定的审批状态。当 `is_sioc` 为 `true` 且 SIOC 审批状态可用时返回此字段。
-   Possible values:
+   可能的值：
 * SIOC_APPROVAL_STATUS_INVALID
 * SIOC_APPROVAL_STATUS_INIT
 * SIOC_APPROVAL_STATUS_UNDER_REVIEW
 * SIOC_APPROVAL_STATUS_APPROVE
 * SIOC_APPROVAL_STATUS_REJECT |
    ^^hazmat_approval_status |string |APPROVAL_STATUS_UNDER_REVIEW |FBT 履约审批状态。此字段针对危险品或作为 Ships in Own Container（SIOC）管理的商品返回。
-   Possible values:
+   可能的值：
 * APPROVAL_STATUS_INVALID
 * APPROVAL_STATUS_INIT
 * APPROVAL_STATUS_UNDER_REVIEW
@@ -231,6 +231,6 @@ https://open-api.tiktokglobalshop.com/fbt/202607/goods/search?app_key=123abc&sig
 
 # 错误码
 常见错误码请参考 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 

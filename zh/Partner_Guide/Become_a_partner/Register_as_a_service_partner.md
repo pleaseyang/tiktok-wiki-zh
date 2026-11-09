@@ -1,6 +1,6 @@
 # 注册为服务合作伙伴
 
-**更新中** 📌 这是一份注册为服务合作伙伴的指南。适用于 CAP、MCN、TAP 和 TSP。如果您是开发者，请[查看开发者指南](64f1993d9495ef0281851694)。  
+**更新中** 📌 这是一份注册为服务合作伙伴的指南。适用于 CAP、MCN、TAP 和 TSP。如果您是开发者，请[查看开发者指南](64f1993d9495ef0281851694)。
 # TikTok Shop Partner Center 入门
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/ab3349b3334b492bb6867a5a4a5476a0~tplv-k9wyc2ijk0-image.image)
 ## 步骤1：创建账号

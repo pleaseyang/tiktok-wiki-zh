@@ -1,7 +1,7 @@
 # 获取 ACC 受众偏好列表
 
-# Path: /analytics/202610/acc/preferences
-# Method: [GET]
+# 路径：/analytics/202610/acc/preferences
+# 方法：[GET]
 # 功能描述
 获取品牌的所选 ACC 受众偏好的商品、直播、video 或图文帖子的分页排名。
 使用 `entity_type` 选择排名类型。每个条目包含其排名、实体信息和偏好指标；`entity_detail` 因实体类型而异。使用 `date` 和 `trend_days` 选择分析窗口，使用 `scope` 选择店铺级或市场级结果。要获取更多结果，将返回的 `page_token` 作为下一次请求中的 `page_token` 传递。
@@ -11,13 +11,13 @@
 
 # 公共参数
 公共参数，请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此参数在请求 API 时传递店铺信息。请求跨境店铺 API 时未传递正确值将返回不正确的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求查询参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个 app 都有一个唯一的 key。请使用分配给您的 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 能够识别发送者。 |
@@ -33,7 +33,7 @@
 
 * `PRODUCT`：数值型商品 ID 执行精确 ID 匹配；否则，关键字为商品名称的区分大小写的子字符串。
 * `LIVE`：对直播 ID、直播类型、类目或标题进行不区分大小写的子字符串匹配。
-* `VIDEO` 或 `PHOTO`：对内容 ID、创作者 ID、标题、创作者别名或创作者账号进行不区分大小写的子字符串匹配。
+* `VIDEO` 或 `PHOTO`：对内容 ID、达人 ID、标题、达人别名或达人账号进行不区分大小写的子字符串匹配。
    省略、为空或仅含空白字符的值不应用关键字过滤。不应用关键字长度验证。 |
    l2_category_id |string |N |848648 |用于过滤的2级商品类目 ID。仅支持 `entity_type=PRODUCT`；其他实体类型请省略。提供 `l3_category_id` 时必填。使用 `GET /analytics/202610/acc/preferences/product/categories` 返回的 `category_level=2` 的 `category_id`，以相同的店铺、品牌、行业、受众、分析窗口和范围查询。 |
    l3_category_id |string |N |601529 |用于过滤的3级商品类目 ID。仅支持 `entity_type=PRODUCT` 且要求 `l2_category_id` 非空；其他实体类型请省略。省略以使用默认的3级类目选择；提供以选择特定的3级类目。使用 `GET /analytics/202610/acc/preferences/product/categories` 返回的所选2级类目下的3级子 `category_id`，以相同的店铺、品牌、行业、受众、分析窗口和范围查询。 |
@@ -51,7 +51,7 @@ https://open-api.tiktokglobalshop.com/analytics/202610/acc/preferences?app_key=1
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -68,8 +68,8 @@ https://open-api.tiktokglobalshop.com/analytics/202610/acc/preferences?app_key=1
 * `PRODUCT`: `product_url`, `l2_category_id`, `l3_category_id`.
 * `LIVE`: `live_start_time`, `replay_url`.
 * `VIDEO` 或 `PHOTO`：`post_time`、`creator_id`、`creator_name`。 |
-   ^^^creator_id |string |1000000000000000004 |video 或图文帖子的创作者 ID（可用时）。适用于 `VIDEO` 和 `PHOTO`。 |
-   ^^^creator_name |string |Demo Creator |video 或图文帖子的创作者显示名称（可用时）。适用于 `VIDEO` 和 `PHOTO`。 |
+   ^^^creator_id |string |1000000000000000004 |video 或图文帖子的达人 ID（可用时）。适用于 `VIDEO` 和 `PHOTO`。 |
+   ^^^creator_name |string |Demo 达人 |video 或图文帖子的达人显示名称（可用时）。适用于 `VIDEO` 和 `PHOTO`。 |
    ^^^l2_category_id |string |848648 |排名商品的2级类目 ID。适用于 `PRODUCT`。 |
    ^^^l3_category_id |string |601529 |与此排名条目关联的3级类目标识符。适用于 `PRODUCT`。值 `-1` 表示默认的3级类目选择。 |
    ^^^live_start_time |string |2026-09-18 |直播开始的 UTC 日历日期，格式为 `YYYY-MM-DD`（可用时）。适用于 `LIVE`。 |
@@ -85,7 +85,7 @@ https://open-api.tiktokglobalshop.com/analytics/202610/acc/preferences?app_key=1
    ^^rank |int |1 |此条目在请求排序中从一开始的位置，跨页面连续。这是当前分页序列的显示位置，不是稳定的业务排名。 |
    ^latest_available_date |string |2026-09-20 |所选店铺、品牌和行业的最新可用分析日期，格式为 `YYYY-MM-DD`（UTC）。当请求 `date` 被省略时用作分析结束日期。 |
    ^next_page_token |string |cGFnZV9udW1iZXI9MQ== |下一页的 token。在下一次请求中将此值原样作为 page_token 传递，并保持所有其他请求参数不变。空字符串表示没有更多页面。 |
-   ^scope |string |MY_SHOP |此排名使用的范围：`MY_SHOP` 为店铺级结果，`MARKET` 为市场级结果。 |
+   ^权限范围 |string |MY_SHOP |此排名使用的范围：`MY_SHOP` 为店铺级结果，`MARKET` 为市场级结果。 |
    ^start_date |string |2026-08-22 |分析窗口的包含开始日期，格式为 `YYYY-MM-DD`（UTC）。计算方式为 `end_date` 减去 `trend_days - 1` 天。 |
    ^total_count |int |1 |过滤后分页前的匹配排名条目总数。 |
 
@@ -96,6 +96,6 @@ https://open-api.tiktokglobalshop.com/analytics/202610/acc/preferences?app_key=1
 
 # 错误码
 常见错误码，请参考 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 

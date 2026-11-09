@@ -2,7 +2,7 @@
 
 # 合作伙伴授权的作用是什么？
 完成合作伙伴授权后，应用即可在该合作伙伴授予的权限范围内调用 **Affiliate Partner** 接口。
-合作伙伴授权用于访问合作伙伴自有的业务类目数据。目前 TikTok Shop 合作伙伴中心仅对 **Seller and Scalable Creator Match-Up (TAP)** 这一合作伙伴类目支持该授权流程。有关支持的端点，请参阅 **Affiliate Partner** API 参考。
+合作伙伴授权用于访问合作伙伴自有的业务类目数据。目前 TikTok Shop 合作伙伴中心仅对 **卖家 and Scalable 达人 Match-Up (TAP)** 这一合作伙伴类目支持该授权流程。有关支持的端点，请参阅 **Affiliate Partner** API 参考。
 # 授权域名概览
 TikTok Shop 针对卖家、达人和合作伙伴授权使用不同的授权入口域名。请根据你要申请授权的数据归属方，选择对应的授权指南。
 | 授权类型 | 数据归属方 | 美国授权入口 | ROW 授权入口 | 说明 |
@@ -13,7 +13,7 @@ TikTok Shop 针对卖家、达人和合作伙伴授权使用不同的授权入�
 # 前置要求
 
 1. 若应用仍在开发中，只能接受应用所有者的授权；应用上线后，才能接受其他合作伙伴的授权。
-2. 应用必须启用合作伙伴 API 权限范围，即 scope key 中以 `partner` 开头的权限：
+2. 应用必须启用合作伙伴 API 权限范围，即权限范围 key 中以 `partner` 开头的权限：
 
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/dec0b1025fc14dec8878e93266569436~tplv-k9wyc2ijk0-image.image)
 # 授权链接
@@ -52,10 +52,10 @@ GET https://auth.tiktok-shops.com/api/v2/token/refresh?app_key={app_key}&app_sec
 
 若刷新令牌已过期，或合作伙伴取消了授权，请让合作伙伴重新授权应用。
 # 合作伙伴要求
-合作伙伴授权仅允许访问该合作伙伴已授权、且应用已获批准访问的业务类目数据。目前合作伙伴中心仅为 **Seller and Scalable Creator Match-Up (TAP)** 类目提供合作伙伴授权，不会授予无关的合作伙伴业务数据访问权限。
-合作伙伴必须已成功入驻 **Seller and Scalable Creator Match-Up (TAP)**：
+合作伙伴授权仅允许访问该合作伙伴已授权、且应用已获批准访问的业务类目数据。目前合作伙伴中心仅为 **卖家 and Scalable 达人 Match-Up (TAP)** 类目提供合作伙伴授权，不会授予无关的合作伙伴业务数据访问权限。
+合作伙伴必须已成功入驻 **卖家 and Scalable 达人 Match-Up (TAP)**：
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/445e0f8141aa4417b224109f48263772~tplv-k9wyc2ijk0-image.image)
-请确认用户在授权页面上选择了 **Seller and Scalable Creator Match-Up (TAP)**。
+请确认用户在授权页面上选择了 **卖家 and Scalable 达人 Match-Up (TAP)**。
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/ffeba3cb3bd74f029a7e4f9d537441e6~tplv-k9wyc2ijk0-image.image)
 # 取消授权
 合作伙伴可在 **My account > My authorizations** 中取消授权。

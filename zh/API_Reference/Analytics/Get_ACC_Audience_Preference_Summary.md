@@ -1,7 +1,7 @@
 # 获取 ACC 受众偏好摘要
 
-# Path: /analytics/202610/acc/preferences/summary
-# Method: [GET]
+# 路径：/analytics/202610/acc/preferences/summary
+# 方法：[GET]
 # 功能描述
 获取所选品牌、受众细分、范围和时间窗口的 ACC 商品、直播、video 和图文帖子受众偏好摘要。
 ---
@@ -9,13 +9,13 @@
 
 # 公共参数
 公共参数请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此参数在请求 API 时传递店铺信息。跨境店铺请求 API 时未传递正确值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型: application/json |
 # 请求查询参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有唯一的 key。请使用分配给您的应用的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名以便 TTS 识别发送方。 |
@@ -33,7 +33,7 @@ https://open-api.tiktokglobalshop.com/analytics/202610/acc/preferences/summary?a
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -42,122 +42,122 @@ https://open-api.tiktokglobalshop.com/analytics/202610/acc/preferences/summary?a
 | ^audience_type | string | CONVERSION | 用于摘要的受众细分，以大写的 audience_type 值返回。 |
 | ^channel_summaries | []object |  | 按以下顺序排列的渠道摘要：PRODUCT、LIVE、VIDEO、PHOTO。当没有可用项目时，每个摘要中的列表可以为空。这些是结构化的 Top 3 结果，而非生成的叙述文本。当底层查询失败时列表也可能为空；仅凭空列表不能确定该渠道没有活动。 |
 | ^^channel | string | PRODUCT | 此摘要代表的渠道：PRODUCT、LIVE、VIDEO 或 PHOTO。 |
-| ^^live_top_items | []object |  | Up to 3 livestreams with the highest GMV for the selected audience, scope, and reporting window, in descending GMV order. Populated in the LIVE summary when data is available. |
-| ^^^live_room_type | string | demo_room_type | Livestream room category label. |
-| ^^^live_start_time | string | 2026-09-18 | Date when the livestream started, in YYYY-MM-DD format (UTC). |
-| ^^^live_type | string | label1 | Livestream type label. |
-| ^^^replay_url | string | https://example.com/live/1000000000000000005/replay | URL of the livestream replay. |
-| ^^^room_id | string | 1000000000000000005 | ID of the livestream room. |
-| ^^^room_image_url | string | https://example.com/images/live-001.jpg | URL of the livestream cover image. |
-| ^^^room_title | string | Demo LIVE Session | Title of the livestream. |
-| ^^^seller_own_id | string | 1000000000000000004 | ID of the content author. |
-| ^^^seller_own_name | string | Demo Creator | Display name of the content author. |
-| ^^^stats | object |  | Audience preference metrics for this item in the selected reporting window. |
-| ^^^^customers | string | 4210 | Reported customer count for this item in the selected reporting window, represented as a string. |
-| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | Formatted gross merchandise value (GMV) band for this item. Positive values use 50-unit bands separated by " ~ "; nonpositive values are shown as a formatted zero. Currency formatting uses the shop's region and currency information where available. |
-| ^^^^orders | string | 8566 | Reported order count for this item in the selected reporting window, represented as a string. |
-| ^^live_type_top_items | []object |  | Up to 3 livestream types with the highest GMV for the selected audience, scope, and reporting window, in descending GMV order. Populated in the LIVE summary when data is available. |
-| ^^^live_type | string | label1 | Stable LIVE type identifier, such as label1. Use this identifier as factor_id in Get ACC Audience Preference List for entity_type=LIVE; the localized display name is not a query value. |
-| ^^^live_type_name | string | Stable, non-shaky image | Localized display name of the LIVE factor. Use live_type, rather than this display name, as the stable identifier for filtering LIVE preferences. |
-| ^^^stats | object |  | Audience preference metrics for this item in the selected reporting window. |
-| ^^^^customers | string | 4210 | Reported customer count for this item in the selected reporting window, represented as a string. |
-| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | Formatted gross merchandise value (GMV) band for this item. Positive values use 50-unit bands separated by " ~ "; nonpositive values are shown as a formatted zero. Currency formatting uses the shop's region and currency information where available. |
-| ^^^^orders | string | 8566 | Reported order count for this item in the selected reporting window, represented as a string. |
-| ^^photo_top_items | []object |  | Up to 3 photo posts with the highest GMV for the selected audience, scope, and reporting window, in descending GMV order. Populated in the PHOTO summary when data is available. |
-| ^^^image_urls | []string | ["https://example.com/images/photo-001.jpg"] | URLs of images in the photo post. The cover image URL can be returned when no other image URLs are available. |
-| ^^^linked_products | []object |  | Products linked to the photo post, when provided. |
-| ^^^^product_id | string | 1000000000000000001 | ID of the product. |
-| ^^^^product_image_url | string | https://example.com/images/product-001.jpg | URL of the product image. |
-| ^^^^product_name | string | Demo Makeup Set | Name of the product. |
-| ^^^^product_scan_url | string | https://example.com/products/1000000000000000001 | URL associated with the linked product. |
-| ^^^photo_id | string | 1000000000000000007 | ID of the photo post. |
-| ^^^photo_title | string | Demo Product Photo Post | Title of the photo post. |
-| ^^^post_images | []object |  | Image metadata for the images in the photo post. |
-| ^^^^color | string | #FFFFFF | Color of the image metadata for the images in the photo post. |
-| ^^^^height | int | 1080 | Height of the image metadata for the images in the photo post. |
-| ^^^^mimetype | string | image/jpeg | MIME type of the image. |
-| ^^^^size | string | 204800 | Size of the image metadata for the images in the photo post. |
-| ^^^^thumb_uri | string | demo/photo-001-thumb | Resource URI identifying the image thumbnail. |
-| ^^^^thumb_url_list | []string | ["https://example.com/images/photo-001-thumb.jpg"] | URLs for the image thumbnail. |
-| ^^^^tint_color | string | #F0F0F0 | Tint color of the image metadata for the images in the photo post. |
-| ^^^^uri | string | demo/photo-001 | Resource URI identifying the image. |
-| ^^^^url_list | []string | ["https://example.com/images/photo-001.jpg"] | URLs for the image. |
-| ^^^^width | int | 1080 | Width of the image metadata for the images in the photo post. |
-| ^^^publish_time | string | 2026-09-18 | Publication date of the photo post, in YYYY-MM-DD format (UTC). |
-| ^^^seller_own_avatar_url | string | https://example.com/images/creator-001.png | URL of the content author's avatar. |
-| ^^^seller_own_id | string | 1000000000000000004 | ID of the content author. |
-| ^^^seller_own_name | string | Demo Creator | Display name of the content author. |
-| ^^^stats | object |  | Audience preference metrics for this item in the selected reporting window. |
-| ^^^^customers | string | 4210 | Reported customer count for this item in the selected reporting window, represented as a string. |
-| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | Formatted gross merchandise value (GMV) band for this item. Positive values use 50-unit bands separated by " ~ "; nonpositive values are shown as a formatted zero. Currency formatting uses the shop's region and currency information where available. |
-| ^^^^orders | string | 8566 | Reported order count for this item in the selected reporting window, represented as a string. |
-| ^^product_category_top_items | []object |  | Up to 3 level-2 product categories with the highest GMV, in descending GMV order, in the PRODUCT summary. Each category includes its available level-3 children; the 3-category limit applies to level-2 entries. |
-| ^^^category_id | string | 848648 | ID of this level-2 product category. |
-| ^^^category_name | string | Makeup | Name of this level-2 product category. |
-| ^^^children | []object |  | Level-3 product categories belonging to this level-2 category. The top-3 limit on product_category_top_items does not independently limit this child list. |
-| ^^^^category_id | string | 601529 | ID of this level-3 product category. |
-| ^^^^category_name | string | Makeup Sets | Name of this level-3 product category. |
-| ^^^^level | int | 3 | Product category level. This node is level 3. |
-| ^^^^stats | object |  | Audience preference metrics for this item in the selected reporting window. |
-| ^^^^^customers | string | 4210 | Reported customer count for this item in the selected reporting window, represented as a string. |
-| ^^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | Formatted gross merchandise value (GMV) band for this item. Positive values use 50-unit bands separated by " ~ "; nonpositive values are shown as a formatted zero. Currency formatting uses the shop's region and currency information where available. |
-| ^^^^^orders | string | 8566 | Reported order count for this item in the selected reporting window, represented as a string. |
-| ^^^level | int | 2 | Product category level. This node is level 2. |
-| ^^^stats | object |  | Audience preference metrics for this item in the selected reporting window. |
-| ^^^^customers | string | 4210 | Reported customer count for this item in the selected reporting window, represented as a string. |
-| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | Formatted gross merchandise value (GMV) band for this item. Positive values use 50-unit bands separated by " ~ "; nonpositive values are shown as a formatted zero. Currency formatting uses the shop's region and currency information where available. |
-| ^^^^orders | string | 8566 | Reported order count for this item in the selected reporting window, represented as a string. |
-| ^^product_top_items | []object |  | Up to 3 products with the highest GMV for the selected audience, scope, and reporting window, in descending GMV order. Populated in the PRODUCT summary when data is available. |
-| ^^^l2_category_id | string | 848648 | ID of the product's level-2 category. |
-| ^^^l2_category_name | string | Makeup | Name of the product's level-2 category. |
-| ^^^l3_category_id | string | 601529 | ID of the product's level-3 category. |
-| ^^^l3_category_name | string | Makeup Sets | Name of the product's level-3 category. |
-| ^^^product_id | string | 1000000000000000001 | ID of the product. |
-| ^^^product_image_url | string | https://example.com/images/product-001.jpg | URL of the product image. |
-| ^^^product_name | string | Demo Makeup Set | Name of the product. |
-| ^^^product_scan_url | string | https://example.com/products/1000000000000000001 | Share link for the product. |
-| ^^^stats | object |  | Audience preference metrics for this item in the selected reporting window. |
-| ^^^^customers | string | 4210 | Reported customer count for this item in the selected reporting window, represented as a string. |
-| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | Formatted gross merchandise value (GMV) band for this item. Positive values use 50-unit bands separated by " ~ "; nonpositive values are shown as a formatted zero. Currency formatting uses the shop's region and currency information where available. |
-| ^^^^orders | string | 8566 | Reported order count for this item in the selected reporting window, represented as a string. |
-| ^^seller_own_top_items | []object |  | Content-author preference summaries for the channel. This list can be empty. |
-| ^^^content_type | string | VIDEO | Content classification associated with this content-author summary. |
-| ^^^seller_own_avatar_url | string | https://example.com/images/creator-001.png | URL of the content author's avatar. |
-| ^^^seller_own_id | string | 1000000000000000004 | ID of the content author. |
-| ^^^seller_own_name | string | Demo Creator | Display name of the content author. |
-| ^^^stats | object |  | Audience preference metrics for this item in the selected reporting window. |
-| ^^^^customers | string | 4210 | Reported customer count for this item in the selected reporting window, represented as a string. |
-| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | Gross merchandise value (GMV) range associated with this content-author summary. |
-| ^^^^orders | string | 8566 | Reported order count for this item in the selected reporting window, represented as a string. |
-| ^^^sub_channel | string | VIDEO | Channel associated with this content-author summary. |
-| ^^video_top_items | []object |  | Up to 3 videos with the highest GMV for the selected audience, scope, and reporting window, in descending GMV order. Populated in the VIDEO summary when data is available. |
-| ^^^linked_products | []object |  | Products linked to the video, when provided. |
-| ^^^^product_id | string | 1000000000000000001 | ID of the product. |
-| ^^^^product_image_url | string | https://example.com/images/product-001.jpg | URL of the product image. |
-| ^^^^product_name | string | Demo Makeup Set | Name of the product. |
-| ^^^^product_scan_url | string | https://example.com/products/1000000000000000001 | URL associated with the linked product. |
-| ^^^publish_time | string | 2026-09-18 | Publication date of the video, in YYYY-MM-DD format (UTC). |
-| ^^^seller_own_avatar_url | string | https://example.com/images/creator-001.png | URL of the content author's avatar. |
-| ^^^seller_own_id | string | 1000000000000000004 | ID of the content author. |
-| ^^^seller_own_name | string | Demo Creator | Display name of the content author. |
-| ^^^stats | object |  | Audience preference metrics for this item in the selected reporting window. |
-| ^^^^customers | string | 4210 | Reported customer count for this item in the selected reporting window, represented as a string. |
-| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | Formatted gross merchandise value (GMV) band for this item. Positive values use 50-unit bands separated by " ~ "; nonpositive values are shown as a formatted zero. Currency formatting uses the shop's region and currency information where available. |
-| ^^^^orders | string | 8566 | Reported order count for this item in the selected reporting window, represented as a string. |
-| ^^^video_cover_url | string | https://example.com/images/video-001.jpg | URL of the video cover image. |
-| ^^^video_id | string | 1000000000000000006 | ID of the video. |
-| ^^^video_infos | []object |  | Available video file representations and their playback metadata. |
-| ^^^^backup_url | string | https://example.com/media/video-001-backup.mp4 | Backup playback URL for this video representation. |
-| ^^^^bitrate | int | 1200000 | Bitrate of this video representation. |
-| ^^^^file_hash | string | 00000000000000000000000000000000 | Hash identifying this video file. |
-| ^^^^format | string | mp4 | File format of this video representation. |
-| ^^^^height | int | 720 | Height format of this video representation. |
-| ^^^^main_url | string | https://example.com/media/video-001.mp4 | Primary playback URL for this video representation. |
-| ^^^^size | int | 10485760 | Size of this video representation. |
-| ^^^^url_expire | int | 1793505600 | Url expire timestamp format of this video representation. |
-| ^^^^video_quality | string | 720p | Quality label of this video representation. |
-| ^^^^width | int | 1280 | Width of this video representation. |
-| ^^^video_title | string | Demo Product Video | Title of the video. |
+| ^^live_top_items | []object |  | 所选受众、范围和报告窗口内 GMV 最高的最多 3 场直播，按 GMV 降序排列。有数据时填充在 LIVE 汇总中。 |
+| ^^^live_room_type | string | demo_room_type | 直播间类目标签。 |
+| ^^^live_start_time | string | 2026-09-18 | 直播开始日期，采用 YYYY-MM-DD 格式 (UTC)。 |
+| ^^^live_type | string | label1 | 直播类型标签。 |
+| ^^^replay_url | string | https://example.com/live/1000000000000000005/replay | 直播回放的 URL。 |
+| ^^^room_id | string | 1000000000000000005 | 直播间的 ID。 |
+| ^^^room_image_url | string | https://example.com/images/live-001.jpg | 直播封面图片的 URL。 |
+| ^^^room_title | string | Demo LIVE Session | 直播标题。 |
+| ^^^seller_own_id | string | 1000000000000000004 | 内容作者的 ID。 |
+| ^^^seller_own_name | string | Demo Creator | 内容作者的显示名称。 |
+| ^^^stats | object |  | 所选统计周期内该商品的受众偏好指标。 |
+| ^^^^customers | string | 4210 | 所选报告时间窗口内该商品的举报客户数，以字符串形式表示。 |
+| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | 该商品的商品交易总额（GMV）格式化区间。正值以 50 为一档，用 " ~ " 分隔；非正值显示为格式化后的零。货币格式在可用时使用店铺的地区和货币信息。 |
+| ^^^^orders | string | 8566 | 所选报告时间窗口内该商品的举报订单数，以字符串形式表示。 |
+| ^^live_type_top_items | []object |  | 所选受众、范围和报告窗口内 GMV 最高的最多 3 种直播类型，按 GMV 降序排列。有数据时填充在 LIVE 汇总中。 |
+| ^^^live_type | string | label1 | 稳定的 LIVE 类型标识符，例如 label1。在 Get ACC Audience Preference List 中将此标识符用作 factor_id，用于 entity_type=LIVE；本地化展示名称不是查询取值。 |
+| ^^^live_type_name | string | 稳定、不抖动的画面 | LIVE 因子的本地化显示名称。请使用 live_type 而非此显示名称，作为筛选 LIVE 偏好的稳定标识符。 |
+| ^^^stats | object |  | 所选统计周期内该商品的受众偏好指标。 |
+| ^^^^customers | string | 4210 | 所选报告时间窗口内该商品的举报客户数，以字符串形式表示。 |
+| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | 该商品的商品交易总额（GMV）格式化区间。正值以 50 为一档，用 " ~ " 分隔；非正值显示为格式化后的零。货币格式在可用时使用店铺的地区和货币信息。 |
+| ^^^^orders | string | 8566 | 所选报告时间窗口内该商品的举报订单数，以字符串形式表示。 |
+| ^^photo_top_items | []object |  | 所选受众、范围和报告窗口内 GMV 最高的最多 3 条图文帖子，按 GMV 降序排列。有数据时填充在 PHOTO 汇总中。 |
+| ^^^image_urls | []string | ["https://example.com/images/photo-001.jpg"] | 照片帖子中图片的 URL。当没有其他可用的图片 URL 时，可以返回封面图片 URL。 |
+| ^^^linked_products | []object |  | 关联到该图文帖的商品，如有提供。 |
+| ^^^^product_id | string | 1000000000000000001 | 商品的 ID。 |
+| ^^^^product_image_url | string | https://example.com/images/product-001.jpg | 商品图片的 URL。 |
+| ^^^^product_name | string | Demo Makeup Set | 商品名称。 |
+| ^^^^product_scan_url | string | https://example.com/products/1000000000000000001 | 与关联商品对应的 URL。 |
+| ^^^photo_id | string | 1000000000000000007 | 照片帖子的 ID。 |
+| ^^^photo_title | string | Demo Product Photo Post | 照片帖子的标题。 |
+| ^^^post_images | []object |  | 照片帖子中图片的图片元数据。 |
+| ^^^^color | string | #FFFFFF | 照片帖子中图片的图片元数据的颜色。 |
+| ^^^^height | int | 1080 | 照片帖子中图片的图片元数据的高度。 |
+| ^^^^mimetype | string | image/jpeg | 图片的 MIME 类型。 |
+| ^^^^size | string | 204800 | 照片帖子中图片的图片元数据的大小。 |
+| ^^^^thumb_uri | string | demo/photo-001-thumb | 标识图片缩略图的资源 URI。 |
+| ^^^^thumb_url_list | []string | ["https://example.com/images/photo-001-thumb.jpg"] | 图片缩略图的 URL。 |
+| ^^^^tint_color | string | #F0F0F0 | 照片帖子中图片的图片元数据的色调颜色。 |
+| ^^^^uri | string | demo/photo-001 | 标识图片的资源 URI。 |
+| ^^^^url_list | []string | ["https://example.com/images/photo-001.jpg"] | 图片的 URL。 |
+| ^^^^width | int | 1080 | 照片帖子中图片的图片元数据的宽度。 |
+| ^^^publish_time | string | 2026-09-18 | 图文帖的发布日期，采用 YYYY-MM-DD 格式 (UTC)。 |
+| ^^^seller_own_avatar_url | string | https://example.com/images/creator-001.png | 内容达人头像的 URL。 |
+| ^^^seller_own_id | string | 1000000000000000004 | 内容作者的 ID。 |
+| ^^^seller_own_name | string | Demo Creator | 内容作者的显示名称。 |
+| ^^^stats | object |  | 所选统计周期内该商品的受众偏好指标。 |
+| ^^^^customers | string | 4210 | 所选报告时间窗口内该商品的举报客户数，以字符串形式表示。 |
+| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | 该商品的商品交易总额（GMV）格式化区间。正值以 50 为一档，用 " ~ " 分隔；非正值显示为格式化后的零。货币格式在可用时使用店铺的地区和货币信息。 |
+| ^^^^orders | string | 8566 | 所选报告时间窗口内该商品的举报订单数，以字符串形式表示。 |
+| ^^product_category_top_items | []object |  | PRODUCT 汇总中 GMV 最高的最多 3 个二级商品类目，按 GMV 降序排列。每个类目包含其可用的三级子类目；3 个类目的上限适用于二级条目。 |
+| ^^^category_id | string | 848648 | 此二级商品类目的 ID。 |
+| ^^^category_name | string | Makeup | 此二级商品类目的名称。 |
+| ^^^children | []object |  | 属于此二级类目的三级商品类目。product_category_top_items 的 top-3 限制不单独限制此子列表。 |
+| ^^^^category_id | string | 601529 | 此三级商品类目的 ID。 |
+| ^^^^category_name | string | Makeup Sets | 此三级商品类目的名称。 |
+| ^^^^level | int | 3 | 商品类目层级。此节点为第 3 级。 |
+| ^^^^stats | object |  | 所选统计周期内该商品的受众偏好指标。 |
+| ^^^^^customers | string | 4210 | 所选报告时间窗口内该商品的举报客户数，以字符串形式表示。 |
+| ^^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | 该商品的商品交易总额（GMV）格式化区间。正值以 50 为一档，用 " ~ " 分隔；非正值显示为格式化后的零。货币格式在可用时使用店铺的地区和货币信息。 |
+| ^^^^^orders | string | 8566 | 所选报告时间窗口内该商品的举报订单数，以字符串形式表示。 |
+| ^^^level | int | 2 | 商品类目层级。此节点为第 2 级。 |
+| ^^^stats | object |  | 所选统计周期内该商品的受众偏好指标。 |
+| ^^^^customers | string | 4210 | 所选报告时间窗口内该商品的举报客户数，以字符串形式表示。 |
+| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | 该商品的商品交易总额（GMV）格式化区间。正值以 50 为一档，用 " ~ " 分隔；非正值显示为格式化后的零。货币格式在可用时使用店铺的地区和货币信息。 |
+| ^^^^orders | string | 8566 | 所选报告时间窗口内该商品的举报订单数，以字符串形式表示。 |
+| ^^product_top_items | []object |  | 所选受众、范围和报告窗口内 GMV 最高的最多 3 个商品，按 GMV 降序排列。有数据时填充在 PRODUCT 汇总中。 |
+| ^^^l2_category_id | string | 848648 | 商品的二级类目 ID。 |
+| ^^^l2_category_name | string | Makeup | 商品的二级类目名称。 |
+| ^^^l3_category_id | string | 601529 | 商品的三级类目 ID。 |
+| ^^^l3_category_name | string | Makeup Sets | 商品的三级类目名称。 |
+| ^^^product_id | string | 1000000000000000001 | 商品的 ID。 |
+| ^^^product_image_url | string | https://example.com/images/product-001.jpg | 商品图片的 URL。 |
+| ^^^product_name | string | Demo Makeup Set | 商品名称。 |
+| ^^^product_scan_url | string | https://example.com/products/1000000000000000001 | 商品的分享链接。 |
+| ^^^stats | object |  | 所选统计周期内该商品的受众偏好指标。 |
+| ^^^^customers | string | 4210 | 所选报告时间窗口内该商品的举报客户数，以字符串形式表示。 |
+| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | 该商品的商品交易总额（GMV）格式化区间。正值以 50 为一档，用 " ~ " 分隔；非正值显示为格式化后的零。货币格式在可用时使用店铺的地区和货币信息。 |
+| ^^^^orders | string | 8566 | 所选报告时间窗口内该商品的举报订单数，以字符串形式表示。 |
+| ^^seller_own_top_items | []object |  | 渠道的内容达人偏好摘要。此列表可以为空。 |
+| ^^^content_type | string | VIDEO | 与此内容达人摘要关联的内容分类。 |
+| ^^^seller_own_avatar_url | string | https://example.com/images/creator-001.png | 内容达人头像的 URL。 |
+| ^^^seller_own_id | string | 1000000000000000004 | 内容作者的 ID。 |
+| ^^^seller_own_name | string | Demo Creator | 内容作者的显示名称。 |
+| ^^^stats | object |  | 所选统计周期内该商品的受众偏好指标。 |
+| ^^^^customers | string | 4210 | 所选报告时间窗口内该商品的举报客户数，以字符串形式表示。 |
+| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | 与此内容达人摘要关联的商品交易总额 (GMV) 区间。 |
+| ^^^^orders | string | 8566 | 所选报告时间窗口内该商品的举报订单数，以字符串形式表示。 |
+| ^^^sub_channel | string | VIDEO | 与此内容达人摘要关联的渠道。 |
+| ^^video_top_items | []object |  | 所选受众、范围和报告窗口内 GMV 最高的最多 3 个视频，按 GMV 降序排列。有数据时填充在 VIDEO 汇总中。 |
+| ^^^linked_products | []object |  | 关联到该视频的商品，如有提供。 |
+| ^^^^product_id | string | 1000000000000000001 | 商品的 ID。 |
+| ^^^^product_image_url | string | https://example.com/images/product-001.jpg | 商品图片的 URL。 |
+| ^^^^product_name | string | Demo Makeup Set | 商品名称。 |
+| ^^^^product_scan_url | string | https://example.com/products/1000000000000000001 | 与关联商品对应的 URL。 |
+| ^^^publish_time | string | 2026-09-18 | 视频的发布日期，采用 YYYY-MM-DD 格式 (UTC)。 |
+| ^^^seller_own_avatar_url | string | https://example.com/images/creator-001.png | 内容达人头像的 URL。 |
+| ^^^seller_own_id | string | 1000000000000000004 | 内容作者的 ID。 |
+| ^^^seller_own_name | string | Demo Creator | 内容作者的显示名称。 |
+| ^^^stats | object |  | 所选统计周期内该商品的受众偏好指标。 |
+| ^^^^customers | string | 4210 | 所选报告时间窗口内该商品的举报客户数，以字符串形式表示。 |
+| ^^^^gmv_range | string | $331,451.00 ~ $331,500.00 | 该商品的商品交易总额（GMV）格式化区间。正值以 50 为一档，用 " ~ " 分隔；非正值显示为格式化后的零。货币格式在可用时使用店铺的地区和货币信息。 |
+| ^^^^orders | string | 8566 | 所选报告时间窗口内该商品的举报订单数，以字符串形式表示。 |
+| ^^^video_cover_url | string | https://example.com/images/video-001.jpg | 视频封面图片的 URL。 |
+| ^^^video_id | string | 1000000000000000006 | 视频的 ID。 |
+| ^^^video_infos | []object |  | 可用的视频文件表示及其播放元数据。 |
+| ^^^^backup_url | string | https://example.com/media/video-001-backup.mp4 | 此视频表示的备用播放 URL。 |
+| ^^^^bitrate | int | 1200000 | 此视频表示的比特率。 |
+| ^^^^file_hash | string | 00000000000000000000000000000000 | 标识此视频文件的哈希。 |
+| ^^^^format | string | mp4 | 此视频表示的文件格式。 |
+| ^^^^height | int | 720 | 此视频表示的高度格式。 |
+| ^^^^main_url | string | https://example.com/media/video-001.mp4 | 此视频表示的主播放 URL。 |
+| ^^^^size | int | 10485760 | 此视频表示的大小。 |
+| ^^^^url_expire | int | 1793505600 | 此视频表示的 Url 过期时间戳格式。 |
+| ^^^^video_quality | string | 720p | 此视频表示的质量标签。 |
+| ^^^^width | int | 1280 | 此视频表示的宽度。 |
+| ^^^video_title | string | Demo Product Video | 视频的标题。 |
 | ^earliest_available_date | string | 2026-08-21 | 所选店铺、品牌和行业的最早可用日期，格式为 YYYY-MM-DD（UTC）。 |
 | ^end_date | string | 2026-09-20 | 报告窗口的截止日期（含），格式为 YYYY-MM-DD（UTC）。 |
 | ^latest_available_date | string | 2026-09-20 | 所选店铺、品牌和行业的最新可用日期，格式为 YYYY-MM-DD（UTC）。 |
@@ -170,6 +170,6 @@ https://open-api.tiktokglobalshop.com/analytics/202610/acc/preferences/summary?a
 
 # 错误码
 常见错误码请参考 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 

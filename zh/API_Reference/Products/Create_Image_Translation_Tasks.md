@@ -1,16 +1,16 @@
 # 创建图片翻译任务
 
-# Path: /product/202505/images/translation_tasks
-# Method: [POST]
+# 路径：/product/202505/images/translation_tasks
+# 方法：[POST]
 # 功能描述
-Initiates a translation task for one or more images. This asynchronous API queues the images for processing in the specified target language.
-Applicable only for sellers that sell across EU.
-Use the [Image Translation Completed webhook](684f8d9bcc4e44049347a12e) to monitor the translation progress, or pass the task ID to the [Get Image Translation Tasks API](684f8b2d535a9d048f234564) to retrieve the status and the translated images.
-**Note**:
+为一个或多个图片发起翻译任务。此异步接口会将图片加入队列，按指定的目标语言进行处理。
+仅适用于跨 EU 销售的卖家。
+使用 [Image Translation Completed webhook](684f8d9bcc4e44049347a12e) 监控翻译进度，或将任务 ID 传给 [Get Image Translation Tasks API](684f8b2d535a9d048f234564) 以获取状态和翻译后的图片。
+**注意**：
 
-* Please wait 5 minutes after task creation before calling the Get endpoint, and retry at intervals over 10 seconds to avoid rate limiting.
-* Each task corresponds to the translation of 1 image into 1 target language.
-* You can create up to 20 tasks per call and 500 tasks per day. Any tasks beyond the daily limit will be rejected.
+* 请在任务创建 5 分钟后再调用 Get 端点，并以超过 10 秒的间隔重试，以避免触发限流。
+* 每个任务对应将 1 张图片翻译成 1 种目标语言。
+* 每次调用最多可创建 20 个任务，每天最多 500 个任务。超出每日上限的任务将被拒绝。
 
 
 ---
@@ -18,27 +18,27 @@ Use the [Image Translation Completed webhook](684f8d9bcc4e44049347a12e) to monit
 
 # 通用参数
 通用参数请参考 [如何调用 TikTok Shop API - 通用参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。在请求跨境店铺的 API 时未传递正确的值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求查询参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的密钥。请使用分配给您的应用的特定密钥。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT（UTC+00:00）。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
 # 请求体参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
-| images | []object | Y |  | The list of images to translate. |
-| Use the [Upload Product Image API](https://partner.tiktokshop.com/docv2/page/6509df95defece02be598a22) to upload the images first and obtain the corresponding image URIs. |  |  |  |  |
-**Note**: A request can contain at most 20 image URI and target language combinations in total. The recommendations to specify up to 5 images and up to 20 target languages are not independent limits that can be used together; the total number of combinations must remain 20 or fewer. For example, you can submit 10 images with 2 target languages each, but you can't submit 10 images with 5 target languages each. |
-^image_uri |string |Y |tos-useast2a-i-tulkllf4y5-euttp/748e39ecff38453ab8396a36a53dbb92 |The URI of the image, retrieved from the [Upload Product Image API](https://partner.tiktokshop.com/docv2/page/6509df95defece02be598a22)
-**Recommendation**: Specify up to 5 images to avoid exceeding the task limit per call. |
-^target_languages |[]string |Y |["it-IT", "fr-FR"] |The target languages to translate the image into. You can specify multiple target languages for each image.
-Possible values:
+| images | []object | Y |  | 要翻译的图片列表。 |
+| 请先使用 [Upload Product Image API](https://partner.tiktokshop.com/docv2/page/6509df95defece02be598a22) 上传图片并获取对应的图片 URI。 |  |  |  |  |
+**注意**: 一次请求最多包含 20 个图片 URI 与目标语言的组合。最多指定 5 张图片、最多指定 20 种目标语言的建议并不是可叠加使用的独立上限；组合总数必须保持在 20 个或更少。例如，可以提交 10 张图片、每张对应 2 种目标语言，但不能提交 10 张图片、每张对应 5 种目标语言。 |
+^image_uri |string |Y |tos-useast2a-i-tulkllf4y5-euttp/748e39ecff38453ab8396a36a53dbb92 |图片的 URI，可通过 [Upload Product Image API](https://partner.tiktokshop.com/docv2/page/6509df95defece02be598a22) 获取
+**建议**: 最多指定 5 张图片，以免超出每次调用的任务上限。 |
+^target_languages |[]string |Y |["it-IT", "fr-FR"] |图片要翻译成的目标语言。可以为每张图片指定多种目标语言。
+可能的值：
 
 * `cs-CZ`
 * `da-DK`
@@ -59,7 +59,7 @@ Possible values:
 * `pl-PL`
 * `pt-PT`
 * `sv-SE`
-   Recommendation: Specify up to 20 languages to avoid exceeding the task limit per call. |
+   建议: 最多指定 20 种语言，以免超出每次调用的任务上限。 |
 
 # 请求示例
 **Query**
@@ -73,18 +73,18 @@ https://open-api.tiktokglobalshop.com/product/202505/images/translation_tasks?ap
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性 description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
 | request_id | string | 202203070749000101890810281E8C70B7 | 请求日志 |
 | data | object |  | 具体返回信息 |
-| ^translation_tasks | []object |  | The list of translation tasks created for the requested images. |
-Each task corresponds to the translation of 1 image into 1 target language. So if you specified 2 target languages for an image, 2 tasks will be created. |
-^^image_uri |string |tos-useast2a-i-tulkllf4y5-euttp/748e39ecff38453ab8396a36a53dbb92 |The URI of the image to translate. |
-^^target_language |string |it-IT |The target language for this translation task. This value corresponds to one of the `target_languages` submitted for the task's `image_uri`. |
-^^id |string |764c6e87eedcea90399a0dafcd572b71 |The ID to identify the image translation task.
-Pass this ID to the [Get Image Translation Tasks API](684f8b2d535a9d048f234564) to retrieve the task status and the translated image URIs. |
+| ^translation_tasks | []object |  | 为所请求图片创建的翻译任务列表。 |
+每个任务对应将 1 张图片翻译成 1 种目标语言。因此，如果为一张图片指定了 2 种目标语言，将创建 2 个任务。 |
+^^image_uri |string |tos-useast2a-i-tulkllf4y5-euttp/748e39ecff38453ab8396a36a53dbb92 |要翻译的图片的 URI。 |
+^^target_language |string |it-IT |该翻译任务的目标语言。此值对应为该任务的 `image_uri` 提交的 `target_languages` 之一。 |
+^^id |string |764c6e87eedcea90399a0dafcd572b71 |用于标识图片翻译任务的 ID。
+将此 ID 传给 [Get Image Translation Tasks API](684f8b2d535a9d048f234564) 以获取任务状态和翻译后的图片 URI。 |
 # 响应示例
 ```json
 {"code":0,"data":{"translation_tasks":[{"image_uri":"tos-useast2a-i-tulkllf4y5-euttp/748e39ecff38453ab8396a36a53dbb92","target_language":"it-IT","id":"764c6e87eedcea90399a0dafcd572b71"}]},"message":"Success","request_id":"202203070749000101890810281E8C70B7"}
@@ -94,9 +94,9 @@ Pass this ID to the [Get Image Translation Tasks API](684f8b2d535a9d048f234564) 
 常见错误码请参考 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
 | 代码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
-| 36009003 | Internal error. Please try again. If the issue persists after multiple attempts, please contact platform support. |
+| 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
 | 12038008 | The image URI is invalid. Please use the URI generated by the Upload Product Image API. |
-| 12038009 | The specified `target_language` is invalid or unsupported. |
+| 12038009 | 指定的 `target_language` 无效或不受支持。 |
 | 12038010 | The number of translation task IDs exceeded the limit of 20. |
 | 12038012 | Exceeded the daily limit of 500 translation tasks. |
 | 12038013 | This operation is not available for this shop. |

@@ -114,7 +114,7 @@ Fulfillment API 还提供拆包发货和合包发货（有时也称为合并包�
 ## 跟踪号验证政策
 如果卖家使用卖家配送模式，TikTok 将验证跟踪号。
 
-1. 商家使用的物流服务商必须受 TikTok 支持。请使用 [Get Shipping Providers](https://partner.tiktokshop.com/docv2/page/650aa48d4a0bb702c06d85cd?external_id=650aa48d4a0bb702c06d85cd) API 获取可用的物流服务商。
+1. 卖家使用的物流服务商必须受 TikTok 支持。请使用 [Get Shipping Providers](https://partner.tiktokshop.com/docv2/page/650aa48d4a0bb702c06d85cd?external_id=650aa48d4a0bb702c06d85cd) API 获取可用的物流服务商。
 2. TikTok 将验证跟踪号是否与所选物流服务商匹配。如果跟踪号未被所选物流服务商验证，将返回错误。
 
 # 常见问题

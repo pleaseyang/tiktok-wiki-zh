@@ -38,7 +38,7 @@
 | 字段 | 类型 | 必填 | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
 | `app_key` | string | 是 | 合作伙伴中心应用页面上的 App key。 | 123abc |
-| `app_secret` | string | 是 | 合作伙伴中心应用页面上的 App secret。 | (your app secret) |
+| `app_secret` | string | 是 | 合作伙伴中心应用页面上的 App secret。 | (您的应用密钥) |
 | `auth_code` | string | 是 | 从授权链接获取的授权码。 | TTP_FeBoANmHP3yqdoUI9fZOCw |
 | `grant_type` | string | 是 | 授权类型。仅接受 `authorized_code`。 | authorized_code |
 > **关于 `grant_type=authorized_code`：** 该取值是 TikTok Shop 令牌接口的正确写法，**并非**标准 OAuth 的 `authorization_code`。请勿「修正」为 `authorization_code`，否则请求会失败。
@@ -105,7 +105,7 @@ https://auth.tiktok-shops.com/api/v2/token/get?app_key=123abc
 | 字段 | 类型 | 必填 | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
 | `app_key` | string | 是 | 合作伙伴中心应用页面上的 App key。 | 123abc |
-| `app_secret` | string | 是 | 合作伙伴中心应用页面上的 App secret。 | (your app secret) |
+| `app_secret` | string | 是 | 合作伙伴中心应用页面上的 App secret。 | (您的应用密钥) |
 | `refresh_token` | string | 是 | Get Access Token 响应中返回的刷新令牌。 | TTP_C2XWDN63ON-FOHJSMR0WSG |
 | `grant_type` | string | 是 | 授权类型。仅接受 `refresh_token`。 | refresh_token |
 请求示例：
@@ -151,5 +151,5 @@ https://auth.tiktok-shops.com/api/v2/token/refresh?app_key=123abc
 如需更多帮助，请参见「如何联系支持」。
 # 启用 API 权限范围
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/84f5bb18084348f585eade8b61db9111~tplv-k9wyc2ijk0-image.image)
-开发应用前，开发者应根据应用的业务类型启用或申请所需的 API 权限范围（scope）。
+开发应用前，开发者应根据应用的业务类型启用或申请所需的 API 权限范围（权限范围）。
 <span style="background-color: rgb(255, 245, 235)">📌 </span><span style="background-color: rgb(255, 245, 235)"><strong>说明</strong></span><span style="background-color: rgb(255, 245, 235)">：启用不必要的权限范围可能延长应用审核时间，并降低用户授权率。</span>

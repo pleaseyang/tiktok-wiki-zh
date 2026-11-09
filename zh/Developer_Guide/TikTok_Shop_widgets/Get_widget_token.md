@@ -15,7 +15,7 @@ Token 流程如下：
 # API 端点
 | 项目 | 值 |
 | --- | --- |
-| API 名称 | Get Widget Token |
+| API 名称 | 获取 Widget 令牌 |
 | API 版本 | `202401` |
 | Host | `https://open-api.tiktokglobalshop.com` |
 | Method | `GET` |

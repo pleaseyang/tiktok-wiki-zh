@@ -1,6 +1,6 @@
 # 机构 - 达人即时通讯（IM）
 
-**注意：** *机构-达人IM适用于***Creator Agency Partners (CAP)***和/或***TikTok Shop Affiliate Partners (TAP)*** *- 用于与达人进行管理和协作。*
+**注意：** *机构-达人IM适用于***达人 Agency Partners (CAP)***和/或***TikTok Shop Affiliate Partners (TAP)*** *- 用于与达人进行管理和协作。*
 # 概述
 通过TikTok Shop的机构-达人IM系统与达人直接沟通。在平台内发送即时消息 - 无需外部通讯工具。无缝跟踪达人互动情况。
 

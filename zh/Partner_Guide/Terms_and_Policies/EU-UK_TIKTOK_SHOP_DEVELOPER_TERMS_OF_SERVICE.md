@@ -61,7 +61,7 @@
 (e) 使用我们提供给您的 API 密钥以外的任何方式访问 TikTok Shop API；
 (f) 通过应用进行或允许超过我们不时施加的任何限制的 API 调用；
 (g) 将 TikTok Shop 开发者服务与开源许可下的软件结合使用，导致 TikTok Shop 开发者服务受任何此类开源许可下的任何义务约束；
-(h) 以违反任何移动开发者或应用商店条款、条件、指南或政策的方式使用 TikTok Shop 开发者服务；
+(h) 以违反任何移动开发者或应用店铺条款、条件、指南或政策的方式使用 TikTok Shop 开发者服务；
 (i) 以（由 TikTok 判定）超出合理请求量、构成过度或滥用使用、或以其他方式不遵守或与任何文档、政策、本开发者条款或任何纳入的开发者条款相矛盾的方式使用 TikTok Shop 开发者服务；
 (j) 为任何未经授权或违法的目的收集或试图从 TikTok Shop 用户收集任何个人数据，或构建、帮助构建或补充任何关于任何个人、设备、内容或浏览器的档案、数据库或类似记录，或将任何个人、设备、内容或浏览器的行为与任何档案、数据库或类似记录关联；
 (k) 将 TikTok Shop 开发者服务用于欺诈或其他违法或未经授权的目的，包括但不限于开发或推广间谍软件、广告软件或其他恶意代码或程序，或诽谤或骚扰任何人；
@@ -198,23 +198,23 @@ TikTok 目前不对使用 TikTok Shop 开发者服务收费；但是，TikTok �
 (vii) SAML 2.0 或 SCIM 集成可供 TikTok 使用；
 (viii) 按照 TikTok 标准的密码复杂性/配置要求；以及
 (ix) 具有适用安全控制的密码管理系统（如适用）。
-<div style="text-align: center"><h1 id="423d3347"><strong>TÉARMAÍ SEIRBHÍSE FORBRÓRA TIKTOK SHOP</strong></h1></div>
+<div style="text-align: center"><h1 id="423d3347"><strong>TIKTOK SHOP 开发者服务条款</strong></h1></div>
 
-*Seo an leagan Gaeilge dena téarmaí. I gcás ina bhfuil aon choimhlint nó neamhréireacht idir an leagan Béarla agus leagan Gaeilge, beidh seasamh ag an leagan Béarla*
-## **Achoimre ar Théarmaí**
+*本条款为爱尔兰语版本。如英文版本与爱尔兰语版本之间存在任何冲突或不一致，以英文版本为准*
+## **条款摘要**
 Go hachomair, is conradh iad na Téarmaí Seirbhíse Forbróra TikTok Shop seo idir Tusa agus TikTok Technology Limited a rialaíonn soláthar Seirbhísí Forbróra TikTok Shop chun aon obair forbartha a dhéanann Túsa a éascú chun do sheirbhísí nó díoltóir a chomhtháthú agus a nascadh Soláthraíonn tú seirbhísí dóibh le hardán Ionad Comhpháirtithe TikTok Shop nó le haon ardán TikTok Shop eile. I measc rudaí eile, na Téarmaí Forbróra seo:
 
-* leag amach na cearta atá agat chun Seirbhísí Forbróra TikTok a rochtain agus a úsáid (clásal 2), agus leag amach úinéireacht TikTok ar ábhar úsáideora/tríú páirtí ar ardán TikTok Shop (clásal 3);
-* roinnt rialacha a leagan amach maidir le cad is féidir leat agus nach féidir leat a dhéanamh agus tú ag rochtain nó ag baint úsáide as na Seirbhísí Forbróra (clásal 3);
-* leag amach conas is féidir le TikTok srian a chur, a chur ar fionraí (clásal 5) nó deireadh a chur leis (clásal 7) Do rochtain ar na Seirbhísí Forbróra nó d'úsáid a bhaint astu;
-* teorainn a chur le caillteanais a mbeadh TikTok faoi dhliteanas ina leith murach sin (clásal 10);
-* a cheangal ort árachas a choinneáil ar do chostas féin chun dliteanais ionchasacha a d'fhéadfadh teacht chun cinn maidir le rochtain ar agus úsáid na Seirbhísí Forbróra a chlúdach (clásal 11.1); agus
+* 列明您访问和使用 TikTok 开发者服务的权利（第 2 条），并列明 TikTok 对 TikTok Shop 平台上用户/第三方内容的所有权（第 3 条）；
+* 列明您在访问或使用开发者服务时可以做和不可以做的一些规则（第 3 条）；
+* 说明 TikTok 可如何限制、暂停（第 5 条）或终止（第 7 条）您对开发者服务的访问或使用；
+* 限制 TikTok 本应承担责任的损失（第 10 条）；
+* 要求您自费投保，以承保因访问和使用开发者服务而可能产生的潜在责任（第 11.1 条）；以及
 * leag amach conas is féidir leat aon díospóidí a d'fhéadfadh a bheith agat i gcoinne TikTok a réiteach faoi na Téarmaí Forbróra seo (clásal 11.8).
 
 *Nuashonrú is déanaí: 24 Feabhra 2025*
 Rialaíonn Na Téarmaí Seirbhíse seo d'fhorbróirí TikTok Shop ("**Téarmaí Forbróra**"), Do comhtháthú agus nasc leis an Ardán Ionaid Comhpháirtithe TikTok Shop ("**TTSPC**") agus/nó ar bith eile Ardán TikTok Shop (trí TikTok Shop API nó eile) (le chéile, an "**Seirbhísí Forbróra TikTok Shop**"), atá ar fáil duitse amháin chun comhtháthú agus nascadh le Seirbhísí TikTok Shop mar chuid de na seirbhísí a sholáthraíonn tú d'Úsáideoir Deiridh. Sna Téarmaí Forbróra seo ciallaíonn "**tu**" nó "**Forbróir**" an duine nó an t-aonán atá ag dul isteach sna Téarmaí Forbróra seo (agus "**Do**" forléireofar dá réir sin é).
 Tá do rochtain agus úsáid a bhaint as Seirbhísí Forbróra TikTok Shop faoi réir na[Téarmaí Seirbhíse maidir leis an Ionad Comhpháirtithe TikTok Shop: Domhanda](6506bbf2de672602b7bc0697) ** agus na Téarmaí Forbróra Ionchorpraithe (mar atá sainmhínithe thíos)*.*
-Nuair is infheidhme, rialaíonn na Téarmaí Forbróra seo aon chomhaontuithe nó aguisín eile (ar cibé téarmaí agus mar a sholáthraíonn TikTok) a dhéantar maidir leis na Téarmaí Forbróra seo.
+在适用情况下，本开发者条款管辖就本开发者条款订立的任何其他协议或附录（无论其条款如何、是否由 TikTok 提供）。
 Trí ghlacadh leis na Téarmaí Forbróra seo nó trí Sheirbhísí Forbróra TikTok Shop a íoslódáil, a shuiteáil, a rochtain, a úsáid nó a oibriú, aontaíonn Tú gur léigh Tú, agus go n-aontaíonn Tú a bheith faoi cheangal ag na Téarmaí Forbróra seo. Mura n-aontaíonn Tú leis na Téarmaí Forbróra seo, níl cead agat Seirbhísí Forbróra TikTok Shop a rochtain ná a úsáid.
 ## 1. **Sainmhínithe**
 **1.1 Iarratas**: ciallaíonn sé na feidhmchláir bogearraí, láithreáin ghréasáin, cainéil, agus táirgí digiteacha eile a chruthaíonn Forbróir a úsáideann Seirbhísí Forbróra TikTok Shop, mar aon lena feabhsuithe, uasghráduithe, nuashonruithe, leaganacha nua agus modhnuithe agus leasuithe eile.
@@ -223,9 +223,9 @@ Trí ghlacadh leis na Téarmaí Forbróra seo nó trí Sheirbhísí Forbróra Ti
 **1.4 Díoltóir**: ciallaíonn sé díoltóir ar TikTok Shop a chuaigh isteach sa [Téarmaí Seirbhíse an díoltóra le haghaidh TikTok Shop](https://seller-ie.tiktok.com/university/essay?knowledge_id=7024902779504417&article_type=agreement&identity=1).
 **1.5 Cruthaitheoir**: ciallaíonn sé cruthaitheoir ar TikTok Shop a chuaigh isteach sa Téarmaí Úsáide Cruthaitheora TikTok Shop ([RA](https://seller-uk.tiktok.com/university/essay?role=1&knowledge_id=1748199815857952&from=other&article_type=agreement&identity=1), [AE](https://seller-ie.tiktok.com/university/essay?knowledge_id=7058140927952672&article_type=agreement&identity=1)).
 **1.6 TikTok Shop API**: ciallaíonn sé comhéadain ríomhchláraithe feidhmchlár TikTok Shop, feisteáin forbartha bogearraí, sonraíochtaí, cód samplach, sonraí, meiteashonraí, teicneolaíocht, bogearraí agus faisnéis agus ábhair ghaolmhara eile chomh maith le haon nuashonruithe orthu a sholáthraíonn TikTok duit chun críche na dTéarmaí Forbróra seo.
-**1.7 Eolas faoi TikTok Shop:** ciallaíonn sé aon sonraí agus faisnéis a chuirtear ar fáil duit tríd an TikTok Shop API nó ar aon mhodh eile atá údaraithe ag TikTok, agus aon chóipeanna agus saothair díorthacha díobh.
+**1.7 关于 TikTok Shop 的信息：** 指通过 TikTok Shop API 或 TikTok 授权的任何其他方式向您提供的任何数据和信息，及其任何副本和衍生作品。
 **1.8 Lógó TikTok Shop**: ciallaíonn sé ainm TikTok Shop, lógó, trádmharcanna, marcanna seirbhíse, ainmneacha fearainn, nó gnéithe branda sainiúla eile de TikTok Shop, lena n-áirítear aon lógó comhcheangailte a Fhéadfadh TikTok a fhorbairit leis an bhForbróir.
-**1.9 Seirbhísí TikTok Shop**: ciallaíonn sé táirgí agus seirbhísí TikTok Shop, lena n-áirítear gan teorainn iad siúd a thairgtear tríd an TTSPC nó aon suíomh(anna) gréasáin TikTok eile agus feidhmchlá(i)r soghluaiste TikTok.
+**1.9 TikTok Shop 服务**：指 TikTok Shop 的产品和服务，包括但不限于通过 TTSPC 或任何其他 TikTok 网站及 TikTok 移动应用程序提供的产品和服务。
 ## 2. **Ceadúnas chun Seirbhísí Forbróra TikTok Shop a úsáid**
 **2.1 Ceadúnas don Fhorbróir.** Faoi réir na dTéarmaí Forbróra seo, tugann TikTok leis seo ceadúnas inchúlghairthe neamh-eisiatach, neamh-inaistrithe, neamh-focheadúnaithe, inchúlghairthe le linn an Téarma chun Seirbhísí Forbróra TikTok Shop a rochtain agus a úsáid chun an Feidhmchlár a fhorbairt, a thástáil, a chothabháil agus a oibriú. as idirghníomhú le Seirbhísí TikTok Shop de réir na dTéarmaí Forbróra seo agus aon doiciméadú agus sonraíochtaí is infheidhme maidir le Seirbhísí Forbróra TikTok Shop chun críche cabhrú le Díoltóirí a gcórais pleanála acmhainní fiontair a chomhtháthú le Seirbhísí TikTok Shop agus iad a úsáid, agus cabhrú le Cruthaitheoirí údarú a thabhairt do thríú páirtithe sonraí agus oibriú gnó na gCruthaitheoirí a bhainistiú le Seirbhísí TikTok Shop agus iad a úsáid.
 **2.2 Úinéireacht TikTok**. Is leis TikTok nó a cheadúnaithe agus coimeádfaidh siad úinéireacht ar gach ceart, teideal agus leas (lena n-áirítear aon Chearta Maoine Intleachtúla) i Seirbhísí Forbróra TikTok Shop agus i Seirbhísí TikTok Shop agus chuig Seirbhísí Forbróra TikTok Shop. Forchoimeádann TikTok na cearta seo go sainráite. Ní thugann na Téarmaí Forbróra seo aon cheart, teideal ná leas duit (seachas an ceadúnas a deonaíodh duit faoi alt 2.1) in aon Chearta Maoine Intleachtúla atá faoi úinéireacht nó ceadúnaithe ag TikTok. Beidh ceart neamhtheoranta, neamh-inchúlghairthe agus ar fud an domhain ag TikTok chun aon aiseolas, cibé acu a sholáthraíonn Tú ó bhéal nó i bhfoirm scríofa, do TikTok maidir le D'úsáid agus/nó rochtain ar Sheirbhísí Forbróra TikTok Shop a úsáid chun aon chríche, gan cúiteamh airgid nó eile do tu.
@@ -239,40 +239,40 @@ Trí ghlacadh leis na Téarmaí Forbróra seo nó trí Sheirbhísí Forbróra Ti
 (c) Ní mór duit na ceadanna agus an toiliú riachtanach a fháil roimh rochtain nó úsáid a bhaint as sonraí Úsáideoir Deiridh. Ní mór duit na dlíthe agus na rialacháin is infheidhme a leanúint freisin agus tú ag rochtain nó ag próiseáil sonraí Úsáideora Deiridh. Níor cheart duit sonraí inneachair Úsáideoir Deiridh nó TikTok a stóráil ar feadh níos faide ná mar a theastaíonn uait nó atá in ann go dlíthiúil.
 (d) Ní mór duit cead sainráite a fháil ó gach Úsáideoir Deiridh sula bhfaighidh tú rochtain ar a gcuntais TikTok nó ar shonraí custaiméara. Ní aontaíonn tú ach sonraí Úsáideora Deiridh a aisghabháil nó a rochtain a mhéid atá údaraithe agus ceadaithe ag an Úsáideoir Deiridh sin.
 (e) Cinnteoidh tú le linn duit d'Fheidhmchlár a dhearadh nó seirbhís a sheachadadh d'Úsáideoir Deiridh ar bith go ndéanfar na sonraí go léir a bhailiú, a phróiseáil, a tharchur, a chothabháil agus a úsáid de réir: (i) Do chomhaontú(s) leis an Úsáideoir Deiridh sin, (ii) go dlíthiúil polasaí príobháideachta imleor a chlúdaíonn an fhaisnéis a bhailítear agus an chaoi a n-úsáidfear, a stórálfar, a phróiseálfar, a chosnófar í, (iii) fógraí comhthéacsúla cuí d'Úsáideoirí Deiridh agus toiliú uathu, (iv) gach dlí agus rialachán is infheidhme.
-(f) Ní mór duit cead sainráite a fháil ó gach Úsáideoir Deiridh sula roinneann Tú a sonraí le tríú páirtithe ar bith.
-(g) Aontaíonn tú gan sonraí Úsáideora Deiridh a chomhiomlánú nó a úsáid ar bhealach eile chun do chuspóirí féin.
+(f) 您必须先获得每位最终用户的明确同意方可与任何第三方共享其数据。
+(g) 您同意不为自身目的汇总或以其他方式使用最终用户数据。
 (h) Barántaíonn tú agus geallann tú go gcuirfear aon fhaisnéis nó ábhair a sholáthraíonn tú do TikTok ar fáil d'Úsáideoirí Deiridh maidir le Seirbhísí Forbróra TikTok Shop (lena n-áirítear, gan teorainn, aon ábhar fógraíochta agus/nó tairiscintí seirbhíse saor in aisce nó lascainithe a bhaineann leis an bhFeidhmchlár nó Do seachadadh seirbhíse) bailí, fíor, cruinn agus cothrom le dáta i ngach slí ábhartha (agus go leigheasfaidh Tú TikTok go pras agus cuirfidh tú é sin ar an eolas má thagann Tú ar an eolas faoi aon neamhchomhlíonadh leis an gcéanna).
 ## 3. **Feidhmchlár Forbróra; Úsáid Réasúnta; Srianta**
 **3.1 Fíordheimhniú**. Chun rochtain a fháil ar Sheirbhísí Forbróra TikTok Shop, ní mór duit clárú leis an TTSPC agus an fhaisnéis a iarraimid a sholáthar. Tá tú freagrach as a chinntiú go bhfuil an fhaisnéis a chuireann Tú ar fáil cruinn agus cothrom le dáta agus go bhfanann tú air. Tá tú freagrach as rúndacht Do dhintiúir logáil isteach a chinntiú agus tá tú freagrach as gach gníomh nó easnamh a tharlaíonn faoi Do Chuntas.
 **3.2 Feidhmchlár**. Déanfaidh tú tástálacha chun cáilíocht an Fheidhmchláir a chinntiú agus go gcomhlíonann sé ceanglais an chomhaontaithe seo agus Do Chomhaontaithe le hÚsáideoirí Deiridh. Tar éis do thástálacha den sórt sin a bheith críochnaithe, ar iarratas TikTok, D'fhéadfadh TikTok a cheangal ort an tIarratas a chur isteach le haghaidh athbhreithnithe agus formheasa ag TikTok roimh é a dháileadh ar Úsáideoirí Deiridh, agus sa chás sin, má thugann TikTok faomhadh don Iarratas, D'fhéadfadh tú an Feidhmchlár a fhoilsiú de réir le haon choinníollacha a leag TikTok síos maidir le foilsiú den sórt sin. Ní fhoilseoidh tú an tIarratas gan ceadú i scríbhinn ó TikTok. Má dhéanann Tú aon athruithe ar an bhFeidhmchlár tar éis duit TikTok a fhormheas, ní mór duit an Feidhmchlár a chur isteach arís chuig TikTok. Aontaíonn tú comhoibriú le TikTok sa phróiseas aighneachta, an fhaisnéis riachtanach go léir a sholáthar, agus gach ceist a iarrann TikTok le réasún a fhreagairt maidir le d'Iarratas.
 **3.3 Ábhar an Fhorbróra**. Má cheadaíonn Seirbhísí Forbróra TikTok Shop duit nó d'Úsáideoirí Deiridh ábhar a chur isteach nó a chruthú chun téacs, grafaicí, grianghraif, físeáin, fuaim, ceol nó ábhar eile a chur isteach ("**Ábhar an Fhorbróra**") do Sheirbhísí TikTok Shop, Deonaíonn tú leis seo ceadúnas suthain, neamh-inchúlghairthe, ar fud an domhain, subcheadúnaithe, saor ó ríchíosa, agus neamheisiatach do TikTok chun úsáid, óstáil, stóráil, cartlannú, cóipeáil, modhnú, taisce, ionchódú, atáirgeadh, dáileadh , a tharchur, a shioncrónú, a thaispeáint, oibreacha díorthacha a chruthú ó, agus a dhéanamh go poiblí Ábhar Forbróirí den sórt sin a mhéid a cheadaítear faoin dlí is infheidhme. Sula gcuirfidh Tú Ábhar Forbróra isteach chuig Seirbhísí Forbróra TikTok Shop, ní mór na cearta riachtanacha go léir a bheith agat (lena n-áirítear ach gan a bheith teoranta do thoilithe ó Úsáideoirí Deiridh nó ó cheadúnaithe tríú páirtí eile) chun an ceadúnas seo a dheonú do TikTok. Tá gach Ábhar Forbróra faoi réir na dTéarmaí Forbróra seo, na dTéarmaí Forbróra Corpraithe seo, agus aon bheartais eile a sholáthraíonn TikTok is infheidhme maidir le hInneachar Forbróra. Ní fhaigheann TikTok úinéireacht in Ábhar an Fhorbróra ná san Fheidhmchlár.
 **3.4 Úsáid Réasúnta**. Caithfidh tú:
-(a) cloí leis na dlíthe, na rialacha agus na rialacháin go léir is infheidhme maidir le D'Fheidhmchlár, Seirbhísí Forbróra TikTok Shop, agus Seirbhísí TikTok Shop;
+(a) 遵守适用于您的应用、TikTok Shop 开发者服务和 TikTok Shop 服务的所有适用法律、规则和法规；
 (b) cloí i gcónaí leis na Téarmaí Forbróra seo agus le ceanglais, iarratais, beartais agus Téarmaí Forbróra Corpraithe TikTok is infheidhme (nó iad siúd d'aon líonra atá nasctha le Seirbhísí Forbróra TikTok Shop nó Seirbhísí TikTok Shop);
-(c) a chinntiú go bhfuil an Feidhmchlár a nascann Tú le Seirbhísí Forbróra TikTok Shop cobhsaí agus inseolta go héasca;
+(c) 确保您连接到 TikTok Shop 开发者服务的应用稳定且易于部署;
 (d) cosaintí teicniúla, fisiceacha agus riaracháin a chur chun feidhme agus a chothabháil de réir na dTéarmaí Forbróra seo agus na gcaighdeán tionscail is airde (lena n-áirítear, ach gan a bheith teoranta do na hÍoschaighdeáin Slándála atá leagtha amach in Iarscríbhinn A, do na Téarmaí Forbróra seo);
 (e) dícheangail láithreach le Seirbhísí Forbróra TikTok Shop agus Seirbhísí TikTok Shop i gcás go dtiocfaidh Tú ar an eolas faoi aon chomhréiteach nó easnamh maidir le Do chórais ríomhaireachta, líonraí, brabhsálaithe gréasáin nó ródairí agus tuairiscigh aon chomhréiteach nó easnamh den sórt sin do TikTok láithreach tar éis duit teacht chun cinn. feasach air; agus
-(f) más infheidhme, cuir gach tacaíocht chustaiméara riachtanach ar fáil don Fheidhmchlár d'Úsáideoirí Deiridh.
+(f) 如适用，为最终用户提供应用所需的一切客户支持。
 **3.5 Srianta Ginearálta.** Agus tú ag rochtain ar Sheirbhísí Forbróra TikTok Shop, ag forbairt Feidhmchlár, nó ag soláthar seirbhísí gaolmhara, ní bheidh Tú a mhéid a cheadaítear faoi dhlíthe infheidhme (nó ní cheadóidh tú do dhaoine eile):
 (a) Seirbhísí Forbróra TikTok Shop, nó Seirbhísí TikTok Shop nó aon oibreacha díorthacha a dháileadh, a cheadúnú, a aistriú, a dhíol go díreach nó go hindíreach, a ligean ar cíos, a shiondeacáitiú, a thabhairt ar iasacht, a chóipeáil, a mhodhnú, a athrú, a athrú, a dhí-dhlúthú, nó a athrú ar shlí eile, go hiomlán nó go páirteach. dhe ;
-(b) focheadúnas a thabhairt d'aon tríú páirtí nó cead a thabhairt d'aon tríú páirtí, gan údarú scríofa sainráite TikTok, an TTSPC, nó aon díorthaigh de a bhrabhsáil, a rochtain nó a úsáid;
+(b) 未经 TikTok 明确书面授权，向任何第三方再授权或允许任何第三方浏览、访问或使用 TTSPC 或其任何衍生内容；
 (c) úsáid a bhaint as Seirbhísí Forbróra TikTok Shop nó Seirbhísí TikTok Shop, gan toiliú sainráite i scríbhinn ó TikTok, chun aon chríche neamhúdaraithe, lena n-áirítear gan teorainn aon fhógra tráchtála nó sireadh nó turscar a chur in iúl nó a éascú;
 (d) úsáid a bhaint as Seirbhísí Forbróra TikTok Shop nó Seirbhísí TikTok Shop maidir le nó chun aon chríocha mídhleathacha, neamhúdaraithe nó míchuí ar shlí eile, nó ar aon mhodh a sháródh ceart aon duine, lena n-áirítear cearta maoine intleachtúla, nó a sháródh aon dlíthe nó rialacháin, nó ar aon mhodh atá míthreorach, clúmhillteach, sáraitheach, leabhaltach, dímheasúil, graosta nó inlochtaithe ar shlí eile do TikTok;
 (e) rochtain a fháil ar an TikTok Shop API ag baint úsáide as aon rud eile seachas an eochair API a chuirimid ar fáil duit;
-(f) a dhéanamh nó a cheadú tríd an bhFeidhmchlár, glaonna API de bhreis ar aon teorainneacha a d'fhéadfaimis a fhorchur ó am go chéile;
+(f) 通过应用程序进行或允许超出我们可能不时施加的任何限制的 API 调用;
 (g) Seirbhísí Forbróra TikTok Shop a úsáid nó a chomhcheangal le bogearraí a thairgtear faoi cheadúnas foinse oscailte ar bhealach a chuirfeadh faoi deara go mbeadh Seirbhísí Forbróra TikTok Shop faoi réir aon oibleagáidí faoi aon cheadúnas foinse oscailte den sórt sin;
-(h) úsáid a bhaint as Seirbhísí Forbróra TikTok Shop ar bhealach a sháraíonn téarmaí, coinníollacha, treoirlínte nó polasaithe aon fhorbróra soghluaiste nó aipmhargadh;
+(h) 以违反任何移动开发者或应用市场的条款、条件、指引或政策的方式使用 TikTok Shop 开发者服务；
 (i) úsáid a bhaint as Seirbhísí Forbróra TikTok Shop ar bhealach a sháraíonn (mar a chinneann TikTok), méid an iarratais réasúnta, gur úsáid iomarcach nó maslach é, nó a theipeann ar aon doiciméadú, polasaithe, na Téarmaí Forbróra seo, nó aon Incorporated a chomhlíonadh nó a thagann salach ar a chéile. Téarmaí Forbróra;
 (j) aon sonraí pearsanta a bhailiú ó úsáideoirí TikTok Shop nó iarracht a dhéanamh iad a bhailiú chun aon chríche neamhúdaraithe nó neamhdhleathach nó chun aon phróifíl, bunachair shonraí, nó taifid chomhchosúla ar aon duine aonair, gléas, ábhar, nó brabhsálaí a chruthú nó a chomhlachú nó a chomhlachú le hiompar aon duine. duine aonair, feiste, inneachar, nó brabhsálaí a bhfuil aon phróifíl, bunachair shonraí nó taifead comhchosúil aige;
 (k) úsáid a bhaint as Seirbhísí Forbróra TikTok Shop chun críocha calaoiseacha nó neamhdhleathacha nó neamhúdaraithe eile, lena n-áirítear ach gan a bheith teoranta d'fhorbairt nó do chur chun cinn earraí spiaireachta, adware nó cóid nó cláir mailíseach eile nó chun aon duine a chlúdú nó a chiapadh;
 (l) víris, bogearraí mailíseacha, cód mailíseach nó inneachar eile de chineál díobhálach nó millteach a thabhairt isteach tríd an bhFeidhmchlár nó Do rochtain nó úsáid a bhaint as Seirbhísí Forbróra TikTok Shop, lena n-áirítear, ach gan a bheith teoranta dó, mainneachtain a chinntiú go bhfuil cosaint leordhóthanach suiteáilte ar do ghléasanna agus ar do fhreastalaithe i gcomhréir leis na cleachtais tionscail is fearr;
-(m) úsáid a bhaint as aon róbat, damhán alla, cuardach suímh nó feidhmchlár aisghabhála, nó feiste eile chun faisnéis a bhailiú faoi úsáideoirí Seirbhísí Forbróra TikTok Shop chun críche ar bith;
-(n) gníomhú ar bhealach ar bith a bhféadfaí a bheith ag súil le réasún go mbeadh drochthionchar aige ar chobhsaíocht fhreastalaithe TikTok nó ar iompar feidhmchlár eile a úsáideann Seirbhísí Forbróra TikTok Shop;
+(m) 出于任何目的，使用任何机器人、爬虫、站点搜索或检索应用程序或其他设备收集有关 TikTok Shop 开发者服务用户的信息；
+(n) 以可合理预期会对 TikTok 服务器稳定性或使用 TikTok Shop 开发者服务的其他应用程序的行为产生不利影响的任何方式行事；
 (o) cur isteach ar nó iarracht cur isteach ar oibriú ceart Sheirbhísí Forbróra TikTok Shop nó Seirbhísí TikTok Shop, cur isteach ar ár suíomh Gréasáin nó ar aon líonraí atá nasctha le Seirbhísí Forbróra TikTok Shop nó Seirbhísí TikTok Shop, nó seachbhóthar, dul timpeall nó iarracht a dhéanamh seachbhóthar nó dul timpeall ar aon bearta is féidir linn a úsáid chun rochtain ar Sheirbhísí Forbróra TikTok Shop nó ar Sheirbhísí TikTok Shop a chosc nó a shrianadh;
 (p) aon fhógraí dlí, cóipchirt, trádmharc nó fógraí dílsithe eile a bhaint, a cheilt nó a athrú maidir le Seirbhísí TikTok Shop, Seirbhísí Forbróra TikTok Shop, agus cloí le ceanglais TikTok maidir le húsáid aon ábhar dílsithe, nó aon údar a fhalsú nó a scriosadh. leithdháiltí, fógraí dlíthiúla, nó lipéid eile de bhunadh nó foinse ábhair;
-(q) aon chleamhnacht, urraíocht, nó formhuiniú Tú féin nó an Iarratas ó TikTok a dhearbhú nó a thabhairt le tuiscint, gan toiliú i scríbhinn a fháil roimh ré ó TikTok;
+(q) 未经 TikTok 事先书面同意，声明或暗示 TikTok 对您或您的应用存在任何关联、赞助或认可；
 (r) bain úsáid as Seirbhísí Forbróra TikTok Shop chun dul san iomaíocht le haon Seirbhísí TikTok Shop nó iad a mhacasamhlú;
-(s) úsáid a bhaint as Seirbhísí Forbróra TikTok Shop chun feidhmiúlacht lárnach de chuid TikTok Shop a athchruthú nó a athsholáthar;
+(s) 使用 TikTok Shop 开发者服务重建或替换 TikTok Shop 的核心功能;
 (t) úsáid a bhaint as Seirbhísí Forbróra TikTok Shop nó Seirbhísí TikTok Shop ar aon bhealach a dhéanann aon damáiste clú d'Úsáideoir Deiridh nó TikTok;
 (u) céannacht bhréagach a chruthú ar an TTSPC; nó
 (v) bain úsáid as Seirbhísí Forbróra TikTok Shop nó Seirbhísí TikTok Shop ar aon mhodh nach bhfuil údaraithe go sainráite faoi na Téarmaí Forbróra seo.
@@ -281,87 +281,87 @@ Trí ghlacadh leis na Téarmaí Forbróra seo nó trí Sheirbhísí Forbróra Ti
 **3.8 Cosaint Sonraí**. Agus d'Fheidhmchláir á bhforbairt nó ag soláthar seirbhísí d'Úsáideoirí Deiridh, comhlíonfaidh Tú gach dlí cosanta sonraí is infheidhme má bhailíonn nó má phróiseálann Tú aon sonraí pearsanta de chuid Úsáideoirí Deiridh dá leithéid.
 ## 4. **Rúndacht**
 Is é gach nós imeachta fíordheimhnithe, faisnéis agus sonraí a fhaigheann Tú rochtain orthu nó a chuirtear ar fáil duit maidir le D'úsáid Seirbhísí Forbróra TikTok Shop agus Seirbhísí TikTok Shop an "**Eolas Rúnda**" de chuid TikTok agus dílseánach ag TikTok, mura féidir Tú a léiriú: (a) go raibh an fhaisnéis sin ar eolas agat cheana féin, seachas faoi oibleagáid rúndachta, tráth an nochta; (b) a bhí ar fáil go ginearálta san fhearann poiblí tráth an nochta duit; (c) a tháinig chun bheith ar fáil go ginearálta san fhearann poiblí tar éis nochtadh seachas trí Do ghníomh nó neamhghníomh; (d) a nocht tríú páirtí duit go dleathach ina dhiaidh sin gan aon oibleagáid rúndachta; nó (e) a d'fhorbair Tú go neamhspleách é gan úsáid a bhaint as aon fhaisnéis nó ábhar a nocht TikTok nó gan tagairt a dhéanamh dó. Ní Fhéadfadh tú an Fhaisnéis Rúnda seo a úsáid ach amháin mar a cheadaítear go sainráite anseo thíos agus ní Fhéadfadh Tú an Fhaisnéis Rúnda a roinnt le tríú páirtí seachas mar a éilíonn cúirt, rialtóir nó eile faoi dhlíthe infheidhme. Aithníonn tú agus aontaíonn tú go bhféadfadh TikTok a bheith ag cruthú go neamhspleách feidhmchláir agus táirgí agus seirbhísí eile a d'fhéadfadh a bheith cosúil nó iomaíoch leis an bhFeidhmchlár agus ní fhorléireofar aon rud sna Téarmaí Forbróra seo mar ní a chuireann srian nó cosc ar TikTok feidhmchláir, táirgí nó táirgí den sórt sin a chruthú agus a shaothrú go hiomlán. seirbhísí gan aon oibleagáid Duitse.
-## 5. **Modhnuithe; Fionraí; Tacaíocht**
+## 5. **修改；暂停；支持**
 D'fhéadfadh TikTok aon ghné de Sheirbhísí Forbróra TikTok Shop a athrú, a chur ar fionraí nó a scor ag am ar bith. Déantar cur síos ar na coinníollacha faoina dtabharfar fógra duit faoi na hathruithe, na fionraíochtaí agus na neamhleanúnachais seo agus faoina gcuirfear i bhfeidhm iad [Roinn C4, Sceideal 1 de Théarmaí Seirbhíse maidir leis an Ionad Comhpháirtithe TikTok Shop](6506bbf2de672602b7bc0697). Bainfidh TikTok úsáid as iarrachtaí atá réasúnta ar bhonn tráchtála chun earráidí a cheartú i Seirbhísí Forbróra TikTok Shop a fhágann nach gcomhlíonfaidh an rud céanna de réir dhoiciméadú úsáideoirí foilsithe TikTok don láithreán nó d'ábhair den sórt sin atá curtha ar fáil ag TikTok. Ó am go chéile, D'fhéadfadh TikTok D'úsáid leanúnach a bhaint as Seirbhísí Forbróra TikTok Shop faoi réir cheadú nó athcheadú d'Iarratas. Sa chás sin, beidh ort dul tríd an bpróiseas formheasa mar atá leagtha amach i gclásal 3.2.
 ## 6. **Táillí**
 Ní ghearrann TikTok táille faoi láthair as úsáid a bhaint as Seirbhísí Forbróra TikTok Shop; áfach, forchoimeádann TikTok an ceart é sin a dhéanamh amach anseo, dá rogha féin amháin. Má chinneann TikTok táille a ghearradh ar Sheirbhísí Forbróra TikTok Shop, nochtfar na táillí sin duit sula dtiocfaidh siad i bhfeidhm agus mura mian leat táillí den sórt sin a íoc, is é an t-aon réiteach eisiach atá agat ná deireadh a chur le D'úsáid de Sheirbhísí Forbróra TikTok Shop agus ag an bpointe sin cuirfear deireadh go huathoibríoch le hoibleagáidí gach páirtí faoi na Téarmaí Forbróra seo.
-## 7. **Téarma & Foirceannadh**
+## 7. **期限 & 终止**
 Tosóidh an "**Téarma**" na Téarmaí Forbróra seo ar cibé acu is luaithe a nglacfaidh tú leis na Téarmaí Forbróra seo nó An chéad úsáid a bhainfidh tú as aon cheann de Sheirbhísí Forbróra TikTok Shop agus leanfaidh siad ar aghaidh go dtí go bhfoirceann ceachtar páirtí na Téarmaí Forbróra seo. D'fhéadfadh ceachtar páirtí deireadh a chur leis na Téarmaí Forbróra seo ar fhógra 30 lá roimh ré don pháirtí eile. Gan cur isteach ar aon cheart nó leigheas eile atá ar fáil dúinn, féadfaimid do chuntas a fhoirceannadh le héifeacht láithreach trí fhógra i scríbhinn a thabhairt duit má dhéanann tú sárú ábhartha ar aon fhoráil de na Téarmaí Forbróra seo agus (más féidir sárú den sórt sin a leigheas, mar a chinneann muid de réir ár rogha féin amháin) go mainneoidh tú an sárú sin a leigheas laistigh de thréimhse 30 lá tar éis fógra a fháil chuige sin. Má dhéanann TikTok do chuntas a fhoirceannadh, beidh deis agat na fíricí agus na himthosca a shoiléiriú trínár bpróiseas inmheánach láimhseála gearán agus beidh tú in ann leas a bhaint as na meicníochtaí réitithe díospóide, gach ceann díobh leagtha amach in [Roinn C9, Sceideal 1 de Théarmaí Seirbhíse maidir leis an Ionad Comhpháirtithe TikTok Shop](6506bbf2de672602b7bc0697) agus clásal 10.2 den [AE: Téarmaí Úsáide TikTok Shop](https://seller-ie.tiktok.com/university/essay?knowledge_id=2225681119987488&article_type=agreement&identity=1).
 Ar fhoirceannadh na dTéarmaí Forbróra seo, rachaidh gach ceadúnas a dheonaítear anseo in éag láithreach, agus ní mór duit scor láithreach d'úsáid aon agus gach Seirbhís Forbróra TikTok Shop, Lógó TikTok Shop agus gach Faisnéis Rúnda, aon Ábhar úsáideora TikTok Shop i ngach foirm i do sheilbh a scriosadh go buan. agus rialú (lena n-áirítear ónár freastalaithe). Mairfidh na clásail seo a leanas aon dul in éag nó foirceannadh na dTéarmaí Forbróra seo: clásail 2.2, 2.7, 3.6, 4, agus clásail 8 go 11, agus aon fhoráil eile de Théarmaí an Fhorbróra a shamhlaíonn oibleagáid leanúnach.
 ## 8. **Séanadh**
 A mhéid is incheadaithe faoin dlí is infheidhme: (a) soláthraíonn TikTok Seirbhísí Forbróra TikTok Shop ar bhonn 'mar atá' agus 'mar atá ar fáil'; (b) Séanann TikTok gach ráthaíocht, coinníoll, barántas agus uiríoll, sainráite, intuigthe, reachtúil nó eile a bhaineann le Seirbhísí Forbróra TikTok Shop arna soláthar ag TikTok thíos, lena n-áirítear, ach gan a bheith teoranta dóibh, na barántaí intuigthe sin maidir le cumas an díoltóra, cáilíocht shásúil, oiriúnacht do cuspóir, teideal agus neamh-sárú ar leith; (c) Ní thugann TikTok barántas, geallann ná ní léiríonn sé go mbeidh Seirbhísí Forbróra TikTok Shop gan bhriseadh nó saor ó earráid, saor ó víreas nó slán nó go gcomhlíonfaidh siad Do chuid riachtanas; agus (d) Is de do rogha féin agus de do phriacal féin an úsáid a bhaineann tú as Seirbhísí Forbróra TikTok Shop, agus is tusa amháin a bheidh freagrach as aon damáiste a eascraíonn as úsáid Sheirbhísí Forbróra TikTok Shop lena n-áirítear, ach gan a bheith teoranta dó, aon damáiste do Do chóras ríomhaireachta, cailliúint sonraí nó aon damáiste nó díobháil eile duitse nó d'aon tríú páirtí. Sa mhéid nach féidir aon cheann de na barántais intuigthe thuas a eisiamh faoi dhlí na dlínse a rialaíonn na Téarmaí Forbróra seo, ní bheidh feidhm ag an séanadh thuas ach amháin sa mhéid sin. Maidir le hÁbhar Úsáideora TikTok Shop, níl TikTok freagrach as cruinneas, iomláine, úsáideacht, infhaighteacht, sábháilteacht nó dlíthiúlacht sonraí den sórt sin, lena n-áirítear ábhar a d'fhéadfadh a bheith maslach, mígheanasach, clúmhillteach, inlochtaithe, nó a d'fhéadfadh sárú a dhéanamh ar thríú páirtí. cearta nó dlíthe nó rialacháin is infheidhme.
-## 9. **Slánaíocht**
+## 9. **赔偿**
 A mhéid a cheadaítear leis an dlí is infheidhme, Aontaíonn Tú TikTok, Cleamhnaithe TikTok, ceadúnaithe, sannaithe agus comharbaí, agus gach duine dá n-oifigeach, stiúrthóirí, fostaí, gníomhairí, comhairleoirí agus scairshealbhóirí a shealbhú ó agus i gcoinne aon tríú-. éileamh nó gníomh páirtí lena n-áirítear aon dliteanas, caillteanais, damáistí (iarbhír agus/nó iarmhartach), speansais, costais dlíthíochta agus táillí dlí réasúnacha, de gach cineál agus cineál a eascraíonn ó nó ar aon bhealach a bhaineann le: (a) Do shárú iarbhír nó líomhnaithe de Do chuid oibleagáidí faoi na Téarmaí Forbróra seo, lena n-áirítear ach gan a bheith teoranta d'aon uiríll nó barántaí atá anseo; (b) D'úsáid Seirbhísí Forbróra TikTok Shop agus aon Ábhar Forbróra nó sonraí a dhíorthaítear uathu; (c) do mhí-iompar toiliúil nó do mhórfhaillí; nó (c) an tIarratas a chomhlíonadh, a chur chun cinn, a dhíol nó a dháileadh. Déanfaidh TikTok gach dícheall réasúnach chun fógra scríofa a sholáthar duit maidir le haon éileamh nó gníomh den sórt sin.
-## 10. **Teorainn le Dliteanas**
+## 10. **责任限制**
 **10.1 GO DTÍ AN MÉID UASACH A CEADAÍTEAR DON DLÍ IS INFHEIDHME, NÍ BHÍ AON CHOIMISINÉIRÍ TIKTOK NÓ TIKTOK FAOI GHNÍOMHAIREACHT SPEISIALTA, NEAMHDHÍREACH, TEAGMHASACH, REACHTÚIL, Eiseamláireach, PIONÓISEACH, IARMHARTA, TIONCHAIR, FAOI CHÚSAMH AN FÉIDIREACHT DE NA DAMÁISTE SIN.**
 **10.2 NÍ DHEIREANN NÍ CHEART SNA TÉARMAÍ SEO DLITEANAS Ceachtar de chuid an Pháirtí i leith BÁIS NÓ Díobhála PEARSANTA DE CHUID FAOI FHILLE, CALAOISE, NÓ AR AON DLITEANAS NACH FÉIDIR A EISIACHT DEN DLÍ IS INFHEIDHME EISIAMH.**
 **10.3 FAOI RÉIR CLÁSAL 10.2, UASTA Dliteanas COMHIOMLÁN TIKTOK I leith Éilimh A ÉIRÍODH AS NA TÉARMAÍ SEO NÓ I gCINEÁL LEIS NA TÉARMAÍ SEO, FAOI CHONRADH, TOIRT (LEABHRÚ FÁILLÍ), SÁRÚ AR AN DLEACHT REACHTÚIL, MÍIONRÚ NÓ NÍ MÓR DUINE, IS FÉIDIR LEIS $10.**
 ## 11. **Ilghnéitheach**
 **11.1 Árachas**. Tógfaidh tú amach agus coimeádfaidh tú clúdach árachais ar Do chostas féin le cuideachta árachais creidiúnach chun Do dhliteanais ionchasacha a eascraíonn faoi na Téarmaí Forbróra seo nó a bhaineann leo a chlúdach a mhéid a mbeifí ag súil le réasún a bheith tógtha amach agus á chothabháil ag duine réasúnta a bhfuil taithí aige nó aici. agus soláthraí stuama seirbhísí forbróra.
 **11.2 Poiblíocht.** Aontaíonn tú go bhD'fhéadfadh TikTok D'ainm, lógó(í) nó faisnéis aitheantais nó íomhá eile a úsáid chun aon chríche gnó dlisteanach gan toiliú. Ní Fhéadfadh tú aon ráiteas poiblí a dhéanamh maidir le do chaidreamh le TikTok ná rochtain a fháil ar Sheirbhísí Forbróra TikTok Shop gan toiliú i scríbhinn roimh ré ó TikTok.
-**11.3 Gníomhaireacht.** Ní dhéanfar aon ní sna Téarmaí Forbróra seo a fhorléiriú chun aon ghníomhaireacht, comhpháirtíocht nó comhfhiontar a bhunú idir Tusa agus TikTok.
+**11.3 代理关系。** 本开发者条款中的任何内容均不得被解释为在您与 TikTok 之间设立任何代理、合伙或合资关系。
 **11.4 Comhaontú Iomlán.** Tá na Téarmaí Forbróra seo, mar aon leis na Téarmaí Forbróra Corpraithe is infheidhme agus Domhanda: [Téarmaí Seirbhíse maidir leis an Ionad Comhpháirtithe TikTok Shop](6506bbf2de672602b7bc0697), an comhaontú dlíthiúil iomlán idir Túsa agus TikTok a chomhdhéanamh agus d'úsáid Seirbhísí Forbróra TikTok Shop a rialú agus cuir in ionad aon chomhaontuithe roimh ré idir Tusa agus TikTok go hiomlán maidir le Seirbhísí Forbróra TikTok Shop. Admhaíonn tú gur chuir Tú isteach na Téarmaí Forbróra seo ag brath ar na huiríll, na barántaí, na gealltanais agus na téarmaí atá sna Téarmaí Forbróra seo amháin agus, ach amháin mar atá leagtha amach go sainráite sna Téarmaí Forbróra seo, ní bheidh aon dliteanas ar TikTok i leith aon cheann eile. ionadaíocht, barántas nó gealltanas mura ndearnadh go calaoiseach é.
 **11.5 Sannadh.** Ní Fhéadfadh tú aon cheann de na cearta nó na hoibleagáidí a dheonaítear anseo a shannadh, go hiomlán nó go páirteach, cibé acu go deonach nó trí oibriú an dlí, gan toiliú roimh ré i scríbhinn ó TikTok. Tá aon iarracht sannadh de shárú ar an gclásal seo ar neamhní, agus D'fhéadfadh TikTok na Téarmaí Forbróra seo a fhoirceannadh. D'fhéadfadh TikTok aon cheann nó gach ceann de na cearta nó na hoibleagáidí a dheonaítear thíos a shannadh, go hiomlán nó go páirteach, cibé acu go deonach nó trí oibriú an dlí, gan Do thoiliú i scríbhinn roimh ré.
 **11.6 Gan Tarscaoileadh/Inroinnteacht.** Ní dhéanfar ár mainneachtain aon fhoráil de na Téarmaí Forbróra seo a fhorghníomhú a fhorléiriú mar tharscaoileadh ar aon fhoráil nó ceart. Má chinneann cúirt dlínse inniúla aon chuid de na Téarmaí Forbróra seo a bheith neamhbhailí nó neamh-infheidhmithe, ní dhéanfar an chuid sin a fhorghníomhú ach a mhéid is incheadaithe agus fanfaidh forálacha eile na dTéarmaí Forbróra seo i bhfeidhm agus i lánéifeacht.
-**11.7 Fógra**. D'fhéadfadh TikTok fógraí a thabhairt duit trí ríomhphost. Ní mór gach fógra chuig TikTok a sheoladh chuig [e-commerce@tiktok.com](mailto:e-commerce@tiktok.com).
+**11.7 通知**。TikTok 可能通过电子邮件向您发出通知。所有发给 TikTok 的通知必须发送至 [e-commerce@tiktok.com](mailto:e-commerce@tiktok.com)。
 **11.8 An Dlí agus an Dlínse Rialaithe.** Tá na Téarmaí Forbróra seo á rialú ag dlí rialaithe an TTSPC is infheidhme maidir leatsa, agus déanfar aon díospóid nó éileamh lena n-áirítear díospóidí nó éilimh neamhchonarthacha a eascraíonn as nó a bhaineann leis na Téarmaí Forbróra seo nó a n-ábhar nó a bhfoirmiú a réiteach de réir na téarmaí um réiteach díospóide sa Global: Téarmaí Seirbhíse maidir leis an Ionad Comhpháirtithe TikTok Shop.
 # **** IARSCRÍBHINN A BEARTA AGUS RIALUITHE SLÁNDÁLA ÍOSTA
 Féadfar na hÍosbhearta Slándála seo a athrú ó am go chéile (ag gníomhú go réasúnta) trí earra athsholáthair a sholáthar don Fhorbróir. Tá siad le cur i bhfeidhm ag an bhForbróir maidir le haon sonraí pearsanta a phróiseáiltear faoi na Téarmaí Forbróra seo. Déanfaidh an forbróir clár um shlándáil faisnéise a dhoiciméadú, a chur chun feidhme agus a chothabháil a chomhlíonann caighdeáin an dea-chleachtais tionscail chun sonraí pearsanta den sórt sin a chosaint, lena n-áireofar:
 ## I. **Rialú Iontrála Córais**
 Coimircí oiriúnacha teicniúla, fisiceacha, riaracháin agus eagraíochtúla a bhunú, a chothabháil, a mhonatóireacht agus a úsáid atá i gcomhréir leis na caighdeáin tionscail is airde chun a chinntiú i gcoinne Teagmhais Slándála lena n-áirítear, ar a laghad:
-(a) Prótacail fíordheimhnithe úsáideora slán agus rialú rochtana córais;
-(b) Úsáid a bhaint as slándáil fhisiciúil aibí agus iomchuí, bogearraí mailíseacha reatha, frithvíreas agus slándála a chuimsíonn scagadh ríomhphoist agus brath mailíseach;
+(a) 安全的用户身份认证协议与系统访问控制;
+(b) 使用成熟且适当的物理安全、最新的恶意软件防护、防病毒和安全防护，包括电子邮件过滤和恶意软件检测；
 (c) Úsáid beart cosanta gréasáin cuí;
 (d) Le linn amanna díomhaoin, déantar trealamh arna eisiúint ag cuideachta (eg ríomhairí glúine arna n-eisiúint ag cuideachta) a ghlasáil go huathoibríoch;
-(e) Úsáid pasfhocail chasta a spreagadh;
-(f) Coincheap na pribhléide is lú, rud a fhágann nach gceadaítear ach an rochtain riachtanach d'úsáideoirí chun feidhm a bpost a bhaint amach. Éilíonn rochtain thuas údarú cuí;
+(e) 鼓励使用复杂密码；
+(f) 最小权限理念，即仅向用户授予履行其职责所必需的访问权限。超出该范围的访问需获得适当授权；
 (g) Déanann pearsanra cuí athbhreithniú rialta ar phribhléidí rochtana TF;
-(h) Seirbhísí monatóireachta líonra i bhfeidhm 24 x 7 x 365 chun gníomhaíochtaí neamhúdaraithe a bhrath;
-(i) Scanadh leochaileachta agus feabhsúchán i bhfeidhm;
+(h) 网络监控服务 24 x 7 x 365 全天候运行，用于检测未授权活动；
+(i) 实施漏洞扫描与改进；
 (j) Tástáil treá mar is cuí; agus
 (k) Cuireadh prótacail criptithe i bhfeidhm de réir mar is gá i gcúinsí éagsúla.
-## II. **Rialuithe Rochtana Fisiciúla**
+## II. **物理访问控制**
 Déanfaidh an forbróir, i measc nithe eile, na bearta slándála iomchuí chun céannacht na ndaoine údaraithe a shuíomh agus chun rochtain neamhúdaraithe ar áitribh agus ar shaoráidí an Fhorbróra ina bpróiseálfar na sonraí a chosc.
-## III. **Rialú Rochtana Sonraí**
-Déanfaidh an forbróir bearta teicniúla agus eagraíochtúla chun cosc a chur ar ghníomhaíochtaí neamhúdaraithe sna córais phróiseála sonraí lasmuigh de raon feidhme aon údaruithe arna ndeonú lena n-áirítear, ar a laghad:
-(a) Rochtain úsáideora agus riarthóir ar an líonra samhail cearta rochtana ról-bhunaithe. Ní thugann samhail an údaraithe cearta rochtana ar shonraí ach amháin ar bhonn "riachtanais";
+## III. **数据访问控制**
+开发者应采取技术和组织措施，防止在任何已授予授权范围之外的数据处理系统中发生未经授权的活动，至少包括：
+(a) 用户和管理员对网络的访问采用基于角色的访问权限模型。该授权模型仅基于"按需知悉"原则授予数据访问权限；
 (b) Riar cearta úsáideora trí riarthóirí córais;
-(c) Laghdaítear líon na riarthóirí go dtí an t-íosmhéid iomlán;
-(d) Iniúchtaí inmheánacha a dhéanamh de réir mar is gá chun próisis, teicneolaíochtaí agus daoine ardriosca a mheas;
+(c) 将管理员数量降至最低限度;
+(d) 根据需要开展内部审计以评估高风险的流程，技术和人员;
 (e) Cosc a chur ar gach fostaí na sonraí pearsanta a nochtadh d'aon tríú páirtí neamhúdaraithe nó na sonraí pearsanta a úsáid ar bhealach neamhúdaraithe; agus
 (f) I gcás ina n-úsáidtear criptiú sonraí, tá príomhchleachtais bhainistíochta saolré cuí i bhfeidhm.
-## IV. **Rialú Aistrithe Sonraí**
+## IV. **数据传输控制**
 Glacfaidh an forbróir bearta teicniúla agus eagrúcháin chun a áirithiú nach bhD'fhéadfadh daoine neamhúdaraithe sonraí pearsanta a léamh, a chóipeáil, a athrú nó a bhaint de faoina dtarchur leictreonach nó le linn a n-iompair nó taifeadta ar iompróirí sonraí agus chun a ráthú gur féidir iad a scrúdú agus a dhéanamh. a shuíomh i gcás ina bhfuil nó ina bhfuil sonraí pearsanta arna dtarchur ag trealamh tarchurtha sonraí lena n-áirítear, ar a laghad:
-(a) Beidh cianrochtain (lena n-áirítear le linn nósanna imeachta cianchothaithe nó seirbhíse) ar na córais TF trí tholláin VPN, nuair is iomchuí, nó trí naisc shlána criptithe eile;
+(a) 对 IT 系统的远程访问（包括远程维护或服务流程期间）应酌情通过 VPN 隧道或其他安全的加密连接进行；
 (b) Prótacail criptithe a chuirtear i bhfeidhm de réir mar is gá faoi chúinsí éagsúla;
 (c) Cuirtear gléasanna stórála sonraí agus doiciméid pháipéir faoi ghlas nuair nach bhfuil siad in úsáid (eg, beartas deisce glan);
 (d) Scriosadh agus diúscairt iomchuí doiciméad;
-(e) próisis scriosta fisiceacha i bhfeidhm de réir caighdeáin tionscail;
+(e) 按行业标准实施物理销毁流程;
 (f) Seisiún cumarsáide slán arna bhunú trí shlándáil ciseal iompair ("TLS") nó trí phrótacail chomhchosúla trasna feidhmeanna/seirbhísí lárnacha; agus
-(g) Deimhnithe criptithe a úsáidtear le haghaidh fíordheimhnithe idir an príomhchliant gréasáin agus an príomhfhreastalaí gréasáin.
-## V. **Rialú Ionchuir**
+(g) 用于主 Web 客户端与主 Web 服务器之间进行身份认证的加密证书。
+## V. **输入控制**
 Déanfaidh an forbróir bearta teicniúla agus eagraíochtúla iomchuí chun a áirithiú gur féidir ina dhiaidh sin a fhíorú agus a shuíomh trí chomhaid loga cé acu ar cuireadh agus ar cuireadh sonraí pearsanta isteach i gcórais phróiseála sonraí, ar athraíodh nó ar baineadh iad.
-## VI. **Rialú Creata**
+## VI. **框架控制**
 Déanfaidh an Forbróir bearta teicniúla agus eagraíochtúla chun a chinntiú nach féidir aon sonraí pearsanta a aistrítear faoi na Téarmaí Forbróra seo a Phróiseáil ach amháin chun na gcríoch atá sonraithe i dTéarmaí an Fhorbróra lena n-áirítear, ar a laghad:
 (a) Cuimsíonn beartais inmheánacha atá soiléir agus ceangailteach treoracha foirmiúla maidir le nósanna imeachta próiseála sonraí;
 (b) Cosaintí conarthacha atá curtha in iúl go soiléir i bhfeidhm mar is cuí sna conarthaí bunúsacha;
 (c) Oiliúint rialta don fhoireann maidir le húsáid chuí an chórais slándála ríomhaire, na nósanna imeachta um chúltaca slándála agus athshlánaithe ó thubaiste, agus a thábhachtaí atá sé slándáil chun a áirithiú go gcomhlíonfar socruithe conarthacha agus go gcoimeádtar feasacht ar cheanglais um chosaint sonraí;
-(d) Próisis scriosta shlán i bhfeidhm de réir caighdeáin tionscail;
+(d) 按行业标准实施安全删除流程;
 (e) Athbhreithnithe tréimhsiúla rochtana a dhéanann monatóireacht ar rialuithe rochtana fostaithe; agus
-(f) Tá líonra corparáideach an fhorbróra scartha óna líonra seirbhísí úsáideoirí trí ghléasanna casta deighilte.
-## VII. **Rialú Infhaighteachta**
+(f) 开发者的企业网络通过复杂的隔离设备与其用户服务网络分离。
+## VII. **可用性控制**
 Déanfaidh an forbróir bearta teicniúla agus eagraíochtúla chun na sonraí a chosaint ar scriosadh nó ar chaillteanas de thaisme lena n-áirítear, ar a laghad:
 (a) Fearais chun monatóireacht a dhéanamh ar theocht agus ar thaise in ionaid sonraí;
 (b) Brathadóirí dóiteáin/deataigh agus múchtóirí dóiteáin nó córas um chosc dóiteáin in ionaid sonraí;
-(c) Úsáid a bhaint as bogearraí frithvíreas aibí agus cuí lena n-áirítear scagadh ríomhphoist agus brath malware;
+(c) 使用成熟且适当的防病毒软件，包括电子邮件过滤和恶意软件检测;
 (d) Bearta aisghabhála sonraí agus plean éigeandála i bhfeidhm agus a thástáil go rialta;
-(e) Cur chun feidhme modhanna cúltaca aibíochta agus iomchuí lena n-áirítear deighilt fhisiciúil na sonraí cúltaca agus stóráil sonraí atá stóráilte i gcartlann iomarcach;
-(f) Úsáid a bhaint as teaglaim de chúltacaí iomlána, difreálacha agus carnacha chun sláine sonraí agus athchóiriú tráthúil ar shonraí lárnacha a chinntiú, de réir mar is cuí;
+(e) 实施成熟且适当的备份方法，包括备份数据的物理隔离以及数据的冗余归档存储；
+(f) 酌情结合使用全量备份、差异备份和增量备份，以确保数据完整性和核心数据的及时恢复；
 (g) Chun soláthar cumhachta gan bhriseadh don chóras a áirithiú, cuirtear aonaid soláthair cumhachta iomarcacha isteach sna córais nuair is féidir;
 (h) Sláine na sonraí stóráilte arna fhíorú go rialta ag baint úsáide as seiceálacha;
-(i) Próisis atá i bhfeidhm chun trácht sonraí a aistriú ón limistéar atá i gceist go dtí limistéar neamhchomhréiteach i gcás teipe;
+(i) 发生故障时用于将数据流量从相关区域转移到非一致区域而启用的流程;
 (j) Déantar cothabháil coisctheach chun inoibritheacht leanúnach trealaimh a chinntiú; agus
-(k) Teicneolaíocht um Dhiúltu Seirbhíse go Cuí agus Teicneolaíocht Diúltaithe Seirbhíse Dáilte i bhfeidhm chun cosaint a thabhairt i gcoinne ionsaithe ocras acmhainní bunaithe ar líonra agus ar chórais.
+(k) 实施适当的拒绝服务防护技术与分布式拒绝服务防护技术，以抵御基于网络和系统的资源耗尽攻击。
 ## VIII. **Íoschaighdeáin Slándála**
 Ní mór duit clár slándála faisnéise a dhoiciméadú, a chur i bhfeidhm agus a chothabháil a chomhlíonann caighdeáin dea-chleachtais tionscail, lena n-áirítear:
 **(a) Beartais Slándála Faisnéise**
@@ -372,27 +372,27 @@ Ní mór duit clár slándála faisnéise a dhoiciméadú, a chur i bhfeidhm agu
 **(b) Eagrú Slándála Faisnéise**
 (i) Feidhm shlándála faisnéise thiomnaithe atá freagrach as tionscnaimh agus oibríochtaí slándála;
 (ii) Cur síos ardleibhéil ar róil agus freagrachtaí laistigh den eagraíocht slándála; agus
-(iii) Feidhm tiomnaithe bainistíochta riosca slándála faisnéise.
+(iii) 专职的信息安全风险管理职能。
 **(c) Slándáil Acmhainní Daonna**
 (i) Comhaontuithe neamhnochta sínithe ag gach pearsanra a láimhseálann sonraí rúnda;
-(ii) Feasacht bhliantúil ar shlándáil, oideachas agus oiliúint;
+(ii) 年度安全意识，教育与培训;
 (iii) Seiceálacha cúlra d'úsáideoirí corparáideacha;
 (iv) Seiceálacha cúlra do chonraitheoirí;
 (v) Próiseas araíonachta maidir le sáruithe beartais;
-(vi) Freagrachtaí bainistíochta doiciméadaithe maidir le slándáil;
+(vi) 形成文档的安全管理职责;
 (vii) Foirceannadh nó athrú ar rialuithe fostaíochta; agus
-(viii) Córais tiomnaithe rialachais agus teicneolaíochta AD.
+(viii) 专用的治理与人力资源技术系统。
 **(d) Bainistíocht Sócmhainní**
 (i) Maoirseacht bhainistíochta ar shócmhainní agus ar shonraí;
 (ii) Úinéireacht sannta do na sócmhainní go léir;
 (iii) Aicmiú agus láimhseáil sócmhainní; agus
-(iv) Próiseas chun meáin inbhainte a bhainistiú agus a dhiúscairt.
-**(e) Rialú Rochtana**
-(i) Tá an phribhléid is lú, leithscaradh dualgas agus an riachtanas fios a bheith acu coincheapa bonnbhunaithe slándála leabaithe sa phróiseas bainistithe rochtana;
-(ii) clár rialaithe dearbhaithe rochtana;
-(iii) Athbhreithniú tréimhsiúil ar rochtain (go bliantúil ar a laghad);
+(iv) 可移动介质的管理与处置流程。
+**(e) 访问控制**
+(i) 最小权限、职责分离和按需知悉等基础安全理念已嵌入访问管理流程；
+(ii) 受控的访问授权登记册；
+(iii) 定期审查访问权限 (至少每年一次);
 (iv) Foirceannadh rochtana laistigh de 24-48 uair an chloig d'úsáideoirí scartha;
-(v) Bainistiú ar chearta rochtana faoi phribhléid;
+(v) 特权访问权限的管理；
 (vi) Úsáid fíordheimhnithe ilfhachtóiriúil (MFA) agus/nó síniú aonair (SSO);
 (vii) SAML 2.0 nó comhtháthú SCIM ar fáil go héasca do TikTok;
 (viii) Ceanglais castachta / cumraíochta pasfhocail de réir chaighdeáin TikTok; agus

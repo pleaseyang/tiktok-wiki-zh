@@ -1,7 +1,7 @@
 # 搜索优惠券列表
 
-# Path: /promotion/202406/coupons/search
-# Method: [POST]
+# 路径：/promotion/202406/coupons/search
+# 方法：[POST]
 # 功能描述
 使用此 API 搜索优惠券。支持的优惠券创建来源包括 TikTok Shop 卖家中心、TikTok 卖家移动应用和 TikTok Shop CRM。不同的筛选条件以 AND 方式组合。在 status 或 display_type 中，多个值以 OR 方式组合。title_keyword 对优惠券标题执行前缀匹配。要获取特定优惠券的完整详情，请使用获取优惠券 API。
 
@@ -10,13 +10,13 @@
 
 # 公共参数
 公共参数请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | 是 | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 用于在请求 API 时传递店铺信息。跨境店铺请求 API 时未传递正确值将返回错误的响应。 |
 | 通过 API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) 获取 |  |  |  |  |  |
 | content-type | header | string | 是 | application/json | 允许类型: application/json |
 # 请求查询参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | 是 | 38abcd | 每个应用都有一个唯一的 key。请使用分配给您应用的特定 key。 |
 | sign | string | 是 | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
@@ -24,7 +24,7 @@
 | page_token | string | 否 | 1661756811000 | 页游标。省略此参数将返回第一页结果。 |
 | page_size | int | 否 | 20 | 每页结果中返回的优惠券数量。范围为 `[1, 100]`，默认值为 `50`。 |
 # 请求体参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | status | []string | 否 | ["ONGOING"] | 优惠券的促销状态。 |
 | 值： |  |  |  |  |
@@ -36,9 +36,9 @@
    title_keyword |string |否 |Coupon123 |要搜索的优惠券标题中的关键词。UTF-8 字节长度必须为 1 到 100。不支持模糊匹配。 |
    display_type |[]string |否 |["CHAT"] |优惠券的展示类型。
    值：
-* `REGULAR`：常规优惠券，在 TTS 中所有可用的展示位置向 TikTok 用户展示，包括 PLP、PDP、TikTok 视频、直播间、创作者橱窗，并可通过 TTS 客服即时消息分享。包括针对特定客户群体的优惠券。
+* `REGULAR`：常规优惠券，在 TTS 中所有可用的展示位置向 TikTok 用户展示，包括 PLP、PDP、TikTok 视频、直播间、达人橱窗，并可通过 TTS 客服即时消息分享。包括针对特定客户群体的优惠券。
 * `LIVE`：仅在直播间向 TikTok 用户展示的优惠券。
-* `CREATOR_EXCLUSIVE`：可通过指定创作者的展示渠道（如其直播间和创作者橱窗）领取的优惠券。
+* `CREATOR_EXCLUSIVE`：可通过指定达人的展示渠道（如其直播间和达人橱窗）领取的优惠券。
 * `CHAT`：可通过 TTS 客服聊天消息发送给客户的专属优惠券，但不在其他展示位置展示。
 * `PROMO_CODE`：促销码在 TikTok 上没有专用的展示位置，但可以在直播、TikTok 视频或其他社交媒体平台上与客户分享。客户可以在结账时输入领取码或使用自定义促销码着陆页 URL 来领取。 |
 
@@ -54,7 +54,7 @@ https://open-api.tiktokglobalshop.com/promotion/202406/coupons/search?app_key=12
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中说明。 |
@@ -69,9 +69,9 @@ https://open-api.tiktokglobalshop.com/promotion/202406/coupons/search?app_key=12
 |优惠券的展示类型。
 值：
 
-* `REGULAR`：常规优惠券，在 TTS 中所有可用的展示位置向 TikTok 用户展示，包括 PLP、PDP、TikTok 视频、直播间、创作者橱窗，并可通过 TTS 客服即时消息分享。包括针对特定客户群体的优惠券。
+* `REGULAR`：常规优惠券，在 TTS 中所有可用的展示位置向 TikTok 用户展示，包括 PLP、PDP、TikTok 视频、直播间、达人橱窗，并可通过 TTS 客服即时消息分享。包括针对特定客户群体的优惠券。
 * `LIVE`：仅在直播间向 TikTok 用户展示的优惠券。
-* `CREATOR_EXCLUSIVE`：可通过指定创作者的展示渠道（如其直播间和创作者橱窗）领取的优惠券。
+* `CREATOR_EXCLUSIVE`：可通过指定达人的展示渠道（如其直播间和达人橱窗）领取的优惠券。
 * `CHAT`：可通过 TTS 客服聊天消息发送给客户的专属优惠券，但不在其他展示位置展示。
 * `PROMO_CODE`：促销码在 TikTok 上没有专用的展示位置，但可以在直播、TikTok 视频或其他社交媒体平台上与客户分享。客户可以在结账时输入领取码或使用自定义促销码着陆页 URL 来领取。
 

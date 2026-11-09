@@ -1,7 +1,7 @@
 # 客服售后解决方案
 
 ## 业务场景与用例
-> 本文档为独立软件供应商（ISV）和商家开发者提供全面的技术集成指南，旨在在 TikTok Shop 开放平台上构建高级客服应用。重点是利用**消息卡片**管理售后操作——特别是**退货、退款和取消**——直接在第三方客服平台内完成。
+> 本文档为独立软件供应商（ISV）和卖家开发者提供全面的技术集成指南，旨在在 TikTok Shop 开放平台上构建高级客服应用。重点是利用**消息卡片**管理售后操作——特别是**退货、退款和取消**——直接在第三方客服平台内完成。
 
 
 在典型的售后场景中，买家通过聊天界面发起请求（例如退货）。然后客服人员需要前往 TikTok Shop Seller Center 处理此请求，造成了脱节且低效的工作流程。
@@ -410,8 +410,8 @@
 ## 分步集成流程
 
 1. **认证与授权**：
-   * 引导商家授权您的应用，确保您请求 `seller.return_refund.basic` 和 `seller.customer_service` 权限范围。
-   * 安全存储每个商家的 `access-token` 和 `shop_cipher`。
+   * 引导卖家授权您的应用，确保您请求 `seller.return_refund.basic` 和 `seller.customer_service` 权限范围。
+   * 安全存储每个卖家的 `access-token` 和 `shop_cipher`。
 2. **Webhook 订阅**：
    * 在 TikTok Shop Partner Center 的应用设置中，订阅 `RETURN_STATUS_CHANGED` 和 `CANCELLATION_STATUS_CHANGED` 事件。
    * 在后端实施公共 endpoint 以接收和验证这些 Webhook POST 请求。

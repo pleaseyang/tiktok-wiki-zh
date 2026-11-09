@@ -1,12 +1,12 @@
-# 提交 TSP (TikTok Shop Partner) 支持工单
+# 提交 TSP (TikTok Shop 合作伙伴) 支持工单
 
-# 通过 Partner Console 提交工单
-如果您是已注册的 TSP (TikTok Shop Partner)，您可以直接在 Partner Center 控制台中打开、提交和管理支持工单。
+# 通过合作伙伴 Console 提交工单
+如果您是已注册的 TSP (TikTok Shop 合作伙伴)，您可以直接在 Partner Center 控制台中打开、提交和管理支持工单。
 
 1. 在 Partner Center 控制台中，导航到左侧导航面板底部的**帮助中心**。然后，选择**查看我的工单**选项：
 
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/52dc0234bb8440fbaf2663cdc0d0f588~tplv-k9wyc2ijk0-image.image)
-您也可以通过点击 **TikTok Shop Partner** 横幅并在下拉菜单中选择**提交工单**来提交工单：
+您也可以通过点击 **TikTok Shop 合作伙伴** 横幅并在下拉菜单中选择**提交工单**来提交工单：
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/8369e43f0d8f4d15a2ca8c674296c2ff~tplv-k9wyc2ijk0-image.image)
 
 2. 您将被重定向到**支持工单**页面。在右上角，选择**提交工单**以向我们的支持团队提交新工单：

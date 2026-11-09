@@ -4,12 +4,12 @@
 
 1. 在 TikTok Shop Partner Center **创建账户**。
 2. **注册为开发者**（卖家开发者或应用开发者 / ISV）。
-3. **启动合规和法律审查**——美国和英国 partner 必须完成（其他地区视情况而定）。此步骤可能需要 **三周或更长时间**，请尽早规划。
+3. **启动合规和法律审查**——美国和英国合作伙伴必须完成（其他地区视情况而定）。此步骤可能需要 **三周或更长时间**，请尽早规划。
 
-> ⏱️ **规划完整时间线。** 步骤 1-2 很快完成，但步骤 3 中的合规和法律审查是关键耗时环节。如果你是英国或美国 partner，请在完全上线前预留 3 周以上时间。
+> ⏱️ **规划完整时间线。** 步骤 1-2 很快完成，但步骤 3 中的合规和法律审查是关键耗时环节。如果你是英国或美国合作伙伴，请在完全上线前预留 3 周以上时间。
 
 ## 步骤 1：在 Partner Center 创建账户
-如果你还没有账户，请使用 TikTok Shop Partner 控制台创建账户：
+如果你还没有账户，请使用 TikTok Shop 合作伙伴控制台创建账户：
 
 * **美国** 地区账户 → [partner.us.tiktokshop.com/account/sign-up](https://partner.us.tiktokshop.com/account/sign-up)
 * **非美国** 地区账户 → [partner.tiktokshop.com/account/sign-up](https://partner.tiktokshop.com/account/sign-up)
@@ -22,7 +22,7 @@
 你的账户区域也可能在登录后导致重定向。如果切换网络无法解决问题，请注销并在隐私窗口中重试，然后确认站点与你的账户区域匹配。
 > ⚠️ 为你的开发者类型使用正确的电子邮件。如果你想注册为应用开发者或系统集成商（ISV），请勿使用与你的 TikTok Shop 卖家账户关联的电子邮件。如果你使用 Shop 账户电子邮件注册，系统会将你识别为卖家，你只能注册为卖家开发者。
 
-**注意：** TikTok Shop Partner Platform 和 Open Platform 已于 2022 年底合并为 TikTok Shop Partner Center。如果你有现有的 Partner Platform 或 Open Platform 账户，可以使用这些凭据登录 Partner Center。
+**注意：** TikTok Shop 合作伙伴 Platform 和 Open Platform 已于 2022 年底合并为 TikTok Shop Partner Center。如果你有现有的合作伙伴 Platform 或 Open Platform 账户，可以使用这些凭据登录 Partner Center。
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/b28cc21e222f476c95281075a679196e~tplv-k9wyc2ijk0-image.image)
 ## 步骤 2：注册为开发者
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/8e669291d30f4b67bd48cadb951ed878~tplv-k9wyc2ijk0-image.image)
@@ -41,14 +41,14 @@
 
 ## 注册为应用开发者或系统集成商（ISV）
 
-1. **开始你的 partner 注册申请。** 在业务指南对话框中，选择 **For app developers（ISV）**，然后点击 **Start Business**。
+1. **开始你的合作伙伴注册申请。** 在业务指南对话框中，选择 **For app developers（ISV）**，然后点击 **Start Business**。
 
 > 如果你的账户因电子邮件错误（**使用了 Shop 账户电子邮件**）需要加入白名单，请在继续注册流程之前提交工单或联系你的 Account Manager（AM）申请白名单。
 
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/b13be7a323f042d693ae5b22cc619072~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 
 
-2. 点击 **Start Business** 开始你的 partner 申请。
+2. 点击 **Start Business** 开始你的合作伙伴申请。
 
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/906a33e285db45fd942596b714ac5e64~tplv-k9wyc2ijk0-image.image" width="1052px" /></div>
 
@@ -59,7 +59,7 @@
 
 
    * **注册区域：** 必须与你公司的商业认证一致。
-   * **目标市场：** 跨境 partner（注册区域为中国和/或中国香港）可选择英国、马来西亚、越南、泰国、菲律宾或新加坡；本地 partner（本地市场实体）应仅选择其本地市场。
+   * **目标市场：** 跨境合作伙伴（注册区域为中国和/或中国香港）可选择英国、马来西亚、越南、泰国、菲律宾或新加坡；本地合作伙伴（本地市场实体）应仅选择其本地市场。
    * **业务类别：** 选择你的业务类别。📌 可用类别可能因注册区域和目标市场而异。
 4. **指定你的公司名称和联系信息，** 并提供额外的业务详情以便团队为你提供支持。
 
@@ -88,7 +88,7 @@
 
 1. 打开你的个人资料，选择添加类别或市场的选项。
 2. 选择目标市场和业务类别，然后点击 **Next**。
-3. 查看 **Partner info** 表单并填写所需信息。如果你在该类别中已有应用，点击 **Submit** 保存草稿。
+3. 查看 **合作伙伴 info** 表单并填写所需信息。如果你在该类别中已有应用，点击 **Submit** 保存草稿。
 4. 在成功页面上，选择你希望继续的方式：
    * **Add to an existing App** 将打开 **App & Service**，并筛选到相关类别。选择一个应用并点击 **Manage**，然后使用 **+ Add market（Seller type）** 选择可用市场，完成卖家设置并 **Save**。如果在市场可用之前需要资格审查，请先完成该审查。
    * **Create a new App** 将打开应用创建流程，并自动带入所选类别。选择 **Public** 或 **Custom**，查看应用详情并完成创建。
@@ -106,15 +106,15 @@
 > 详细指南请参阅：https://partner.tiktokshop.com/docv2/page/seller-developer-onboarding-onepager
 
 
-* 在申请开发者账户的目标市场时，选择类别 **Seller inhouse developer / TikTok Shop Seller**，并在下一步中 **关联已激活的 TikTok Shop 账户**。
+* 在申请开发者账户的目标市场时，选择类别 **卖家 inhouse developer / TikTok Shop 卖家**，并在下一步中 **关联已激活的 TikTok Shop 账户**。
 
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/f9513f71b0d84bcab0ad458aa7d7f8f0~tplv-k9wyc2ijk0-image.image)
 
 📌 **注意**：请确保你输入的卖家账户信息真实有效。
 
 ## 步骤 3：启动合规和法律审查
-注册为开发者 partner 后，启动合规和法律审查。这可能需要 **三周或更长时间**。某些 partner 视情况需要审查，但 **美国和英国 partner 始终需要审查**。
-联系你所辖市场的 Partner Development & Management 团队索取尽职调查问卷：
+注册为开发者合作伙伴后，启动合规和法律审查。这可能需要 **三周或更长时间**。某些合作伙伴视情况需要审查，但 **美国和英国合作伙伴始终需要审查**。
+联系你所辖市场的合作伙伴 Development & Management 团队索取尽职调查问卷：
 
 * 美国：[partner.us@tiktokshop.com](mailto:partner.us@tiktokshop.com)
 * 英国：[partner.uk@tiktokshop.com](mailto:partner.uk@tiktokshop.com)
@@ -122,5 +122,5 @@
 
 **何时开始：** 注册完成后立即启动此审查，以便 3 周以上的时间线与你的开发工作并行进行。提前准备你的尽职调查问卷和支持性商业文件。详情请参见合规和法律审查。
 ## 后续步骤
-现在你已拥有 partner 开发者账户，可以开始 [进行你的第一次 TikTok Shop API 调用](https://partner.tiktokshop.com/docv2/page/make-your-first-api-call-overview)。
+现在你已拥有合作伙伴开发者账户，可以开始 [进行你的第一次 TikTok Shop API 调用](https://partner.tiktokshop.com/docv2/page/make-your-first-api-call-overview)。
 

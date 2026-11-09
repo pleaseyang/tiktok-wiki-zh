@@ -7,13 +7,13 @@
 | `app_key` | Query | string | 分配给您的应用的唯一 key。请参阅创建您的应用以了解获取 **`app_key`** 的位置。 | 29a39d |
 | `sign` | Query | string | 基于请求参数值的 HMAC-SHA256 哈希值，用于服务验证请求发送方身份（除 access token 外）。 <br/> 请参阅签署您的 API 请求以了解如何生成此签名。 | bc721f0e0182914e3487b81df204de37a352fc3aa96947efda6dc1e5dd0d5290 |
 | `timestamp` | Query | Unix 时间戳 | 10 位秒级 Unix 时间戳，用于确保请求的时效性并防止重放攻击。请勿发送毫秒级时间戳。此值也用于生成 **`sign`** 参数的数字签名。 <br/> 有效范围：[当前时间 - 5 分钟，当前时间 + 30 秒]。发送无效的时间戳可能导致错误 `36009004 Invalid timestamp`。 | 1623812664 |
-# Header 参数
+# 请求头参数
 | **参数** | **类型** | **描述** | **示例** |
 | --- | --- | --- | --- |
-| `x-tts-access-token` | string | 用于验证请求的店铺或商家授权的 access token。对于 `202309` 及更新版本的 API，access token 必须通过此 header 发送，而非 query 字符串。 | act.example_access_token |
+| `x-tts-access-token` | string | 用于验证请求的店铺或卖家授权的 access token。对于 `202309` 及更新版本的 API，access token 必须通过此请求头发送，而非 query 字符串。 | act.example_access_token |
 | `content-type` | string | 请求内容类型。发送 JSON 请求体时使用 `application/json`。 | application/json |
 
-> **版本说明：** 对于 `202309` 版本之前的旧版 API，部分较早的文档可能将 `access_token` 显示为 query 参数。对于 `202309` 及更新版本的 API，请使用 `x-tts-access-token` header。
+> **版本说明：** 对于 `202309` 版本之前的旧版 API，部分较早的文档可能将 `access_token` 显示为 query 参数。对于 `202309` 及更新版本的 API，请使用 `x-tts-access-token` 请求头。
 
 # 端点特定的公共标识符
 部分端点除了上述参数外，还需要公共业务标识符。这些字段是否为必填取决于具体的端点。请始终遵循端点文档了解确切的位置、要求和允许的值。

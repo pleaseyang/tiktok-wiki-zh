@@ -3,8 +3,8 @@
 **集成原则：API 是数据源；webhook 是变更触发器。** 商品创建、编辑、价格、库存、特殊上架和目录维护操作应通过当前 Product Open API 契约写入，然后通过 Get Product 或相关搜索 API 验证平台状态。Webhook 应触发对账，而不是替代写后读或定时轮询。
 
 # 目的与受众
-本指南面向希望直接集成 TikTok Shop 商品 API（而非依赖 1P 连接器路径进行商品上架和日常目录维护）的卖家、ISV、PIM 系统、连接器应用和自研商家系统。
-**这是一份参考集成指南，而非产品需求文档。** 它将当前商品领域的集成模式转化为面向商家的架构：上架前需要做什么准备、调用哪些商品操作 API、如何处理审核和上架状态，以及如何安全地消费商品 webhook。
+本指南面向希望直接集成 TikTok Shop 商品 API（而非依赖 1P 连接器路径进行商品上架和日常目录维护）的卖家、ISV、PIM 系统、连接器应用和自研卖家系统。
+**这是一份参考集成指南，而非产品需求文档。** 它将当前商品领域的集成模式转化为面向卖家的架构：上架前需要做什么准备、调用哪些商品操作 API、如何处理审核和上架状态，以及如何安全地消费商品 webhook。
 起草时使用的主要参考：[TikTok Shop Products API 概览](https://partner.tiktokshop.com/docv2/page/products-api-overview)、[TikTok Shop 开发者指南](https://partner.tiktokshop.com/docv2/page/tts-developer-guide)、[Create Product API](https://partner.tiktokshop.com/docv2/page/create-product-202309)、[Edit Product API](https://partner.tiktokshop.com/docv2/page/edit-product-202509)、[Update Price API](https://partner.tiktokshop.com/docv2/page/update-price-202309)、[Update Inventory API](https://partner.tiktokshop.com/docv2/page/update-inventory-202309)、[Partial Edit Product API](https://partner.tiktokshop.com/docv2/page/partial-edit-product-202309)、[Get Authorized Category Assets API](https://partner.tiktokshop.com/docv2/page/get-authorized-category-assets-202405)、[商品状态变更 webhook](https://partner.tiktokshop.com/docv2/page/5-product-status-change)、[库存状态变更 webhook](https://partner.tiktokshop.com/docv2/page/27-inventory-status-change)、[商品审核状态变更 webhook](https://partner.tiktokshop.com/docv2/page/37-product-audit-status-change)、[组合商品变更 webhook](https://partner.tiktokshop.com/docv2/page/42-combined-listing-change) 以及 [组合商品 - 合并为变体功能指南](https://seller-us.tiktok.com/university/essay?knowledge_id=1016792318773006&role=1&course_type=1&from=search)、[[外部] TikTok Shop 目录集成解决方案 V2023.Q2.01](https://bytedance.sg.larkoffice.com/docx/GYCFd9SVXomiNhxfaQMcYLIznkf)
 # 术语
 | 术语 | 在本指南中的含义 |
@@ -22,7 +22,7 @@
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/e47ffdd9b7384a36bc6816af30d1b98c~tplv-k9wyc2ijk0-image.image)
 **推荐状态模型。** 存储外部商品 ID、TikTok 商品 ID、SKU ID、卖家 SKU、类目 ID、TikTok 属性 ID、卖家属性映射、仓库 ID、各仓库库存数量、各 SKU 价格、上架状态、审核状态、拒绝原因、webhook 事件时间戳、最近成功的 API 请求 ID 以及最近一次 TikTok 更新时间。
 # 上架前的前置条件
-商品上架失败最常见的原因是卖家系统在店铺、类目、品牌、仓库、物流和合规数据就绪之前就开始构建商品 payload。在接入时以及商家变更市场、类目、品牌、仓库或物流模板时，都需要运行这些检查。
+商品上架失败最常见的原因是卖家系统在店铺、类目、品牌、仓库、物流和合规数据就绪之前就开始构建商品 payload。在接入时以及卖家变更市场、类目、品牌、仓库或物流模板时，都需要运行这些检查。
 | 领域 | 卖家操作 | 为什么重要 | 测试指南 |
 | --- | --- | --- | --- |
 | 开发者应用就绪 | 按照 [TikTok Shop 开发者指南](https://partner.tiktokshop.com/docv2/page/tts-developer-guide) 准备应用、授权、请求签名、token 刷新和 webhook 回调配置。 | 在卖家应用能够签署请求、安全刷新 token 并接收授权店铺的 webhook 回调之前，不应开始调用商品 API。 |  |
@@ -99,7 +99,7 @@ Create Product 和 Product Edit 遵循相同的集成规范：构建完整的商
 在构建创建或编辑 payload 之前解析 TikTok 类目。卖家可以浏览类目树，向平台请求推荐类目，然后获取所选类目的属性和规则。
 | 步骤 | 使用的 API / 字段 | 卖家使用方式 |
 | --- | --- | --- |
-| 浏览/选择类目 | `GET /product/202309/categories`（[Get Categories API](https://partner.tiktokshop.com/docv2/page/get-categories-202309)） | 当卖家 UI 允许商家从可用类目树中选择 TikTok 类目时使用。 |
+| 浏览/选择类目 | `GET /product/202309/categories`（[Get Categories API](https://partner.tiktokshop.com/docv2/page/get-categories-202309)） | 当卖家 UI 允许卖家从可用类目树中选择 TikTok 类目时使用。 |
 | 推荐类目 | `POST /product/202309/categories/recommend`（[Recommend Category API](https://partner.tiktokshop.com/docv2/page/recommend-category-202309)） | 当卖家不确定最佳类目时使用自动推荐；发送标题、描述和商品信号，然后请卖家确认所选类目。 |
 | 确认规则 | `GET /product/202309/categories/{category_id}/rules`（[Get Category Rules API](https://partner.tiktokshop.com/docv2/page/get-category-rules-202309)） | 用于验证类目约束、认证、包装尺寸、尺码表和其他上架要求。提供成功商品上架所需满足的必填属性/条件。 |
 
@@ -240,7 +240,7 @@ Product API 参考文档是请求字段、权限、受支持市场和当前限�
 *如果不支持本地复制，将商品保留为该市场的本地上架。如果复制创建了草稿或失败，更新现有目标商品并在重试前确认其最新状态。*
 ## Direct API 流程
 
-1. **授权每个店铺。** 获取源店铺和每个目标店铺的访问权限。确认应用具有所需的 Product API scope。
+1. **授权每个店铺。** 获取源店铺和每个目标店铺的访问权限。确认应用具有所需的 Product API 权限范围。
 2. **检查店铺就绪度。** 获取卖家的授权店铺，并为每个将创建或接收商品的店铺调用 Get Listing Prerequisites。
 3. **检查上架方式。** 调用 Get Global Listing Rules。仅在响应允许对目标市场和库存模型使用本地复制时继续。
 4. **准备每个目标市场。** 获取目标店铺的类目、属性、类目规则和授权类目资源。即使实体商品相同，要求也可能因国家/地区而异。
@@ -278,7 +278,7 @@ Product API 参考文档是请求字段、权限、受支持市场和当前限�
 
 * 使用 Search Products、Get Product 和 Get Global Replicated Products 进行定期对账。Webhook 可能延迟或丢失。
 * 保留源商品、目标店铺、请求时间、最新结果和所需卖家操作的审计跟踪。
-* 以卖家友好的语言展示错误，例如："法国需要认证"，而不是仅显示 API 错误代码。
+* 以卖家友好的语言展示错误，例如："法国需要认证"，而不是仅显示 API 错误码。
 * 先推出一两个目标市场。在启用更多市场之前确认映射、webhook、合规处理、价格和库存。
 
 **推荐的卖家状态：** 处理中、需要操作和就绪。将详细的 API 状态保留在集成日志中，而卖家以通俗语言看到下一步操作。

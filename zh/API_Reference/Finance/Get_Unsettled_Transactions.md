@@ -1,7 +1,7 @@
 # 获取未结算交易
 
-# Path: /finance/202507/orders/unsettled
-# Method: [GET]
+# 路径：/finance/202507/orders/unsettled
+# 方法：[GET]
 # 功能描述
 此 API 允许合作伙伴检索卖家生成的未结算交易列表（包括订单和调整），返回订单 ID 和调整 ID 的详细费用明细。
 目前，此 API 仅返回 2025 年 1 月 1 日之后创建的交易。交易一旦结算，将不再由此 API 返回，请从 Get Statement Transaction API 获取。
@@ -12,13 +12,13 @@
 
 # 公共参数
 有关公共参数，请参阅 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。在请求跨境店铺 API 时未传递正确值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的 key。请使用分配给您应用的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 能够识别发送方。 |
@@ -44,7 +44,7 @@ https://open-api.tiktokglobalshop.com/finance/202507/orders/unsettled?app_key=12
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中说明。 |
@@ -132,8 +132,8 @@ https://open-api.tiktokglobalshop.com/finance/202507/orders/unsettled?app_key=12
    ^^^distant_shipping_fee_amount |string |0 |客户支付的远距离运费。根据您当前的 Horizon+ 计划设置，此费用包含在发往爪哇岛以外地区的订单商品价格中。 |
    ^^^shipping_app_service_fee_amount |string |0 |使用运费生成运单的运费应用服务费 |
    ^^^logistics_service_fee |string |0 |在整个订单生命周期内因物流相关服务向卖家收取的费用，包括处理、协调、配送相关事务的处理以及基本运费激励。这是每笔订单的金额，基于包裹的重量等级和运输路线。它使平台能够在不断变化的全球环境中持续提升服务于卖家和客户的优质、可持续物流网络。 |
-   ^^^fbt_overall_merchant_subsidy |string |0 |适用于您的订单的补贴，在账单周期内提供给所有 FBT（Fulfilled by TikTok）商家。金额根据您在此期间的合格 FBT 订单量计算。 |
-   ^^^fbt_key_merchant_subsidy |string |0 |基于关键商家计划资格适用于您的订单的补贴。金额根据您在账单周期内的合格 FBT（Fulfilled by TikTok）订单量计算。 |
+   ^^^fbt_overall_merchant_subsidy |string |0 |适用于您的订单的补贴，在账单周期内提供给所有 FBT（Fulfilled by TikTok）卖家。金额根据您在此期间的合格 FBT 订单量计算。 |
+   ^^^fbt_key_merchant_subsidy |string |0 |基于关键卖家计划资格适用于您的订单的补贴。金额根据您在账单周期内的合格 FBT（Fulfilled by TikTok）订单量计算。 |
    ^^^supplementary_component |object | |补充运费金额，仅供参考。这些金额不直接贡献于 `est_shipping_cost_amount`。 |
    ^^^^customer_shipping_fee_offset_amount |string |-6.99 |用于抵消 TikTok Shop 运费激励或客户支付运费的费用，使卖家净收费为 $0。
    仅适用于美国。 |
@@ -172,7 +172,7 @@ https://open-api.tiktokglobalshop.com/finance/202507/orders/unsettled?app_key=12
    仅适用于东南亚市场。 |
    ^^^^affiliate_partner_commission_amount |string |0 |通过联盟合作伙伴链接购买的佣金金额。 |
    ^^^^affiliate_ads_commission_amount |string |-3 |来自广告的符合条件的订单佣金。 |
-   ^^^^sfp_service_fee_amount |string |0 |参与 [Seller Free Shipping Programme] 收取的服务费。 |
+   ^^^^sfp_service_fee_amount |string |0 |参与 [卖家 Free Shipping Programme] 收取的服务费。 |
    ^^^^live_specials_fee_amount |string |0 |参与 [LIVE Specials Programme] 收取的服务费。 |
    ^^^^bonus_cashback_service_fee_amount |string |0 |参与返现奖励计划收取的服务费。 |
    ^^^^mall_service_fee_amount |string |0 |使用 TikTok Shop Mall 收取的服务费。 |
@@ -231,7 +231,7 @@ https://open-api.tiktokglobalshop.com/finance/202507/orders/unsettled?app_key=12
 
 # 错误码
 有关常见错误码，请参阅 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 | 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
 

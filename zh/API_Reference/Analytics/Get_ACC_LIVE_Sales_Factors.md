@@ -1,7 +1,7 @@
 # 获取 ACC 直播销售因素
 
-# Path: /analytics/202610/acc/preferences/live/factors
-# Method: [GET]
+# 路径：/analytics/202610/acc/preferences/live/factors
+# 方法：[GET]
 # 功能描述
 获取所选 ACC 受众、范围和报告窗口的 LIVE 类型（销售因素）分页排名。每个因素包含其 ID、显示名称、GMV 范围以及客户和订单数量。
 
@@ -10,13 +10,13 @@
 
 # 公共参数
 公共参数，请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此参数在请求 API 时传递店铺信息。请求跨境店铺 API 时未传递正确值将返回不正确的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求查询参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个 app 都有一个唯一的 key。请使用分配给您的 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 能够识别发送者。 |
@@ -40,7 +40,7 @@ https://open-api.tiktokglobalshop.com/analytics/202610/acc/preferences/live/fact
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -50,7 +50,7 @@ https://open-api.tiktokglobalshop.com/analytics/202610/acc/preferences/live/fact
 | ^end_date | string | 2026-09-20 | 报告窗口的包含结束日期，格式为 YYYY-MM-DD（UTC）。为提供的 date，或在省略 date 时为 latest_available_date。 |
 | ^factors | []object |  | 当前页面的 LIVE 类型因素，按 sort_field 和 sort_order 排序。空数组表示此页面和选择未返回任何因素。 |
 | ^^factor_id | string | label1 | 稳定的 LIVE 因素标识符，如 label1。在 Get ACC Audience Preference List 中过滤 LIVE 时，将此值原样作为 factor_id 传递；不要传递 factor_name。 |
-| ^^factor_name | string | Stable, non-shaky image | LIVE 因素的本地化显示名称（可用时）。过滤 LIVE 偏好时使用 factor_id 而非此显示名称。 |
+| ^^factor_name | string | 稳定、不抖动的画面 | LIVE 因素的本地化显示名称（可用时）。过滤 LIVE 偏好时使用 factor_id 而非此显示名称。 |
 | ^^metrics | object |  | 所选受众、范围和报告窗口中此 LIVE 因素的 GMV 范围、客户数量和订单数量。 |
 | ^^^customers | string | 4210 | 所选受众、范围和报告窗口中此 LIVE 类型的客户数量，以数值字符串表示。 |
 | ^^^gmv_range | string | $331,451.00 ~ $331,500.00 | 所选受众、范围和报告窗口内此 LIVE 类型的商品总额 (GMV)，以当前店铺货币的格式化范围表示。零 GMV 返回为格式化的零而非范围。 |
@@ -66,6 +66,6 @@ https://open-api.tiktokglobalshop.com/analytics/202610/acc/preferences/live/fact
 
 # 错误码
 常见错误码，请参考 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 

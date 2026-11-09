@@ -5,10 +5,10 @@ Fulfillment API 允许卖家履行 TikTok Shop 订单。
 TikTok Shop 提供两种 fulfillment 类型：
 
 1. Fulfilled by TikTok（FULFILLMENT_BY_TIKTOK）：TikTok 将自动代表卖家处理订单。卖家无需管理 fulfillment 流程。
-2. Fulfilled by Seller（FULFILLMENT_BY_SELLER）：在此 fulfillment 类型下，有两种 shipping 类型：
+2. Fulfilled by 卖家（FULFILLMENT_BY_SELLER）：在此 fulfillment 类型下，有两种 shipping 类型：
 
 a) TikTok shipping（TIKTOK）：有时也称为"平台 shipping"或"通过平台发货"。在此 shipping 类型下，卖家通过 TikTok Shop 购买 shipping label，并安排 TikTok Shop carrier 上门取件，或将包裹送至 TikTok Shop carrier 的投递点。卖家可以从 [Get Order Detail](https://partner.tiktokshop.com/docv2/page/650aa8ccc16ffe02b8f167a0) 或 [Get Order List](https://partner.tiktokshop.com/docv2/page/650aa8094a0bb702c06df242) 获取 shipping 类型。
-b) Seller shipping（SELLER）：有时也称为"通过卖家发货"。卖家通过自己的渠道管理 shipping。在此 shipping 类型下，卖家调用 Fulfillment API 将 shipping 详情回传给 TikTok Shop。卖家可以从 [Get Order Detail](https://partner.tiktokshop.com/docv2/page/650aa8ccc16ffe02b8f167a0) 或 [Get Order List](https://partner.tiktokshop.com/docv2/page/650aa8094a0bb702c06df242) 获取 shipping 类型。
+b) 卖家 shipping（SELLER）：有时也称为"通过卖家发货"。卖家通过自己的渠道管理 shipping。在此 shipping 类型下，卖家调用 Fulfillment API 将 shipping 详情回传给 TikTok Shop。卖家可以从 [Get Order Detail](https://partner.tiktokshop.com/docv2/page/650aa8ccc16ffe02b8f167a0) 或 [Get Order List](https://partner.tiktokshop.com/docv2/page/650aa8094a0bb702c06df242) 获取 shipping 类型。
 Fulfillment API 还提供拆包发货（split-package）和合包发货（consolidated-package，有时也称为 combined package）的 shipment 选项，以支持更灵活的 shipping 需求。卖家可以从 [Get Order Detail](https://partner.tiktokshop.com/docv2/page/650aa8ccc16ffe02b8f167a0) 或 [Get Order List](https://partner.tiktokshop.com/docv2/page/650aa8094a0bb702c06df242) 获取 fulfillment 类型。
 # API 概述
 ## TikTok shipping
@@ -114,7 +114,7 @@ Fulfillment API 还提供拆包发货（split-package）和合包发货（consol
 ## Tracking number 验证政策
 如果卖家使用卖家 shipping 模式，TikTok 将验证 tracking number。
 
-1. 商家使用的 shipping service provider 必须受到 TikTok 支持。请使用 [Get Shipping Providers](https://partner.tiktokshop.com/docv2/page/650aa48d4a0bb702c06d85cd?external_id=650aa48d4a0bb702c06d85cd) API 获取可用的 shipping provider。
+1. 卖家使用的 shipping service provider 必须受到 TikTok 支持。请使用 [Get Shipping Providers](https://partner.tiktokshop.com/docv2/page/650aa48d4a0bb702c06d85cd?external_id=650aa48d4a0bb702c06d85cd) API 获取可用的 shipping provider。
 2. TikTok 将验证 tracking number 是否与所选的 shipping service provider 匹配。如果 tracking number 未被所选 shipping provider 验证通过，将返回错误。
 
 # 常见问题

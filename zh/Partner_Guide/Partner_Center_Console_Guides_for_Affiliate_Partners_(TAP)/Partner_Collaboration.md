@@ -3,8 +3,8 @@
 📌 **此功能仅适用于TTSPC上的**[ ](https://bytedance.feishu.cn/docx/YVSSdFlS4olNfdxSPjecs8kYnOg)TAP **合作伙伴。**
 ## Affiliate Partner介绍
 ### **什么是Affiliate Partner？**
-Affiliate Partner可以将规模化达人与商家/供应链连接起来，帮助双方提高运营效率并优化达人升级。
-Affiliate Partner在TTSPC上被标识为**"Seller and Scalable Creator Match-up"**类别。
+Affiliate Partner可以将规模化达人与卖家/供应链连接起来，帮助双方提高运营效率并优化达人升级。
+Affiliate Partner在TTSPC上被标识为**"卖家 and Scalable 达人 Match-up"**类别。
 ### **Affiliate Partner有什么好处？**
 
 1. <span style="color: rgb(216, 57, 49)">您可以将其作为与卖家和达人进行基于产品的合作工具。替代线下合作/目标计划，在产品/卖家合作中实现运营流程的完全可见。</span>
@@ -15,20 +15,20 @@ Affiliate Partner在TTSPC上被标识为**"Seller and Scalable Creator Match-up"
 <span style="background-color: rgba(255, 246, 122, 0.8)">入口：</span>[https://partner.tiktokshop.com/](https://partner.tiktokshop.com/)
 Affiliate Partner将在以下市场开放注册：
 本地合作伙伴：支持位于**印度尼西亚、泰国、菲律宾、马来西亚、新加坡和越南**并提供服务的合作伙伴。
-**请在类别选择页面**<span style="background-color: rgba(255, 246, 122, 0.8)"><strong>选择"Seller and Scalable Creator Match-up"</strong></span>
+**请在类别选择页面**<span style="background-color: rgba(255, 246, 122, 0.8)"><strong>选择"卖家 and Scalable 达人 Match-up"</strong></span>
 ### 入驻前需准备的文件：
 [合作伙伴自助入驻指南](https://bytedance.feishu.cn/docx/RHwGdhlRCoThRwxsRXwch0Jdnlg?from=from_copylink)
 如果您已在[TikTok Shop合作伙伴平台](https://affiliate.tiktokglobalshop.com/partner/auth/welcome)上拥有Affiliate Partner角色，您可以使用之前的账号登录，并参考[Affiliate Partner迁移手册](https://bytedance.feishu.cn/docx/UZhzdEsxio708Zx03LVc8SDrnCg?from=from_copylink)
 ### 入驻流程
-**情况1：如果您没有TikTok Partner Center账号，请按照**[合作伙伴自助入驻指南](https://bytedance.feishu.cn/docx/RHwGdhlRCoThRwxsRXwch0Jdnlg?from=from_copylink)**操作。请在类别选择页面**<span style="background-color: rgba(255, 246, 122, 0.8)"><strong>选择"Seller and Scalable Creator Match-up"</strong></span>
+**情况1：如果您没有TikTok Partner Center账号，请按照**[合作伙伴自助入驻指南](https://bytedance.feishu.cn/docx/RHwGdhlRCoThRwxsRXwch0Jdnlg?from=from_copylink)**操作。请在类别选择页面**<span style="background-color: rgba(255, 246, 122, 0.8)"><strong>选择"卖家 and Scalable 达人 Match-up"</strong></span>
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/9b56ad4d2f9c426db40a287749677c38~tplv-k9wyc2ijk0-image.image)
-**情况2：如果您有TikTok Partner Center账号但没有"**<span style="background-color: rgba(255, 246, 122, 0.8)"><strong>Seller and Scalable Creator Match-up</strong></span>**"类别认证，您可以添加类别申请**
-您可以通过个人资料➤我的类别和市场➤添加类别和市场来添加**"**<span style="background-color: rgba(255, 246, 122, 0.8)"><strong>Seller and Scalable Creator Match-up</strong></span>**"类别**
+**情况2：如果您有TikTok Partner Center账号但没有"**<span style="background-color: rgba(255, 246, 122, 0.8)"><strong>卖家 and Scalable 达人 Match-up</strong></span>**"类别认证，您可以添加类别申请**
+您可以通过个人资料➤我的类别和市场➤添加类别和市场来添加**"**<span style="background-color: rgba(255, 246, 122, 0.8)"><strong>卖家 and Scalable 达人 Match-up</strong></span>**"类别**
 点击提交后，您需要补充Affiliate Partner信息（包括：**公司信息和联系信息，以及合作伙伴运营能力证明**），参考[TikTok Shop Partner Center指南](https://bytedance.feishu.cn/docx/doxcnpxGEdlf0MHDcH7N88ZBhkc?from=from_copylink)
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/8ac114c7b2df40f5829bc1f9288ded32~tplv-k9wyc2ijk0-image.image)
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/9578c8ed606e44adaaf1194df66e764d~tplv-k9wyc2ijk0-image.image)
 **情况3：如果您**<span style="background-color: rgba(255, 246, 122, 0.8)"><strong>已经在</strong></span>[TikTok合作伙伴平台](https://affiliate.tiktokglobalshop.com/partner/partner-creator/link?tab=all)**上拥有Affiliate Partner账号**
-您可以使用邮箱/手机号码和密码在[TikTok合作伙伴平台](https://affiliate.tiktokglobalshop.com/partner/partner-creator/link?tab=all)上使用现有账号登录。登录后，您将自动获得**"**<span style="background-color: rgba(255, 246, 122, 0.8)"><strong>Seller and Scalable Creator Match-up</strong></span>**"**类别认证。
+您可以使用邮箱/手机号码和密码在[TikTok合作伙伴平台](https://affiliate.tiktokglobalshop.com/partner/partner-creator/link?tab=all)上使用现有账号登录。登录后，您将自动获得**"**<span style="background-color: rgba(255, 246, 122, 0.8)"><strong>卖家 and Scalable 达人 Match-up</strong></span>**"**类别认证。
 ## **产品功能介绍**
 ### 1.激活账号和绑定银行账户
 #### <span style="background-color: rgba(255, 246, 122, 0.8)"><strong>激活账号</strong></span>
@@ -71,7 +71,7 @@ Affiliate Partner将在以下市场开放注册：
 ### 2.合作伙伴协作
 #### 合作伙伴
 ##### 场景1：创建合作伙伴协作
-合作伙伴通过**[TTSPC] ➤ [Creator Matchmaking] ➤ [创建协作]**创建协作和项目。
+合作伙伴通过**[TTSPC] ➤ [达人 Matchmaking] ➤ [创建协作]**创建协作和项目。
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/96b5f472d92640c8b80d97d2592eb355~tplv-k9wyc2ijk0-image.image" width="1500px" /></div>
 
 
@@ -364,7 +364,7 @@ Affiliate Partner将在以下市场开放注册：
 | **模块** | **说明** | **演示** |
 | --- | --- | --- |
 | 活动业绩页面 | 卖家可以在活动业绩页面查看推广产品的业绩数据 <br/> <br/> * 数据概览： <br/> * 有销售的产品数量 <br/> * 已付款订单数量 <br/> * 实际订单数量 <br/> * 预估佣金基数 <br/> * 实际佣金基数 <br/> * 预估总佣金 <br/> * 实际总佣金 <br/> * 产品信息： <br/> * 产品图片 <br/> * 产品名称 <br/> * 产品ID <br/> * 售价 <br/> * 已付款订单数量 <br/> * 付款金额 <br/> * 总佣金比例 <br/> * 预估总佣金 <br/> * 实际总佣金 <br/> * 操作： <br/> * 搜索：卖家可以按产品名称或产品ID搜索 <br/> <br/> 注意：仅显示有销售产品的数据 <br/> | ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/cb73ad7888904eb1a26130f98580f756~tplv-k9wyc2ijk0-image.image) <br/> 活动业绩页面 |
-#### 
+####
 
 #### 达人
 ##### 场景：达人添加产品
@@ -415,7 +415,7 @@ Affiliate Partner将在以下市场开放注册：
 达人市场支持您查看达人列表和达人信息。我们支持您通过联系方式联系达人或向达人发送邀请。
 <span style="background-color: rgba(255, 246, 122, 0.8)">注意：达人市场仅对符合条件的合作伙伴开放，如果您没有查看达人市场的权限，请联系您的客户经理。</span>
 #### 步骤1 查看达人列表
-**点击TikTok Shop Partner → 查找达人 → 达人市场查看达人市场**
+**点击TikTok Shop 合作伙伴 → 查找达人 → 达人市场查看达人市场**
 支持以下功能：
 
 1. 搜索达人：按用户名/昵称搜索
@@ -428,7 +428,7 @@ Affiliate Partner将在以下市场开放注册：
 <span style="background-color: rgba(255, 246, 122, 0.8)">❌ 官方或营销账号的达人</span>
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/9d7943cf8f694586892df32445dde51c~tplv-k9wyc2ijk0-image.image" width="1280px" /></div>
 
-如果您同时拥有**"creator management"**类别，可以在页面上切换角色来使用达人市场。切换角色后，当前的邀请和申请将归属于当前身份。
+如果您同时拥有**"达人 management"**类别，可以在页面上切换角色来使用达人市场。切换角色后，当前的邀请和申请将归属于当前身份。
 #### 步骤2 达人详情页
 在达人详情页，您可以查看达人的详细信息，包括：基本信息、核心数据、粉丝画像（性别/年龄）、互动趋势（直播/视频）以及浏览量前3的电商视频。
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/7f51869f356a4fc1aa7465fd6404e9f3~tplv-k9wyc2ijk0-image.image" width="1154px" /></div>
@@ -445,7 +445,7 @@ Affiliate Partner将在以下市场开放注册：
 2. **信息确认：**Affiliate Partner的基本信息将同步到达人端。建议Affiliate Partner在邀请达人前确认信息。
 
 > *如何确认信息？
-> TikTok Partner → 个人资料 → 公司信息，您也可以在邀请达人页面点击[确认信息]直接跳转到公司信息页面进行确认。如果信息不准确，可以向您的运营（客户经理）反馈修改需求
+> TikTok 合作伙伴 → 个人资料 → 公司信息，您也可以在邀请达人页面点击[确认信息]直接跳转到公司信息页面进行确认。如果信息不准确，可以向您的运营（客户经理）反馈修改需求
 
 
 3. **联系方式：**已根据注册时提供的现有信息自动填充，您可以根据需要查看和修改。
@@ -475,7 +475,7 @@ Affiliate Partner发送邀请后，达人可以在TikTok Shop收件箱—通知�
 <div style="text-align: center"><img src="https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/7bf894499e614f71a74f1bae7704b911~tplv-k9wyc2ijk0-image.image" width="318px" /></div>
 
 #### 步骤4 查看邀请历史
-入口：**TikTok Shop Partner Portal → 查找达人 → 邀请历史**
+入口：**TikTok Shop 合作伙伴 Portal → 查找达人 → 邀请历史**
 历史邀请界面将展示MCN已发送邀请的所有达人。我们支持以下功能：
 
 1. 搜索达人：按用户名/昵称搜索
@@ -486,7 +486,7 @@ Affiliate Partner发送邀请后，达人可以在TikTok Shop收件箱—通知�
    ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/473ae65be91446d6a87c237fc18671d7~tplv-k9wyc2ijk0-image.image)
 
 注意：
-如果您同时拥有MCN（creator management）和Affiliate Partner（Seller and Scalable Creator Match-up）角色，可以切换邀请意向
+如果您同时拥有MCN（达人 management）和Affiliate Partner（卖家 and Scalable 达人 Match-up）角色，可以切换邀请意向
 
 * 绑定达人：MCN角色
 * 产品分发：Affiliate Partner角色

@@ -1,4 +1,4 @@
-# 产品定价
+# 商品定价
 
 TikTok Shop 上的价格在 SKU 级别设置。允许的价格范围因目标市场和卖家运营模式而异。
 某些市场还要求特定的货币精度。对于印度尼西亚、日本和越南，价格必须是整数，因为这些货币不支持小数位。
@@ -27,7 +27,7 @@ TikTok Shop 上的价格在 SKU 级别设置。允许的价格范围因目标市
 | Brazil | 0.5 – 10,000 |  |
 | France | 0.01 – 6,300 |  |
 | Germany | 0.01 – 6,300 |  |
-| Indonesia | 100 – 100,000,000 | A discounted price less than 2,000 IDR may lead to a negative balance. |
+| Indonesia | 100 – 100,000,000 | 折扣价低于 2,000 IDR 可能导致余额为负。 |
 | Ireland | 0.01 – 6,300 |  |
 | Italy | 0.01 – 6,300 |  |
 | Japan | 1 – 500,000 | Prices must be integers. |
@@ -81,8 +81,8 @@ TikTok Shop 上的价格在 SKU 级别设置。允许的价格范围因目标市
 | Vietnam | 1 – 180,000,000 | Prices must be integers. |
 ### 注意事项
 
-* For Indonesia, Japan, and Vietnam, prices must be integers.
-* For Thailand, the minimum price is `30` for local sellers and sellers with local warehouses, and `0.01` for sellers with cross-border warehouses.
-* For Indonesia, a discounted price less than `2,000 IDR` may lead to a negative balance.
+* 对于印度尼西亚，日本，和越南，价格必须为整数。
+* 对于泰国，本地卖家和拥有本地仓库的卖家的最低价格为 `30`，拥有跨境仓库的卖家为 `0.01`。
+* 对于印度尼西亚，折扣价低于 `2,000 IDR` 可能导致余额为负。
 
 

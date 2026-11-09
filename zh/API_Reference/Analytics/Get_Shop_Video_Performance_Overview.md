@@ -1,7 +1,7 @@
 # 获取店铺视频表现概览
 
-# Path: /analytics/202609/shop_videos/overview_performance
-# Method: [GET]
+# 路径：/analytics/202609/shop_videos/overview_performance
+# 方法：[GET]
 # 功能描述
 返回店铺下所有 video 的整体 performance 指标。
 ---
@@ -9,44 +9,44 @@
 
 # 公共参数
 公共参数请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此参数在请求 API 时传递店铺信息。跨境店铺请求 API 时未传递正确值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型: application/json |
 # 请求查询参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有唯一的 key。请使用分配给您的应用的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名以便 TTS 识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT (UTC+00:00)。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
-| start_date_ge | string | Y | 2024-09-01 | Start date (ISO 8601 YYYY-MM-DD format) in shop registered timezone. |
-| In the parameter name, "ge" refers to "greater than or equal to" (inclusive) |  |  |  |  |
-| end_date_lt | string | Y | 2024-09-08 | End date (ISO 8601 YYYY-MM-DD format) in shop registered timezone. |
-| In the parameter name, "lt" refers to "less than" (exclusive) |  |  |  |  |
-| today | bool | N | true | If "today" is set to true, start_date_ge and end_date_lt will be overwritten. |
-| The response will contain real-time metrics of today (local time) |  |  |  |  |
-| granularity | string | N | ALL | Granularity of the data. |
-| Available values: ALL, 1D |  |  |  |  |
-| Default value: ALL |  |  |  |  |
+| start_date_ge | string | Y | 2024-09-01 | 开始日期（ISO 8601 YYYY-MM-DD 格式），采用店铺注册时区。 |
+| 在参数名中，"ge" 表示"大于或等于"（含边界） |  |  |  |  |
+| end_date_lt | string | Y | 2024-09-08 | 结束日期（ISO 8601 YYYY-MM-DD 格式），采用店铺注册时区。 |
+| 在参数名中，"lt" 表示"小于"（不含边界） |  |  |  |  |
+| today | bool | N | true | 如果将 "today" 设置为 true, start_date_ge 和 end_date_lt 将被覆盖。 |
+| 响应将包含当日 (本地时间) 的实时指标 |  |  |  |  |
+| granularity | string | N | ALL | 数据粒度。 |
+| 可用取值：ALL, 1D |  |  |  |  |
+| 默认值：ALL |  |  |  |  |
 
 * ALL: aggregate
 * 1D: daily |
-   currency |string |N |USD |Currently, only local currency is supported in the response.
+   currency |string |N |USD |目前，响应中仅支持本地货币。
 
 Currency.
-Available values: USD, LOCAL
-Default value: LOCAL
+可用取值：USD, LOCAL
+默认值：LOCAL
 
-* USD: US dollars
-* LOCAL: local currency where the shop is located |
-   account_type |string |N |ALL |Types of the accounts under which videos were created.
+* USD：美元
+* LOCAL：店铺所在地的本地货币 |
+   account_type |string |N |ALL |创建视频所归属的账号类型。
    Available values:
-* ALL: All account types.
-* OFFICIAL_ACCOUNTS: Official accounts.
-* MARKETING_ACCOUNTS: Marketing accounts.
-* AFFILIATE_ACCOUNTS: Affiliate accounts.
-   Default value: ALL |
+* ALL: 所有账号类型。
+* OFFICIAL_ACCOUNTS：官方账号。
+* MARKETING_ACCOUNTS：营销账号。
+* AFFILIATE_ACCOUNTS: 联盟账户。
+   默认值: ALL |
 
 # 请求示例
 **Query**
@@ -55,7 +55,7 @@ https://open-api.tiktokglobalshop.com/analytics/202609/shop_videos/overview_perf
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -97,6 +97,6 @@ https://open-api.tiktokglobalshop.com/analytics/202609/shop_videos/overview_perf
 
 # 错误码
 常见错误码请参考 [如何调用 TikTok Shop API - 常见错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 

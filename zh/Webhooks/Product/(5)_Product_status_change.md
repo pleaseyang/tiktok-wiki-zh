@@ -11,7 +11,7 @@
 | **参数名称** | **示例** | **描述** |
 | --- | --- | --- |
 | product_id | 1X2X3X4X5 | TikTok Shop 商品的标识符 |
-| status | Live-On sell | 商品审核状态，可能的值：<br/>  <br/> * PRODUCT_FIRST_PASS_REVIEW<br/> * PRODUCT_STATUS_CHANGED<br/> * PRODUCT_AUDIT_FAILURE |
+| status | 直播销售 | 商品审核状态，可能的值：<br/>  <br/> * PRODUCT_FIRST_PASS_REVIEW<br/> * PRODUCT_STATUS_CHANGED<br/> * PRODUCT_AUDIT_FAILURE |
 | suspended_reason | 1X2X3X4X5 | 商品审核被拒绝或冻结的原因 |
 | update_time | 1627587600 | 状态变更的时间，以 Unix 时间戳（秒）表示。 |
 ## 事件示例

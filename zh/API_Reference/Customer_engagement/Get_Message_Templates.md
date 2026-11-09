@@ -1,7 +1,7 @@
 # 获取消息模板
 
-# Path: /customer_engagement/202412/message_templates
-# Method: [GET]
+# 路径：/customer_engagement/202412/message_templates
+# 方法：[GET]
 # 功能描述
 获取 TikTok Shop 预定义的 customer engagement 消息模板库，您可以直接在 customer engagement 通信中使用。
 
@@ -10,13 +10,13 @@
 
 # 公共参数
 公共参数请参考 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此参数在请求 API 时传递店铺信息。跨境店铺请求 API 时未传递正确的值将返回错误的响应。 |
 | 通过 API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) 获取 |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Query 参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个 app 都有一个唯一的 key。请使用分配给您 app 的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 能够识别发送方。 |
@@ -31,7 +31,7 @@ https://open-api.tiktokglobalshop.com/customer_engagement/202412/message_templat
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -39,8 +39,8 @@ https://open-api.tiktokglobalshop.com/customer_engagement/202412/message_templat
 | data | object |  | 具体返回信息 |
 | ^message_templates | []object |  | TikTok Shop 预定义的 customer engagement 消息模板。 |
 | ^^id | string | 123456789_987654321 | 模板 ID。 |
-| ^^message_title | string | Meet your next favorite thing! | 消息标题。 |
-| ^^message_body | string | We strive to create products with you in mind. Check out our newest drop to find your perfect fit that's built for a confidence boost. | 消息正文。 |
+| ^^message_title | string | 遇见你的下一个心头好! | 消息标题。 |
+| ^^message_body | string | 我们力求以您为本打造商品。查看我们的最新上新，找到专为提升自信打造的完美之选。 | 消息正文。 |
 | ^^product_card_rules | object |  | 消息中可包含的交互式商品卡片的数量和类型规则。 |
 | ^^^min_count | int | 0 | 必须包含的最少商品卡片数量。 |
 | ^^^max_count | int | 4 | 可以包含的最多商品卡片数量。 |

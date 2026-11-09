@@ -9,7 +9,7 @@
 2. **创建商品集并与达人分享：** 您可以创建商品集并通过一个链接与达人分享
 
 📌 **注意**
-商品市场将对所有 MCN（类别：达人管理）和 TAP（类别：商家和可扩展达人匹配）开放。
+商品市场将对所有 MCN（类别：达人管理）和 TAP（类别：卖家和可扩展达人匹配）开放。
 # MCN 和 TAP 功能指南
 ## 步骤 1 - 挑选商品
 商品市场是您搜索和发现想要与达人分享的商品的地方。目前，您可以通过三种不同的方式查找商品：
@@ -36,8 +36,8 @@
 | 商品市场 | 商品详情 |
 | --- | --- |
 | ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/79746d2511ce4edabe0f9e8a519ec820~tplv-k9wyc2ijk0-image.image) | ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/6058e080737546f19ee68e540dc8caa6~tplv-k9wyc2ijk0-image.image) |
-> 提示：如何找到商家的联系方式
-> 您可以点击商品卡片上的联系信息。如果商家未提供任何联系信息，您可以改用达人商品市场通过 IM 联系商家。
+> 提示：如何找到卖家的联系方式
+> 您可以点击商品卡片上的联系信息。如果卖家未提供任何联系信息，您可以改用达人商品市场通过 IM 联系卖家。
 > ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/8d68400680444c048876e219e95cd86a~tplv-k9wyc2ijk0-image.image)
 
 ## 步骤 2 - 将商品添加到商品集

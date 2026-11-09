@@ -8,7 +8,7 @@
 1. 先确认 HTTP 状态码，重点关注 `401`、`403`、`404`、`408`、`429` 和 `5xx`。
 2. 同时检查 API 响应中的 `code` 与 `message`。部分常见的请求校验失败会复用同一个数字错误码。
 3. 若失败与具体端点相关，请查看该端点参考页的 **Errorcode** 章节。
-4. 若失败与授权相关，请把端点要求的权限范围（scope）与合作伙伴中心中应用已开通的范围、以及令牌的 `granted_scopes` 字段逐一比对。
+4. 若失败与授权相关，请把端点要求的权限范围（权限范围）与合作伙伴中心中应用已开通的范围、以及令牌的 `granted_scopes` 字段逐一比对。
 
 # `36009004` 的消息关键字索引
 错误码 `36009004` 被多种不同的请求校验失败复用。请勿仅凭数字错误码做程序化分支判断，需结合响应 `message` 中的关键字，并记录包含 `request_id` 的完整响应。
@@ -28,7 +28,7 @@
 # 通用错误
 | **错误码** <!-- width:90px --> | **错误消息** <!-- width:300px --> | **详情与处理建议** |
 | --- | --- | --- |
-| 36009002 | Too many requests. You've made too many requests in a short period of time. | 按限流处理。HTTP 响应需与业务错误码结合判断：`HTTP 429` 与 `36009002` 都表示触发限流。请加入重试/退避逻辑，若存在 `Retry-After` 响应头则遵循该值，并参考 Rate limits 说明。 |
+| 36009002 | 请求过多。您在短时间内发送了过多请求。 | 按限流处理。HTTP 响应需与业务错误码结合判断：`HTTP 429` 与 `36009002` 都表示触发限流。请加入重试/退避逻辑，若存在 `Retry-After` 响应头则遵循该值，并参考 Rate limits 说明。 |
 | 36009007 | Request timeout. The request to the endpoint timed out. | 请重试，或考虑拆分为更小的请求。 |
 | 36009009 | Invalid path. The specified path does not match any available endpoint. | 详见 API 文档。 |
 | 36009010 | Invalid method. The HTTP method used is not supported by this endpoint. | 详见 API 文档。 |

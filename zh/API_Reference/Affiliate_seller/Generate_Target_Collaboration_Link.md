@@ -1,27 +1,27 @@
 # 生成 Target Collaboration 链接
 
-# Path: /affiliate_seller/202509/target_collaboration/{target_collaboration_id}/link
-# Method: [POST]
+# 路径：/affiliate_seller/202509/target_collaboration/{target_collaboration_id}/link
+# 方法：[POST]
 # 功能描述
-使用此 API 生成 target collaboration 链接。Creator 可以通过此链接接受 target collaboration 邀请。
+使用此 API 生成 target collaboration 链接。达人可以通过此链接接受 target collaboration 邀请。
 
 ---
 
 
 # 通用参数
 有关通用参数，请参阅 [How to call TikTok Shop APIs - Common Parameters](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。请求跨境店铺 API 时未传递正确值将返回不正确的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求 Path 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
-| target_collaboration_id | string | Y | 123 | Target collaboration ID. |
+| target_collaboration_id | string | Y | 123 | 定向协作 ID。 |
 |  |  |  |  |  |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的密钥。请使用分配给您应用的特定密钥。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 可以识别发送者。 |
@@ -38,13 +38,13 @@ https://open-api.tiktokglobalshop.com/affiliate_seller/202509/target_collaborati
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
 | request_id | string | 202203070749000101890810281E8C70B7 | 请求日志 |
 | data | object |  | 具体返回信息 |
-| ^link | string | https://affiliate-id.tokopedia.com/api/v1/oec/affiliate/seller/invitation_group/share/long_url/AJBNfIPZXGcc | The link of the target invitation, the creator can jump to the page of adding products after clicking. |
+| ^link | string | https://affiliate-id.tokopedia.com/api/v1/oec/affiliate/seller/invitation_group/share/long_url/AJBNfIPZXGcc | 定向邀请的链接，达人点击后可跳转至添加商品的页面。 |
 # 响应示例
 ```json
 {"code":0,"data":{"link":"https://affiliate-id.tokopedia.com/api/v1/oec/affiliate/seller/invitation_group/share/long_url/AJBNfIPZXGcc"},"message":"Success","request_id":"202203070749000101890810281E8C70B7"}
@@ -52,6 +52,6 @@ https://open-api.tiktokglobalshop.com/affiliate_seller/202509/target_collaborati
 
 # 错误码
 有关常见错误码，请参阅 [How to call TikTok Shop APIs - Common Error Code](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 

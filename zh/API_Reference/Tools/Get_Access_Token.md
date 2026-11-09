@@ -33,7 +33,7 @@
 
 1. 您的应用通过 Get Access Token API 将 `code`（作为 `auth_code` 传递）换取 token。
 
-# Get Access Token API
+# 获取访问令牌 API
 向 `https://auth.tiktok-shops.com/api/v2/token/get` 发送 `GET` 请求，并附带以下参数：
 | 参数 | 类型 | 是否必填？ | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
@@ -57,7 +57,7 @@ https://auth.tiktok-shops.com/api/v2/token/get?app_key=123abc
 | `code` | int | 机器可读的结果码。`0` = 成功。请参阅公共错误码。 | 0 |
 | `message` | string | 人类可读的结果消息。 | success |
 | `request_id` | string | 用于追踪 API 请求的 ID。 | 2024080809462301024509910319695C45 |
-| `data.access_token` | string | 用户 access token。在 API 请求的 `x-tts-access-token` header 中传递。 | TTP_RLM6CIADWF606TZGFO5XGA |
+| `data.access_token` | string | 用户 access token。在 API 请求的 `x-tts-access-token` 请求头中传递。 | TTP_RLM6CIADWF606TZGFO5XGA |
 | `data.access_token_expire_in` | Unix timestamp | Access token 过期时间（默认有效期：**7 天**）。 | 1660556783 |
 | `data.refresh_token` | string | 用于刷新 access token 的 token。 | TTP_C2XWDN63ON-FOHJSMR0WSG |
 | `data.refresh_token_expire_in` | Unix timestamp | Refresh token 过期时间（等于用户授予的授权时长）。 | 1691487031 |
@@ -100,7 +100,7 @@ https://auth.tiktok-shops.com/api/v2/token/get?app_key=123abc
 | 5 | 全球卖家 | 当前全球销售类型。 |
 > 请将接收到的值与此表进行匹配 — 例如，达人集成应收到 `1`，Affiliate Partner (TAP) 集成应收到 `3`。如果您收到意外的值，请确认用户通过适用于您应用类型的正确授权链接进行了授权。
 
-# Get Refresh Token API
+# 获取刷新令牌 API
 Access token 会过期（默认 7 天）。在过期前，通过向 `https://auth.tiktok-shops.com/api/v2/token/refresh` 发送 `GET` 请求来刷新：
 | 参数 | 类型 | 是否必填？ | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
@@ -151,5 +151,5 @@ Token 获取/刷新以及理解 `user_type` 是最常见的授权支持主题。
 如需更多帮助，请参阅"如何联系支持"。
 # 启用 API Scope
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/84f5bb18084348f585eade8b61db9111~tplv-k9wyc2ijk0-image.image)
-在开发应用之前，开发者应根据应用的业务类型启用或申请必要的 API scope。
-<span style="background-color: rgb(255, 245, 235)">📌 </span><span style="background-color: rgb(255, 245, 235)"><strong>注意</strong></span><span style="background-color: rgb(255, 245, 235)">：启用不必要的 scope 可能会导致应用审核时间更长以及用户授权率降低。</span>
+在开发应用之前，开发者应根据应用的业务类型启用或申请必要的 API 权限范围。
+<span style="background-color: rgb(255, 245, 235)">📌 </span><span style="background-color: rgb(255, 245, 235)"><strong>注意</strong></span><span style="background-color: rgb(255, 245, 235)">：启用不必要的权限范围可能会导致应用审核时间更长以及用户授权率降低。</span>

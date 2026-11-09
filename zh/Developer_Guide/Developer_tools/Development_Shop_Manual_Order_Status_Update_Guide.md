@@ -1,10 +1,10 @@
 # 开发店铺手动订单状态更新指南
 
 # 文档概述
-本指南适用于在 Full Function Account 开发店铺环境中工作的商家、测试人员和开发者。它说明了如何手动模拟通过 TikTok App 下的测试订单的订单状态推进，而无需依赖真实的履约操作（如仓储或物流）。
+本指南适用于在 Full Function Account 开发店铺环境中工作的卖家、测试人员和开发者。它说明了如何手动模拟通过 TikTok App 下的测试订单的订单状态推进，而无需依赖真实的履约操作（如仓储或物流）。
 当你需要在开发店铺中验证端到端订单状态展示、履约回调、取消或退款行为时，请使用本指南。
 # 1. 功能概述
-在开发店铺环境中，商家通常无法依赖真实的履约事件来驱动订单状态变更。手动订单状态更新功能允许测试人员在 Partner Center 中为从 TikTok App 创建的测试订单手动触发状态推进。
+在开发店铺环境中，卖家通常无法依赖真实的履约事件来驱动订单状态变更。手动订单状态更新功能允许测试人员在 Partner Center 中为从 TikTok App 创建的测试订单手动触发状态推进。
 它涵盖了正向流程（从下单到已送达）和逆向流程（包括订单取消和退款）。这让团队能够在沙箱中端到端地验证业务逻辑和前端状态展示。
 | 维度 | 描述 |
 | --- | --- |
@@ -12,9 +12,9 @@
 | 支持市场 | 本地 Full Function Account 开发店铺。请参阅下方的国家级别表格。 |
 | 支持流程 | 正向流程和逆向流程 |
 | 入口 | Partner Center / Seller Center 中的开发店铺订单管理页面 |
-| 目标用户 | 商家测试人员、开发者调试工程师和运营审核人员 |
+| 目标用户 | 卖家测试人员、开发者调试工程师和运营审核人员 |
 ## 1.1 支持的市场
-使用与 Seller Center 开发店铺指南相同的国家级别市场范围。对于 Full Function Account，支持的本地区域与 Core Function Account 相同，而跨境商家支持目前不可用。
+使用与 Seller Center 开发店铺指南相同的国家级别市场范围。对于 Full Function Account，支持的本地区域与 Core Function Account 相同，而跨境卖家支持目前不可用。
 | 国家/地区 | 国家代码 | Full Function 本地 |
 | --- | --- | --- |
 | 奥地利 | AT (40) | 支持 |
@@ -66,7 +66,7 @@
 2. 确认订单出现在 Partner Center / Seller Center 中，状态为 **On Hold**。
 3. 选择以下路径之一：
    * 正向流程：**On Hold -> Pending Shipment -> Awaiting Collection / In Transit -> Delivered**。
-   * 商家端逆向流程：**On Hold / Pending Shipment -> Cancelled**，或退款请求 -> 商家审批 -> 退款状态更新。
+   * 卖家端逆向流程：**On Hold / Pending Shipment -> Cancelled**，或退款请求 -> 卖家审批 -> 退款状态更新。
    * 消费者端逆向流程：买家在 TikTok App 中取消订单 -> 后端订单状态更新为 **Cancelled**。
 4. 每次操作后，验证后端和 TikTok App 中对应的订单状态。
 5. 对后端创建的订单运行回归验证，确保现有订单操作仍然有效。
@@ -91,7 +91,7 @@
 验收标准：在 TikTok App 中下的单可以在 Partner Center 中找到，且状态同步正确，这意味着 TikTok App 下单路径按预期工作。
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/b65c33efef574d498e6306d8678348d0~tplv-k9wyc2ijk0-image.image)
 ## 4.2 步骤 2：正向流程 - 在后端手动驱动状态推进
-### 4.2.1 On Hold -> Pending Shipment
+### 4.2.1 挂起 -> 待发货
 
 1. 在后端找到目标订单。当前状态应为 **On Hold**。
 2. 打开订单详情页，找到**手动状态推送**操作按钮。
@@ -107,7 +107,7 @@
 注意：后端状态手动推送后，TikTok App 状态通常在几秒内同步。如果更新尚未可见，请稍等片刻并刷新页面。
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/25a87058567f40869aa990ced2c6d037~tplv-k9wyc2ijk0-image.image)
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/26403bcf61ba453997c1abe3047c7993~tplv-k9wyc2ijk0-image.image)
-### 4.2.2 Pending Shipment -> Awaiting Collection -> In Transit
+### 4.2.2 待发货 -> 待揽收 -> 运输中
 
 1. 确认当前订单状态为 **Pending Shipment**。
 2. 点击后端中的**发货**。
@@ -124,7 +124,7 @@
 * 提交物流信息后，状态应进入发货阶段，并可推进至 **In Transit**。
 
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/a5e21a5dbebc4630a2384187b85c5768~tplv-k9wyc2ijk0-image.image)
-### 4.2.3 In Transit -> Delivered
+### 4.2.3 运输中 -> 已送达
 
 1. 确认当前订单状态为 **In Transit**。
 2. 在后端中手动将订单推送至 **Delivered**。
@@ -156,7 +156,7 @@
 4. 在 Seller Center 退款管理页面中找到该请求并点击**批准退款**。
 5. 退款审批完成后，在 TikTok App 中验证退款状态已更新。
 
-重要提示：退款流程需要两个后端操作：**提交退款请求**和**作为商家批准退款**。TikTok App 状态仅在审批步骤完成后才会变更。
+重要提示：退款流程需要两个后端操作：**提交退款请求**和**作为卖家批准退款**。TikTok App 状态仅在审批步骤完成后才会变更。
 ## 4.4 步骤 4：在 TikTok App 中发起的逆向流程 - 取消同步回后端
 此测试用例验证用户在 TikTok App 中发起的取消是否正确同步回后端。
 
@@ -180,9 +180,9 @@
 | 操作类型 | 起始状态 | 目标状态 | 入口 |
 | --- | --- | --- | --- |
 | 正向 | On Hold | Pending Shipment | 后端 -> 订单详情 -> 手动状态推送 |
-| 正向 | Pending Shipment | Awaiting Collection / In Transit | 后端 -> 发货 |
+| 正向 | Pending Shipment | 待揽收 / 运输中 | 后端 -> 发货 |
 | 正向 | In Transit | Delivered | 后端 -> 手动推进 |
-| 逆向 | On Hold / Pending Shipment | Cancelled | 后端 -> 取消订单 |
+| 逆向 | 暂挂 / 待发货 | Cancelled | 后端 -> 取消订单 |
 | 逆向 | 符合退款条件的任何状态 | Refunding / Refunded | 后端 -> 发起退款 -> 批准退款 |
 | 消费者端逆向 | On Hold | Cancelled | TikTok App -> 我的订单 -> 取消订单 |
 # 6. 常见问题

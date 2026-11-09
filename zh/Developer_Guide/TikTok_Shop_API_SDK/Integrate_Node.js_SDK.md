@@ -1,7 +1,7 @@
 # 集成 Node.js SDK
 
 # 概述
-按照本指南安装 TikTok Shop Node.js SDK，获取商家 access token，获取授权店铺的 `shop_cipher`，并使用[搜索商品](https://partner.tiktokshop.com/docv2/page/search-products-202502)发起您的第一次商品 API 调用。
+按照本指南安装 TikTok Shop Node.js SDK，获取卖家 access token，获取授权店铺的 `shop_cipher`，并使用[搜索商品](https://partner.tiktokshop.com/docv2/page/search-products-202502)发起您的第一次商品 API 调用。
 SDK 为您签署 TikTok Shop API 请求。仅当您使用自己的 HTTP 客户端而非 SDK 调用 OpenAPI 端点时，才需要使用[签署您的 API 请求](https://partner.tiktokshop.com/docv2/page/sign-your-api-request)。
 本指南使用：
 | 任务 | SDK API 或辅助工具 | OpenAPI 端点 |
@@ -13,11 +13,11 @@ SDK 为您签署 TikTok Shop API 请求。仅当您使用自己的 HTTP 客户�
 # 前提条件
 集成 SDK 之前，您需要：
 
-1. 一个 TikTok Shop 应用和测试商家账号。请参阅[创建测试商家账号](https://partner.tiktokshop.com/docv2/page/create-test-seller-account)。
-2. 从为测试应用配置的重定向 URL 获取的商家授权码。请参阅[生成测试 access token](https://partner.tiktokshop.com/docv2/page/generate-test-access-token)。
+1. 一个 TikTok Shop 应用和测试卖家账号。请参阅[创建测试商家账号](https://partner.tiktokshop.com/docv2/page/create-test-seller-account)。
+2. 从为测试应用配置的重定向 URL 获取的卖家授权码。请参阅[生成测试 access token](https://partner.tiktokshop.com/docv2/page/generate-test-access-token)。
 3. 从合作伙伴中心下载的最新 Node.js SDK 包。SDK 包根据您应用已启用的范围和 API 版本生成。请参阅[更新 SDK](https://partner.tiktokshop.com/docv2/page/update-sdk)。
 
-不要将 `app_key`、`app_secret`、`access_token`、`refresh_token`、授权码或商家数据提交到源代码管理。请从环境变量或密钥管理器加载密钥。
+不要将 `app_key`、`app_secret`、`access_token`、`refresh_token`、授权码或卖家数据提交到源代码管理。请从环境变量或密钥管理器加载密钥。
 # 环境要求
 使用受支持的 Node.js LTS 版本。截至 2026 年 7 月，Node.js 22.x 和 24.x 是受支持的 LTS 系列；Node.js 16.x 已停止维护。在发布本指南的新版本之前，请查看 [Node.js 发布计划](https://github.com/nodejs/release#release-schedule)。
 建议基线：
@@ -115,7 +115,7 @@ const client = new TikTokShopNodeApiClient({
 
 `sandbox: false` 将请求发送到生产环境。仅在测试 SDK 包支持的沙箱或开发店铺环境时使用 `sandbox: true`。
 # 获取 Access Token
-使用 SDK 辅助工具将一次性商家授权码交换为 access token。
+使用 SDK 辅助工具将一次性卖家授权码交换为 access token。
 ```TypeScript
 const authCode = requiredEnv("TTS_AUTH_CODE");
 
@@ -130,7 +130,7 @@ if (!accessToken) {
 
 在生产环境中，将 access token、refresh token 及其过期时间戳存储在安全的服务端数据存储中。不要将 token 存储在前端代码中。
 # 获取 Shop Cipher
-`shop_cipher` 标识用于搜索商品等店铺级 API 的授权店铺。使用商家 `accessToken` 调用[获取授权店铺](https://partner.tiktokshop.com/docv2/page/get-authorized-shops-202309)，并使用响应中的 `data.shops[].cipher`。
+`shop_cipher` 标识用于搜索商品等店铺级 API 的授权店铺。使用卖家 `accessToken` 调用[获取授权店铺](https://partner.tiktokshop.com/docv2/page/get-authorized-shops-202309)，并使用响应中的 `data.shops[].cipher`。
 ```TypeScript
 const contentType = "application/json";
 

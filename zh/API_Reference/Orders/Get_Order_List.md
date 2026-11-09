@@ -1,7 +1,7 @@
 # 获取订单列表
 
-# Path: /order/202309/orders/search
-# Method: [POST]
+# 路径：/order/202309/orders/search
+# 方法：[POST]
 # 功能描述
 返回在指定参数所示时间范围内创建或更新的订单列表。您还可以应用一系列筛选条件来缩小返回的订单列表范围，例如订单状态、配送选项类型和买家用户 ID。
 
@@ -11,13 +11,13 @@
 
 # 公共参数
 有关公共参数，请参阅 [如何调用 TikTok Shop API - 公共参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 是否必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 在请求 API 时使用该属性传递店铺信息。若为跨境店铺请求 API 时未传递正确的值，将返回不正确的响应。 |
 | 通过 API 获取：[获取授权店铺](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许的类型：application/json |
 # 请求查询参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都会有一个唯一的密钥。请使用分配给您应用的专属密钥。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由生成算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
@@ -37,7 +37,7 @@
 
 使用 `sort_order` 参数指定返回结果的排序顺序。 |
 # 请求体参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 是否必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性描述 <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | order_status | string | N | UNPAID | 具体的订单状态。 |
 | 可用取值： |  |  |  |  |
@@ -97,7 +97,7 @@ https://open-api.tiktokglobalshop.com/order/202309/orders/search?app_key=123abc&
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性描述 <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中说明。 |
@@ -107,7 +107,7 @@ https://open-api.tiktokglobalshop.com/order/202309/orders/search?app_key=123abc&
 | ^total_count | int | 22113 | 搜索结果中的订单总数。 |
 | ^orders | []object |  | 订单信息。 |
 | ^^id | string | 576461413038785752 | TikTok Shop 订单 ID。 |
-| ^^buyer_message | string | Please ship asap! | 买家的备注。 |
+| ^^buyer_message | string | 请尽快发货！ | 买家的备注。 |
 | ^^cancellation_initiator | string | SELLER | 取消请求发起方。 |
 | 可用取值： |  |  |  |
 
@@ -236,7 +236,7 @@ Unix 时间戳。 |
 * `SELLER`：由卖家提供发货服务，包括代表卖家发货的第三方履约服务商。
 * `TIKTOK_DIGITAL`：Tiktok 将虚拟商品直接交付给买家。无需进行任何操作。 |
    ^^user_id |string |7021436810468230477 |买家用户 ID。 |
-   ^^seller_note |string |seller note |来自 TikTok Shop 卖家中心的卖家备注。 |
+   ^^seller_note |string |卖家 note |来自 TikTok Shop 卖家中心的卖家备注。 |
    ^^delivery_sla_time |int |1678389618 |订单应在此日期前送达，才被视为准时送达，以避免延迟配送处罚。 |
    ^^is_cod |bool |false |该选项适用于支持货到付款（COD）的卖家。买家将在收到包裹时以现金支付。
 
@@ -421,7 +421,7 @@ Unix 时间戳。 |
 可能的取值：
 
 * `TEMPORARY LISTING` |
-   ^^buyer_email |string |v2b2V5@chat.seller.tiktok.com |买家的匿名化电子邮箱地址。不建议直接向该邮箱地址发送消息。如需联系买家，请前往 TikTok Shop 卖家中心 - 买家消息页面。 |
+   ^^buyer_email |string |v2b2V5@chat.卖家.tiktok.com |买家的匿名化电子邮箱地址。不建议直接向该邮箱地址发送消息。如需联系买家，请前往 TikTok Shop 卖家中心 - 买家消息页面。 |
    ^^delivery_due_time |int |1678389618 |若订单未在此时间前将状态更新为 `DELIVERED`，该订单将被 TikTok Shop 自动取消。Unix 时间戳。 |
    ^^is_sample_order |bool |false |使用该字段判断订单是否为样品订单。 |
    ^^shipping_due_time |int |1678389618 |若订单未在此时间前将状态更新为 `AWAITING_COLLECTION`，该订单将被 TikTok Shop 自动取消。Unix 时间戳。 |

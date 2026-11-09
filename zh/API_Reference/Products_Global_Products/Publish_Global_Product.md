@@ -1,14 +1,14 @@
-# 发布全球产品
+# 发布全球商品
 
-# Path: /product/202309/global_products/{global_product_id}/publish
-# Method: [POST]
+# 路径：/product/202309/global_products/{global_product_id}/publish
+# 方法：[POST]
 # 功能描述
-Publish and convert a global product to local products in one or multiple shops in supported markets. After publishing, the product is sent for review by TikTok Shop in the respective markets. For sellers in the EU market, the provided information will also be automatically translated into all EU languages supported by TikTok Shop.
-**Note**:
+在受支持市场的一个或多个店铺中发布全球商品并将其转换为本地商品。发布后，商品将由 TikTok Shop 在相应市场送审。对于欧盟市场的卖家，所提供的信息还将自动翻译为 TikTok Shop 支持的所有欧盟语言。
+**注意**：
 
-* You can only publish in each market once. To change product information, edit the global product by using the [Edit Global Product API](6509e1bcc16ffe02b8dc3cd7). The changes will be automatically synchronized to all markets where the product is published
-* Use the [Get Product API](6509d85b4a0bb702c057fdda) to obtain the converted local product information in the target market's language.
-* Use the [Edit Product API](6509da7d0fcef602bf1caddf) or [Partial Edit Product API](650a98d74a0bb702c06c3289) to edit the local product information, if necessary.
+* 每个市场只能发布一次。要更改商品信息，请使用 [Edit Global Product API](6509e1bcc16ffe02b8dc3cd7) 编辑全球商品。更改将自动同步到该商品已发布的所有市场
+* 使用 [Get Product API](6509d85b4a0bb702c057fdda) 获取目标市场语言下转换后的本地商品信息。
+* 如有需要，使用 [Edit Product API](6509da7d0fcef602bf1caddf) 或 [Partial Edit Product API](650a98d74a0bb702c06c3289) 修改本地商品信息。
 
 
 ---
@@ -16,120 +16,120 @@ Publish and convert a global product to local products in one or multiple shops 
 
 # 通用参数
 通用参数请参考 [如何调用 TikTok Shop API - 通用参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| 属性 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | content-type | header | string | Y | application/json | 允许类型：application/json |
 # 请求路径参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
-| global_product_id | string | Y | 1729592969712207008 | The global product id. |
+| global_product_id | string | Y | 1729592969712207008 | 全球商品 ID。 |
 # 请求查询参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的密钥。请使用分配给您的应用的特定密钥。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 识别发送方。 |
 | timestamp | int | Y | 1623812664 | Unix 时间戳 GMT（UTC+00:00）。此时间戳用于所有 API 请求。开发者可以将其转换为本地时间。 |
 # 请求体参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 属性 description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
-| publish_target | []object | Y |  | Target markets for publishing global products. |
+| publish_target | []object | Y |  | 发布全球商品的目标市场。 |
 |  |  |  |  |  |
-| ^region | string | Y | MY | The new market where you want to publish the global product. |
-| Possible values: |  |  |  |  |
+| ^region | string | Y | MY | 要发布该全球商品的新市场。 |
+| 可能的值： |  |  |  |  |
 
-* AT: Austria
+* AT: 奥地利
 * BE:Belgium
-* CZ:Czech Republic
-* DE: Germany
+* CZ:捷克
+* DE: 德国
 * ES: Spain
-* FR: France
-* GB: United Kingdom
-* GR: Greece
+* FR: 法国
+* GB: 英国
+* GR: 希腊
 * HU:Hungary
-* ID: Indonesia
-* IE: Ireland
+* ID: 印度尼西亚
+* IE: 爱尔兰
 * IT: Italy
 * JP: Japan
-* MY: Malaysia
-* NL: Netherlands(NL)
-* PH: Philippines
+* MY: 马来西亚
+* NL: 荷兰(NL)
+* PH: 菲律宾
 * PO: Poland
 * PT:Portugal
-* SG: Singapore
-* TH: Thailand
-* US: United States
-* VN: Vietnam
-* MX: Mexico |
-   ^responsible_person_ids |[]string |N |["67726293bf1eb1e92401a"] |负责人 ID 列表。从 [Search Responsible Persons API](67066a55f17b7d02f95d2fb1).
-   Default: The IDs provided when the global product was created.
-   **Note**: Applicable only for the EU market in certain categories. Use the [Get Global Category Rules API](650a056df1fd3102b91b5b8e) to check the requirements. |
-   ^manufacturer_ids |[]string |N |["67726293bf1eb1e92401a"] |制造商 ID 列表。从 [Search Manufacturers API](67066a580dcee902fa03ccf9).
-   Default: The IDs provided when the global product was created.
-   **Note**: Applicable only for the EU market in certain categories. Use the [Get Global Category Rules API](650a056df1fd3102b91b5b8e) to check the requirements. |
-   ^skus |[]object |Y | |The SKUs to be published in the specified market.
-* Max SKUs for EU, JP, UK, US: 300
-* Max SKUs for other regions: 100 |
-   ^^related_global_sku_id |string |Y |1729592969712207400 |The global SKU ID to be published.
-   After publishing, a corresponding local product SKU will be created and linked to the global SKU. |
-   ^^price |object |N | |The SKU's local pricing information in the specified market.
+* SG: 新加坡
+* TH: 泰国
+* US: 美国
+* VN: 越南
+* MX: 墨西哥 |
+   ^responsible_person_ids |[]string |N |["67726293bf1eb1e92401a"] |负责人 ID 列表。从 [Search Responsible Persons API](67066a55f17b7d02f95d2fb1)。
+   默认值：创建全球商品时提供的 ID。
+   **注意**： 仅适用于欧盟市场的特定分类。 Use the [Get Global Category Rules API](650a056df1fd3102b91b5b8e) 检查要求。 |
+   ^manufacturer_ids |[]string |N |["67726293bf1eb1e92401a"] |制造商 ID 列表。从 [Search Manufacturers API](67066a580dcee902fa03ccf9)。
+   默认值：创建全球商品时提供的 ID。
+   **注意**： 仅适用于欧盟市场的特定分类。 Use the [Get Global Category Rules API](650a056df1fd3102b91b5b8e) 检查要求。 |
+   ^skus |[]object |Y | |要在指定市场上架的 SKU。
+* EU、JP、UK、US 的最大 SKU 数：300
+* 其他地区的最大 SKU 数量：100 |
+   ^^related_global_sku_id |string |Y |1729592969712207400 |待发布的全球 SKU ID。
+   发布后，将创建对应的本地商品 SKU 并关联到全球 SKU。 |
+   ^^price |object |N | |指定市场中 SKU 的本地价格信息。
 
-**Note**:
+**注意**：
 
-* Provide this only if you want to manually override the default local prices, which are automatically calculated from the global uniform price.
-* Specify either `amount` or `sale_price`, the other will be auto-filled. If both are provided, `sale_price` takes precedence.
-* JP and US shops using China warehouses must provide `price.sale_price`. |
-   ^^^amount |string |N |10.01 |The SKU's **local pre-tax price**. This excludes any applicable charges such as cross-border shipping costs, taxes, and other fees, and therefore does not appear on the product page.
-   Refer to [Product Pricing](https://partner.tiktokshop.com/docv2/page/67e1288d76cfee049d9af858) for the allowed price ranges in each market.
+* 仅当您想要手动覆盖默认的本地价格时提供此值，默认本地价格由全球统一价格自动计算得出。
+* 请指定 `amount` 或 `sale_price` 之一，另一项将自动填充。如果两者都提供，`sale_price` 优先。
+* 使用中国仓库的 JP 和 US 店铺必须提供 `price.sale_price`。 |
+   ^^^amount |string |N |10.01 |SKU 的**本地税前价格**。其中不含任何适用费用，如跨境配送成本、税费及其他费用，因此不会显示在商品页面上。
+   Refer to [Product Pricing](https://partner.tiktokshop.com/docv2/page/67e1288d76cfee049d9af858) 了解各市场允许的价格范围。
 
-**Note**: Not applicable for JP and US shops using China warehouses, please use `price.sale_price` instead. |
+**注意**: 不适用于使用中国仓库的 JP 和 US 店铺，请改用 `price.sale_price`。 |
 ^^^currency |string |Y |MYR |货币。
-Possible values based on the region:
+基于地区的可能值：
 
-* BRL: Brazil
-* CZK: Czech Republic
-* EUR: France, Germany, Ireland, Italy, Spain, Netherlands, Belgium, Austria, Greece, Portugal
-* GBP: United Kingdom
-* HUF: Hungary
-* IDR: Indonesia
-* JPY: Japan
-* MXN: Mexico
-* MYR: Malaysia
-* PHP: Philippines
-* PLN: Poland
-* SGD: Singapore
-* THB: Thailand
-* USD: United States
-* VND: Vietnam |
-   ^^^sale_price |string |N |100.00 |The SKU's **local display price** shown on the product page before any discounts.
-   Refer to [Product Pricing](https://partner.tiktokshop.com/docv2/page/67e1288d76cfee049d9af858) for the allowed price ranges in each market.
+* BRL: 巴西
+* CZK: 捷克共和国
+* EUR: 法国、德国、爱尔兰、意大利、西班牙、荷兰、比利时、奥地利、希腊、葡萄牙
+* GBP: 英国
+* HUF: 匈牙利
+* IDR: 印度尼西亚
+* JPY: 日本
+* MXN: 墨西哥
+* MYR: 马来西亚
+* PHP: 菲律宾
+* PLN: 波兰
+* SGD: 新加坡
+* THB: 泰国
+* USD: 美国
+* VND: 越南 |
+   ^^^sale_price |string |N |100.00 |SKU 在商品页面上折扣前显示的**本地展示价格**。
+   Refer to [Product Pricing](https://partner.tiktokshop.com/docv2/page/67e1288d76cfee049d9af858) 了解各市场允许的价格范围。
 
-**Note**:
+**注意**：
 
-* Required for JP and US shops using China warehouses, optional for others.
-* This is the definitive final price shown on the product page, all other prices will be ignored. |
-   ^^inventory |object |N | |SKU inventory information per warehouse.
-   Required for sellers without multiple warehouses, optional for others.
+* 对于使用中国仓库的 JP 和 US 店铺为必填，其他为可选。
+* 这是商品页面上显示的最终确定价格，所有其他价格将被忽略。 |
+   ^^inventory |object |N | |各仓库的 SKU 库存信息。
+   没有多个仓库的卖家必填，其他卖家可选。
 
-**Note**: If inventory details are not provided, the global SKU quantity will be evenly split among all markets, and any surplus will be added to the last published product SKU. |
-^^^warehouse_id |string |N |7068517275539719942 |The warehouse ID. Retrieve this value from the [Get Warehouse List API](https://partner.tiktokshop.com/docv2/page/650aa418defece02be6e66b6).
+**说明**：如果未提供库存明细，全球 SKU 数量将在所有市场间平均分配，余数将加到最后一个已发布的商品 SKU 上。 |
+^^^warehouse_id |string |N |7068517275539719942 |仓库 ID。可从 [Get Warehouse List API](https://partner.tiktokshop.com/docv2/page/650aa418defece02be6e66b6) 获取此值。
 Default:
 
-* Sellers without multiple warehouses: The available warehouses will be used, prioritizing local warehouses in the specified market over warehouses in the seller's base country.
-* Sellers with multiple warehouses: The global warehouse ID |
-   ^^^quantity |int |N |999 |The SKU quantity available in the warehouse.
-   Valid range: [1, 99,999]
+* 没有多个仓库的卖家：将使用可用仓库，优先使用指定市场内的本地仓库，其次为卖家基准国家的仓库。
+* 拥有多个仓库的卖家: 全局仓库 ID |
+   ^^^quantity |int |N |999 |仓库中可用的 SKU 数量。
+   有效范围：[1, 99,999]
 
-**Note**: If the local SKU inventory quantity exceeds the global SKU quantity, the global SKU quantity will be updated to be the sum of all local inventories. |
-^^fees |[]object |N | |The fees required for this product based on TikTok Shop policies. Fees are required only for certain product categories, retrieve the requirements from the [Get Category Rules API](https://partner.tiktokshop.com/docv2/page/6509c0febace3e02b74594a9). |
+**注意**： 如果本地 SKU 库存数量超过全球 SKU 数量，则全球 SKU 数量将更新为所有本地库存的总和。 |
+^^fees |[]object |N | |根据 TikTok Shop 政策该商品所需的费用。仅某些商品类目需要费用，请从 [Get Category Rules API](https://partner.tiktokshop.com/docv2/page/6509c0febace3e02b74594a9) 获取要求。 |
 ^^^type |string |N |PFAND |费用类型。
-Possible values: PFAND |
-^^^amount |string |N |1.01 |The fee amount.
-Valid range:
+可能的值：PFAND |
+^^^amount |string |N |1.01 |费用金额。
+有效范围：
 
 * PFAND: [0.00 - 6300.00] |
-   ^^^additional_attribute |string |N |SINGLE_USE |An optional attribute that provides additional context for the fee. The accepted values may vary by fee type and market.
+   ^^^additional_attribute |string |N |SINGLE_USE |提供费用附加上下文的可选属性。接受的值可能因费用类型和市场而异。
 
-Possible values for Pfand:
+Pfand 的可能值：
 
 * SINGLE_USE
 * REUSABLE
@@ -147,81 +147,81 @@ https://open-api.tiktokglobalshop.com/product/202309/global_products/17295929697
 ```
 
 # 响应参数
-| 属性 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 属性 description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
 | request_id | string | 202203070749000101890810281E8C70B7 | 请求日志 |
 | data | object |  | 具体返回信息 |
-| ^products | []object |  | The local products converted from the global product. Match each item to its publication result in `publish_result` by `region`. A region can have a `publish_result` item without a corresponding local product when its status is `FAILED`. |
-| ^^region | string | MY | The market of this local product. |
-| Possible values: |  |  |  |
+| ^products | []object |  | 由全球商品转换而来的本地商品。按 `region` 将每个项目与 `publish_result` 中对应的发布结果进行匹配。当某地区的状态为 `FAILED` 时，该地区可以有 `publish_result` 项目但没有对应的本地商品。 |
+| ^^region | string | MY | 该本地商品所在的市场。 |
+| 可能的值： |  |  |  |
 
-* AT: Austria
+* AT: 奥地利
 * BE:Belgium
-* CZ:Czech Republic
-* DE: Germany
+* CZ:捷克
+* DE: 德国
 * ES: Spain
-* FR: France
-* GB: United Kingdom
-* GR: Greece
+* FR: 法国
+* GB: 英国
+* GR: 希腊
 * HU:Hungary
-* ID: Indonesia
-* IE: Ireland
+* ID: 印度尼西亚
+* IE: 爱尔兰
 * IT: Italy
 * JP: Japan
-* MY: Malaysia
-* NL: Netherlands(NL)
-* PH: Philippines
+* MY: 马来西亚
+* NL: 荷兰(NL)
+* PH: 菲律宾
 * PO: Poland
 * PT:Portugal
-* SG: Singapore
-* TH: Thailand
-* US: United States
-* VN: Vietnam
-* MX: Mexico |
-   ^^shop_id |string |7494083603082020484 |The ID of the local shop in the specified market. One market can only have one local shop. |
-   ^^skus |[]object | |The newly created local SKUs in the specified market. |
-   ^^^related_global_sku_id |string |1729696746528737924 |The associated global SKU ID. |
-   ^^^id |string |1729592969712207400 |The newly generated local SKU ID. |
+* SG: 新加坡
+* TH: 泰国
+* US: 美国
+* VN: 越南
+* MX: 墨西哥 |
+   ^^shop_id |string |7494083603082020484 |指定市场中本地店铺的 ID. 一个市场只能有一个本地店铺。 |
+   ^^skus |[]object | |指定市场中新创建的本地 SKU。 |
+   ^^^related_global_sku_id |string |1729696746528737924 |关联的全局 SKU ID。 |
+   ^^^id |string |1729592969712207400 |新生成的本地 SKU ID。 |
    ^^^seller_sku |string |XL-COLOR-001 |用于管理 SKU 的内部代码/名称，对买家不可见。 |
-   ^^^sale_attributes |[]object | |定义产品每个变体的属性列表（如尺寸、颜色、长度）。 |
-   ^^^^id |string |100001 |The newly generated local sales attribute ID. |
-   ^^^^value_id |string |7272008676829824800 |The newly generated local sales attribute value ID. |
-   ^^id |string |1929592969712207410 |The newly generated local product ID. |
-   ^publish_result |[]object | |Results of publishing the global product. |
-   ^^region |string |MY |The market associated with this publication result.
-   Possible values:
-* AT: Austria
+   ^^^sale_attributes |[]object | |定义商品每个变体的属性列表（如尺寸、颜色、长度）。 |
+   ^^^^id |string |100001 |新生成的本地销售属性 ID。 |
+   ^^^^value_id |string |7272008676829824800 |新生成的本地销售属性值 ID。 |
+   ^^id |string |1929592969712207410 |新生成的本地商品 ID。 |
+   ^publish_result |[]object | |全球商品发布的结果。 |
+   ^^region |string |MY |与此发布结果关联的市场。
+   可能的值：
+* AT: 奥地利
 * BE:Belgium
-* CZ:Czech Republic
-* DE: Germany
+* CZ:捷克
+* DE: 德国
 * ES: Spain
-* FR: France
-* GB: United Kingdom
-* GR: Greece
+* FR: 法国
+* GB: 英国
+* GR: 希腊
 * HU:Hungary
-* ID: Indonesia
-* IE: Ireland
+* ID: 印度尼西亚
+* IE: 爱尔兰
 * IT: Italy
 * JP: Japan
-* MY: Malaysia
-* NL: Netherlands(NL)
-* PH: Philippines
+* MY: 马来西亚
+* NL: 荷兰(NL)
+* PH: 菲律宾
 * PO: Poland
 * PT:Portugal
-* SG: Singapore
-* TH: Thailand
-* US: United States
-* VN: Vietnam
-* MX: Mexico |
-   ^^status |string |SUCCESS |The status of publishing the product to the market.
-   Possible values:
-* SUCCESS: The global product was successfully published to the local shop, submitted for listing, and is now under review.
-* DRAFT: The global product was saved as a draft local product due to validation errors.
-* FAILED: Synchronization of the global product to the local shop was unsuccessful. |
-   ^^fail_reasons |[]object | |The list of errors that occurred. |
-   ^^^message |string |The publish region is inactive. |The error message. |
+* SG: 新加坡
+* TH: 泰国
+* US: 美国
+* VN: 越南
+* MX: 墨西哥 |
+   ^^status |string |SUCCESS |将商品发布到市场的状态。
+   可能的值：
+* SUCCESS：全球商品已成功发布到本地店铺，已提交上架，目前正在审核中。
+* DRAFT: 由于校验错误，该全球商品被保存为草稿本地商品。
+* FAILED：全球商品同步到本地店铺未成功。 |
+   ^^fail_reasons |[]object | |发生的错误列表。 |
+   ^^^message |string |The publish region is inactive. |错误消息。 |
 
 # 响应示例
 ```json
@@ -238,22 +238,22 @@ https://open-api.tiktokglobalshop.com/product/202309/global_products/17295929697
 | 12019028 | Multiple warehouses detected. Include all warehouse IDs and the corresponding details and try again. |
 | 12019113 | product status is invalid |
 | 12019121 | calculate price error |
-| 12019150 | The product ID does not exist. |
+| 12019150 | 商品 ID 不存在。 |
 | 12019212 | region already published |
 | 12052055 | The SKU inventory quantity for the warehouse must be within allowed limits. |
-| 12052084 | The provided currency is not available for this shop/region. |
+| 12052084 | 所提供的货币不适用于该店铺/地区。 |
 | 12052117 | seller publish global product over limit and save draft |
 | 12052145 | activity warehouse not allowed to be deleted |
 | 12052146 | The specified inventory quantity is too low. It must be greater than the locked quantity (e.g. for committed orders, campaigns, creators) to ensure a non-negative available stock. |
-| 12052260 | The product ID does not exist |
+| 12052260 | 商品 ID 不存在 |
 | 12052379 | the cover region of share warehouse can not cover the the product region |
 | 12052424 | Missing 'sale price' value |
 | 12052531 | The warehouse is disabled. |
 | 12052556 | The SKU id not exist. |
-| 12052700 | The seller is inactive. |
+| 12052700 | 卖家不活跃。 |
 | 12052701 | do not support cross-boarder seller create local product directly |
-| 36009003 | Internal error. Please try again. If the issue persists after multiple attempts, please contact platform support. |
-| 12052901 | The product in its current status is not available for this operation. Change the product status and try again. |
+| 36009003 | 内部错误。请重试。如果多次尝试后问题仍然存在，请联系平台支持。 |
+| 12052901 | 商品当前状态不支持此操作。请更改商品状态后重试。 |
 | 12052903 | The publish region is inactive. |
-| 12052910 | Invalid input parameters. Refer to the API documentation for details. |
+| 12052910 | 输入参数无效。请参阅 API 文档了解详情。 |
 

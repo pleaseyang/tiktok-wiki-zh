@@ -1,7 +1,7 @@
 # 获取 Package Shipping 单据
 
-# Path: /fulfillment/202309/packages/{package_id}/shipping_documents
-# Method: [GET]
+# 路径：/fulfillment/202309/packages/{package_id}/shipping_documents
+# 方法：[GET]
 # 功能描述
 对于使用 TikTok Shipping 发货的 package，使用此 API 获取由 `package_id` 指定的 package 的 `document_type` 所选 shipping 单据的 URL。首先调用 `Ship Package` 安排发货，然后在 package 被揽收前获取单据。
 
@@ -10,17 +10,17 @@
 
 # 通用参数
 通用参数请参考 [如何调用 TikTok Shop API - 通用参数](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Properties <!-- width:110px --> | Location <!-- width:75px --> | Type <!-- width:75px --> | Require <!-- width:60px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 位置 <!-- width:75px --> | 类型 <!-- width:75px --> | 必填 <!-- width:60px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- | --- |
 | shop_cipher | query | string | Y | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMt3 | 使用此属性在请求 API 时传递店铺信息。在请求跨境店铺 API 时未传递正确值将返回错误的响应。 |
-| Get by API [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
+| 通过 API 获取 [Get Authorization Shop](https://partner.tiktokshop.com/docv2/page/6507ead7b99d5302be949ba9?external_id=6507ead7b99d5302be949ba9) |  |  |  |  |  |
 | content-type | header | string | Y | application/json | 允许类型: application/json |
 # 请求 Path 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | package_id | string | Y | 5433567853345 | TikTok Shop package ID。 |
 # 请求 Query 参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Require <!-- width:90px --> | Sample <!-- width:254px --> | Properties description <!-- width:254px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 必填 <!-- width:90px --> | 示例 <!-- width:254px --> | 描述 <!-- width:254px --> |
 | --- | --- | --- | --- | --- |
 | app_key | string | Y | 38abcd | 每个应用都有一个唯一的 key。请使用分配给您应用的特定 key。 |
 | sign | string | Y | 5361235029d141222525e303d742f9e38aea052d10896d3197ab9d6233730b8c | 由 gen 算法生成的签名。当您向 TTS 发送 API 请求时，必须对其进行签名，以便 TTS 可以识别发送方。 |
@@ -60,7 +60,7 @@ https://open-api.tiktokglobalshop.com/fulfillment/202309/packages/5433567853345/
 ```
 
 # 响应参数
-| Properties <!-- width:110px --> | Type <!-- width:90px --> | Sample <!-- width:289px --> | Properties description <!-- width:289px --> |
+| 字段 <!-- width:110px --> | 类型 <!-- width:90px --> | 示例 <!-- width:289px --> | 描述 <!-- width:289px --> |
 | --- | --- | --- | --- |
 | code | int | 0 | API 响应中返回的成功或失败状态码。 |
 | message | string | Success | API 响应中返回的成功或失败消息。失败原因将在消息中描述。 |
@@ -76,15 +76,15 @@ https://open-api.tiktokglobalshop.com/fulfillment/202309/packages/5433567853345/
 
 # 错误码
 通用错误码请参考 [如何调用 TikTok Shop API - 通用错误码](https://partner.tiktokshop.com/docv2/page/64f199679495ef0281851ee5#Back%20To%20Top)
-| Code <!-- width:250px --> | Message <!-- width:553px --> |
+| 错误码 <!-- width:250px --> | 消息 <!-- width:553px --> |
 | --- | --- |
 | 11006010 | 内部 package 状态错误，请稍后重试。 |
-| 11034002 | 此 API 仅适用于 TikTok Shipping 订单。对于商家自发货，请离线获取 shipping label 并通过 API 或卖家中心上传到 TikTok Shop。 |
+| 11034002 | 此 API 仅适用于 TikTok Shipping 订单。对于卖家自发货，请离线获取 shipping label 并通过 API 或卖家中心上传到 TikTok Shop。 |
 | 11034009 | 仓库不存在。 |
 | 11034023 | Shipping 单据生成超时错误，请稍后重试。 |
 | 11034025 | 内部 package 标签错误，请稍后重试。 |
 | 11034037 | Shipping 单据仍在由物流服务商生成中，请稍后重试。 |
-| 21008017 | 此 API 仅适用于 TikTok Shipping 订单。对于商家自发货，请离线获取 shipping label 并通过 API 或卖家中心上传到 TikTok Shop。 |
+| 21008017 | 此 API 仅适用于 TikTok Shipping 订单。对于卖家自发货，请离线获取 shipping label 并通过 API 或卖家中心上传到 TikTok Shop。 |
 | 21008043 | 此 package 由 TikTok fulfillment。无法打印 shipping 单据。 |
 | 21008109 | 无法获取 shipping 信息，请检查订单状态。 |
 | 21011001 | 未找到 package。如果错误持续存在，请联系平台寻求帮助。 |
