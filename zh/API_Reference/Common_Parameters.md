@@ -1,23 +1,23 @@
-# Common Parameters
+# 通用参数
 
-When calling TikTok Shop APIs, include the following common parameters unless the endpoint documentation states otherwise.
-# Query parameters
-| **Parameter** | **Location** | **Type** | **Description** | **Sample** |
+调用 TikTok Shop API 时，除非对应端点文档另有说明，否则都需要传入以下通用参数。
+# 查询参数
+| **字段** | **位置** | **类型** | **描述** | **示例** |
 | --- | --- | --- | --- | --- |
-| `app_key` | Query | string | The unique key assigned to your app. Refer to Create your app to find out where to get your **`app_key`**. | 29a39d |
-| `sign` | Query | string | A HMAC-SHA256 hash based on the request parameter values, used by the service to verify the sender of the request in addition to the access token. <br/> Refer to Sign your API request to learn how to generate this signature. | bc721f0e0182914e3487b81df204de37a352fc3aa96947efda6dc1e5dd0d5290 |
-| `timestamp` | Query | Unix timestamp | A 10-digit Unix timestamp in seconds, used to ensure timeliness of the request and prevent replay attacks. Do not send a millisecond-level timestamp. This value is also used to generate the digital signature for the **`sign`** parameter. <br/> Valid range: [current time - 5 mins, current time + 30 secs]. Sending an invalid timestamp may cause error `36009004 Invalid timestamp`. | 1623812664 |
-# Header parameters
-| **Parameter** | **Type** | **Description** | **Sample** |
+| `app_key` | 查询参数 | string | 分配给应用的唯一密钥。请参考「创建应用」了解如何获取 **`app_key`**。 | 29a39d |
+| `sign` | 查询参数 | string | 基于请求参数值生成的 HMAC-SHA256 哈希，服务方据此在访问令牌之外校验请求发送方身份。<br/> 请参考「为 API 请求签名」了解如何生成签名。 | bc721f0e0182914e3487b81df204de37a352fc3aa96947efda6dc1e5dd0d5290 |
+| `timestamp` | 查询参数 | Unix timestamp | 10 位秒级 Unix 时间戳，用于保证请求时效性并防止重放攻击。请勿传入毫秒级时间戳。该值同时用于生成 **`sign`** 参数的数字签名。<br/> 有效范围：[当前时间 - 5 分钟, 当前时间 + 30 秒]。时间戳无效可能触发错误 `36009004 Invalid timestamp`。 | 1623812664 |
+# 请求头参数
+| **字段** | **类型** | **描述** | **示例** |
 | --- | --- | --- | --- |
-| `x-tts-access-token` | string | The access token used to authenticate the shop or seller authorization for the request. For API version `202309` and later, the access token must be sent in this header instead of the query string. | act.example_access_token |
-| `content-type` | string | The request content type. Use `application/json` when sending a JSON request body. | application/json |
+| `x-tts-access-token` | string | 用于校验店铺或卖家授权的访问令牌。API 版本 `202309` 及以上时，必须通过此请求头传递访问令牌，不能再放在查询字符串中。 | act.example_access_token |
+| `content-type` | string | 请求内容类型。发送 JSON 请求体时使用 `application/json`。 | application/json |
 
-> **Version note:** For legacy APIs before version `202309`, some older documents may show `access_token` as a query parameter. For API version `202309` and later, use the `x-tts-access-token` header.
+> **版本说明：** 对于 `202309` 之前的旧版 API，部分旧文档可能仍把 `access_token` 列为查询参数。API 版本 `202309` 及以上请使用 `x-tts-access-token` 请求头。
 
-# Endpoint-specific common identifiers
-Some endpoints require common business identifiers in addition to the parameters above. Whether these fields are required depends on the specific endpoint. Always follow the endpoint documentation for the exact location, requirement, and allowed value.
-| **Parameter** | **Location** | **Type** | **Description** | **Sample** |
+# 端点专用通用标识符
+除上述参数外，部分端点还需要传入通用业务标识符。这些字段是否必填取决于具体端点，位置、必填性与允许值一律以该端点的文档为准。
+| **字段** | **位置** | **类型** | **描述** | **示例** |
 | --- | --- | --- | --- | --- |
-| `shop_cipher` | Depends on endpoint | string | The encrypted shop identifier. Include this field when the endpoint requires a shop-level identifier. If the field is part of the signed request parameters for the endpoint, include it when generating `sign`. | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMtA |
-| `category_asset_cipher` | Depends on endpoint | string | The encrypted category asset identifier. Include this field when the endpoint requires a category asset identifier. If the field is part of the signed request parameters for the endpoint, include it when generating `sign`. | CAT_ASSET_XF90igAAAABh00qsWgtvOiGFNqyubMtA |
+| `shop_cipher` | 视端点而定 | string | 加密后的店铺标识符。当端点要求店铺级标识符时传入此字段；若该字段属于端点的签名请求参数，生成 `sign` 时也需纳入。 | GCP_XF90igAAAABh00qsWgtvOiGFNqyubMtA |
+| `category_asset_cipher` | 视端点而定 | string | 加密后的类目资产标识符。当端点要求类目资产标识符时传入此字段；若该字段属于端点的签名请求参数，生成 `sign` 时也需纳入。 | CAT_ASSET_XF90igAAAABh00qsWgtvOiGFNqyubMtA |

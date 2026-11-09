@@ -1,49 +1,49 @@
-# Get Access Token
+# 获取访问令牌
 
-Authorization is how a TikTok Shop user (seller, creator, or partner) grants your app access to their data. The flow is OAuth-based: the user approves an authorization link, your app receives a short-lived `auth_code`, and you exchange it for an `access_token` and `refresh_token`.
-This page is the **reference** for the token APIs and the `user_type` values. For step-by-step, role-specific walkthroughs, see:
+授权是指 TikTok Shop 用户（卖家、达人或合作伙伴）允许你的应用访问其数据。该流程基于 OAuth：用户同意授权链接后，你的应用会收到一个短期有效的 `auth_code`，再用它换取 `access_token` 与 `refresh_token`。
+本页是令牌接口与 `user_type` 取值的**参考文档**。按角色分步操作的说明，请参见：
 
-* [Seller authorization guide](https://partner.tiktokshop.com/docv2/page/seller-authorization-guide)
-* [Creator authorization guide](https://partner.tiktokshop.com/docv2/page/creator-authorization-guide)
-* [Partner authorization guide](https://partner.tiktokshop.com/docv2/page/partner-authorization-guide)
+* [卖家授权指南](https://partner.tiktokshop.com/docv2/page/seller-authorization-guide)
+* [达人授权指南](https://partner.tiktokshop.com/docv2/page/creator-authorization-guide)
+* [合作伙伴授权指南](https://partner.tiktokshop.com/docv2/page/partner-authorization-guide)
 
-# Authorization domains by market
-Different markets and authorization types use different domains. Use this table as the single reference:
-| Authorization type | US market | Rest of World (ROW) |
+# 各市场的授权域名
+不同市场、不同授权类型使用不同域名。请以本表为统一依据：
+| 授权类型 | 美国市场 | 其他市场（ROW） |
 | --- | --- | --- |
-| Seller (via authorization link) | `https://services.us.tiktokshop.com/open/authorize?service_id={service_id}` | `https://services.tiktokshop.com/open/authorize?service_id={service_id}` |
-| Partner (TAP) | `https://partner.us.tiktokshop.com/open/authorize?service_id={service_id}` | `https://partner.tiktokshop.com/open/authorize?service_id={service_id}` |
-| Creator | `https://shop.tiktok.com/alliance/creator/auth?app_key={app_key}&state={state}` | `https://shop.tiktok.com/alliance/creator/auth?app_key={app_key}&state={state}` |
-| Token endpoints (all markets) | `https://auth.tiktok-shops.com/api/v2/token/get` and `.../token/refresh` | same |
-> **Where do I get** **`service_id` / `app_key`?** Both are shown on your app's detail page in Partner Center (**App & Service**). The `service_id` is the unique identifier of your registered online application (OAuth client).
+| 卖家（通过授权链接） | `https://services.us.tiktokshop.com/open/authorize?service_id={service_id}` | `https://services.tiktokshop.com/open/authorize?service_id={service_id}` |
+| 合作伙伴（TAP） | `https://partner.us.tiktokshop.com/open/authorize?service_id={service_id}` | `https://partner.tiktokshop.com/open/authorize?service_id={service_id}` |
+| 达人 | `https://shop.tiktok.com/alliance/creator/auth?app_key={app_key}&state={state}` | `https://shop.tiktok.com/alliance/creator/auth?app_key={app_key}&state={state}` |
+| 令牌端点（所有市场） | `https://auth.tiktok-shops.com/api/v2/token/get` 与 `.../token/refresh` | 同上 |
+> **`service_id` / `app_key` 从哪里获取？** 两者都显示在合作伙伴中心应用详情页（**App & Service**）。`service_id` 是你注册的线上应用（OAuth 客户端）的唯一标识符。
 
-# Authorization flow
+# 授权流程
 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI2MjVweCIgaGVpZ2h0PSI2MTZweCIgdmlld0JveD0iLTAuNSAtMC41IDYyNSA2MTYiPjxkZWZzLz48Zz48cmVjdCB4PSIxNDIiIHk9IjEyIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMwMDAwMDAiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48cGF0aCBkPSJNIDE5MiA2MiBMIDE5MiA2MTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC41IC0wLjUpIj48Zm9yZWlnbk9iamVjdCBzdHlsZT0ib3ZlcmZsb3c6IHZpc2libGU7IHRleHQtYWxpZ246IGxlZnQ7IiBwb2ludGVyLWV2ZW50cz0ibm9uZSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGRpdiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiB1bnNhZmUgY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IHVuc2FmZSBjZW50ZXI7IHdpZHRoOiA5OHB4OyBoZWlnaHQ6IDFweDsgcGFkZGluZy10b3A6IDM3cHg7IG1hcmdpbi1sZWZ0OiAxNDNweDsiPjxkaXYgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7IGZvbnQtc2l6ZTogMDsgdGV4dC1hbGlnbjogY2VudGVyOyAiPjxkaXYgc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgZm9udC1zaXplOiAxMnB4OyBmb250LWZhbWlseTogSGVsdmV0aWNhOyBjb2xvcjogIzAwMDAwMDsgbGluZS1oZWlnaHQ6IDEuMjsgcG9pbnRlci1ldmVudHM6IGFsbDsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgd29yZC13cmFwOiBub3JtYWw7ICI+U2VydmljZS9BcHA8L2Rpdj48L2Rpdj48L2Rpdj48L2ZvcmVpZ25PYmplY3Q+PC9nPjxyZWN0IHg9IjE4NyIgeT0iMTQyIiB3aWR0aD0iMTAiIGhlaWdodD0iNDcwIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMwMDAwMDAiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48ZWxsaXBzZSBjeD0iMTIiIGN5PSI3IiByeD0iNSIgcnk9IjUiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzAwMDAwMCIgcG9pbnRlci1ldmVudHM9ImFsbCIvPjxwYXRoIGQ9Ik0gMTIgMTIgTCAxMiAyOC42NyBNIDEyIDE1LjMzIEwgMiAxNS4zMyBNIDEyIDE1LjMzIEwgMjIgMTUuMzMgTSAxMiAyOC42NyBMIDIgNDIgTSAxMiAyOC42NyBMIDIyIDQyIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRlci1ldmVudHM9ImFsbCIvPjxwYXRoIGQ9Ik0gMTIgNDIgTCAxMiA2MTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC41IC0wLjUpIj48Zm9yZWlnbk9iamVjdCBzdHlsZT0ib3ZlcmZsb3c6IHZpc2libGU7IHRleHQtYWxpZ246IGxlZnQ7IiBwb2ludGVyLWV2ZW50cz0ibm9uZSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGRpdiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiB1bnNhZmUgZmxleC1zdGFydDsganVzdGlmeS1jb250ZW50OiB1bnNhZmUgY2VudGVyOyB3aWR0aDogMThweDsgaGVpZ2h0OiAxcHg7IHBhZGRpbmctdG9wOiA0NXB4OyBtYXJnaW4tbGVmdDogM3B4OyI+PGRpdiBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsgZm9udC1zaXplOiAwOyB0ZXh0LWFsaWduOiBjZW50ZXI7ICI+PGRpdiBzdHlsZT0iZGlzcGxheTogaW5saW5lLWJsb2NrOyBmb250LXNpemU6IDEycHg7IGZvbnQtZmFtaWx5OiBIZWx2ZXRpY2E7IGNvbG9yOiAjMDAwMDAwOyBsaW5lLWhlaWdodDogMS4yOyBwb2ludGVyLWV2ZW50czogYWxsOyBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmOyB3aGl0ZS1zcGFjZTogbm9ybWFsOyB3b3JkLXdyYXA6IG5vcm1hbDsgIj5Vc2VyPC9kaXY+PC9kaXY+PC9kaXY+PC9mb3JlaWduT2JqZWN0PjwvZz48cmVjdCB4PSI3IiB5PSI3MiIgd2lkdGg9IjEwIiBoZWlnaHQ9IjU0MCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMDAwMDAwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PHJlY3QgeD0iMjkyIiB5PSIxMiIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMDAwMDAwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PHBhdGggZD0iTSAzNjIgNjIgTCAzNjIgNjEyIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iMyAzIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuNSAtMC41KSI+PGZvcmVpZ25PYmplY3Qgc3R5bGU9Im92ZXJmbG93OiB2aXNpYmxlOyB0ZXh0LWFsaWduOiBsZWZ0OyIgcG9pbnRlci1ldmVudHM9Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkaXYgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogdW5zYWZlIGNlbnRlcjsganVzdGlmeS1jb250ZW50OiB1bnNhZmUgY2VudGVyOyB3aWR0aDogMTM4cHg7IGhlaWdodDogMXB4OyBwYWRkaW5nLXRvcDogMzdweDsgbWFyZ2luLWxlZnQ6IDI5M3B4OyI+PGRpdiBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsgZm9udC1zaXplOiAwOyB0ZXh0LWFsaWduOiBjZW50ZXI7ICI+PGRpdiBzdHlsZT0iZGlzcGxheTogaW5saW5lLWJsb2NrOyBmb250LXNpemU6IDEycHg7IGZvbnQtZmFtaWx5OiBIZWx2ZXRpY2E7IGNvbG9yOiAjMDAwMDAwOyBsaW5lLWhlaWdodDogMS4yOyBwb2ludGVyLWV2ZW50czogYWxsOyB3aGl0ZS1zcGFjZTogbm9ybWFsOyB3b3JkLXdyYXA6IG5vcm1hbDsgIj5UaWtUb2sgU2hvcCBPcGVuIEF1dGhvcml6YXRpb24gQ2VudGVyPC9kaXY+PC9kaXY+PC9kaXY+PC9mb3JlaWduT2JqZWN0PjwvZz48cmVjdCB4PSIzNTciIHk9IjcyIiB3aWR0aD0iMTAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMwMDAwMDAiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48cmVjdCB4PSI0ODIiIHk9IjEyIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMwMDAwMDAiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48cGF0aCBkPSJNIDU1MiA2MiBMIDU1MiA2MTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC41IC0wLjUpIj48Zm9yZWlnbk9iamVjdCBzdHlsZT0ib3ZlcmZsb3c6IHZpc2libGU7IHRleHQtYWxpZ246IGxlZnQ7IiBwb2ludGVyLWV2ZW50cz0ibm9uZSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGRpdiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiB1bnNhZmUgY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IHVuc2FmZSBjZW50ZXI7IHdpZHRoOiAxMzhweDsgaGVpZ2h0OiAxcHg7IHBhZGRpbmctdG9wOiAzN3B4OyBtYXJnaW4tbGVmdDogNDgzcHg7Ij48ZGl2IHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyBmb250LXNpemU6IDA7IHRleHQtYWxpZ246IGNlbnRlcjsgIj48ZGl2IHN0eWxlPSJkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IGZvbnQtc2l6ZTogMTJweDsgZm9udC1mYW1pbHk6IEhlbHZldGljYTsgY29sb3I6ICMwMDAwMDA7IGxpbmUtaGVpZ2h0OiAxLjI7IHBvaW50ZXItZXZlbnRzOiBhbGw7IHdoaXRlLXNwYWNlOiBub3JtYWw7IHdvcmQtd3JhcDogbm9ybWFsOyAiPlRpa1RvayBTaG9wIE9wZW4gQVBJPC9kaXY+PC9kaXY+PC9kaXY+PC9mb3JlaWduT2JqZWN0PjwvZz48cmVjdCB4PSI1NDciIHk9IjUxMiIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMDAwMDAwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PHBhdGggZD0iTSAyMiAxMDIgTCAzNDMuODggMTAyIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRlci1ldmVudHM9InN0cm9rZSIvPjxwYXRoIGQ9Ik0gMzUwLjg4IDEwMiBMIDM0My44OCAxMDUuNSBMIDM0My44OCA5OC41IFoiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuNSAtMC41KSI+PGZvcmVpZ25PYmplY3Qgc3R5bGU9Im92ZXJmbG93OiB2aXNpYmxlOyB0ZXh0LWFsaWduOiBsZWZ0OyIgcG9pbnRlci1ldmVudHM9Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkaXYgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogdW5zYWZlIGZsZXgtZW5kOyBqdXN0aWZ5LWNvbnRlbnQ6IHVuc2FmZSBjZW50ZXI7IHdpZHRoOiAxcHg7IGhlaWdodDogMXB4OyBwYWRkaW5nLXRvcDogMTI5cHg7IG1hcmdpbi1sZWZ0OiAxOTJweDsiPjxkaXYgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7IGZvbnQtc2l6ZTogMDsgdGV4dC1hbGlnbjogY2VudGVyOyAiPjxkaXYgc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgZm9udC1zaXplOiAxMXB4OyBmb250LWZhbWlseTogSGVsdmV0aWNhOyBjb2xvcjogIzAwMDAwMDsgbGluZS1oZWlnaHQ6IDEuMjsgcG9pbnRlci1ldmVudHM6IGFsbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgd2hpdGUtc3BhY2U6IG5vd3JhcDsgIj5BY2Nlc3MgdG8gc3Vic2NyaXB0aW9uL2F1dGhvcml6YXRpb24gbGlua3MgPGJyIC8+dGhyb3VnaCB0aGUgU2VydmljZSBNYXJrZXRwbGFjZTwvZGl2PjwvZGl2PjwvZGl2PjwvZm9yZWlnbk9iamVjdD48L2c+PHBhdGggZD0iTSAzNTcgMzEyLjIgTCAyMDQuMjQgMzEyIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iMyAzIiBwb2ludGVyLWV2ZW50cz0ic3Ryb2tlIi8+PHBhdGggZD0iTSAyMTIuMTIgMzA3LjUxIEwgMjAzLjEyIDMxMiBMIDIxMi4xMSAzMTYuNTEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuNSAtMC41KSI+PGZvcmVpZ25PYmplY3Qgc3R5bGU9Im92ZXJmbG93OiB2aXNpYmxlOyB0ZXh0LWFsaWduOiBsZWZ0OyIgcG9pbnRlci1ldmVudHM9Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkaXYgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogdW5zYWZlIGZsZXgtZW5kOyBqdXN0aWZ5LWNvbnRlbnQ6IHVuc2FmZSBjZW50ZXI7IHdpZHRoOiAxcHg7IGhlaWdodDogMXB4OyBwYWRkaW5nLXRvcDogMzQwcHg7IG1hcmdpbi1sZWZ0OiAyNzdweDsiPjxkaXYgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7IGZvbnQtc2l6ZTogMDsgdGV4dC1hbGlnbjogY2VudGVyOyAiPjxkaXYgc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgZm9udC1zaXplOiAxMXB4OyBmb250LWZhbWlseTogSGVsdmV0aWNhOyBjb2xvcjogIzAwMDAwMDsgbGluZS1oZWlnaHQ6IDEuMjsgcG9pbnRlci1ldmVudHM6IGFsbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgd2hpdGUtc3BhY2U6IG5vd3JhcDsgIj5DYWxsYmFjayByZWRpcmVjdCBVUkwgPGJyIC8+YW5kIGdldCBhdXRoIGNvZGU8L2Rpdj48L2Rpdj48L2Rpdj48L2ZvcmVpZ25PYmplY3Q+PC9nPjxwYXRoIGQ9Ik0gMjAyIDE3MiBMIDM0NC4zOCAxNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0ic3Ryb2tlIi8+PHBhdGggZD0iTSAzNTEuMzggMTcyIEwgMzQ0LjM4IDE3NS41IEwgMzQ0LjM4IDE2OC41IFoiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuNSAtMC41KSI+PGZvcmVpZ25PYmplY3Qgc3R5bGU9Im92ZXJmbG93OiB2aXNpYmxlOyB0ZXh0LWFsaWduOiBsZWZ0OyIgcG9pbnRlci1ldmVudHM9Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkaXYgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogdW5zYWZlIGZsZXgtZW5kOyBqdXN0aWZ5LWNvbnRlbnQ6IHVuc2FmZSBjZW50ZXI7IHdpZHRoOiAxcHg7IGhlaWdodDogMXB4OyBwYWRkaW5nLXRvcDogMTk5cHg7IG1hcmdpbi1sZWZ0OiAyNzNweDsiPjxkaXYgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7IGZvbnQtc2l6ZTogMDsgdGV4dC1hbGlnbjogY2VudGVyOyAiPjxkaXYgc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgZm9udC1zaXplOiAxMXB4OyBmb250LWZhbWlseTogSGVsdmV0aWNhOyBjb2xvcjogIzAwMDAwMDsgbGluZS1oZWlnaHQ6IDEuMjsgcG9pbnRlci1ldmVudHM6IGFsbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgd2hpdGUtc3BhY2U6IG5vd3JhcDsgIj5BY2Nlc3Mgc2VydmljZSBzcGxpY2luZyA8YnIgLz5hdXRob3JpemF0aW9uIGxpbms8L2Rpdj48L2Rpdj48L2Rpdj48L2ZvcmVpZ25PYmplY3Q+PC9nPjxwYXRoIGQ9Ik0gMjIgMTcyIEwgMTczLjM4IDE3MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50ZXItZXZlbnRzPSJzdHJva2UiLz48cGF0aCBkPSJNIDE4MC4zOCAxNzIgTCAxNzMuMzggMTc1LjUgTCAxNzMuMzggMTY4LjUgWiIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC41IC0wLjUpIj48Zm9yZWlnbk9iamVjdCBzdHlsZT0ib3ZlcmZsb3c6IHZpc2libGU7IHRleHQtYWxpZ246IGxlZnQ7IiBwb2ludGVyLWV2ZW50cz0ibm9uZSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGRpdiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiB1bnNhZmUgZmxleC1lbmQ7IGp1c3RpZnktY29udGVudDogdW5zYWZlIGNlbnRlcjsgd2lkdGg6IDFweDsgaGVpZ2h0OiAxcHg7IHBhZGRpbmctdG9wOiAxODlweDsgbWFyZ2luLWxlZnQ6IDEwMnB4OyI+PGRpdiBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsgZm9udC1zaXplOiAwOyB0ZXh0LWFsaWduOiBjZW50ZXI7ICI+PGRpdiBzdHlsZT0iZGlzcGxheTogaW5saW5lLWJsb2NrOyBmb250LXNpemU6IDExcHg7IGZvbnQtZmFtaWx5OiBIZWx2ZXRpY2E7IGNvbG9yOiAjMDAwMDAwOyBsaW5lLWhlaWdodDogMS4yOyBwb2ludGVyLWV2ZW50czogYWxsOyBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmOyB3aGl0ZS1zcGFjZTogbm93cmFwOyAiPkFjY2VzcyBzZXJ2aWNlIHdlYnNpdGUgbGluazwvZGl2PjwvZGl2PjwvZGl2PjwvZm9yZWlnbk9iamVjdD48L2c+PHBhdGggZD0iTSAyMDIgMzgyLjUgTCAzNDQuMzggMzgyLjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0ic3Ryb2tlIi8+PHBhdGggZD0iTSAzNTEuMzggMzgyLjUgTCAzNDQuMzggMzg2IEwgMzQ0LjM4IDM3OSBaIiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRlci1ldmVudHM9ImFsbCIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjUgLTAuNSkiPjxmb3JlaWduT2JqZWN0IHN0eWxlPSJvdmVyZmxvdzogdmlzaWJsZTsgdGV4dC1hbGlnbjogbGVmdDsiIHBvaW50ZXItZXZlbnRzPSJub25lIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGl2IHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IHVuc2FmZSBmbGV4LWVuZDsganVzdGlmeS1jb250ZW50OiB1bnNhZmUgY2VudGVyOyB3aWR0aDogMXB4OyBoZWlnaHQ6IDFweDsgcGFkZGluZy10b3A6IDQxMHB4OyBtYXJnaW4tbGVmdDogMjczcHg7Ij48ZGl2IHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyBmb250LXNpemU6IDA7IHRleHQtYWxpZ246IGNlbnRlcjsgIj48ZGl2IHN0eWxlPSJkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IGZvbnQtc2l6ZTogMTFweDsgZm9udC1mYW1pbHk6IEhlbHZldGljYTsgY29sb3I6ICMwMDAwMDA7IGxpbmUtaGVpZ2h0OiAxLjI7IHBvaW50ZXItZXZlbnRzOiBhbGw7IGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IHdoaXRlLXNwYWNlOiBub3dyYXA7ICI+VXNlIGF1dGggY29kZSB0byA8YnIgLz5nZXQgYWNjZXNzX3Rva2VuPC9kaXY+PC9kaXY+PC9kaXY+PC9mb3JlaWduT2JqZWN0PjwvZz48cGF0aCBkPSJNIDM1MiA0NTYuNSBMIDIwNC4yNCA0NTYuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IjMgMyIgcG9pbnRlci1ldmVudHM9InN0cm9rZSIvPjxwYXRoIGQ9Ik0gMjEyLjEyIDQ1MiBMIDIwMy4xMiA0NTYuNSBMIDIxMi4xMiA0NjEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuNSAtMC41KSI+PGZvcmVpZ25PYmplY3Qgc3R5bGU9Im92ZXJmbG93OiB2aXNpYmxlOyB0ZXh0LWFsaWduOiBsZWZ0OyIgcG9pbnRlci1ldmVudHM9Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkaXYgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogdW5zYWZlIGZsZXgtZW5kOyBqdXN0aWZ5LWNvbnRlbnQ6IHVuc2FmZSBjZW50ZXI7IHdpZHRoOiAxcHg7IGhlaWdodDogMXB4OyBwYWRkaW5nLXRvcDogNDcwcHg7IG1hcmdpbi1sZWZ0OiAyNzJweDsiPjxkaXYgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7IGZvbnQtc2l6ZTogMDsgdGV4dC1hbGlnbjogY2VudGVyOyAiPjxkaXYgc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgZm9udC1zaXplOiAxMXB4OyBmb250LWZhbWlseTogSGVsdmV0aWNhOyBjb2xvcjogIzAwMDAwMDsgbGluZS1oZWlnaHQ6IDEuMjsgcG9pbnRlci1ldmVudHM6IGFsbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgd2hpdGUtc3BhY2U6IG5vd3JhcDsgIj7CoHJldHVybiBhY2Nlc3NfdG9rZW48L2Rpdj48L2Rpdj48L2Rpdj48L2ZvcmVpZ25PYmplY3Q+PC9nPjxwYXRoIGQ9Ik0gMjAyIDUzMi41IEwgNTMzLjg4IDUzMi41IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRlci1ldmVudHM9InN0cm9rZSIvPjxwYXRoIGQ9Ik0gNTQwLjg4IDUzMi41IEwgNTMzLjg4IDUzNiBMIDUzMy44OCA1MjkgWiIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC41IC0wLjUpIj48Zm9yZWlnbk9iamVjdCBzdHlsZT0ib3ZlcmZsb3c6IHZpc2libGU7IHRleHQtYWxpZ246IGxlZnQ7IiBwb2ludGVyLWV2ZW50cz0ibm9uZSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGRpdiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiB1bnNhZmUgZmxleC1lbmQ7IGp1c3RpZnktY29udGVudDogdW5zYWZlIGNlbnRlcjsgd2lkdGg6IDFweDsgaGVpZ2h0OiAxcHg7IHBhZGRpbmctdG9wOiA1MzBweDsgbWFyZ2luLWxlZnQ6IDM3MnB4OyI+PGRpdiBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsgZm9udC1zaXplOiAwOyB0ZXh0LWFsaWduOiBjZW50ZXI7ICI+PGRpdiBzdHlsZT0iZGlzcGxheTogaW5saW5lLWJsb2NrOyBmb250LXNpemU6IDExcHg7IGZvbnQtZmFtaWx5OiBIZWx2ZXRpY2E7IGNvbG9yOiAjMDAwMDAwOyBsaW5lLWhlaWdodDogMS4yOyBwb2ludGVyLWV2ZW50czogYWxsOyBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmOyB3aGl0ZS1zcGFjZTogbm93cmFwOyAiPlVzZSBhY2Nlc3NfdG9rZW4gdG8gY2FsbCBPcGVuIEFQSTwvZGl2PjwvZGl2PjwvZGl2PjwvZm9yZWlnbk9iamVjdD48L2c+PHBhdGggZD0iTSA1NDIgNjAyIEwgMjAyLjI0IDYwMi40MSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50ZXItZXZlbnRzPSJzdHJva2UiLz48cGF0aCBkPSJNIDIxMC4xMSA1OTcuOSBMIDIwMS4xMiA2MDIuNDEgTCAyMTAuMTIgNjA2LjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuNSAtMC41KSI+PGZvcmVpZ25PYmplY3Qgc3R5bGU9Im92ZXJmbG93OiB2aXNpYmxlOyB0ZXh0LWFsaWduOiBsZWZ0OyIgcG9pbnRlci1ldmVudHM9Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkaXYgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogdW5zYWZlIGZsZXgtZW5kOyBqdXN0aWZ5LWNvbnRlbnQ6IHVuc2FmZSBjZW50ZXI7IHdpZHRoOiAxcHg7IGhlaWdodDogMXB4OyBwYWRkaW5nLXRvcDogNTk5cHg7IG1hcmdpbi1sZWZ0OiAzNzFweDsiPjxkaXYgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7IGZvbnQtc2l6ZTogMDsgdGV4dC1hbGlnbjogY2VudGVyOyAiPjxkaXYgc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgZm9udC1zaXplOiAxMXB4OyBmb250LWZhbWlseTogSGVsdmV0aWNhOyBjb2xvcjogIzAwMDAwMDsgbGluZS1oZWlnaHQ6IDEuMjsgcG9pbnRlci1ldmVudHM6IGFsbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgd2hpdGUtc3BhY2U6IG5vd3JhcDsgIj5SZXR1cm4gdGhlIHJlc3VsdCBvZiBBUEkgY2FsbDwvZGl2PjwvZGl2PjwvZGl2PjwvZm9yZWlnbk9iamVjdD48L2c+PHBhdGggZD0iTSAxODIgNjAyLjUgTCAyNC4yNCA2MDIuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50ZXItZXZlbnRzPSJzdHJva2UiLz48cGF0aCBkPSJNIDMyLjEyIDU5OCBMIDIzLjEyIDYwMi41IEwgMzIuMTIgNjA3IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRlci1ldmVudHM9ImFsbCIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjUgLTAuNSkiPjxmb3JlaWduT2JqZWN0IHN0eWxlPSJvdmVyZmxvdzogdmlzaWJsZTsgdGV4dC1hbGlnbjogbGVmdDsiIHBvaW50ZXItZXZlbnRzPSJub25lIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGl2IHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IHVuc2FmZSBmbGV4LWVuZDsganVzdGlmeS1jb250ZW50OiB1bnNhZmUgY2VudGVyOyB3aWR0aDogMXB4OyBoZWlnaHQ6IDFweDsgcGFkZGluZy10b3A6IDYwMHB4OyBtYXJnaW4tbGVmdDogMTAycHg7Ij48ZGl2IHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyBmb250LXNpemU6IDA7IHRleHQtYWxpZ246IGNlbnRlcjsgIj48ZGl2IHN0eWxlPSJkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IGZvbnQtc2l6ZTogMTFweDsgZm9udC1mYW1pbHk6IEhlbHZldGljYTsgY29sb3I6ICMwMDAwMDA7IGxpbmUtaGVpZ2h0OiAxLjI7IHBvaW50ZXItZXZlbnRzOiBhbGw7IGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IHdoaXRlLXNwYWNlOiBub3dyYXA7ICI+RGlzcGxheSBBUEkgY2FsbCByZXN1bHRzPC9kaXY+PC9kaXY+PC9kaXY+PC9mb3JlaWduT2JqZWN0PjwvZz48cGF0aCBkPSJNIDIyIDI0MiBMIDM0My44OCAyNDIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0ic3Ryb2tlIi8+PHBhdGggZD0iTSAzNTAuODggMjQyIEwgMzQzLjg4IDI0NS41IEwgMzQzLjg4IDIzOC41IFoiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PHJlY3QgeD0iNjIiIHk9IjI0MiIgd2lkdGg9IjQwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9Im5vbmUiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC41IC0wLjUpIj48Zm9yZWlnbk9iamVjdCBzdHlsZT0ib3ZlcmZsb3c6IHZpc2libGU7IHRleHQtYWxpZ246IGxlZnQ7IiBwb2ludGVyLWV2ZW50cz0ibm9uZSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGRpdiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiB1bnNhZmUgY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IHVuc2FmZSBjZW50ZXI7IHdpZHRoOiAxcHg7IGhlaWdodDogMXB4OyBwYWRkaW5nLXRvcDogMjUycHg7IG1hcmdpbi1sZWZ0OiA4MnB4OyI+PGRpdiBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsgZm9udC1zaXplOiAwOyB0ZXh0LWFsaWduOiBjZW50ZXI7ICI+PGRpdiBzdHlsZT0iZGlzcGxheTogaW5saW5lLWJsb2NrOyBmb250LXNpemU6IDEycHg7IGZvbnQtZmFtaWx5OiBIZWx2ZXRpY2E7IGNvbG9yOiAjMDAwMDAwOyBsaW5lLWhlaWdodDogMS4yOyBwb2ludGVyLWV2ZW50czogYWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyAiPkxvZ2luIHNlbGxlciBjZW50ZXI8L2Rpdj48L2Rpdj48L2Rpdj48L2ZvcmVpZ25PYmplY3Q+PC9nPjxwYXRoIGQ9Ik0gMjAyIDIwMiBMIDM2NiAyMDIgTCAzNzIgMjA4IEwgMzcyIDIzMiBMIDIwMiAyMzIgTCAyMDIgMjAyIFoiIGZpbGw9IiNmZmZmY2MiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PHBhdGggZD0iTSAzNjYgMjAyIEwgMzY2IDIwOCBMIDM3MiAyMDggWiIgZmlsbC1vcGFjaXR5PSIwLjA1IiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9Im5vbmUiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48cGF0aCBkPSJNIDM2NiAyMDIgTCAzNjYgMjA4IEwgMzcyIDIwOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC41IC0wLjUpIj48Zm9yZWlnbk9iamVjdCBzdHlsZT0ib3ZlcmZsb3c6IHZpc2libGU7IHRleHQtYWxpZ246IGxlZnQ7IiBwb2ludGVyLWV2ZW50cz0ibm9uZSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGRpdiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiB1bnNhZmUgY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IHVuc2FmZSBjZW50ZXI7IHdpZHRoOiAxNjhweDsgaGVpZ2h0OiAxcHg7IHBhZGRpbmctdG9wOiAyMTdweDsgbWFyZ2luLWxlZnQ6IDIwM3B4OyI+PGRpdiBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsgZm9udC1zaXplOiAwOyB0ZXh0LWFsaWduOiBjZW50ZXI7ICI+PGRpdiBzdHlsZT0iZGlzcGxheTogaW5saW5lLWJsb2NrOyBmb250LXNpemU6IDEycHg7IGZvbnQtZmFtaWx5OiBIZWx2ZXRpY2E7IGNvbG9yOiAjMDAwMDAwOyBsaW5lLWhlaWdodDogMS4yOyBwb2ludGVyLWV2ZW50czogYWxsOyB3aGl0ZS1zcGFjZTogbm9ybWFsOyB3b3JkLXdyYXA6IG5vcm1hbDsgIj5QYXJhbWV0ZXJzIHNlcnZpY2VfaWQvYXBwX2tleeOAgXN0YXRlPC9kaXY+PC9kaXY+PC9kaXY+PC9mb3JlaWduT2JqZWN0PjwvZz48cGF0aCBkPSJNIDIyIDI2MiBMIDE3NiAyNjIgTCAxODIgMjY4IEwgMTgyIDI5MiBMIDIyIDI5MiBMIDIyIDI2MiBaIiBmaWxsPSIjZmZmZmNjIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRlci1ldmVudHM9ImFsbCIvPjxwYXRoIGQ9Ik0gMTc2IDI2MiBMIDE3NiAyNjggTCAxODIgMjY4IFoiIGZpbGwtb3BhY2l0eT0iMC4wNSIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSJub25lIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PHBhdGggZD0iTSAxNzYgMjYyIEwgMTc2IDI2OCBMIDE4MiAyNjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuNSAtMC41KSI+PGZvcmVpZ25PYmplY3Qgc3R5bGU9Im92ZXJmbG93OiB2aXNpYmxlOyB0ZXh0LWFsaWduOiBsZWZ0OyIgcG9pbnRlci1ldmVudHM9Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkaXYgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogdW5zYWZlIGNlbnRlcjsganVzdGlmeS1jb250ZW50OiB1bnNhZmUgY2VudGVyOyB3aWR0aDogMTU4cHg7IGhlaWdodDogMXB4OyBwYWRkaW5nLXRvcDogMjc3cHg7IG1hcmdpbi1sZWZ0OiAyM3B4OyI+PGRpdiBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsgZm9udC1zaXplOiAwOyB0ZXh0LWFsaWduOiBjZW50ZXI7ICI+PGRpdiBzdHlsZT0iZGlzcGxheTogaW5saW5lLWJsb2NrOyBmb250LXNpemU6IDEycHg7IGZvbnQtZmFtaWx5OiBIZWx2ZXRpY2E7IGNvbG9yOiAjMDAwMDAwOyBsaW5lLWhlaWdodDogMS4yOyBwb2ludGVyLWV2ZW50czogYWxsOyB3aGl0ZS1zcGFjZTogbm9ybWFsOyB3b3JkLXdyYXA6IG5vcm1hbDsgIj5JbnB1dCBhY2NvdW50IGFuZCBwYXNzd29yZDwvZGl2PjwvZGl2PjwvZGl2PjwvZm9yZWlnbk9iamVjdD48L2c+PHBhdGggZD0iTSAzMDIgMTEyIEwgNDY2IDExMiBMIDQ3MiAxMTggTCA0NzIgMTQyIEwgMzAyIDE0MiBMIDMwMiAxMTIgWiIgZmlsbD0iI2ZmZmZjYyIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48cGF0aCBkPSJNIDQ2NiAxMTIgTCA0NjYgMTE4IEwgNDcyIDExOCBaIiBmaWxsLW9wYWNpdHk9IjAuMDUiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0ibm9uZSIgcG9pbnRlci1ldmVudHM9ImFsbCIvPjxwYXRoIGQ9Ik0gNDY2IDExMiBMIDQ2NiAxMTggTCA0NzIgMTE4IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRlci1ldmVudHM9ImFsbCIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjUgLTAuNSkiPjxmb3JlaWduT2JqZWN0IHN0eWxlPSJvdmVyZmxvdzogdmlzaWJsZTsgdGV4dC1hbGlnbjogbGVmdDsiIHBvaW50ZXItZXZlbnRzPSJub25lIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGl2IHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IHVuc2FmZSBjZW50ZXI7IGp1c3RpZnktY29udGVudDogdW5zYWZlIGNlbnRlcjsgd2lkdGg6IDE2OHB4OyBoZWlnaHQ6IDFweDsgcGFkZGluZy10b3A6IDEyN3B4OyBtYXJnaW4tbGVmdDogMzAzcHg7Ij48ZGl2IHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyBmb250LXNpemU6IDA7IHRleHQtYWxpZ246IGNlbnRlcjsgIj48ZGl2IHN0eWxlPSJkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IGZvbnQtc2l6ZTogMTJweDsgZm9udC1mYW1pbHk6IEhlbHZldGljYTsgY29sb3I6ICMwMDAwMDA7IGxpbmUtaGVpZ2h0OiAxLjI7IHBvaW50ZXItZXZlbnRzOiBhbGw7IHdoaXRlLXNwYWNlOiBub3JtYWw7IHdvcmQtd3JhcDogbm9ybWFsOyAiPlBhcmFtZXRlcnMgc2VydmljZV9pZC9hcHBfa2V5PC9kaXY+PC9kaXY+PC9kaXY+PC9mb3JlaWduT2JqZWN0PjwvZz48cGF0aCBkPSJNIDIwMiA0MTIgTCA1MzYgNDEyIEwgNTQyIDQxOCBMIDU0MiA0NDIgTCAyMDIgNDQyIEwgMjAyIDQxMiBaIiBmaWxsPSIjZmZmZmNjIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRlci1ldmVudHM9ImFsbCIvPjxwYXRoIGQ9Ik0gNTM2IDQxMiBMIDUzNiA0MTggTCA1NDIgNDE4IFoiIGZpbGwtb3BhY2l0eT0iMC4wNSIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSJub25lIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PHBhdGggZD0iTSA1MzYgNDEyIEwgNTM2IDQxOCBMIDU0MiA0MTgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludGVyLWV2ZW50cz0iYWxsIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuNSAtMC41KSI+PGZvcmVpZ25PYmplY3Qgc3R5bGU9Im92ZXJmbG93OiB2aXNpYmxlOyB0ZXh0LWFsaWduOiBsZWZ0OyIgcG9pbnRlci1ldmVudHM9Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkaXYgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogdW5zYWZlIGNlbnRlcjsganVzdGlmeS1jb250ZW50OiB1bnNhZmUgY2VudGVyOyB3aWR0aDogMzM4cHg7IGhlaWdodDogMXB4OyBwYWRkaW5nLXRvcDogNDI3cHg7IG1hcmdpbi1sZWZ0OiAyMDNweDsiPjxkaXYgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7IGZvbnQtc2l6ZTogMDsgdGV4dC1hbGlnbjogY2VudGVyOyAiPjxkaXYgc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgZm9udC1zaXplOiAxMnB4OyBmb250LWZhbWlseTogSGVsdmV0aWNhOyBjb2xvcjogIzAwMDAwMDsgbGluZS1oZWlnaHQ6IDEuMjsgcG9pbnRlci1ldmVudHM6IGFsbDsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgd29yZC13cmFwOiBub3JtYWw7ICI+UGFyYW1ldGVycyBhcHBfa2V544CBYXBwX3NlY3JldOOAgWF1dGhfY29kZeOAgWdyYW50X3R5cGXjgIFncmFudGVkX3Njb3BlczwvZGl2PjwvZGl2PjwvZGl2PjwvZm9yZWlnbk9iamVjdD48L2c+PHBhdGggZD0iTSAyMDIgNDc2IEwgNTM2IDQ3NiBMIDU0MiA0ODIgTCA1NDIgNTA2IEwgMjAyIDUwNiBMIDIwMiA0NzYgWiIgZmlsbD0iI2ZmZmZjYyIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50ZXItZXZlbnRzPSJhbGwiLz48cGF0aCBkPSJNIDUzNiA0NzYgTCA1MzYgNDgyIEwgNTQyIDQ4MiBaIiBmaWxsLW9wYWNpdHk9IjAuMDUiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0ibm9uZSIgcG9pbnRlci1ldmVudHM9ImFsbCIvPjxwYXRoIGQ9Ik0gNTM2IDQ3NiBMIDUzNiA0ODIgTCA1NDIgNDgyIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRlci1ldmVudHM9ImFsbCIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjUgLTAuNSkiPjxmb3JlaWduT2JqZWN0IHN0eWxlPSJvdmVyZmxvdzogdmlzaWJsZTsgdGV4dC1hbGlnbjogbGVmdDsiIHBvaW50ZXItZXZlbnRzPSJub25lIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGl2IHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IHVuc2FmZSBjZW50ZXI7IGp1c3RpZnktY29udGVudDogdW5zYWZlIGNlbnRlcjsgd2lkdGg6IDMzOHB4OyBoZWlnaHQ6IDFweDsgcGFkZGluZy10b3A6IDQ5MXB4OyBtYXJnaW4tbGVmdDogMjAzcHg7Ij48ZGl2IHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyBmb250LXNpemU6IDA7IHRleHQtYWxpZ246IGNlbnRlcjsgIj48ZGl2IHN0eWxlPSJkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IGZvbnQtc2l6ZTogMTJweDsgZm9udC1mYW1pbHk6IEhlbHZldGljYTsgY29sb3I6ICMwMDAwMDA7IGxpbmUtaGVpZ2h0OiAxLjI7IHBvaW50ZXItZXZlbnRzOiBhbGw7IHdoaXRlLXNwYWNlOiBub3JtYWw7IHdvcmQtd3JhcDogbm9ybWFsOyAiPlJlc3BvbnNlIFBhcmFtZXRlcnMgYWNjZXNzX3Rva2Vu44CBcmVmcmVzaF90b2tlbuOAgW9wZW5faWQ8L2Rpdj48L2Rpdj48L2Rpdj48L2ZvcmVpZ25PYmplY3Q+PC9nPjwvZz48L3N2Zz4=" width="625px" />
 
-1. The user opens your authorization link and approves (or rejects) the request.
-2. On approval, the user is redirected to your **Redirect URL** with a temporary `code`:
+1. 用户打开授权链接，同意（或拒绝）授权请求。
+2. 用户同意后，将携带临时 `code` 重定向到你的 **Redirect URL**：
 
 ```Plain Text
 {redirect_url}?code=FeBoANmHP3yqdoUI9fZOCw&state={state}
 ```
 
-If the user rejects, they are still redirected, but `code` is null: `code=null&error=auth_denied`.
-> ❗ **Important:** The `auth_code` expires in **30 minutes** and can be used **only once**. Exchange it for tokens immediately.
+若用户拒绝授权，仍会重定向，但 `code` 为空：`code=null&error=auth_denied`。
+> ❗ **重要：** `auth_code` 有效期为 **30 分钟**，且**仅可使用一次**。请立即用它换取令牌。
 
 
-1. Your app exchanges the `code` (passed as `auth_code`) for tokens via the Get Access Token API.
+1. 你的应用通过 Get Access Token 接口，用 `code`（作为 `auth_code` 传入）换取令牌。
 
-# Get Access Token API
-Make a `GET` request to `https://auth.tiktok-shops.com/api/v2/token/get` with the following parameters:
-| Parameter | Type | Required? | Description | Sample |
+# Get Access Token 接口
+向 `https://auth.tiktok-shops.com/api/v2/token/get` 发起 `GET` 请求，并传入以下参数：
+| 字段 | 类型 | 必填 | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
-| `app_key` | string | Yes | App key from the Partner Center app page. | 123abc |
-| `app_secret` | string | Yes | App secret from the Partner Center app page. | (your app secret) |
-| `auth_code` | string | Yes | Authorization code obtained from the authorization link. | TTP_FeBoANmHP3yqdoUI9fZOCw |
-| `grant_type` | string | Yes | Grant token type. Only `authorized_code` is accepted. | authorized_code |
-> **On** **`grant_type=authorized_code`:** this value is intentional and correct for the TikTok Shop token API — it is **not** the standard OAuth `authorization_code`. Do not "fix" it to `authorization_code`, or the request will fail.
+| `app_key` | string | 是 | 合作伙伴中心应用页面上的 App key。 | 123abc |
+| `app_secret` | string | 是 | 合作伙伴中心应用页面上的 App secret。 | (your app secret) |
+| `auth_code` | string | 是 | 从授权链接获取的授权码。 | TTP_FeBoANmHP3yqdoUI9fZOCw |
+| `grant_type` | string | 是 | 授权类型。仅接受 `authorized_code`。 | authorized_code |
+> **关于 `grant_type=authorized_code`：** 该取值是 TikTok Shop 令牌接口的正确写法，**并非**标准 OAuth 的 `authorization_code`。请勿「修正」为 `authorization_code`，否则请求会失败。
 
-Your request should resemble:
+请求示例：
 ```Plain Text
 https://auth.tiktok-shops.com/api/v2/token/get?app_key=123abc
 &app_secret={your_app_secret}
@@ -51,21 +51,21 @@ https://auth.tiktok-shops.com/api/v2/token/get?app_key=123abc
 &grant_type=authorized_code
 ```
 
-If all parameters are valid, the response contains:
-| Field | Type | Description | Sample |
+若所有参数有效，响应包含：
+| 字段 | 类型 | 描述 | 示例 |
 | --- | --- | --- | --- |
-| `code` | int | Machine-readable result code. `0` = success. See Common error codes. | 0 |
-| `message` | string | Human-readable result message. | success |
-| `request_id` | string | ID to track the API request. | 2024080809462301024509910319695C45 |
-| `data.access_token` | string | User access token. Pass it in the `x-tts-access-token` header of API requests. | TTP_RLM6CIADWF606TZGFO5XGA |
-| `data.access_token_expire_in` | Unix timestamp | Access token expiration (default validity: **7 days**). | 1660556783 |
-| `data.refresh_token` | string | Token used to refresh the access token. | TTP_C2XWDN63ON-FOHJSMR0WSG |
-| `data.refresh_token_expire_in` | Unix timestamp | Refresh token expiration (equals the authorization duration the user granted). | 1691487031 |
-| `data.open_id` | string | ID identifying the authorizing user. | 7010736057180325637 |
-| `data.seller_name` | string | Name of the authorizing seller. | Test Seller |
-| `data.seller_base_region` | string | Region where the seller is based. | US |
-| `data.user_type` | int | Type of authorizing user. See the enumeration below. | 0 |
-| `data.granted_scopes` | []string | The **Scope Key** values authorized for the app. | ["seller.affiliate_collaboration.read", "seller.affiliate_collaboration.write"] |
+| `code` | int | 机器可读的结果码。`0` 表示成功，参见通用错误码。 | 0 |
+| `message` | string | 人类可读的结果消息。 | success |
+| `request_id` | string | 用于追踪该次 API 请求的 ID。 | 2024080809462301024509910319695C45 |
+| `data.access_token` | string | 用户访问令牌。请在 API 请求的 `x-tts-access-token` 请求头中传入。 | TTP_RLM6CIADWF606TZGFO5XGA |
+| `data.access_token_expire_in` | Unix timestamp | 访问令牌过期时间（默认有效期 **7 天**）。 | 1660556783 |
+| `data.refresh_token` | string | 用于刷新访问令牌的刷新令牌。 | TTP_C2XWDN63ON-FOHJSMR0WSG |
+| `data.refresh_token_expire_in` | Unix timestamp | 刷新令牌过期时间（与用户授予的授权时长一致）。 | 1691487031 |
+| `data.open_id` | string | 标识授权用户的 ID。 | 7010736057180325637 |
+| `data.seller_name` | string | 授权卖家的名称。 | Test Seller |
+| `data.seller_base_region` | string | 卖家所在地区。 | US |
+| `data.user_type` | int | 授权用户类型，取值见下方枚举表。 | 0 |
+| `data.granted_scopes` | []string | 应用已获授权的 **Scope Key** 列表。 | ["seller.affiliate_collaboration.read", "seller.affiliate_collaboration.write"] |
 ```Plain Text
 {
   "code": 0,
@@ -88,27 +88,27 @@ If all parameters are valid, the response contains:
 }
 ```
 
-# `user_type` enumeration
-The `user_type` field tells you which kind of user authorized your app:
-| Value | User type | Notes |
+# `user_type` 枚举
+`user_type` 字段用于标识是哪一类用户授权了你的应用：
+| 取值 | 用户类型 | 说明 |
 | --- | --- | --- |
-| 0 | Seller | Standard seller authorization. |
-| 1 | Creator | Affiliate creator authorization. |
-| 2 | Partner | Legacy partner type. |
-| 3 | Partner | Current partner type used for Affiliate Partner / TAP authorization. |
-| 4 | Global Selling seller | Cross-border / Global Selling. |
-| 5 | Global Selling seller | Current Global Selling type. |
-> Match the value you receive against this table — for example, creator integrations should receive `1`, and Affiliate Partner (TAP) integrations should receive `3`. If you receive an unexpected value, verify that the user authorized through the correct authorization link for your app type.
+| 0 | 卖家 | 标准卖家授权。 |
+| 1 | 达人 | 联盟达人授权。 |
+| 2 | 合作伙伴 | 旧版合作伙伴类型。 |
+| 3 | 合作伙伴 | 当前用于 Affiliate Partner / TAP 授权的合作伙伴类型。 |
+| 4 | 全球销售卖家 | 跨境 / Global Selling。 |
+| 5 | 全球销售卖家 | 当前的 Global Selling 类型。 |
+> 请将收到的取值与上表对照——例如达人集成应收到 `1`，Affiliate Partner（TAP）集成应收到 `3`。若收到预期之外的取值，请确认用户是通过与你的应用类型相匹配的正确授权链接完成授权的。
 
-# Get Refresh Token API
-Access tokens expire (default 7 days). Before expiry, refresh them by making a `GET` request to `https://auth.tiktok-shops.com/api/v2/token/refresh`:
-| Parameter | Type | Required? | Description | Sample |
+# Get Refresh Token 接口
+访问令牌会过期（默认 7 天）。过期前，请向 `https://auth.tiktok-shops.com/api/v2/token/refresh` 发起 `GET` 请求刷新：
+| 字段 | 类型 | 必填 | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
-| `app_key` | string | Yes | App key from the Partner Center app page. | 123abc |
-| `app_secret` | string | Yes | App secret from the Partner Center app page. | (your app secret) |
-| `refresh_token` | string | Yes | Refresh token from the Get Access Token response. | TTP_C2XWDN63ON-FOHJSMR0WSG |
-| `grant_type` | string | Yes | Grant token type. Only `refresh_token` is accepted. | refresh_token |
-Your request should resemble:
+| `app_key` | string | 是 | 合作伙伴中心应用页面上的 App key。 | 123abc |
+| `app_secret` | string | 是 | 合作伙伴中心应用页面上的 App secret。 | (your app secret) |
+| `refresh_token` | string | 是 | Get Access Token 响应中返回的刷新令牌。 | TTP_C2XWDN63ON-FOHJSMR0WSG |
+| `grant_type` | string | 是 | 授权类型。仅接受 `refresh_token`。 | refresh_token |
+请求示例：
 ```Plain Text
 https://auth.tiktok-shops.com/api/v2/token/refresh?app_key=123abc
 &app_secret={your_app_secret}
@@ -116,7 +116,7 @@ https://auth.tiktok-shops.com/api/v2/token/refresh?app_key=123abc
 &grant_type=refresh_token
 ```
 
-The response has the same shape as Get Access Token. Note the corrected JSON (every field is comma-separated):
+响应结构与 Get Access Token 相同。请注意以下 JSON 已修正（每个字段之间都有逗号分隔）：
 ```Plain Text
 {
   "code": 0,
@@ -139,17 +139,17 @@ The response has the same shape as Get Access Token. Note the corrected JSON (ev
 }
 ```
 
-# State parameter (recommended)
-Add a `state` parameter to your authorization link for CSRF protection. It should be an unguessable, server-generated, single-use random string that you validate on callback. See the [OpenID Connect documentation](https://developers.google.com/identity/protocols/oauth2/openid-connect#createxsrftoken) for an example of creating and confirming a `state`.
-# Common questions
-Token retrieval/refresh and understanding `user_type` are among the most frequent authorization support topics. Before contacting support, double-check:
+# `state` 参数（推荐）
+建议在授权链接中加入 `state` 参数以防 CSRF 攻击。它应是服务端生成的、不可猜测且一次性使用的随机字符串，并在回调时校验。创建与校验 `state` 的示例参见 [OpenID Connect 文档](https://developers.google.com/identity/protocols/oauth2/openid-connect#createxsrftoken)。
+# 常见问题
+获取/刷新令牌以及理解 `user_type` 是授权相关支持问题中最常见的两类。联系支持前，请再次确认：
 
-* `grant_type` is exactly `authorized_code` (get) or `refresh_token` (refresh).
-* Your `auth_code` is fresh (≤ 30 minutes old) and unused.
-* You're using the correct authorization domain for your market and app type (see the table above).
+* `grant_type` 严格等于 `authorized_code`（获取令牌）或 `refresh_token`（刷新令牌）。
+* 你的 `auth_code` 是新的（≤ 30 分钟）且未被使用过。
+* 你使用的授权域名与所在市场、应用类型相匹配（见上表）。
 
-For more help, see How to contact support.
-# Enable API Scope
+如需更多帮助，请参见「如何联系支持」。
+# 启用 API 权限范围
 ![Image](https://p16-arcosite-sg.ibyteimg.com/tos-alisg-i-k9wyc2ijk0-sg/84f5bb18084348f585eade8b61db9111~tplv-k9wyc2ijk0-image.image)
-Before developing an app, the developer should enable or apply for the necessary API scope depending on the app's business type.
-<span style="background-color: rgb(255, 245, 235)">📌 </span><span style="background-color: rgb(255, 245, 235)"><strong>Note</strong></span><span style="background-color: rgb(255, 245, 235)">: Enabling unnecessary scope(s) could result in a longer app review time and lower user authorization rate.</span>
+开发应用前，开发者应根据应用的业务类型启用或申请所需的 API 权限范围（scope）。
+<span style="background-color: rgb(255, 245, 235)">📌 </span><span style="background-color: rgb(255, 245, 235)"><strong>说明</strong></span><span style="background-color: rgb(255, 245, 235)">：启用不必要的权限范围可能延长应用审核时间，并降低用户授权率。</span>
